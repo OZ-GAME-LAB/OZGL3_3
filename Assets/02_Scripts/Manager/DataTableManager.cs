@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -27,7 +27,7 @@ public class DataTableManager
         TextAsset textAsset = Resources.Load<TextAsset>(resourcePath);
         if (null == textAsset)
         {
-            Debug.LogError($"¸®¼Ò½º¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù: Resources/{resourcePath}");
+            Debug.LogError($"ë¦¬ì†ŒìŠ¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤: Resources/{resourcePath}");
             return new Dictionary<string, T>();
         }
 
@@ -41,18 +41,18 @@ public class DataTableManager
 
             if (wrapper == null || wrapper.items == null)
             {
-                Debug.LogError($"[{typeof(T).Name}] JSON ÆÄ½Ì °á°ú°¡ ºñ¾î ÀÖ½À´Ï´Ù.");
+                Debug.LogError($"[{typeof(T).Name}] JSON íŒŒì‹± ê²°ê³¼ê°€ ë¹„ì–´ ìˆìŠµë‹ˆë‹¤.");
             }
 
             if (null != wrapper && null != wrapper.items)
             {
-                Debug.Log($"{typeof(T).Name} µ¥ÀÌÅÍ¸¦ {wrapper.items.Count}°³ ·ÎµåÇß½À´Ï´Ù.");
+                Debug.Log($"{typeof(T).Name} ë°ì´í„°ë¥¼ {wrapper.items.Count}ê°œ ë¡œë“œí–ˆìŠµë‹ˆë‹¤.");
                 return wrapper.items.ToDictionary(value => value.Id.ToString());
             }
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"[{typeof(T).Name} JSON ·Îµå ¿À·ù] {ex.Message}");
+            Debug.LogError($"[{typeof(T).Name} JSON ë¡œë“œ ì˜¤ë¥˜] {ex.Message}");
         }
 
         return new Dictionary<string, T>();
