@@ -1,0 +1,6136 @@
+fileFormatVersion: 2
+guid: a7e8a5e2b27bfba41a9f582a5608c45e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5827724930924066843
+    second: Shoggoth_SpriteSheet_0
+  - first:
+      213: -7931344884950689070
+    second: Shoggoth_SpriteSheet_1
+  - first:
+      213: 2698593278997127600
+    second: Shoggoth_SpriteSheet_2
+  - first:
+      213: 8864222424133149054
+    second: Shoggoth_SpriteSheet_3
+  - first:
+      213: 940297960852185856
+    second: Shoggoth_SpriteSheet_4
+  - first:
+      213: 341518675425121969
+    second: Shoggoth_SpriteSheet_5
+  - first:
+      213: 6421720869501180857
+    second: Shoggoth_SpriteSheet_6
+  - first:
+      213: -6867161821696802960
+    second: Shoggoth_SpriteSheet_7
+  - first:
+      213: -3851101660632184206
+    second: Shoggoth_SpriteSheet_8
+  - first:
+      213: -4776581205514165987
+    second: Shoggoth_SpriteSheet_9
+  - first:
+      213: 8569292474333506175
+    second: Shoggoth_SpriteSheet_10
+  - first:
+      213: -9012491525830488331
+    second: Shoggoth_SpriteSheet_11
+  - first:
+      213: -7028902310728167711
+    second: Shoggoth_SpriteSheet_12
+  - first:
+      213: 2573788346128321689
+    second: Shoggoth_SpriteSheet_13
+  - first:
+      213: -5232033497470445133
+    second: Shoggoth_SpriteSheet_14
+  - first:
+      213: 8112811262085480973
+    second: Shoggoth_SpriteSheet_15
+  - first:
+      213: 8379153642520147389
+    second: Shoggoth_SpriteSheet_16
+  - first:
+      213: -229234942163470352
+    second: Shoggoth_SpriteSheet_17
+  - first:
+      213: -3235056406996762386
+    second: Shoggoth_SpriteSheet_18
+  - first:
+      213: 7409002055087440712
+    second: Shoggoth_SpriteSheet_19
+  - first:
+      213: -5181070365049967026
+    second: Shoggoth_SpriteSheet_20
+  - first:
+      213: -3095178126121307240
+    second: Shoggoth_SpriteSheet_21
+  - first:
+      213: -3415169531299724063
+    second: Shoggoth_SpriteSheet_22
+  - first:
+      213: 4896183871865828124
+    second: Shoggoth_SpriteSheet_23
+  - first:
+      213: -8520063782031730720
+    second: Shoggoth_SpriteSheet_24
+  - first:
+      213: -4893985391130169830
+    second: Shoggoth_SpriteSheet_25
+  - first:
+      213: 4032090850646930298
+    second: Shoggoth_SpriteSheet_26
+  - first:
+      213: -8686453266140766671
+    second: Shoggoth_SpriteSheet_27
+  - first:
+      213: 3013464457086107731
+    second: Shoggoth_SpriteSheet_28
+  - first:
+      213: 5767127665022500687
+    second: Shoggoth_SpriteSheet_29
+  - first:
+      213: 9091909176623004942
+    second: Shoggoth_SpriteSheet_30
+  - first:
+      213: 190667111085538481
+    second: Shoggoth_SpriteSheet_31
+  - first:
+      213: 5120870861695828905
+    second: Shoggoth_SpriteSheet_32
+  - first:
+      213: 1224662541071599964
+    second: Shoggoth_SpriteSheet_33
+  - first:
+      213: -505914504828443955
+    second: Shoggoth_SpriteSheet_34
+  - first:
+      213: -6041967367807240439
+    second: Shoggoth_SpriteSheet_35
+  - first:
+      213: -7524676087226136954
+    second: Shoggoth_SpriteSheet_36
+  - first:
+      213: -8608449112229229056
+    second: Shoggoth_SpriteSheet_37
+  - first:
+      213: -264312942351398499
+    second: Shoggoth_SpriteSheet_38
+  - first:
+      213: 4428118804304082048
+    second: Shoggoth_SpriteSheet_39
+  - first:
+      213: -6921123084306739497
+    second: Shoggoth_SpriteSheet_40
+  - first:
+      213: 4714655949457749070
+    second: Shoggoth_SpriteSheet_41
+  - first:
+      213: 4329906497290360228
+    second: Shoggoth_SpriteSheet_42
+  - first:
+      213: 9153910588499895901
+    second: Shoggoth_SpriteSheet_43
+  - first:
+      213: 6657240848107912249
+    second: Shoggoth_SpriteSheet_44
+  - first:
+      213: -2318657511972893895
+    second: Shoggoth_SpriteSheet_45
+  - first:
+      213: 9216589751522447157
+    second: Shoggoth_SpriteSheet_46
+  - first:
+      213: 3723725708837716847
+    second: Shoggoth_SpriteSheet_47
+  - first:
+      213: 1780752656080860541
+    second: Shoggoth_SpriteSheet_48
+  - first:
+      213: -7686886892857800689
+    second: Shoggoth_SpriteSheet_49
+  - first:
+      213: 3435015905278817298
+    second: Shoggoth_SpriteSheet_50
+  - first:
+      213: -2676009755523725845
+    second: Shoggoth_SpriteSheet_51
+  - first:
+      213: 4031907480254425898
+    second: Shoggoth_SpriteSheet_52
+  - first:
+      213: 4811099705282338463
+    second: Shoggoth_SpriteSheet_53
+  - first:
+      213: 5702950502151787531
+    second: Shoggoth_SpriteSheet_54
+  - first:
+      213: -6009542553637573714
+    second: Shoggoth_SpriteSheet_55
+  - first:
+      213: -6160505351974452106
+    second: Shoggoth_SpriteSheet_56
+  - first:
+      213: -8595413434685563827
+    second: Shoggoth_SpriteSheet_57
+  - first:
+      213: -5583634977606211247
+    second: Shoggoth_SpriteSheet_58
+  - first:
+      213: -7147224304848106063
+    second: Shoggoth_SpriteSheet_59
+  - first:
+      213: 1633508343480973191
+    second: Shoggoth_SpriteSheet_60
+  - first:
+      213: -4067225806380915525
+    second: Shoggoth_SpriteSheet_61
+  - first:
+      213: 5441015782840181450
+    second: Shoggoth_SpriteSheet_62
+  - first:
+      213: -3046021959637163657
+    second: Shoggoth_SpriteSheet_63
+  - first:
+      213: -3407633580809738229
+    second: Shoggoth_SpriteSheet_64
+  - first:
+      213: -1260008107016744664
+    second: Shoggoth_SpriteSheet_65
+  - first:
+      213: 6877669561907182098
+    second: Shoggoth_SpriteSheet_66
+  - first:
+      213: 7831087070770141764
+    second: Shoggoth_SpriteSheet_67
+  - first:
+      213: 6923353567597853087
+    second: Shoggoth_SpriteSheet_68
+  - first:
+      213: 6501386227129229814
+    second: Shoggoth_SpriteSheet_69
+  - first:
+      213: 4016463918890492280
+    second: Shoggoth_SpriteSheet_70
+  - first:
+      213: 7475866021659356694
+    second: Shoggoth_SpriteSheet_71
+  - first:
+      213: -860472295209765184
+    second: Shoggoth_SpriteSheet_72
+  - first:
+      213: -1233874690813585455
+    second: Shoggoth_SpriteSheet_73
+  - first:
+      213: 117493830599742830
+    second: Shoggoth_SpriteSheet_74
+  - first:
+      213: -4891099635924114426
+    second: Shoggoth_SpriteSheet_75
+  - first:
+      213: -1607506262891709737
+    second: Shoggoth_SpriteSheet_76
+  - first:
+      213: 8419328599364222992
+    second: Shoggoth_SpriteSheet_77
+  - first:
+      213: -7347840670239798874
+    second: Shoggoth_SpriteSheet_78
+  - first:
+      213: 916759307118150642
+    second: Shoggoth_SpriteSheet_79
+  - first:
+      213: 5917639372058291132
+    second: Shoggoth_SpriteSheet_80
+  - first:
+      213: -7424629760761827438
+    second: Shoggoth_SpriteSheet_81
+  - first:
+      213: -1388260428075603774
+    second: Shoggoth_SpriteSheet_82
+  - first:
+      213: 7435605834924930164
+    second: Shoggoth_SpriteSheet_83
+  - first:
+      213: -4506309554678465253
+    second: Shoggoth_SpriteSheet_84
+  - first:
+      213: -8937137524245740077
+    second: Shoggoth_SpriteSheet_85
+  - first:
+      213: 6310877860325050589
+    second: Shoggoth_SpriteSheet_86
+  - first:
+      213: 6017509873611940683
+    second: Shoggoth_SpriteSheet_87
+  - first:
+      213: -5902034062538704371
+    second: Shoggoth_SpriteSheet_88
+  - first:
+      213: -1998160859231698171
+    second: Shoggoth_SpriteSheet_89
+  - first:
+      213: -1200349105868323303
+    second: Shoggoth_SpriteSheet_90
+  - first:
+      213: 4767556835680547769
+    second: Shoggoth_SpriteSheet_91
+  - first:
+      213: -1107894708452030142
+    second: Shoggoth_SpriteSheet_92
+  - first:
+      213: 623873449117634080
+    second: Shoggoth_SpriteSheet_93
+  - first:
+      213: -3874322857417131465
+    second: Shoggoth_SpriteSheet_94
+  - first:
+      213: -2942674339396816930
+    second: Shoggoth_SpriteSheet_95
+  - first:
+      213: -3475758002337056818
+    second: Shoggoth_SpriteSheet_96
+  - first:
+      213: 4354654777173515376
+    second: Shoggoth_SpriteSheet_97
+  - first:
+      213: -618093286718227466
+    second: Shoggoth_SpriteSheet_98
+  - first:
+      213: -3896934417385628691
+    second: Shoggoth_SpriteSheet_99
+  - first:
+      213: -7875371055443186109
+    second: Shoggoth_SpriteSheet_100
+  - first:
+      213: 1780545786375937028
+    second: Shoggoth_SpriteSheet_101
+  - first:
+      213: -1600102230133014050
+    second: Shoggoth_SpriteSheet_102
+  - first:
+      213: 2959657101697172208
+    second: Shoggoth_SpriteSheet_103
+  - first:
+      213: -3470221127367620938
+    second: Shoggoth_SpriteSheet_104
+  - first:
+      213: 4994181398718315025
+    second: Shoggoth_SpriteSheet_105
+  - first:
+      213: -4996958450836258372
+    second: Shoggoth_SpriteSheet_106
+  - first:
+      213: -1493611051279983316
+    second: Shoggoth_SpriteSheet_107
+  - first:
+      213: -2098529582352739780
+    second: Shoggoth_SpriteSheet_108
+  - first:
+      213: 8571844225161908598
+    second: Shoggoth_SpriteSheet_109
+  - first:
+      213: -7220448711196158499
+    second: Shoggoth_SpriteSheet_110
+  - first:
+      213: 4817532118219725299
+    second: Shoggoth_SpriteSheet_111
+  - first:
+      213: -4104079344030387285
+    second: Shoggoth_SpriteSheet_112
+  - first:
+      213: -5646181549296477111
+    second: Shoggoth_SpriteSheet_113
+  - first:
+      213: 660059362410822718
+    second: Shoggoth_SpriteSheet_114
+  - first:
+      213: -2609846290685349808
+    second: Shoggoth_SpriteSheet_115
+  - first:
+      213: -8014337848091274619
+    second: Shoggoth_SpriteSheet_116
+  - first:
+      213: 4446307348402610636
+    second: Shoggoth_SpriteSheet_117
+  - first:
+      213: -9026139952913862654
+    second: Shoggoth_SpriteSheet_118
+  - first:
+      213: 4804885618467533064
+    second: Shoggoth_SpriteSheet_119
+  - first:
+      213: 7621190551162350075
+    second: Shoggoth_SpriteSheet_120
+  - first:
+      213: 243859692485935728
+    second: Shoggoth_SpriteSheet_121
+  - first:
+      213: -3956635588337267739
+    second: Shoggoth_SpriteSheet_122
+  - first:
+      213: -2015707277247075484
+    second: Shoggoth_SpriteSheet_123
+  - first:
+      213: -2088725124881739752
+    second: Shoggoth_SpriteSheet_124
+  - first:
+      213: 5234523924238728695
+    second: Shoggoth_SpriteSheet_125
+  - first:
+      213: -4022838880940880499
+    second: Shoggoth_SpriteSheet_126
+  - first:
+      213: -7906173983908449004
+    second: Shoggoth_SpriteSheet_127
+  - first:
+      213: 1714599306194155940
+    second: Shoggoth_SpriteSheet_128
+  - first:
+      213: -394412407904076285
+    second: Shoggoth_SpriteSheet_129
+  - first:
+      213: 7661384530390292898
+    second: Shoggoth_SpriteSheet_130
+  - first:
+      213: 707505558556867486
+    second: Shoggoth_SpriteSheet_131
+  - first:
+      213: 3897633562205513975
+    second: Shoggoth_SpriteSheet_132
+  - first:
+      213: -8113636109337876194
+    second: Shoggoth_SpriteSheet_133
+  - first:
+      213: -6115359112213808764
+    second: Shoggoth_SpriteSheet_134
+  - first:
+      213: 564212409480402599
+    second: Shoggoth_SpriteSheet_135
+  - first:
+      213: -8263778976480520706
+    second: Shoggoth_SpriteSheet_136
+  - first:
+      213: -2140041704344054475
+    second: Shoggoth_SpriteSheet_137
+  - first:
+      213: -2852122956076151654
+    second: Shoggoth_SpriteSheet_138
+  - first:
+      213: 9081911470981142373
+    second: Shoggoth_SpriteSheet_139
+  - first:
+      213: 2564050658346721137
+    second: Shoggoth_SpriteSheet_140
+  - first:
+      213: 8709211714414350640
+    second: Shoggoth_SpriteSheet_141
+  - first:
+      213: 4218304911713254547
+    second: Shoggoth_SpriteSheet_142
+  - first:
+      213: -1904781815525087384
+    second: Shoggoth_SpriteSheet_143
+  - first:
+      213: -3797967115564112968
+    second: Shoggoth_SpriteSheet_144
+  - first:
+      213: 8637715927066043160
+    second: Shoggoth_SpriteSheet_145
+  - first:
+      213: 173741652625153976
+    second: Shoggoth_SpriteSheet_146
+  - first:
+      213: 5982633008053620131
+    second: Shoggoth_SpriteSheet_147
+  - first:
+      213: 1765734050054889797
+    second: Shoggoth_SpriteSheet_148
+  - first:
+      213: -2214888096651669929
+    second: Shoggoth_SpriteSheet_149
+  - first:
+      213: -1771368829045729362
+    second: Shoggoth_SpriteSheet_150
+  - first:
+      213: 8004409347322082866
+    second: Shoggoth_SpriteSheet_151
+  - first:
+      213: -4399458760836954392
+    second: Shoggoth_SpriteSheet_152
+  - first:
+      213: -7835860345664157532
+    second: Shoggoth_SpriteSheet_153
+  - first:
+      213: -4342484809384521582
+    second: Shoggoth_SpriteSheet_154
+  - first:
+      213: 1675482807613254427
+    second: Shoggoth_SpriteSheet_155
+  - first:
+      213: -6251894753359005264
+    second: Shoggoth_SpriteSheet_156
+  - first:
+      213: -380362265557572039
+    second: Shoggoth_SpriteSheet_157
+  - first:
+      213: 7842065930736685908
+    second: Shoggoth_SpriteSheet_158
+  - first:
+      213: -690948153131630165
+    second: Shoggoth_SpriteSheet_159
+  - first:
+      213: -3420261350375746283
+    second: Shoggoth_SpriteSheet_160
+  - first:
+      213: 2488815062902559157
+    second: Shoggoth_SpriteSheet_161
+  - first:
+      213: -327877389567301908
+    second: Shoggoth_SpriteSheet_162
+  - first:
+      213: 4085211221691759673
+    second: Shoggoth_SpriteSheet_163
+  - first:
+      213: -2270559480525315511
+    second: Shoggoth_SpriteSheet_164
+  - first:
+      213: -8179614424265688058
+    second: Shoggoth_SpriteSheet_165
+  - first:
+      213: -1527679114198668790
+    second: Shoggoth_SpriteSheet_166
+  - first:
+      213: -8263768548917764504
+    second: Shoggoth_SpriteSheet_167
+  - first:
+      213: 3116689520965804026
+    second: Shoggoth_SpriteSheet_168
+  - first:
+      213: 8977728419133919286
+    second: Shoggoth_SpriteSheet_169
+  - first:
+      213: -2029711138449631888
+    second: Shoggoth_SpriteSheet_170
+  - first:
+      213: 4476084572644967874
+    second: Shoggoth_SpriteSheet_171
+  - first:
+      213: 8271074694083733509
+    second: Shoggoth_SpriteSheet_172
+  - first:
+      213: -1360212246104143119
+    second: Shoggoth_SpriteSheet_173
+  - first:
+      213: 8021011852849513065
+    second: Shoggoth_SpriteSheet_174
+  - first:
+      213: -3004396720075394676
+    second: Shoggoth_SpriteSheet_175
+  - first:
+      213: -4969590759444438714
+    second: Shoggoth_SpriteSheet_176
+  - first:
+      213: 7766550908275636273
+    second: Shoggoth_SpriteSheet_177
+  - first:
+      213: -4876480641970330563
+    second: Shoggoth_SpriteSheet_178
+  - first:
+      213: 8261438535621620160
+    second: Shoggoth_SpriteSheet_179
+  - first:
+      213: 8051973584831824296
+    second: Shoggoth_SpriteSheet_180
+  - first:
+      213: -2972558097311346133
+    second: Shoggoth_SpriteSheet_181
+  - first:
+      213: 7897918654174999268
+    second: Shoggoth_SpriteSheet_182
+  - first:
+      213: 6795873138656102963
+    second: Shoggoth_SpriteSheet_183
+  - first:
+      213: 3942322845237171234
+    second: Shoggoth_SpriteSheet_184
+  - first:
+      213: -7448174146181233851
+    second: Shoggoth_SpriteSheet_185
+  - first:
+      213: -8586545581773973678
+    second: Shoggoth_SpriteSheet_186
+  - first:
+      213: 2719648018872240508
+    second: Shoggoth_SpriteSheet_187
+  - first:
+      213: 5159405594280383645
+    second: Shoggoth_SpriteSheet_188
+  - first:
+      213: -98762275703011229
+    second: Shoggoth_SpriteSheet_189
+  - first:
+      213: -3299384489295131247
+    second: Shoggoth_SpriteSheet_190
+  - first:
+      213: -5404091627436971601
+    second: Shoggoth_SpriteSheet_191
+  - first:
+      213: -680071041635001516
+    second: Shoggoth_SpriteSheet_192
+  - first:
+      213: 8213141246249594670
+    second: Shoggoth_SpriteSheet_193
+  - first:
+      213: 7671467783165383553
+    second: Shoggoth_SpriteSheet_194
+  - first:
+      213: -2985004936521201536
+    second: Shoggoth_SpriteSheet_195
+  - first:
+      213: 6659346272576856026
+    second: Shoggoth_SpriteSheet_196
+  - first:
+      213: -4701201346335685208
+    second: Shoggoth_SpriteSheet_197
+  - first:
+      213: -1245077878691205113
+    second: Shoggoth_SpriteSheet_198
+  - first:
+      213: -2587539826056447539
+    second: Shoggoth_SpriteSheet_199
+  - first:
+      213: 8879557263431339551
+    second: Shoggoth_SpriteSheet_200
+  - first:
+      213: -8194620449708187294
+    second: Shoggoth_SpriteSheet_201
+  - first:
+      213: 6166103034720471420
+    second: Shoggoth_SpriteSheet_202
+  - first:
+      213: -7040736518761359638
+    second: Shoggoth_SpriteSheet_203
+  - first:
+      213: 7056579651691005588
+    second: Shoggoth_SpriteSheet_204
+  - first:
+      213: 9066162145945170579
+    second: Shoggoth_SpriteSheet_205
+  - first:
+      213: 5964643331582227252
+    second: Shoggoth_SpriteSheet_206
+  - first:
+      213: 1029869085013919481
+    second: Shoggoth_SpriteSheet_207
+  - first:
+      213: -2377495611384379533
+    second: Shoggoth_SpriteSheet_208
+  - first:
+      213: 8317266349203064252
+    second: Shoggoth_SpriteSheet_209
+  - first:
+      213: -8462619640839278176
+    second: Shoggoth_SpriteSheet_210
+  - first:
+      213: -5261221271121982484
+    second: Shoggoth_SpriteSheet_211
+  - first:
+      213: -8598470558627642250
+    second: Shoggoth_SpriteSheet_212
+  - first:
+      213: -7623752806330837236
+    second: Shoggoth_SpriteSheet_213
+  - first:
+      213: -1032916672793914931
+    second: Shoggoth_SpriteSheet_214
+  - first:
+      213: -5375086890077189311
+    second: Shoggoth_SpriteSheet_215
+  - first:
+      213: 8109839208565872521
+    second: Shoggoth_SpriteSheet_216
+  - first:
+      213: 1564194139255111776
+    second: Shoggoth_SpriteSheet_217
+  - first:
+      213: -6910941972494595794
+    second: Shoggoth_SpriteSheet_218
+  - first:
+      213: -1688634418716151838
+    second: Shoggoth_SpriteSheet_219
+  - first:
+      213: 7929032290377267268
+    second: Shoggoth_SpriteSheet_220
+  - first:
+      213: -643261901830341232
+    second: Shoggoth_SpriteSheet_221
+  - first:
+      213: -7361877758790514818
+    second: Shoggoth_SpriteSheet_222
+  - first:
+      213: 1583268336623701067
+    second: Shoggoth_SpriteSheet_223
+  - first:
+      213: 8513029027982109871
+    second: Shoggoth_SpriteSheet_224
+  - first:
+      213: 3292434472184510245
+    second: Shoggoth_SpriteSheet_225
+  - first:
+      213: -2797744849065703811
+    second: Shoggoth_SpriteSheet_226
+  - first:
+      213: -6157015077042145928
+    second: Shoggoth_SpriteSheet_227
+  - first:
+      213: -2072384492446219022
+    second: Shoggoth_SpriteSheet_228
+  - first:
+      213: 6931194563143640307
+    second: Shoggoth_SpriteSheet_229
+  - first:
+      213: 629351906742190283
+    second: Shoggoth_SpriteSheet_230
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1840
+        width: 49
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18ba64b2fc30e050800000000000000
+      internalID: 5827724930924066843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1841
+        width: 51
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da176569d33ee190800000000000000
+      internalID: -7931344884950689070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1842
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b161eb1a44537520800000000000000
+      internalID: 2698593278997127600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1842
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e712280845b040b70800000000000000
+      internalID: 8864222424133149054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1843
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0036e93730c9c0d00800000000000000
+      internalID: 940297960852185856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1845
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b650e40d615db400800000000000000
+      internalID: 341518675425121969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1844
+        width: 54
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb94596b198e1950800000000000000
+      internalID: 6421720869501180857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 1838
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f33aaf4b0f2b0a0800000000000000
+      internalID: -6867161821696802960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1722
+        width: 50
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a0a1491732e8ac0800000000000000
+      internalID: -3851101660632184206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1723
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11658473bc26bdb0800000000000000
+      internalID: -4776581205514165987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1782
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7aa3157a1e3ce670800000000000000
+      internalID: 8569292474333506175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1778
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fec7ad15b23de280800000000000000
+      internalID: -9012491525830488331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1722
+        width: 47
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee0020d692547e90800000000000000
+      internalID: -7028902310728167711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1782
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99cc4024ddee7b320800000000000000
+      internalID: 2573788346128321689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1723
+        width: 49
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b9545a21451467b0800000000000000
+      internalID: -5232033497470445133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1785
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02c46efbde769070800000000000000
+      internalID: 8112811262085480973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1784
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db575dcd7dbb84470800000000000000
+      internalID: 8379153642520147389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1725
+        width: 43
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f73d3ed80891dcf0800000000000000
+      internalID: -229234942163470352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1783
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee04b908655ca13d0800000000000000
+      internalID: -3235056406996762386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1785
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84340a15d1012d660800000000000000
+      internalID: 7409002055087440712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1725
+        width: 53
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ea4e614f32918b0800000000000000
+      internalID: -5181070365049967026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1780
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893fafba4e7bb05d0800000000000000
+      internalID: -3095178126121307240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1785
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e48427d761ea90d0800000000000000
+      internalID: -3415169531299724063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 1783
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c133f855a4db2f340800000000000000
+      internalID: 4896183871865828124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 1787
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7d358a127a2c980800000000000000
+      internalID: -8520063782031730720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 1723
+        width: 49
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e2cb95732151cb0800000000000000
+      internalID: -4893985391130169830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1779
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73b9e6044dd4f730800000000000000
+      internalID: 4032090850646930298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1724
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ed5a9f6c4837780800000000000000
+      internalID: -8686453266140766671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1619
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35002eb25f9f1d920800000000000000
+      internalID: 3013464457086107731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1620
+        width: 49
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f7ef74e04f80050800000000000000
+      internalID: 5767127665022500687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 1622
+        width: 29
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d7ab2a933fc2e70800000000000000
+      internalID: 9091909176623004942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 1675
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bc7a923ab265a200800000000000000
+      internalID: 190667111085538481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1668
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3470ccaecf01740800000000000000
+      internalID: 5120870861695828905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 1616
+        width: 39
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59cc42b710eef010800000000000000
+      internalID: 1224662541071599964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1681
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc2abf43071aaf8f0800000000000000
+      internalID: -505914504828443955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1671
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 907f851d0be962ca0800000000000000
+      internalID: -6041967367807240439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1675
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 686820357faf29790800000000000000
+      internalID: -7524676087226136954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1677
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ecc865425a88880800000000000000
+      internalID: -8608449112229229056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1667
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d994b9187c8f45cf0800000000000000
+      internalID: -264312942351398499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1677
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084b5c16796d37d30800000000000000
+      internalID: 4428118804304082048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1669
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de0429793b33ff90800000000000000
+      internalID: -6921123084306739497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1612
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e447c915b92dd6140800000000000000
+      internalID: 4714655949457749070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1655
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5d5a9b40be61c30800000000000000
+      internalID: 4329906497290360228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1642
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5629354e29390f70800000000000000
+      internalID: 9153910588499895901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1646
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c31bf9745436c50800000000000000
+      internalID: 6657240848107912249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1650
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b8013174972dfd0800000000000000
+      internalID: -2318657511972893895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1643
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f40042c87e7ef70800000000000000
+      internalID: 9216589751522447157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1627
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6303449dc45da330800000000000000
+      internalID: 3723725708837716847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1615
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75788a1b1186b810800000000000000
+      internalID: 1780752656080860541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1524
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08ca9a0911b25590800000000000000
+      internalID: -7686886892857800689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1533
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214f5ff24c0abaf20800000000000000
+      internalID: 3435015905278817298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1540
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be547823e47ecdad0800000000000000
+      internalID: -2676009755523725845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1528
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b2ec7cd7634f730800000000000000
+      internalID: 4031907480254425898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1534
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9e175011b574c240800000000000000
+      internalID: 4811099705282338463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1540
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0494642443f42f40800000000000000
+      internalID: 5702950502151787531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1529
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaba6db23e0d99ca0800000000000000
+      internalID: -6009542553637573714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1523
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6748baaa50d718aa0800000000000000
+      internalID: -6160505351974452106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1529
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c52f78505f6b880800000000000000
+      internalID: -8595413434685563827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1517
+        width: 55
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159e55c3291f282b0800000000000000
+      internalID: -5583634977606211247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1521
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd8d73cc55ffcc90800000000000000
+      internalID: -7147224304848106063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1513
+        width: 51
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787f1d60f236ba610800000000000000
+      internalID: 1633508343480973191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1505
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb42d5d9daf4e87c0800000000000000
+      internalID: -4067225806380915525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1500
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac2ab79d60f528b40800000000000000
+      internalID: 5441015782840181450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1522
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771a9cd8a2b5ab5d0800000000000000
+      internalID: -3046021959637163657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1527
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08a42b0057a5b0d0800000000000000
+      internalID: -3407633580809738229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1524
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821972f6d4d838ee0800000000000000
+      internalID: -1260008107016744664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1521
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21a7effe604627f50800000000000000
+      internalID: 6877669561907182098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1515
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44a9862333c9dac60800000000000000
+      internalID: 7831087070770141764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1515
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f997a136361b41060800000000000000
+      internalID: 6923353567597853087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1513
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f1a7a7e350993a50800000000000000
+      internalID: 6501386227129229814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1385
+        width: 59
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87124a277a85db730800000000000000
+      internalID: 4016463918890492280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1440
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e2b61b98c9fb760800000000000000
+      internalID: 7475866021659356694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1442
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c6f4f8a10dfe04f0800000000000000
+      internalID: -860472295209765184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 1399
+        width: 71
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d716bc818560eee0800000000000000
+      internalID: -1233874690813585455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1404
+        width: 70
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e659234340c61a100800000000000000
+      internalID: 117493830599742830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1404
+        width: 60
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60463b79bc25f1cb0800000000000000
+      internalID: -4891099635924114426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1406
+        width: 62
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dabf12229df0b9e0800000000000000
+      internalID: -1607506262891709737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1438
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010446ce0c677d470800000000000000
+      internalID: 8419328599364222992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 1399
+        width: 13
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9403847d9370a90800000000000000
+      internalID: -7347840670239798874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 1383
+        width: 22
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f38f4d8bbbf8bc00800000000000000
+      internalID: 916759307118150642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1392
+        width: 47
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb6668e7adaf1250800000000000000
+      internalID: 5917639372058291132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 1368
+        width: 72
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f6ff8e19a66f890800000000000000
+      internalID: -7424629760761827438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 1375
+        width: 25
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c862d8fe78ebbce0800000000000000
+      internalID: -1388260428075603774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 1390
+        width: 57
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474b5808c14903760800000000000000
+      internalID: 7435605834924930164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_84
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 1369
+        width: 60
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1df071e55f5671c0800000000000000
+      internalID: -4506309554678465253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_85
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1368
+        width: 38
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5c48ec5c8e8f380800000000000000
+      internalID: -8937137524245740077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_86
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1431
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd84d8d3afdb49750800000000000000
+      internalID: 6310877860325050589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_87
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1385
+        width: 17
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43ab01195d728350800000000000000
+      internalID: 6017509873611940683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_88
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 1400
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0aff1a5a43c71ea0800000000000000
+      internalID: -5902034062538704371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_89
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 1373
+        width: 35
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503c765094b1544e0800000000000000
+      internalID: -1998160859231698171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_90
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1386
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916c24219d0875fe0800000000000000
+      internalID: -1200349105868323303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_91
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1393
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b37935bea3c92240800000000000000
+      internalID: 4767556835680547769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_92
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1396
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2498e2ee1a7ff90f0800000000000000
+      internalID: -1107894708452030142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_93
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1273
+        width: 86
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e4477b89178a800800000000000000
+      internalID: 623873449117634080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_94
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1279
+        width: 96
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ab97263e3ab3ac0800000000000000
+      internalID: -3874322857417131465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_95
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1289
+        width: 64
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf689e77458927d0800000000000000
+      internalID: -2942674339396816930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_96
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 1329
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec77a712380a3cfc0800000000000000
+      internalID: -3475758002337056818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_97
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 1326
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c92e8a277de6c30800000000000000
+      internalID: 4354654777173515376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_98
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 1295
+        width: 92
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb3b173e671c67f0800000000000000
+      internalID: -618093286718227466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1294
+        width: 91
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb5cb25bce4be9c0800000000000000
+      internalID: -3896934417385628691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 1327
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e6ae520cf05b290800000000000000
+      internalID: -7875371055443186109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1271
+        width: 78
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c914f75f4c5b810800000000000000
+      internalID: 1780545786375937028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed18c98df7b4bc9e0800000000000000
+      internalID: -1600102230133014050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1286
+        width: 44
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f24f9bf370d21920800000000000000
+      internalID: 2959657101697172208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1282
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b6823b454c47dfc0800000000000000
+      internalID: -3470221127367620938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1322
+        width: 23
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11af7769585ee4540800000000000000
+      internalID: 4994181398718315025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_106
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 1284
+        width: 62
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1c48493cc37aab0800000000000000
+      internalID: -4996958450836258372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_107
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1317
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2ddbdf89a0a54be0800000000000000
+      internalID: -1493611051279983316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 1318
+        width: 23
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32573d967680e2e0800000000000000
+      internalID: -2098529582352739780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1279
+        width: 95
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67152ce38ee45f670800000000000000
+      internalID: 8571844225161908598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 1319
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5d93a1720dbcb90800000000000000
+      internalID: -7220448711196158499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_111
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 1316
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f99588efef4bd240800000000000000
+      internalID: 4817532118219725299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_112
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1303
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3fc09b4916b07c0800000000000000
+      internalID: -4104079344030387285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_113
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 1282
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c91d0bbcbb4a1b0800000000000000
+      internalID: -5646181549296477111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_114
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1284
+        width: 43
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3cfa233e70092900800000000000000
+      internalID: 660059362410822718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1306
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050345d40a6f7cbd0800000000000000
+      internalID: -2609846290685349808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 1311
+        width: 27
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5821d8e503a57c090800000000000000
+      internalID: -8014337848091274619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1286
+        width: 58
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc12fbfc9f474bd30800000000000000
+      internalID: 4446307348402610636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_118
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 1293
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200bb9d0985bcb280800000000000000
+      internalID: -9026139952913862654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1293
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 801f32b33026ea240800000000000000
+      internalID: 4804885618467533064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_120
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 1285
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9689f6d68e3c960800000000000000
+      internalID: 7621190551162350075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_121
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1283
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07209a9291d526300800000000000000
+      internalID: 243859692485935728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_122
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 1281
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb0d7345e43719c0800000000000000
+      internalID: -3956635588337267739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_123
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 1283
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ba48839e4c604e0800000000000000
+      internalID: -2015707277247075484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_124
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1267
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8109df1c09b5303e0800000000000000
+      internalID: -2088725124881739752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_125
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1148
+        width: 36
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd788086c3c4a840800000000000000
+      internalID: 5234523924238728695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_126
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1145
+        width: 39
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d83e80a510c28c0800000000000000
+      internalID: -4022838880940880499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_127
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1153
+        width: 54
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415b3bc76a0a74290800000000000000
+      internalID: -7906173983908449004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_128
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1158
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a975d11cfa7bc710800000000000000
+      internalID: 1714599306194155940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_129
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1164
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30efed33104c68af0800000000000000
+      internalID: -394412407904076285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_130
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1165
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9169d73a4b25a60800000000000000
+      internalID: 7661384530390292898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_131
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1166
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b75669e8091d900800000000000000
+      internalID: 707505558556867486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_132
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 1165
+        width: 66
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f866e3031d271630800000000000000
+      internalID: 3897633562205513975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_133
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 1162
+        width: 69
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19222a42f2966f80800000000000000
+      internalID: -8113636109337876194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_134
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 1161
+        width: 69
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4893c8ab941e12ba0800000000000000
+      internalID: -6115359112213808764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_135
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1171
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a652f4723c74d700800000000000000
+      internalID: 564212409480402599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_136
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 1158
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef59984edc8215d80800000000000000
+      internalID: -8263778976480520706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_137
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 1165
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5351d08886b0d42e0800000000000000
+      internalID: -2140041704344054475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_138
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1056
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c085b58493b68d0800000000000000
+      internalID: -2852122956076151654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_139
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1062
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56750656d5e690e70800000000000000
+      internalID: 9081911470981142373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_140
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1058
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fdcd42d76559320800000000000000
+      internalID: 2564050658346721137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_141
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1056
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 031965f29e55dd870800000000000000
+      internalID: 8709211714414350640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_142
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1059
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c34f8b7fd6a8a30800000000000000
+      internalID: 4218304911713254547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_143
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1058
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867e00fd70bd095e0800000000000000
+      internalID: -1904781815525087384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_144
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 937
+        width: 44
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3af28e709ea4bc0800000000000000
+      internalID: -3797967115564112968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_145
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 1058
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813618ffed45fd770800000000000000
+      internalID: 8637715927066043160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_146
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 944
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf596fcc11496200800000000000000
+      internalID: 173741652625153976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_147
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 938
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad00920605960350800000000000000
+      internalID: 5982633008053620131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_148
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 966
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541655563c5218810800000000000000
+      internalID: 1765734050054889797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_149
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 975
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e06d5d2032341e0800000000000000
+      internalID: -2214888096651669929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_150
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 975
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea797826f65da67e0800000000000000
+      internalID: -1771368829045729362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_151
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 957
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236f2f764ef551f60800000000000000
+      internalID: 8004409347322082866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_152
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 976
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e6455cf09bf1f2c0800000000000000
+      internalID: -4399458760836954392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_153
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 937
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a84e13288e614390800000000000000
+      internalID: -7835860345664157532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_154
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 950
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2901b16c2156cb3c0800000000000000
+      internalID: -4342484809384521582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_155
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 953
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1bef078cb2804710800000000000000
+      internalID: 1675482807613254427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_156
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 961
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b978e488decc39a0800000000000000
+      internalID: -6251894753359005264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_157
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 949
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9366a73e88ea8baf0800000000000000
+      internalID: -380362265557572039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_158
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 961
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453d0ca3a6d94dc60800000000000000
+      internalID: 7842065930736685908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_159
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 947
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba18066c0524966f0800000000000000
+      internalID: -690948153131630165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_160
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 937
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5151bd35c6ac880d0800000000000000
+      internalID: -3420261350375746283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_161
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 939
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1d2f70d1c0a8220800000000000000
+      internalID: 2488815062902559157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_162
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 937
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce665f85045237bf0800000000000000
+      internalID: -327877389567301908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_163
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 825
+        width: 37
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c706536f591b830800000000000000
+      internalID: 4085211221691759673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_164
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 821
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942a4e1be2a5d70e0800000000000000
+      internalID: -2270559480525315511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_165
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 817
+        width: 37
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60c7bf1c40c2c7e80800000000000000
+      internalID: -8179614424265688058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_166
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 816
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0aa76b80f79ccae0800000000000000
+      internalID: -1527679114198668790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_167
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 866
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e16bfb942315d80800000000000000
+      internalID: -8263768548917764504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_168
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 817
+        width: 37
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff595c3b94b04b20800000000000000
+      internalID: 3116689520965804026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_169
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 816
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63018606e6c479c70800000000000000
+      internalID: 8977728419133919286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_170
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 814
+        width: 38
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0755e04397405d3e0800000000000000
+      internalID: -2029711138449631888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_171
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 812
+        width: 41
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c50c19143f3e1e30800000000000000
+      internalID: 4476084572644967874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_172
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 812
+        width: 48
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508659bbc92c8c270800000000000000
+      internalID: 8271074694083733509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_173
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 729
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa83db3b2e8f1de0800000000000000
+      internalID: -1360212246104143119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_174
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 730
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9620b4478cb505f60800000000000000
+      internalID: 8021011852849513065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_175
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 730
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81be8fd91d3e46d0800000000000000
+      internalID: -3004396720075394676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_176
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 729
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6412048c887780bb0800000000000000
+      internalID: -4969590759444438714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_177
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 615
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 138b1c1f6e458cb60800000000000000
+      internalID: 7766550908275636273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_178
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 616
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d342a4d51b2435cb0800000000000000
+      internalID: -4876480641970330563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_179
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 614
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c13371c39686a270800000000000000
+      internalID: 8261438535621620160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_180
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 614
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a1cab0705b5ebf60800000000000000
+      internalID: 8051973584831824296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_181
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 501
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22db87e82a5fb6d0800000000000000
+      internalID: -2972558097311346133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_182
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 499
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e23807cb2b0b9d60800000000000000
+      internalID: 7897918654174999268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_183
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 498
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a47301d9acf4e50800000000000000
+      internalID: 6795873138656102963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_184
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 495
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224d44c8db1f5b630800000000000000
+      internalID: 3942322845237171234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_185
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 493
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5438e9f7315c2a890800000000000000
+      internalID: -7448174146181233851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_186
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 499
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25799ae694676d880800000000000000
+      internalID: -8586545581773973678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_187
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 389
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7989feb6712eb520800000000000000
+      internalID: 2719648018872240508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_188
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 388
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94de336d04e99740800000000000000
+      internalID: 5159405594280383645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_189
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 390
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3684387cb3021aef0800000000000000
+      internalID: -98762275703011229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_190
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 273
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19d4122b94b3632d0800000000000000
+      internalID: -3299384489295131247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_191
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 274
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9e4f40c4fc005b0800000000000000
+      internalID: -5404091627436971601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_192
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 272
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45bd055adf6ef86f0800000000000000
+      internalID: -680071041635001516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_193
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 283
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2fe0d8c270faf170800000000000000
+      internalID: 8213141246249594670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_194
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 280
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1831d69bd47867a60800000000000000
+      internalID: 7671467783165383553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_195
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 284
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088cdd153d12396d0800000000000000
+      internalID: -2985004936521201536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_196
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 280
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adfd345f620ca6c50800000000000000
+      internalID: 6659346272576856026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_197
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 270
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5c216984af1ceb0800000000000000
+      internalID: -4701201346335685208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_198
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 269
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700f9ea144898bee0800000000000000
+      internalID: -1245077878691205113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_199
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 271
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9bab1dc36371cd0800000000000000
+      internalID: -2587539826056447539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_200
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 133
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e809109468a3b70800000000000000
+      internalID: 8879557263431339551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_201
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 189
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261edf13e1cd64e80800000000000000
+      internalID: -8194620449708187294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_202
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 136
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79c8f86a06629550800000000000000
+      internalID: 6166103034720471420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_203
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 139
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6db1a80774a4e90800000000000000
+      internalID: -7040736518761359638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_204
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 29
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 496ca4c4ec10ee160800000000000000
+      internalID: 7056579651691005588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_205
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 36
+        width: 61
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392b729ef6a71dd70800000000000000
+      internalID: 9066162145945170579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_206
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 35
+        width: 67
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4337cde028ba6c250800000000000000
+      internalID: 5964643331582227252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_207
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 34
+        width: 73
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f64961f974da4e00800000000000000
+      internalID: 1029869085013919481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_208
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 36
+        width: 44
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37742648650710fd0800000000000000
+      internalID: -2377495611384379533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_209
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 69
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb50f868daddc6370800000000000000
+      internalID: 8317266349203064252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_210
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 46
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a1f786064cbe8a80800000000000000
+      internalID: -8462619640839278176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_211
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 70
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb8b0a01236cf6b0800000000000000
+      internalID: -5261221271121982484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_212
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 75
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 674485565981ca880800000000000000
+      internalID: -8598470558627642250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_213
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 58
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c07534b073df23690800000000000000
+      internalID: -7623752806330837236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_214
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 59
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc15a8b32c75aa1f0800000000000000
+      internalID: -1032916672793914931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_215
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 73
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14b0710b3fad765b0800000000000000
+      internalID: -5375086890077189311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_216
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 76
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9879a1cdacfeb8070800000000000000
+      internalID: 8109839208565872521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_217
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 48
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0608c0e384225b510800000000000000
+      internalID: 1564194139255111776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_218
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 61
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e294f1a44e66710a0800000000000000
+      internalID: -6910941972494595794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_219
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 30
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2efece461f3c098e0800000000000000
+      internalID: -1688634418716151838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_220
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 52
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448f988bbd4990e60800000000000000
+      internalID: 7929032290377267268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_221
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 40
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d3cdb55bca217f0800000000000000
+      internalID: -643261901830341232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_222
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 41
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77417bee2b55d990800000000000000
+      internalID: -7361877758790514818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_223
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 27
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4c4494e926e8f510800000000000000
+      internalID: 1583268336623701067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_224
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 50
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac66770cca542670800000000000000
+      internalID: 8513029027982109871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_225
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 38
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527fec855b311bd20800000000000000
+      internalID: 3292434472184510245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_226
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 46
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d76824302e96c29d0800000000000000
+      internalID: -2797744849065703811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_227
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 40
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875bd20a863ed8aa0800000000000000
+      internalID: -6157015077042145928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_228
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 32
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f407b9b8496d33e0800000000000000
+      internalID: -2072384492446219022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_229
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 32
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4ab4d6bbc803060800000000000000
+      internalID: 6931194563143640307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoggoth_SpriteSheet_230
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 26
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc045188938ebb800800000000000000
+      internalID: 629351906742190283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Shoggoth_SpriteSheet_0: 5827724930924066843
+      Shoggoth_SpriteSheet_1: -7931344884950689070
+      Shoggoth_SpriteSheet_10: 8569292474333506175
+      Shoggoth_SpriteSheet_100: -7875371055443186109
+      Shoggoth_SpriteSheet_101: 1780545786375937028
+      Shoggoth_SpriteSheet_102: -1600102230133014050
+      Shoggoth_SpriteSheet_103: 2959657101697172208
+      Shoggoth_SpriteSheet_104: -3470221127367620938
+      Shoggoth_SpriteSheet_105: 4994181398718315025
+      Shoggoth_SpriteSheet_106: -4996958450836258372
+      Shoggoth_SpriteSheet_107: -1493611051279983316
+      Shoggoth_SpriteSheet_108: -2098529582352739780
+      Shoggoth_SpriteSheet_109: 8571844225161908598
+      Shoggoth_SpriteSheet_11: -9012491525830488331
+      Shoggoth_SpriteSheet_110: -7220448711196158499
+      Shoggoth_SpriteSheet_111: 4817532118219725299
+      Shoggoth_SpriteSheet_112: -4104079344030387285
+      Shoggoth_SpriteSheet_113: -5646181549296477111
+      Shoggoth_SpriteSheet_114: 660059362410822718
+      Shoggoth_SpriteSheet_115: -2609846290685349808
+      Shoggoth_SpriteSheet_116: -8014337848091274619
+      Shoggoth_SpriteSheet_117: 4446307348402610636
+      Shoggoth_SpriteSheet_118: -9026139952913862654
+      Shoggoth_SpriteSheet_119: 4804885618467533064
+      Shoggoth_SpriteSheet_12: -7028902310728167711
+      Shoggoth_SpriteSheet_120: 7621190551162350075
+      Shoggoth_SpriteSheet_121: 243859692485935728
+      Shoggoth_SpriteSheet_122: -3956635588337267739
+      Shoggoth_SpriteSheet_123: -2015707277247075484
+      Shoggoth_SpriteSheet_124: -2088725124881739752
+      Shoggoth_SpriteSheet_125: 5234523924238728695
+      Shoggoth_SpriteSheet_126: -4022838880940880499
+      Shoggoth_SpriteSheet_127: -7906173983908449004
+      Shoggoth_SpriteSheet_128: 1714599306194155940
+      Shoggoth_SpriteSheet_129: -394412407904076285
+      Shoggoth_SpriteSheet_13: 2573788346128321689
+      Shoggoth_SpriteSheet_130: 7661384530390292898
+      Shoggoth_SpriteSheet_131: 707505558556867486
+      Shoggoth_SpriteSheet_132: 3897633562205513975
+      Shoggoth_SpriteSheet_133: -8113636109337876194
+      Shoggoth_SpriteSheet_134: -6115359112213808764
+      Shoggoth_SpriteSheet_135: 564212409480402599
+      Shoggoth_SpriteSheet_136: -8263778976480520706
+      Shoggoth_SpriteSheet_137: -2140041704344054475
+      Shoggoth_SpriteSheet_138: -2852122956076151654
+      Shoggoth_SpriteSheet_139: 9081911470981142373
+      Shoggoth_SpriteSheet_14: -5232033497470445133
+      Shoggoth_SpriteSheet_140: 2564050658346721137
+      Shoggoth_SpriteSheet_141: 8709211714414350640
+      Shoggoth_SpriteSheet_142: 4218304911713254547
+      Shoggoth_SpriteSheet_143: -1904781815525087384
+      Shoggoth_SpriteSheet_144: -3797967115564112968
+      Shoggoth_SpriteSheet_145: 8637715927066043160
+      Shoggoth_SpriteSheet_146: 173741652625153976
+      Shoggoth_SpriteSheet_147: 5982633008053620131
+      Shoggoth_SpriteSheet_148: 1765734050054889797
+      Shoggoth_SpriteSheet_149: -2214888096651669929
+      Shoggoth_SpriteSheet_15: 8112811262085480973
+      Shoggoth_SpriteSheet_150: -1771368829045729362
+      Shoggoth_SpriteSheet_151: 8004409347322082866
+      Shoggoth_SpriteSheet_152: -4399458760836954392
+      Shoggoth_SpriteSheet_153: -7835860345664157532
+      Shoggoth_SpriteSheet_154: -4342484809384521582
+      Shoggoth_SpriteSheet_155: 1675482807613254427
+      Shoggoth_SpriteSheet_156: -6251894753359005264
+      Shoggoth_SpriteSheet_157: -380362265557572039
+      Shoggoth_SpriteSheet_158: 7842065930736685908
+      Shoggoth_SpriteSheet_159: -690948153131630165
+      Shoggoth_SpriteSheet_16: 8379153642520147389
+      Shoggoth_SpriteSheet_160: -3420261350375746283
+      Shoggoth_SpriteSheet_161: 2488815062902559157
+      Shoggoth_SpriteSheet_162: -327877389567301908
+      Shoggoth_SpriteSheet_163: 4085211221691759673
+      Shoggoth_SpriteSheet_164: -2270559480525315511
+      Shoggoth_SpriteSheet_165: -8179614424265688058
+      Shoggoth_SpriteSheet_166: -1527679114198668790
+      Shoggoth_SpriteSheet_167: -8263768548917764504
+      Shoggoth_SpriteSheet_168: 3116689520965804026
+      Shoggoth_SpriteSheet_169: 8977728419133919286
+      Shoggoth_SpriteSheet_17: -229234942163470352
+      Shoggoth_SpriteSheet_170: -2029711138449631888
+      Shoggoth_SpriteSheet_171: 4476084572644967874
+      Shoggoth_SpriteSheet_172: 8271074694083733509
+      Shoggoth_SpriteSheet_173: -1360212246104143119
+      Shoggoth_SpriteSheet_174: 8021011852849513065
+      Shoggoth_SpriteSheet_175: -3004396720075394676
+      Shoggoth_SpriteSheet_176: -4969590759444438714
+      Shoggoth_SpriteSheet_177: 7766550908275636273
+      Shoggoth_SpriteSheet_178: -4876480641970330563
+      Shoggoth_SpriteSheet_179: 8261438535621620160
+      Shoggoth_SpriteSheet_18: -3235056406996762386
+      Shoggoth_SpriteSheet_180: 8051973584831824296
+      Shoggoth_SpriteSheet_181: -2972558097311346133
+      Shoggoth_SpriteSheet_182: 7897918654174999268
+      Shoggoth_SpriteSheet_183: 6795873138656102963
+      Shoggoth_SpriteSheet_184: 3942322845237171234
+      Shoggoth_SpriteSheet_185: -7448174146181233851
+      Shoggoth_SpriteSheet_186: -8586545581773973678
+      Shoggoth_SpriteSheet_187: 2719648018872240508
+      Shoggoth_SpriteSheet_188: 5159405594280383645
+      Shoggoth_SpriteSheet_189: -98762275703011229
+      Shoggoth_SpriteSheet_19: 7409002055087440712
+      Shoggoth_SpriteSheet_190: -3299384489295131247
+      Shoggoth_SpriteSheet_191: -5404091627436971601
+      Shoggoth_SpriteSheet_192: -680071041635001516
+      Shoggoth_SpriteSheet_193: 8213141246249594670
+      Shoggoth_SpriteSheet_194: 7671467783165383553
+      Shoggoth_SpriteSheet_195: -2985004936521201536
+      Shoggoth_SpriteSheet_196: 6659346272576856026
+      Shoggoth_SpriteSheet_197: -4701201346335685208
+      Shoggoth_SpriteSheet_198: -1245077878691205113
+      Shoggoth_SpriteSheet_199: -2587539826056447539
+      Shoggoth_SpriteSheet_2: 2698593278997127600
+      Shoggoth_SpriteSheet_20: -5181070365049967026
+      Shoggoth_SpriteSheet_200: 8879557263431339551
+      Shoggoth_SpriteSheet_201: -8194620449708187294
+      Shoggoth_SpriteSheet_202: 6166103034720471420
+      Shoggoth_SpriteSheet_203: -7040736518761359638
+      Shoggoth_SpriteSheet_204: 7056579651691005588
+      Shoggoth_SpriteSheet_205: 9066162145945170579
+      Shoggoth_SpriteSheet_206: 5964643331582227252
+      Shoggoth_SpriteSheet_207: 1029869085013919481
+      Shoggoth_SpriteSheet_208: -2377495611384379533
+      Shoggoth_SpriteSheet_209: 8317266349203064252
+      Shoggoth_SpriteSheet_21: -3095178126121307240
+      Shoggoth_SpriteSheet_210: -8462619640839278176
+      Shoggoth_SpriteSheet_211: -5261221271121982484
+      Shoggoth_SpriteSheet_212: -8598470558627642250
+      Shoggoth_SpriteSheet_213: -7623752806330837236
+      Shoggoth_SpriteSheet_214: -1032916672793914931
+      Shoggoth_SpriteSheet_215: -5375086890077189311
+      Shoggoth_SpriteSheet_216: 8109839208565872521
+      Shoggoth_SpriteSheet_217: 1564194139255111776
+      Shoggoth_SpriteSheet_218: -6910941972494595794
+      Shoggoth_SpriteSheet_219: -1688634418716151838
+      Shoggoth_SpriteSheet_22: -3415169531299724063
+      Shoggoth_SpriteSheet_220: 7929032290377267268
+      Shoggoth_SpriteSheet_221: -643261901830341232
+      Shoggoth_SpriteSheet_222: -7361877758790514818
+      Shoggoth_SpriteSheet_223: 1583268336623701067
+      Shoggoth_SpriteSheet_224: 8513029027982109871
+      Shoggoth_SpriteSheet_225: 3292434472184510245
+      Shoggoth_SpriteSheet_226: -2797744849065703811
+      Shoggoth_SpriteSheet_227: -6157015077042145928
+      Shoggoth_SpriteSheet_228: -2072384492446219022
+      Shoggoth_SpriteSheet_229: 6931194563143640307
+      Shoggoth_SpriteSheet_23: 4896183871865828124
+      Shoggoth_SpriteSheet_230: 629351906742190283
+      Shoggoth_SpriteSheet_24: -8520063782031730720
+      Shoggoth_SpriteSheet_25: -4893985391130169830
+      Shoggoth_SpriteSheet_26: 4032090850646930298
+      Shoggoth_SpriteSheet_27: -8686453266140766671
+      Shoggoth_SpriteSheet_28: 3013464457086107731
+      Shoggoth_SpriteSheet_29: 5767127665022500687
+      Shoggoth_SpriteSheet_3: 8864222424133149054
+      Shoggoth_SpriteSheet_30: 9091909176623004942
+      Shoggoth_SpriteSheet_31: 190667111085538481
+      Shoggoth_SpriteSheet_32: 5120870861695828905
+      Shoggoth_SpriteSheet_33: 1224662541071599964
+      Shoggoth_SpriteSheet_34: -505914504828443955
+      Shoggoth_SpriteSheet_35: -6041967367807240439
+      Shoggoth_SpriteSheet_36: -7524676087226136954
+      Shoggoth_SpriteSheet_37: -8608449112229229056
+      Shoggoth_SpriteSheet_38: -264312942351398499
+      Shoggoth_SpriteSheet_39: 4428118804304082048
+      Shoggoth_SpriteSheet_4: 940297960852185856
+      Shoggoth_SpriteSheet_40: -6921123084306739497
+      Shoggoth_SpriteSheet_41: 4714655949457749070
+      Shoggoth_SpriteSheet_42: 4329906497290360228
+      Shoggoth_SpriteSheet_43: 9153910588499895901
+      Shoggoth_SpriteSheet_44: 6657240848107912249
+      Shoggoth_SpriteSheet_45: -2318657511972893895
+      Shoggoth_SpriteSheet_46: 9216589751522447157
+      Shoggoth_SpriteSheet_47: 3723725708837716847
+      Shoggoth_SpriteSheet_48: 1780752656080860541
+      Shoggoth_SpriteSheet_49: -7686886892857800689
+      Shoggoth_SpriteSheet_5: 341518675425121969
+      Shoggoth_SpriteSheet_50: 3435015905278817298
+      Shoggoth_SpriteSheet_51: -2676009755523725845
+      Shoggoth_SpriteSheet_52: 4031907480254425898
+      Shoggoth_SpriteSheet_53: 4811099705282338463
+      Shoggoth_SpriteSheet_54: 5702950502151787531
+      Shoggoth_SpriteSheet_55: -6009542553637573714
+      Shoggoth_SpriteSheet_56: -6160505351974452106
+      Shoggoth_SpriteSheet_57: -8595413434685563827
+      Shoggoth_SpriteSheet_58: -5583634977606211247
+      Shoggoth_SpriteSheet_59: -7147224304848106063
+      Shoggoth_SpriteSheet_6: 6421720869501180857
+      Shoggoth_SpriteSheet_60: 1633508343480973191
+      Shoggoth_SpriteSheet_61: -4067225806380915525
+      Shoggoth_SpriteSheet_62: 5441015782840181450
+      Shoggoth_SpriteSheet_63: -3046021959637163657
+      Shoggoth_SpriteSheet_64: -3407633580809738229
+      Shoggoth_SpriteSheet_65: -1260008107016744664
+      Shoggoth_SpriteSheet_66: 6877669561907182098
+      Shoggoth_SpriteSheet_67: 7831087070770141764
+      Shoggoth_SpriteSheet_68: 6923353567597853087
+      Shoggoth_SpriteSheet_69: 6501386227129229814
+      Shoggoth_SpriteSheet_7: -6867161821696802960
+      Shoggoth_SpriteSheet_70: 4016463918890492280
+      Shoggoth_SpriteSheet_71: 7475866021659356694
+      Shoggoth_SpriteSheet_72: -860472295209765184
+      Shoggoth_SpriteSheet_73: -1233874690813585455
+      Shoggoth_SpriteSheet_74: 117493830599742830
+      Shoggoth_SpriteSheet_75: -4891099635924114426
+      Shoggoth_SpriteSheet_76: -1607506262891709737
+      Shoggoth_SpriteSheet_77: 8419328599364222992
+      Shoggoth_SpriteSheet_78: -7347840670239798874
+      Shoggoth_SpriteSheet_79: 916759307118150642
+      Shoggoth_SpriteSheet_8: -3851101660632184206
+      Shoggoth_SpriteSheet_80: 5917639372058291132
+      Shoggoth_SpriteSheet_81: -7424629760761827438
+      Shoggoth_SpriteSheet_82: -1388260428075603774
+      Shoggoth_SpriteSheet_83: 7435605834924930164
+      Shoggoth_SpriteSheet_84: -4506309554678465253
+      Shoggoth_SpriteSheet_85: -8937137524245740077
+      Shoggoth_SpriteSheet_86: 6310877860325050589
+      Shoggoth_SpriteSheet_87: 6017509873611940683
+      Shoggoth_SpriteSheet_88: -5902034062538704371
+      Shoggoth_SpriteSheet_89: -1998160859231698171
+      Shoggoth_SpriteSheet_9: -4776581205514165987
+      Shoggoth_SpriteSheet_90: -1200349105868323303
+      Shoggoth_SpriteSheet_91: 4767556835680547769
+      Shoggoth_SpriteSheet_92: -1107894708452030142
+      Shoggoth_SpriteSheet_93: 623873449117634080
+      Shoggoth_SpriteSheet_94: -3874322857417131465
+      Shoggoth_SpriteSheet_95: -2942674339396816930
+      Shoggoth_SpriteSheet_96: -3475758002337056818
+      Shoggoth_SpriteSheet_97: 4354654777173515376
+      Shoggoth_SpriteSheet_98: -618093286718227466
+      Shoggoth_SpriteSheet_99: -3896934417385628691
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
