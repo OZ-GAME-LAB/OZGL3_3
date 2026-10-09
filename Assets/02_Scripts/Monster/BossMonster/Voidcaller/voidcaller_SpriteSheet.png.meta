@@ -1,0 +1,4992 @@
+fileFormatVersion: 2
+guid: 8872d02769123b74599642d1646b7845
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1441853902471851788
+    second: voidcaller_SpriteSheet_0
+  - first:
+      213: 6591272344330597574
+    second: voidcaller_SpriteSheet_1
+  - first:
+      213: -5800509131746745098
+    second: voidcaller_SpriteSheet_2
+  - first:
+      213: 8560308633951394901
+    second: voidcaller_SpriteSheet_3
+  - first:
+      213: 8247709929689069662
+    second: voidcaller_SpriteSheet_4
+  - first:
+      213: 4655164775047950875
+    second: voidcaller_SpriteSheet_5
+  - first:
+      213: -8400908123086868396
+    second: voidcaller_SpriteSheet_6
+  - first:
+      213: 6067536005386010531
+    second: voidcaller_SpriteSheet_7
+  - first:
+      213: -9131220310521459465
+    second: voidcaller_SpriteSheet_8
+  - first:
+      213: -4971613511706363112
+    second: voidcaller_SpriteSheet_9
+  - first:
+      213: 5591462238605700701
+    second: voidcaller_SpriteSheet_10
+  - first:
+      213: 5808699675949853410
+    second: voidcaller_SpriteSheet_11
+  - first:
+      213: -7671484936868112564
+    second: voidcaller_SpriteSheet_12
+  - first:
+      213: 2925870433116615184
+    second: voidcaller_SpriteSheet_13
+  - first:
+      213: 5278143566763419929
+    second: voidcaller_SpriteSheet_14
+  - first:
+      213: 6449880014909862836
+    second: voidcaller_SpriteSheet_15
+  - first:
+      213: 8475504267988471742
+    second: voidcaller_SpriteSheet_16
+  - first:
+      213: -8431667541430958601
+    second: voidcaller_SpriteSheet_17
+  - first:
+      213: -1433020730208500077
+    second: voidcaller_SpriteSheet_18
+  - first:
+      213: -7914590290777257886
+    second: voidcaller_SpriteSheet_19
+  - first:
+      213: -3894235994739069637
+    second: voidcaller_SpriteSheet_20
+  - first:
+      213: -5129971825056738985
+    second: voidcaller_SpriteSheet_21
+  - first:
+      213: 3165178595413691614
+    second: voidcaller_SpriteSheet_22
+  - first:
+      213: -1631642548912562621
+    second: voidcaller_SpriteSheet_23
+  - first:
+      213: -180219766489055664
+    second: voidcaller_SpriteSheet_24
+  - first:
+      213: 6428526023144363207
+    second: voidcaller_SpriteSheet_25
+  - first:
+      213: -3773919855088530266
+    second: voidcaller_SpriteSheet_26
+  - first:
+      213: 431379388685677191
+    second: voidcaller_SpriteSheet_27
+  - first:
+      213: 2046438463668651025
+    second: voidcaller_SpriteSheet_28
+  - first:
+      213: -1714864657245690214
+    second: voidcaller_SpriteSheet_29
+  - first:
+      213: -5319537275386237449
+    second: voidcaller_SpriteSheet_30
+  - first:
+      213: -5829670273135916952
+    second: voidcaller_SpriteSheet_31
+  - first:
+      213: 5692906707094589906
+    second: voidcaller_SpriteSheet_32
+  - first:
+      213: 3163093132981703922
+    second: voidcaller_SpriteSheet_33
+  - first:
+      213: 655014246125103202
+    second: voidcaller_SpriteSheet_34
+  - first:
+      213: -1899606109369413326
+    second: voidcaller_SpriteSheet_35
+  - first:
+      213: 2058865774078777690
+    second: voidcaller_SpriteSheet_36
+  - first:
+      213: -2437376835817964609
+    second: voidcaller_SpriteSheet_37
+  - first:
+      213: 4228622551378731590
+    second: voidcaller_SpriteSheet_38
+  - first:
+      213: -6930452667411067400
+    second: voidcaller_SpriteSheet_39
+  - first:
+      213: -5288422507803851716
+    second: voidcaller_SpriteSheet_40
+  - first:
+      213: -4395046066556573644
+    second: voidcaller_SpriteSheet_41
+  - first:
+      213: 3527173785099473680
+    second: voidcaller_SpriteSheet_42
+  - first:
+      213: -7741403609900921442
+    second: voidcaller_SpriteSheet_43
+  - first:
+      213: 5705271472462916952
+    second: voidcaller_SpriteSheet_44
+  - first:
+      213: 4630190354293138065
+    second: voidcaller_SpriteSheet_45
+  - first:
+      213: 2546210273156835504
+    second: voidcaller_SpriteSheet_46
+  - first:
+      213: -9008290331084922677
+    second: voidcaller_SpriteSheet_47
+  - first:
+      213: -1634226907403205411
+    second: voidcaller_SpriteSheet_48
+  - first:
+      213: -8720366402365986343
+    second: voidcaller_SpriteSheet_49
+  - first:
+      213: -5566413596079584447
+    second: voidcaller_SpriteSheet_50
+  - first:
+      213: 5842201320349894068
+    second: voidcaller_SpriteSheet_51
+  - first:
+      213: 195102913393279419
+    second: voidcaller_SpriteSheet_52
+  - first:
+      213: 2204357285919027112
+    second: voidcaller_SpriteSheet_53
+  - first:
+      213: 9066941495016229192
+    second: voidcaller_SpriteSheet_54
+  - first:
+      213: -830475931705937576
+    second: voidcaller_SpriteSheet_55
+  - first:
+      213: -5441202310559556687
+    second: voidcaller_SpriteSheet_56
+  - first:
+      213: 7809156142187717305
+    second: voidcaller_SpriteSheet_57
+  - first:
+      213: 787996066926376369
+    second: voidcaller_SpriteSheet_58
+  - first:
+      213: 1987886498415013924
+    second: voidcaller_SpriteSheet_59
+  - first:
+      213: -3960539511590520626
+    second: voidcaller_SpriteSheet_60
+  - first:
+      213: 5882471408880159130
+    second: voidcaller_SpriteSheet_61
+  - first:
+      213: -5617089942583652359
+    second: voidcaller_SpriteSheet_62
+  - first:
+      213: 3820305793328926217
+    second: voidcaller_SpriteSheet_63
+  - first:
+      213: 5178178238314094785
+    second: voidcaller_SpriteSheet_64
+  - first:
+      213: 5292693153778854610
+    second: voidcaller_SpriteSheet_65
+  - first:
+      213: -4876050167986238963
+    second: voidcaller_SpriteSheet_66
+  - first:
+      213: 2553096913185791243
+    second: voidcaller_SpriteSheet_67
+  - first:
+      213: -7636209611369247
+    second: voidcaller_SpriteSheet_68
+  - first:
+      213: -1863254259924022529
+    second: voidcaller_SpriteSheet_69
+  - first:
+      213: 8330956946101775060
+    second: voidcaller_SpriteSheet_70
+  - first:
+      213: 7557213018146272387
+    second: voidcaller_SpriteSheet_71
+  - first:
+      213: 442518531794713928
+    second: voidcaller_SpriteSheet_72
+  - first:
+      213: -18965055902485128
+    second: voidcaller_SpriteSheet_73
+  - first:
+      213: 7306141676994301106
+    second: voidcaller_SpriteSheet_74
+  - first:
+      213: -827253990285307458
+    second: voidcaller_SpriteSheet_75
+  - first:
+      213: 3187246270852979140
+    second: voidcaller_SpriteSheet_76
+  - first:
+      213: 2652809873721369099
+    second: voidcaller_SpriteSheet_77
+  - first:
+      213: 8282887186762538265
+    second: voidcaller_SpriteSheet_78
+  - first:
+      213: -1794057184338343361
+    second: voidcaller_SpriteSheet_79
+  - first:
+      213: 5301504202244559561
+    second: voidcaller_SpriteSheet_80
+  - first:
+      213: -5682485814391937782
+    second: voidcaller_SpriteSheet_81
+  - first:
+      213: 5285250072560092320
+    second: voidcaller_SpriteSheet_82
+  - first:
+      213: -4611784332663723363
+    second: voidcaller_SpriteSheet_83
+  - first:
+      213: -3293380828687305154
+    second: voidcaller_SpriteSheet_84
+  - first:
+      213: -660764679737906708
+    second: voidcaller_SpriteSheet_85
+  - first:
+      213: 9121118710385174925
+    second: voidcaller_SpriteSheet_86
+  - first:
+      213: -6637306170357379341
+    second: voidcaller_SpriteSheet_87
+  - first:
+      213: -6686217053242285638
+    second: voidcaller_SpriteSheet_88
+  - first:
+      213: -7523456182773028379
+    second: voidcaller_SpriteSheet_89
+  - first:
+      213: -2251214270395672707
+    second: voidcaller_SpriteSheet_90
+  - first:
+      213: 4952958027707982437
+    second: voidcaller_SpriteSheet_91
+  - first:
+      213: 1513281325492939170
+    second: voidcaller_SpriteSheet_92
+  - first:
+      213: -7262763124946939825
+    second: voidcaller_SpriteSheet_93
+  - first:
+      213: -8835071558907221105
+    second: voidcaller_SpriteSheet_94
+  - first:
+      213: 8501218176217246871
+    second: voidcaller_SpriteSheet_95
+  - first:
+      213: 2565148193738706214
+    second: voidcaller_SpriteSheet_96
+  - first:
+      213: 4198874748514776695
+    second: voidcaller_SpriteSheet_97
+  - first:
+      213: -8957238140946901050
+    second: voidcaller_SpriteSheet_98
+  - first:
+      213: 635509908800019429
+    second: voidcaller_SpriteSheet_99
+  - first:
+      213: 1879696551434913744
+    second: voidcaller_SpriteSheet_100
+  - first:
+      213: 146492672114305495
+    second: voidcaller_SpriteSheet_101
+  - first:
+      213: -1249692457040424466
+    second: voidcaller_SpriteSheet_102
+  - first:
+      213: -8507259676973664770
+    second: voidcaller_SpriteSheet_103
+  - first:
+      213: 2247654153432203095
+    second: voidcaller_SpriteSheet_104
+  - first:
+      213: -104223883016389635
+    second: voidcaller_SpriteSheet_105
+  - first:
+      213: 4139714710690850372
+    second: voidcaller_SpriteSheet_106
+  - first:
+      213: -9059993610986398238
+    second: voidcaller_SpriteSheet_107
+  - first:
+      213: 5884079151234743337
+    second: voidcaller_SpriteSheet_108
+  - first:
+      213: 5253566708369291717
+    second: voidcaller_SpriteSheet_109
+  - first:
+      213: -2699764164804022764
+    second: voidcaller_SpriteSheet_110
+  - first:
+      213: 3168431966550741625
+    second: voidcaller_SpriteSheet_111
+  - first:
+      213: -8355172540411816534
+    second: voidcaller_SpriteSheet_112
+  - first:
+      213: 2268066801075544178
+    second: voidcaller_SpriteSheet_113
+  - first:
+      213: -3253531219605708213
+    second: voidcaller_SpriteSheet_114
+  - first:
+      213: -2750658474564499001
+    second: voidcaller_SpriteSheet_115
+  - first:
+      213: -8189281759740293917
+    second: voidcaller_SpriteSheet_116
+  - first:
+      213: 7086994387226970302
+    second: voidcaller_SpriteSheet_117
+  - first:
+      213: 2157216375662279496
+    second: voidcaller_SpriteSheet_118
+  - first:
+      213: 7913727223421166860
+    second: voidcaller_SpriteSheet_119
+  - first:
+      213: 7542908115043837120
+    second: voidcaller_SpriteSheet_120
+  - first:
+      213: 6915010402962922157
+    second: voidcaller_SpriteSheet_121
+  - first:
+      213: 8641079418673219830
+    second: voidcaller_SpriteSheet_122
+  - first:
+      213: 3628110086855215100
+    second: voidcaller_SpriteSheet_123
+  - first:
+      213: -7470571307587330196
+    second: voidcaller_SpriteSheet_124
+  - first:
+      213: 8425943551311333815
+    second: voidcaller_SpriteSheet_125
+  - first:
+      213: 8698832519026109610
+    second: voidcaller_SpriteSheet_126
+  - first:
+      213: 1881953595277611003
+    second: voidcaller_SpriteSheet_127
+  - first:
+      213: 236451444912505793
+    second: voidcaller_SpriteSheet_128
+  - first:
+      213: -6042822751273956828
+    second: voidcaller_SpriteSheet_129
+  - first:
+      213: 716282197912037028
+    second: voidcaller_SpriteSheet_130
+  - first:
+      213: 8200844260033376451
+    second: voidcaller_SpriteSheet_131
+  - first:
+      213: -4308438510027168004
+    second: voidcaller_SpriteSheet_132
+  - first:
+      213: 7989561182112546239
+    second: voidcaller_SpriteSheet_133
+  - first:
+      213: 9018918329781589685
+    second: voidcaller_SpriteSheet_134
+  - first:
+      213: 3322901986047912096
+    second: voidcaller_SpriteSheet_135
+  - first:
+      213: -4743479633642586838
+    second: voidcaller_SpriteSheet_136
+  - first:
+      213: 5113011185493345625
+    second: voidcaller_SpriteSheet_137
+  - first:
+      213: -8571783825649202279
+    second: voidcaller_SpriteSheet_138
+  - first:
+      213: -1561120147754565808
+    second: voidcaller_SpriteSheet_139
+  - first:
+      213: -232369175364291264
+    second: voidcaller_SpriteSheet_140
+  - first:
+      213: 2059253376828582212
+    second: voidcaller_SpriteSheet_141
+  - first:
+      213: -326314575770169513
+    second: voidcaller_SpriteSheet_142
+  - first:
+      213: 4154930334038166542
+    second: voidcaller_SpriteSheet_143
+  - first:
+      213: -7579842966052733602
+    second: voidcaller_SpriteSheet_144
+  - first:
+      213: 1356473573599369356
+    second: voidcaller_SpriteSheet_145
+  - first:
+      213: -1198541810877900458
+    second: voidcaller_SpriteSheet_146
+  - first:
+      213: 343920462837391291
+    second: voidcaller_SpriteSheet_147
+  - first:
+      213: -5434125764853513168
+    second: voidcaller_SpriteSheet_148
+  - first:
+      213: -38470907998891075
+    second: voidcaller_SpriteSheet_149
+  - first:
+      213: 1413859004559820258
+    second: voidcaller_SpriteSheet_150
+  - first:
+      213: 6951758722723358413
+    second: voidcaller_SpriteSheet_151
+  - first:
+      213: -2148500710799204910
+    second: voidcaller_SpriteSheet_152
+  - first:
+      213: -8035011625506102575
+    second: voidcaller_SpriteSheet_153
+  - first:
+      213: 3391875105299289450
+    second: voidcaller_SpriteSheet_154
+  - first:
+      213: 5815300899820723374
+    second: voidcaller_SpriteSheet_155
+  - first:
+      213: -5348267324220621099
+    second: voidcaller_SpriteSheet_156
+  - first:
+      213: 3049118543868963548
+    second: voidcaller_SpriteSheet_157
+  - first:
+      213: -5074306192068689045
+    second: voidcaller_SpriteSheet_158
+  - first:
+      213: -3388648930471523011
+    second: voidcaller_SpriteSheet_159
+  - first:
+      213: -2340659669698056821
+    second: voidcaller_SpriteSheet_160
+  - first:
+      213: 532219167199193223
+    second: voidcaller_SpriteSheet_161
+  - first:
+      213: 3603655552450520363
+    second: voidcaller_SpriteSheet_162
+  - first:
+      213: -5421296920984241946
+    second: voidcaller_SpriteSheet_163
+  - first:
+      213: 8856130013929281034
+    second: voidcaller_SpriteSheet_164
+  - first:
+      213: -8350305843724699309
+    second: voidcaller_SpriteSheet_165
+  - first:
+      213: 18379124780759815
+    second: voidcaller_SpriteSheet_166
+  - first:
+      213: 4084439822343142223
+    second: voidcaller_SpriteSheet_167
+  - first:
+      213: 3046578364362080707
+    second: voidcaller_SpriteSheet_168
+  - first:
+      213: -2871816696450053938
+    second: voidcaller_SpriteSheet_169
+  - first:
+      213: -3100987526888929888
+    second: voidcaller_SpriteSheet_170
+  - first:
+      213: -658715624891374766
+    second: voidcaller_SpriteSheet_171
+  - first:
+      213: 8093106180474531049
+    second: voidcaller_SpriteSheet_172
+  - first:
+      213: -3494212919939110226
+    second: voidcaller_SpriteSheet_173
+  - first:
+      213: 1618186030039953030
+    second: voidcaller_SpriteSheet_174
+  - first:
+      213: 8003190200659708381
+    second: voidcaller_SpriteSheet_175
+  - first:
+      213: -4134188780226180
+    second: voidcaller_SpriteSheet_176
+  - first:
+      213: 34637096697316066
+    second: voidcaller_SpriteSheet_177
+  - first:
+      213: -3597608470879295750
+    second: voidcaller_SpriteSheet_178
+  - first:
+      213: -1148194125404674843
+    second: voidcaller_SpriteSheet_179
+  - first:
+      213: 6737313472658498978
+    second: voidcaller_SpriteSheet_180
+  - first:
+      213: -4091563007396287998
+    second: voidcaller_SpriteSheet_181
+  - first:
+      213: 3662963569336288855
+    second: voidcaller_SpriteSheet_182
+  - first:
+      213: -1104929916201358519
+    second: voidcaller_SpriteSheet_183
+  - first:
+      213: -7703182172424531509
+    second: voidcaller_SpriteSheet_184
+  - first:
+      213: -4953748923436737905
+    second: voidcaller_SpriteSheet_185
+  - first:
+      213: -7142028415735510212
+    second: voidcaller_SpriteSheet_186
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2993
+        width: 79
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f68da2c7e720410800000000000000
+      internalID: 1441853902471851788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 2993
+        width: 78
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c47ead6647e87b50800000000000000
+      internalID: 6591272344330597574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 2993
+        width: 77
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f463d55da3708fa0800000000000000
+      internalID: -5800509131746745098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 2993
+        width: 76
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55cd16e19535cc670800000000000000
+      internalID: 8560308633951394901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 2993
+        width: 76
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5834999b70c57270800000000000000
+      internalID: 8247709929689069662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 2993
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12f4a3e2b77a9040800000000000000
+      internalID: 4655164775047950875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 2993
+        width: 76
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450b6bc629af96b80800000000000000
+      internalID: -8400908123086868396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 2993
+        width: 77
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3affce689d7343450800000000000000
+      internalID: 6067536005386010531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2858
+        width: 47
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc4981c183674180800000000000000
+      internalID: -9131220310521459465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 2859
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81bb5321ad7410bb0800000000000000
+      internalID: -4971613511706363112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 2860
+        width: 47
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e6a1bf74dd89d40800000000000000
+      internalID: 5591462238605700701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 2860
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eaeae75495ac9050800000000000000
+      internalID: 5808699675949853410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 2860
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c47573e5819698590800000000000000
+      internalID: -7671484936868112564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 2859
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012fbb038a7ca9820800000000000000
+      internalID: 2925870433116615184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 2858
+        width: 47
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9196272fb9bbf3940800000000000000
+      internalID: 5278143566763419929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 2859
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3f79c53b3928950800000000000000
+      internalID: 6449880014909862836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 2795
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf82c10a3a0f9570800000000000000
+      internalID: 8475504267988471742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 2834
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f501d04b03bcfa80800000000000000
+      internalID: -8431667541430958601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 2833
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396c6240d33ec1ce0800000000000000
+      internalID: -1433020730208500077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 2806
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2684777501ab92290800000000000000
+      internalID: -7914590290777257886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 2823
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3da90ecef4e4f9c0800000000000000
+      internalID: -3894235994739069637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 2820
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7511bbb0ecdaec8b0800000000000000
+      internalID: -5129971825056738985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 2721
+        width: 53
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc8d46a929fceb20800000000000000
+      internalID: 3165178595413691614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 2806
+        width: 49
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e57af1fbd3b59e0800000000000000
+      internalID: -1631642548912562621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 2811
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e7ae4c31bbf7df0800000000000000
+      internalID: -180219766489055664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 1772
+        y: 2811
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4dfd6bb56b63950800000000000000
+      internalID: 6428526023144363207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 2819
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac87aa03e750abc0800000000000000
+      internalID: -3773919855088530266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1945
+        y: 2811
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782f80ab4419cf500800000000000000
+      internalID: 431379388685677191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 2767
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1148aa1b0f8666c10800000000000000
+      internalID: 2046438463668651025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 2766
+        width: 21
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96aff21ea39338e0800000000000000
+      internalID: -1714864657245690214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 2721
+        width: 49
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd672b38053d26b0800000000000000
+      internalID: -5319537275386237449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 2721
+        width: 49
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 868441406c9d81fa0800000000000000
+      internalID: -5829670273135916952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 2721
+        width: 51
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d1dfcfdc74410f40800000000000000
+      internalID: 5692906707094589906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 2721
+        width: 65
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f41ad6127095eb20800000000000000
+      internalID: 3163093132981703922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 2807
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2686b178cf3171900800000000000000
+      internalID: 655014246125103202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 2721
+        width: 51
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231dfddde4e33a5e0800000000000000
+      internalID: -1899606109369413326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 2721
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59dc20638f829c10800000000000000
+      internalID: 2058865774078777690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 2721
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbbfd4d7ea2bc2ed0800000000000000
+      internalID: -2437376835817964609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 2721
+        width: 79
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 642a2286ec51faa30800000000000000
+      internalID: 4228622551378731590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 2721
+        width: 80
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd0e42a40612df90800000000000000
+      internalID: -6930452667411067400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 2721
+        width: 74
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34cb289fbfbb96b0800000000000000
+      internalID: -5288422507803851716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 2721
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 438ea6f63e8a103c0800000000000000
+      internalID: -4395046066556573644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 2721
+        width: 45
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0139ce9aed903f030800000000000000
+      internalID: 3527173785099473680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 2721
+        width: 55
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9dcde8be62019490800000000000000
+      internalID: -7741403609900921442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 2441
+        y: 2721
+        width: 67
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d62572d223d2f40800000000000000
+      internalID: 5705271472462916952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 2721
+        width: 81
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192251e689db14040800000000000000
+      internalID: 4630190354293138065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 2775
+        y: 2721
+        width: 83
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8a6f6c0c4f55320800000000000000
+      internalID: 2546210273156835504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 2585
+        width: 49
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc0e81efbaf1cf280800000000000000
+      internalID: -9008290331084922677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 2669
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4c8d5494f0259e0800000000000000
+      internalID: -1634226907403205411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 2670
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d969b3a5f80bf680800000000000000
+      internalID: -8720366402365986343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 2677
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14b85c4935020c2b0800000000000000
+      internalID: -5566413596079584447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 1969
+        y: 2690
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b506c5c52ba31150800000000000000
+      internalID: 5842201320349894068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 2687
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb14377e01525b200800000000000000
+      internalID: 195102913393279419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 2585
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af6f39b543779e10800000000000000
+      internalID: 2204357285919027112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 2585
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84901b1404f34dd70800000000000000
+      internalID: 9066941495016229192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 2585
+        width: 79
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851f7284a8e8974f0800000000000000
+      internalID: -830475931705937576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 2585
+        width: 74
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb1018c357fc74b0800000000000000
+      internalID: -5441202310559556687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 2585
+        width: 75
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2a8aaf222bf5c60800000000000000
+      internalID: 7809156142187717305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 2585
+        width: 68
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b53d857f368fea00800000000000000
+      internalID: 787996066926376369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 2631
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42072dfec34669b10800000000000000
+      internalID: 1987886498415013924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 2585
+        width: 52
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec87fbc4c465909c0800000000000000
+      internalID: -3960539511590520626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 2585
+        width: 49
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9981b7649cb2a150800000000000000
+      internalID: 5882471408880159130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 2585
+        width: 49
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffc1e435761c02b0800000000000000
+      internalID: -5617089942583652359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 2585
+        width: 51
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90eccb0d0e3740530800000000000000
+      internalID: 3820305793328926217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 2585
+        width: 51
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0ae5e2ca59cd740800000000000000
+      internalID: 5178178238314094785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 2585
+        width: 51
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da6128a16c637940800000000000000
+      internalID: 5292693153778854610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 2585
+        width: 55
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a4236e43ac45cb0800000000000000
+      internalID: -4876050167986238963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 2441
+        y: 2585
+        width: 67
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0dd59b9d1c6e6320800000000000000
+      internalID: 2553096913185791243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 2585
+        width: 81
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e41fa668eed4eff0800000000000000
+      internalID: -7636209611369247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 2775
+        y: 2585
+        width: 83
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffacefe5f146426e0800000000000000
+      internalID: -1863254259924022529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2449
+        width: 56
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da287304318d9370800000000000000
+      internalID: 8330956946101775060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 2449
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384f09e333d90e860800000000000000
+      internalID: 7557213018146272387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 2449
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84db6269244242600800000000000000
+      internalID: 442518531794713928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 2449
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87579c3d16f9cbff0800000000000000
+      internalID: -18965055902485128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 2449
+        width: 76
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc0ce74521a46560800000000000000
+      internalID: 7306141676994301106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 2449
+        width: 110
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1150af0e00584f0800000000000000
+      internalID: -827253990285307458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 2449
+        width: 112
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c951e9b89f5b3c20800000000000000
+      internalID: 3187246270852979140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 2497
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02afc3668ca0d420800000000000000
+      internalID: 2652809873721369099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 2449
+        width: 94
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d9d91030ab2f270800000000000000
+      internalID: 8282887186762538265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 2501
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a86c40f7a3a17e0800000000000000
+      internalID: -1794057184338343361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 2494
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2170ebbf9b29940800000000000000
+      internalID: 5301504202244559561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2449
+        width: 84
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a05e8f74241c321b0800000000000000
+      internalID: -5682485814391937782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2449
+        width: 77
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a44d0440faf85940800000000000000
+      internalID: 5285250072560092320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 2485
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9aedde6596afffb0800000000000000
+      internalID: -4611784332663723363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_84
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 2480
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36f20cd59f8b42d0800000000000000
+      internalID: -3293380828687305154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_85
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 2484
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9e810560e74d6f0800000000000000
+      internalID: -660764679737906708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_86
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 2478
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d896dae2429b49e70800000000000000
+      internalID: 9121118710385174925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_87
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2463
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe075a343d83e3a0800000000000000
+      internalID: -6637306170357379341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_88
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 2461
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1a552e309c533a0800000000000000
+      internalID: -6686217053242285638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_89
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 2202
+        width: 28
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e9e8967670579790800000000000000
+      internalID: -7523456182773028379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_90
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 2336
+        width: 43
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7796cb6c8412c0e0800000000000000
+      internalID: -2251214270395672707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_91
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 2337
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56224f495117cb440800000000000000
+      internalID: 4952958027707982437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_92
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 2332
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a92d3b0951400510800000000000000
+      internalID: 1513281325492939170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_93
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 2313
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f405bb9ea6b753b90800000000000000
+      internalID: -7262763124946939825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_94
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 2066
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8bad263a35836580800000000000000
+      internalID: -8835071558907221105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_95
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 2066
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ce58fc3e46af570800000000000000
+      internalID: 8501218176217246871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_96
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1905
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62dc70401bc399320800000000000000
+      internalID: 2565148193738706214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_97
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1905
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 776b4915656654a30800000000000000
+      internalID: 4198874748514776695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_98
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1905
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c797484e5f71b380800000000000000
+      internalID: -8957238140946901050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1905
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb144d15e8c1d800800000000000000
+      internalID: 635509908800019429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1905
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d70ec1fd06061a10800000000000000
+      internalID: 1879696551434913744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1906
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d922932f42780200800000000000000
+      internalID: 146492672114305495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1905
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1de9bd45338aee0800000000000000
+      internalID: -1249692457040424466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1769
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5fafda56420f980800000000000000
+      internalID: -8507259676973664770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 1769
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ff1414b85413f10800000000000000
+      internalID: 2247654153432203095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1769
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb32bb3ee8bd8ef0800000000000000
+      internalID: -104223883016389635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_106
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1769
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446ef22a898337930800000000000000
+      internalID: 4139714710690850372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_107
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1769
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2edd8dd00df644280800000000000000
+      internalID: -9059993610986398238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 1769
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92cf0a710d278a150800000000000000
+      internalID: 5884079151234743337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1660
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c97b20361b68e840800000000000000
+      internalID: 5253566708369291717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1661
+        width: 43
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ee68bcbc2888ad0800000000000000
+      internalID: -2699764164804022764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_111
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1662
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 972df35261888fb20800000000000000
+      internalID: 3168431966550741625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_112
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1657
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5d7a397d67c0c80800000000000000
+      internalID: -8355172540411816534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_113
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1633
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 270e6f42dbac97f10800000000000000
+      internalID: 2268066801075544178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_114
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1497
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4222cdf79229d2d0800000000000000
+      internalID: -3253531219605708213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1361
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c94a25e0b2b3d9d0800000000000000
+      internalID: -2750658474564499001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1361
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec0811d0a3d95e80800000000000000
+      internalID: -8189281759740293917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1225
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb8c9dfb8df0a5260800000000000000
+      internalID: 7086994387226970302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_118
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1228
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b710f3dd8ffed10800000000000000
+      internalID: 2157216375662279496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1225
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c056b512bf433dd60800000000000000
+      internalID: 7913727223421166860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_120
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1225
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4699277facda860800000000000000
+      internalID: 7542908115043837120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_121
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1230
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa5cbef25d07ff50800000000000000
+      internalID: 6915010402962922157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_122
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1225
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f8c4f9e2f74be770800000000000000
+      internalID: 8641079418673219830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_123
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf74405c6e2a95230800000000000000
+      internalID: 3628110086855215100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_124
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 1225
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f180ef9f2335890800000000000000
+      internalID: -7470571307587330196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_125
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1225
+        width: 46
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9c7617407fee470800000000000000
+      internalID: 8425943551311333815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_126
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1089
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aacea21761678b870800000000000000
+      internalID: 8698832519026109610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_127
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1089
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff8a4ae2da0e1a10800000000000000
+      internalID: 1881953595277611003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_128
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 1089
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c343ac165b084300800000000000000
+      internalID: 236451444912505793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_129
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1089
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42acaa559b4932ca0800000000000000
+      internalID: -6042822751273956828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_130
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 1089
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6ab7d2ddeb0f900800000000000000
+      internalID: 716282197912037028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_131
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1089
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0379197604fc170800000000000000
+      internalID: 8200844260033376451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_132
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 953
+        width: 49
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf6a731900a5534c0800000000000000
+      internalID: -4308438510027168004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_133
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 953
+        width: 55
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd711b809f90ee60800000000000000
+      internalID: 7989561182112546239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_134
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 953
+        width: 54
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b614e8cf62a92d70800000000000000
+      internalID: 9018918329781589685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_135
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 953
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a863d530c15d1e20800000000000000
+      internalID: 3322901986047912096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_136
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 953
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2dfe6db766cb2eb0800000000000000
+      internalID: -4743479633642586838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_137
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 960
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9550ee3559015f640800000000000000
+      internalID: 5113011185493345625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_138
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 983
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b8dbc9608ea0980800000000000000
+      internalID: -8571783825649202279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_139
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 974
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05f326d2f79c55ae0800000000000000
+      internalID: -1561120147754565808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_140
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 953
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04539a5577576ccf0800000000000000
+      internalID: -232369175364291264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_141
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 817
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 449246c2900f39c10800000000000000
+      internalID: 2059253376828582212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_142
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 816
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75fcf2a4f92b87bf0800000000000000
+      internalID: -326314575770169513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_143
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 817
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c07d2002749a930800000000000000
+      internalID: 4154930334038166542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_144
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 817
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5dfe2b6bfcfec690800000000000000
+      internalID: -7579842966052733602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_145
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 817
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88589d378923d210800000000000000
+      internalID: 1356473573599369356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_146
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 817
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6595b2ab29ced5fe0800000000000000
+      internalID: -1198541810877900458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_147
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 681
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf196ab6d9d5c400800000000000000
+      internalID: 343920462837391291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_148
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 681
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034cb19786b1694b0800000000000000
+      internalID: -5434125764853513168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_149
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 681
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db31a8ab9e2577ff0800000000000000
+      internalID: -38470907998891075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_150
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 681
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5864116490f9310800000000000000
+      internalID: 1413859004559820258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_151
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 681
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc62620f9bb997060800000000000000
+      internalID: 6951758722723358413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_152
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 681
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd932d9cfdfe22e0800000000000000
+      internalID: -2148500710799204910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_153
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 545
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d223977f77ed7090800000000000000
+      internalID: -8035011625506102575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_154
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 545
+        width: 45
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a65dad5ff6c521f20800000000000000
+      internalID: 3391875105299289450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_155
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 545
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eacd2db8b5914b050800000000000000
+      internalID: 5815300899820723374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_156
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 545
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de3008743327c5b0800000000000000
+      internalID: -5348267324220621099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_157
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 562
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdaad552925a05a20800000000000000
+      internalID: 3049118543868963548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_158
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 548
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b634e2437617499b0800000000000000
+      internalID: -5074306192068689045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_159
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 545
+        width: 71
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3dccb660c919f0d0800000000000000
+      internalID: -3388648930471523011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_160
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 545
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d60978e6e448fd0800000000000000
+      internalID: -2340659669698056821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_161
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 545
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788ef834382d26700800000000000000
+      internalID: 532219167199193223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_162
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 409
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b256da8c1a1c20230800000000000000
+      internalID: 3603655552450520363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_163
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 409
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8b0d27c2fa3c4b0800000000000000
+      internalID: -5421296920984241946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_164
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 409
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a061eec635b47ea70800000000000000
+      internalID: 8856130013929281034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_165
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 273
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 359bbe2b311cd1c80800000000000000
+      internalID: -8350305843724699309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_166
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 273
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70bf6d377bb414000800000000000000
+      internalID: 18379124780759815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_167
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 273
+        width: 41
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bf83dc068dea830800000000000000
+      internalID: 4084439822343142223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_168
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 273
+        width: 43
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1413481ee974a20800000000000000
+      internalID: 3046578364362080707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_169
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 273
+        width: 48
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec80f0c1ee14528d0800000000000000
+      internalID: -2871816696450053938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_170
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 273
+        width: 53
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a54ed6264417f4d0800000000000000
+      internalID: -3100987526888929888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_171
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 137
+        width: 74
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253a95211a5cbd6f0800000000000000
+      internalID: -658715624891374766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_172
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 137
+        width: 73
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ece3b8213d705070800000000000000
+      internalID: 8093106180474531049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_173
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 137
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaae279ccdf028fc0800000000000000
+      internalID: -3494212919939110226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_174
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ee70dee93f47610800000000000000
+      internalID: 1618186030039953030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_175
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 52
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd98534b51b011f60800000000000000
+      internalID: 8003190200659708381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_176
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 53
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79f15a2aff41fff0800000000000000
+      internalID: -4134188780226180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_177
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 1
+        width: 78
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e2c1b4814e0b7000800000000000000
+      internalID: 34637096697316066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_178
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 56
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6ad4c182ab21ec0800000000000000
+      internalID: -3597608470879295750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_179
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1
+        width: 85
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4601eb68bc010f0800000000000000
+      internalID: -1148194125404674843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_180
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 59
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a5634658eebf7d50800000000000000
+      internalID: 6737313472658498978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_181
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1
+        width: 84
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ae3007f19d737c0800000000000000
+      internalID: -4091563007396287998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_182
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1
+        width: 75
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7568c7785f575d230800000000000000
+      internalID: 3662963569336288855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_183
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1
+        width: 78
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bad1b68108aa0f0800000000000000
+      internalID: -1104929916201358519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_184
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1
+        width: 94
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc1938c90acc81590800000000000000
+      internalID: -7703182172424531509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_185
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 1
+        width: 104
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a5418a99fb04bb0800000000000000
+      internalID: -4953748923436737905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidcaller_SpriteSheet_186
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 1
+        width: 110
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3bc658fefa62ec90800000000000000
+      internalID: -7142028415735510212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      voidcaller_SpriteSheet_0: 1441853902471851788
+      voidcaller_SpriteSheet_1: 6591272344330597574
+      voidcaller_SpriteSheet_10: 5591462238605700701
+      voidcaller_SpriteSheet_100: 1879696551434913744
+      voidcaller_SpriteSheet_101: 146492672114305495
+      voidcaller_SpriteSheet_102: -1249692457040424466
+      voidcaller_SpriteSheet_103: -8507259676973664770
+      voidcaller_SpriteSheet_104: 2247654153432203095
+      voidcaller_SpriteSheet_105: -104223883016389635
+      voidcaller_SpriteSheet_106: 4139714710690850372
+      voidcaller_SpriteSheet_107: -9059993610986398238
+      voidcaller_SpriteSheet_108: 5884079151234743337
+      voidcaller_SpriteSheet_109: 5253566708369291717
+      voidcaller_SpriteSheet_11: 5808699675949853410
+      voidcaller_SpriteSheet_110: -2699764164804022764
+      voidcaller_SpriteSheet_111: 3168431966550741625
+      voidcaller_SpriteSheet_112: -8355172540411816534
+      voidcaller_SpriteSheet_113: 2268066801075544178
+      voidcaller_SpriteSheet_114: -3253531219605708213
+      voidcaller_SpriteSheet_115: -2750658474564499001
+      voidcaller_SpriteSheet_116: -8189281759740293917
+      voidcaller_SpriteSheet_117: 7086994387226970302
+      voidcaller_SpriteSheet_118: 2157216375662279496
+      voidcaller_SpriteSheet_119: 7913727223421166860
+      voidcaller_SpriteSheet_12: -7671484936868112564
+      voidcaller_SpriteSheet_120: 7542908115043837120
+      voidcaller_SpriteSheet_121: 6915010402962922157
+      voidcaller_SpriteSheet_122: 8641079418673219830
+      voidcaller_SpriteSheet_123: 3628110086855215100
+      voidcaller_SpriteSheet_124: -7470571307587330196
+      voidcaller_SpriteSheet_125: 8425943551311333815
+      voidcaller_SpriteSheet_126: 8698832519026109610
+      voidcaller_SpriteSheet_127: 1881953595277611003
+      voidcaller_SpriteSheet_128: 236451444912505793
+      voidcaller_SpriteSheet_129: -6042822751273956828
+      voidcaller_SpriteSheet_13: 2925870433116615184
+      voidcaller_SpriteSheet_130: 716282197912037028
+      voidcaller_SpriteSheet_131: 8200844260033376451
+      voidcaller_SpriteSheet_132: -4308438510027168004
+      voidcaller_SpriteSheet_133: 7989561182112546239
+      voidcaller_SpriteSheet_134: 9018918329781589685
+      voidcaller_SpriteSheet_135: 3322901986047912096
+      voidcaller_SpriteSheet_136: -4743479633642586838
+      voidcaller_SpriteSheet_137: 5113011185493345625
+      voidcaller_SpriteSheet_138: -8571783825649202279
+      voidcaller_SpriteSheet_139: -1561120147754565808
+      voidcaller_SpriteSheet_14: 5278143566763419929
+      voidcaller_SpriteSheet_140: -232369175364291264
+      voidcaller_SpriteSheet_141: 2059253376828582212
+      voidcaller_SpriteSheet_142: -326314575770169513
+      voidcaller_SpriteSheet_143: 4154930334038166542
+      voidcaller_SpriteSheet_144: -7579842966052733602
+      voidcaller_SpriteSheet_145: 1356473573599369356
+      voidcaller_SpriteSheet_146: -1198541810877900458
+      voidcaller_SpriteSheet_147: 343920462837391291
+      voidcaller_SpriteSheet_148: -5434125764853513168
+      voidcaller_SpriteSheet_149: -38470907998891075
+      voidcaller_SpriteSheet_15: 6449880014909862836
+      voidcaller_SpriteSheet_150: 1413859004559820258
+      voidcaller_SpriteSheet_151: 6951758722723358413
+      voidcaller_SpriteSheet_152: -2148500710799204910
+      voidcaller_SpriteSheet_153: -8035011625506102575
+      voidcaller_SpriteSheet_154: 3391875105299289450
+      voidcaller_SpriteSheet_155: 5815300899820723374
+      voidcaller_SpriteSheet_156: -5348267324220621099
+      voidcaller_SpriteSheet_157: 3049118543868963548
+      voidcaller_SpriteSheet_158: -5074306192068689045
+      voidcaller_SpriteSheet_159: -3388648930471523011
+      voidcaller_SpriteSheet_16: 8475504267988471742
+      voidcaller_SpriteSheet_160: -2340659669698056821
+      voidcaller_SpriteSheet_161: 532219167199193223
+      voidcaller_SpriteSheet_162: 3603655552450520363
+      voidcaller_SpriteSheet_163: -5421296920984241946
+      voidcaller_SpriteSheet_164: 8856130013929281034
+      voidcaller_SpriteSheet_165: -8350305843724699309
+      voidcaller_SpriteSheet_166: 18379124780759815
+      voidcaller_SpriteSheet_167: 4084439822343142223
+      voidcaller_SpriteSheet_168: 3046578364362080707
+      voidcaller_SpriteSheet_169: -2871816696450053938
+      voidcaller_SpriteSheet_17: -8431667541430958601
+      voidcaller_SpriteSheet_170: -3100987526888929888
+      voidcaller_SpriteSheet_171: -658715624891374766
+      voidcaller_SpriteSheet_172: 8093106180474531049
+      voidcaller_SpriteSheet_173: -3494212919939110226
+      voidcaller_SpriteSheet_174: 1618186030039953030
+      voidcaller_SpriteSheet_175: 8003190200659708381
+      voidcaller_SpriteSheet_176: -4134188780226180
+      voidcaller_SpriteSheet_177: 34637096697316066
+      voidcaller_SpriteSheet_178: -3597608470879295750
+      voidcaller_SpriteSheet_179: -1148194125404674843
+      voidcaller_SpriteSheet_18: -1433020730208500077
+      voidcaller_SpriteSheet_180: 6737313472658498978
+      voidcaller_SpriteSheet_181: -4091563007396287998
+      voidcaller_SpriteSheet_182: 3662963569336288855
+      voidcaller_SpriteSheet_183: -1104929916201358519
+      voidcaller_SpriteSheet_184: -7703182172424531509
+      voidcaller_SpriteSheet_185: -4953748923436737905
+      voidcaller_SpriteSheet_186: -7142028415735510212
+      voidcaller_SpriteSheet_19: -7914590290777257886
+      voidcaller_SpriteSheet_2: -5800509131746745098
+      voidcaller_SpriteSheet_20: -3894235994739069637
+      voidcaller_SpriteSheet_21: -5129971825056738985
+      voidcaller_SpriteSheet_22: 3165178595413691614
+      voidcaller_SpriteSheet_23: -1631642548912562621
+      voidcaller_SpriteSheet_24: -180219766489055664
+      voidcaller_SpriteSheet_25: 6428526023144363207
+      voidcaller_SpriteSheet_26: -3773919855088530266
+      voidcaller_SpriteSheet_27: 431379388685677191
+      voidcaller_SpriteSheet_28: 2046438463668651025
+      voidcaller_SpriteSheet_29: -1714864657245690214
+      voidcaller_SpriteSheet_3: 8560308633951394901
+      voidcaller_SpriteSheet_30: -5319537275386237449
+      voidcaller_SpriteSheet_31: -5829670273135916952
+      voidcaller_SpriteSheet_32: 5692906707094589906
+      voidcaller_SpriteSheet_33: 3163093132981703922
+      voidcaller_SpriteSheet_34: 655014246125103202
+      voidcaller_SpriteSheet_35: -1899606109369413326
+      voidcaller_SpriteSheet_36: 2058865774078777690
+      voidcaller_SpriteSheet_37: -2437376835817964609
+      voidcaller_SpriteSheet_38: 4228622551378731590
+      voidcaller_SpriteSheet_39: -6930452667411067400
+      voidcaller_SpriteSheet_4: 8247709929689069662
+      voidcaller_SpriteSheet_40: -5288422507803851716
+      voidcaller_SpriteSheet_41: -4395046066556573644
+      voidcaller_SpriteSheet_42: 3527173785099473680
+      voidcaller_SpriteSheet_43: -7741403609900921442
+      voidcaller_SpriteSheet_44: 5705271472462916952
+      voidcaller_SpriteSheet_45: 4630190354293138065
+      voidcaller_SpriteSheet_46: 2546210273156835504
+      voidcaller_SpriteSheet_47: -9008290331084922677
+      voidcaller_SpriteSheet_48: -1634226907403205411
+      voidcaller_SpriteSheet_49: -8720366402365986343
+      voidcaller_SpriteSheet_5: 4655164775047950875
+      voidcaller_SpriteSheet_50: -5566413596079584447
+      voidcaller_SpriteSheet_51: 5842201320349894068
+      voidcaller_SpriteSheet_52: 195102913393279419
+      voidcaller_SpriteSheet_53: 2204357285919027112
+      voidcaller_SpriteSheet_54: 9066941495016229192
+      voidcaller_SpriteSheet_55: -830475931705937576
+      voidcaller_SpriteSheet_56: -5441202310559556687
+      voidcaller_SpriteSheet_57: 7809156142187717305
+      voidcaller_SpriteSheet_58: 787996066926376369
+      voidcaller_SpriteSheet_59: 1987886498415013924
+      voidcaller_SpriteSheet_6: -8400908123086868396
+      voidcaller_SpriteSheet_60: -3960539511590520626
+      voidcaller_SpriteSheet_61: 5882471408880159130
+      voidcaller_SpriteSheet_62: -5617089942583652359
+      voidcaller_SpriteSheet_63: 3820305793328926217
+      voidcaller_SpriteSheet_64: 5178178238314094785
+      voidcaller_SpriteSheet_65: 5292693153778854610
+      voidcaller_SpriteSheet_66: -4876050167986238963
+      voidcaller_SpriteSheet_67: 2553096913185791243
+      voidcaller_SpriteSheet_68: -7636209611369247
+      voidcaller_SpriteSheet_69: -1863254259924022529
+      voidcaller_SpriteSheet_7: 6067536005386010531
+      voidcaller_SpriteSheet_70: 8330956946101775060
+      voidcaller_SpriteSheet_71: 7557213018146272387
+      voidcaller_SpriteSheet_72: 442518531794713928
+      voidcaller_SpriteSheet_73: -18965055902485128
+      voidcaller_SpriteSheet_74: 7306141676994301106
+      voidcaller_SpriteSheet_75: -827253990285307458
+      voidcaller_SpriteSheet_76: 3187246270852979140
+      voidcaller_SpriteSheet_77: 2652809873721369099
+      voidcaller_SpriteSheet_78: 8282887186762538265
+      voidcaller_SpriteSheet_79: -1794057184338343361
+      voidcaller_SpriteSheet_8: -9131220310521459465
+      voidcaller_SpriteSheet_80: 5301504202244559561
+      voidcaller_SpriteSheet_81: -5682485814391937782
+      voidcaller_SpriteSheet_82: 5285250072560092320
+      voidcaller_SpriteSheet_83: -4611784332663723363
+      voidcaller_SpriteSheet_84: -3293380828687305154
+      voidcaller_SpriteSheet_85: -660764679737906708
+      voidcaller_SpriteSheet_86: 9121118710385174925
+      voidcaller_SpriteSheet_87: -6637306170357379341
+      voidcaller_SpriteSheet_88: -6686217053242285638
+      voidcaller_SpriteSheet_89: -7523456182773028379
+      voidcaller_SpriteSheet_9: -4971613511706363112
+      voidcaller_SpriteSheet_90: -2251214270395672707
+      voidcaller_SpriteSheet_91: 4952958027707982437
+      voidcaller_SpriteSheet_92: 1513281325492939170
+      voidcaller_SpriteSheet_93: -7262763124946939825
+      voidcaller_SpriteSheet_94: -8835071558907221105
+      voidcaller_SpriteSheet_95: 8501218176217246871
+      voidcaller_SpriteSheet_96: 2565148193738706214
+      voidcaller_SpriteSheet_97: 4198874748514776695
+      voidcaller_SpriteSheet_98: -8957238140946901050
+      voidcaller_SpriteSheet_99: 635509908800019429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
