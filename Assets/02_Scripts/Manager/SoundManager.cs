@@ -38,14 +38,14 @@ public class SoundManager
         ApplyVolume("SFXVolume", _sfxVolume, false);
     }
 
-    public void PlayBGM(string soundPath)
+    public void PlayBGM(string audioName)
     {
-        PlayAudioClip(_bgmPlayer, soundPath, isLoop: true);
+        PlayAudioClip(_bgmPlayer, audioName, isLoop: true);
     }
 
-    public void PlaySFX(string soundPath)
+    public void PlaySFX(string audioName)
     {
-        PlayAudioClip(_sfxPlayer, soundPath);
+        PlayAudioClip(_sfxPlayer, audioName);
     }
 
     public void StopBGM()
