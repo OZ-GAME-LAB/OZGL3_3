@@ -1,16 +1,21 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class UIManager : SingletonBehaviour<UIManager>
 {
-    [SerializeField] Canvas Canvas_BgRoot;
-    [SerializeField] Canvas Canvas_MainRoot;
-    [SerializeField] Canvas Canvas_ContentRoot;
-    [SerializeField] Canvas Canvas_PopupRoot;
-    [SerializeField] Canvas Canvas_VeryFrontRoot;
+    [SerializeField] private Canvas Canvas_BgRoot;
+    [SerializeField] private Canvas Canvas_MainRoot;
+    [SerializeField] private Canvas Canvas_ContentRoot;
+    [SerializeField] private Canvas Canvas_PopupRoot;
+    [SerializeField] private Canvas Canvas_VeryFrontRoot;
 
     private Dictionary<UIType, UIBase> _createdUIDic = new Dictionary<UIType, UIBase>();
     private HashSet<UIType> _openedUIDic = new HashSet<UIType>();
+
+    protected override void Init()
+    {
+        base.Init();
+    }
 
     private void Start()
     {
@@ -19,7 +24,6 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     public UIBase OpenUI(UIRootType uiRootType, UIType uiType, bool isInitialHide = false)
     {
-
         var openedUI = GetCreatedUI(uiRootType, uiType);
 
         if (openedUI == null)
