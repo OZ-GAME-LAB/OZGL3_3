@@ -10,7 +10,6 @@ public class UIButton : MonoBehaviour
     [SerializeField] private Button Button_Base;
     [SerializeField] private TextMeshProUGUI Text_Base;
     [SerializeField] private Image Image_Base;
-    [SerializeField] private Image Image_Select;
 
     private bool _isManualUnbindEvent;
 
@@ -19,7 +18,6 @@ public class UIButton : MonoBehaviour
     private void Awake()
     {
         InitUIButton();
-        SetDefaultUI();
     }
 
     private void OnDisable()
@@ -37,14 +35,6 @@ public class UIButton : MonoBehaviour
             }
 
             _boundActions.Clear();
-        }
-    }
-
-    private void SetDefaultUI()
-    {
-        if (Image_Select != null)
-        {
-            Image_Select.gameObject.SetActive(false);
         }
     }
 
@@ -116,16 +106,6 @@ public class UIButton : MonoBehaviour
         }
 
         Text_Base.text = buttonStr;
-    }
-
-    public void SetSelectedUI(bool isSelected)
-    {
-        if (Image_Select == null)
-        {
-            return;
-        }
-
-        Image_Select.gameObject.SetActive(isSelected);
     }
 
     public void SetInteractable(bool isInteractable)
