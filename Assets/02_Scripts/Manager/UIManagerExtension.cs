@@ -23,7 +23,7 @@ public static class UIManagerExtension
     {
         string path = string.Empty; // "" == string.Empty
 
-        path = $"Prefab/UI/{uiRootType}/{uiType}";
+        path = $"UI/{uiRootType}/{uiType}";
         return path;
     }
 
