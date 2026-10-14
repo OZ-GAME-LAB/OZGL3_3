@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Shoggoth_ProjectileSkill
+  m_Name: Shoggoth_Projectile
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileSkill
-  CoolDown: 10
+  CoolDown: 5
   Range: 5
   _projectilePrefab: {fileID: 1987322239900584554, guid: fc83a6e2df3fbe541b10b6bf9df0cf52, type: 3}

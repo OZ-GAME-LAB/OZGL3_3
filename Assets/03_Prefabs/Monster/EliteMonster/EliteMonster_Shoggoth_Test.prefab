@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6931036689774495730}
   - component: {fileID: 5602583284590123232}
   - component: {fileID: 4215278070989427528}
-  - component: {fileID: 2132518944744835777}
+  - component: {fileID: 8683366866423821959}
   m_Layer: 0
   m_Name: EliteMonster_Shoggoth_Test
   m_TagString: Monster
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 4
 --- !u!114 &4215278070989427528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,17 +176,16 @@ MonoBehaviour:
   _moveSpeed: 3
   _aggroRange: 7
   Skills:
-  - {fileID: 11400000, guid: 08e5ecd89bed5d24284e5289d070aba2, type: 2}
+  - {fileID: 11400000, guid: 5ec2ddf696ddb8f4fb1b83d14eee4fb9, type: 2}
   _playerTransform: {fileID: 0}
   _groundCheck: {fileID: 619035669189607197}
   _checkGroundRadius: 0.2
   _wallCheck: {fileID: 1331288122426053374}
-  _checkWallRadius: 0.5
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!70 &2132518944744835777
-CapsuleCollider2D:
+--- !u!61 &8683366866423821959
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -219,9 +218,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.49, y: 0.67}
-  m_Direction: 0
+  m_Offset: {x: 0.05519867, y: 0.5393367}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.49, y: 0.67}
+    newSize: {x: 0.49, y: 0.67}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.3882084, y: 0.5754175}
+  m_EdgeRadius: 0
 --- !u!1 &6347243876154713213
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 8620201611780788753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

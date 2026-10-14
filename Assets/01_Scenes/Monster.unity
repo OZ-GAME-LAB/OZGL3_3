@@ -7009,8 +7009,8 @@ Transform:
   m_GameObject: {fileID: 631147879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.39, y: 3.14, z: 0}
-  m_LocalScale: {x: 14.8151, y: 1, z: 1}
+  m_LocalPosition: {x: 5.85, y: 5.91, z: 0}
+  m_LocalScale: {x: 14.8151, y: 1.0644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -19449,11 +19449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1525903587090699586, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.91
+      value: 9.45
       objectReference: {fileID: 0}
     - target: {fileID: 1525903587090699586, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.35
+      value: 8.08
       objectReference: {fileID: 0}
     - target: {fileID: 1525903587090699586, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19503,6 +19503,10 @@ PrefabInstance:
       propertyPath: _playerTransform
       value: 
       objectReference: {fileID: 1708864298}
+    - target: {fileID: 5602583284590123232, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6347243876154713213, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -19513,6 +19517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3048989397602442514, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
+    - {fileID: 2132518944744835777, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -23094,7 +23099,7 @@ Transform:
   m_GameObject: {fileID: 1708864296}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.41, y: 6.4, z: 0}
+  m_LocalPosition: {x: -0.44, y: 7.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23157,7 +23162,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

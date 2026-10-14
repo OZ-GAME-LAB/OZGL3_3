@@ -8,7 +8,6 @@ public class Monster : MonsterBase
     [SerializeField] private MonsterAnimatorController AnimController_Monster;
 
     [Header("Setting")]
-    [SerializeField] private float _moveSpeed = 3f;
     [SerializeField] private float _spawnRange = 10f;
     [SerializeField] private float _agroRange = 8f;
     [SerializeField] private float _attackRange = 1.5f;
