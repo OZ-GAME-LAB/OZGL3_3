@@ -1,0 +1,170 @@
+﻿using System.Collections.Generic;
+using System.Threading;
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerCombatHandler : MonoBehaviour
+{
+    [SerializeField] private SpriteRenderer _spriteRenderer_Player;
+    [SerializeField] private string _targetTag;
+    [SerializeField] private Vector2 _rangeOffset = new Vector2(0.2f, 0f);
+    [SerializeField] private Vector2 _rangeSize = new Vector2(0.4f, 0.3f);
+    [SerializeField, Min(1)] private int _attackDamage = 1;
+
+    private Rigidbody2D _rigidbody2D_Player;
+    private readonly List<Collider2D> _overlapColliders = new List<Collider2D>();
+    private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
+
+    private void Awake()
+    {
+        _rigidbody2D_Player = GetComponent<Rigidbody2D>();
+
+        if (_spriteRenderer_Player == null)
+        {
+            _spriteRenderer_Player = GetComponent<SpriteRenderer>();
+        }
+
+        if (_spriteRenderer_Player == null)
+        {
+            Debug.LogError(
+                $"Awake: SpriteRenderer 참조를 확인하세요.",
+                this);
+            enabled = false;
+        }
+    }
+
+    public int FindTargetsInRange(List<Collider2D> targets)
+    {
+        if (targets == null)
+        {
+            Debug.LogError(
+                $"FindTargetsInRange: null입니다.",
+                this);
+            return 0;
+        }
+
+        targets.Clear();
+        _overlapColliders.Clear();
+
+        ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.SetLayerMask(Physics2D.AllLayers);
+        contactFilter.useTriggers = true;
+
+        Physics2D.OverlapBox(
+            GetRangeCenter(),
+            GetWorldRangeSize(),
+            transform.eulerAngles.z,
+            contactFilter,
+            _overlapColliders);
+
+        foreach (Collider2D overlapCollider in _overlapColliders)
+        {
+            if (overlapCollider.attachedRigidbody == _rigidbody2D_Player)
+            {
+                continue;
+            }
+
+            if (!HasTargetTagInParents(overlapCollider.transform))
+            {
+                continue;
+            }
+
+            targets.Add(overlapCollider);
+        }
+
+        return targets.Count;
+    }
+    
+    //ToDO(이주헌): 몬스터 협업시 주석해제
+    //public int ApplyAttackDamage()
+    //{
+    //    FindTargetsInRange(_targetsInRange);
+    //    _damagedMonsters.Clear();
+
+    //    foreach (Collider2D targetCollider in _targetsInRange)
+    //    {
+    //        Monster monster = targetCollider.GetComponentInParent<Monster>();
+    //        if (monster == null || !_damagedMonsters.Add(monster))
+    //        {
+    //            continue;
+    //        }
+
+    //        monster.TakeDamage(_attackDamage);
+    //    }
+
+    //    return _damagedMonsters.Count;
+    //}
+
+    //public void AnimationAttackHit()
+    //{
+    //    ApplyAttackDamage();
+    //}
+
+    private bool HasTargetTagInParents(Transform targetTransform)
+    {
+        if (string.IsNullOrWhiteSpace(_targetTag))
+        {
+            Debug.LogError(
+                $"HasTargetTagInParents: Target Tag가 비어 있습니다.",
+                this);
+            return false;
+        }
+
+        Transform current = targetTransform;
+        while (current != null)
+        {
+            if (current.CompareTag(_targetTag))
+            {
+                return true;
+            }
+
+            current = current.parent;
+        }
+
+        return false;
+    }
+
+    private Vector2 GetRangeCenter()
+    {
+        float facingDirection =
+            _spriteRenderer_Player != null && _spriteRenderer_Player.flipX
+                ? -1f
+                : 1f;
+
+        Vector3 scaledOffset = new Vector3(
+            _rangeOffset.x * facingDirection * Mathf.Abs(transform.lossyScale.x),
+            _rangeOffset.y * Mathf.Abs(transform.lossyScale.y),
+            0f);
+
+        return transform.position + transform.rotation * scaledOffset;
+    }
+
+    private Vector2 GetWorldRangeSize()
+    {
+        Vector3 worldScale = transform.lossyScale;
+        return new Vector2(
+            _rangeSize.x * Mathf.Abs(worldScale.x),
+            _rangeSize.y * Mathf.Abs(worldScale.y));
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_spriteRenderer_Player == null)
+        {
+            _spriteRenderer_Player = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        Matrix4x4 previousMatrix = Gizmos.matrix;
+        Gizmos.matrix = Matrix4x4.TRS(
+            GetRangeCenter(),
+            transform.rotation,
+            Vector3.one);
+
+        Gizmos.color = new Color(1f, 0f, 0f, 0.18f);
+        Gizmos.DrawCube(Vector3.zero, GetWorldRangeSize());
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(Vector3.zero, GetWorldRangeSize());
+
+        Gizmos.matrix = previousMatrix;
+    }
+}
