@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum UIRootType
 {
@@ -15,6 +14,7 @@ public enum UIType
 {
     GameStartUI,
     MainUI,
+    SimplePopupUI
 }
 
 public static class UIManagerExtension
@@ -56,8 +56,24 @@ public static class UIManagerExtension
             return;
         }
     }
+
     public static void CloseMainUI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.MainUI, UIType.MainUI);
+    }
+
+    public static void OpenSimplePopupUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.SimplePopupUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseSimplePopupUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.SimplePopupUI);
     }
 }
