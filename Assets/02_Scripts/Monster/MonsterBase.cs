@@ -6,9 +6,9 @@ public class MonsterBase : MonoBehaviour
     private MonsterAnimatorController _monsterAnimController;
 
     [Header("Stats")]
-    private float _maxHp = 100f;
-    private float _moveSpeed = 3f;
-    private float _aggroRange = 7f;
+    [SerializeField] private float _maxHp = 100f;
+    [SerializeField] protected float _moveSpeed = 3f;
+    [SerializeField] private float _aggroRange = 7f;
     protected float _currentHp;
 
 
@@ -16,11 +16,13 @@ public class MonsterBase : MonoBehaviour
     public List<MonsterSkill> Skills = new List<MonsterSkill>();
     protected List<float> _skillCooldownTimers = new List<float>();
 
-    protected Transform _playerTransform;
+    [SerializeField] protected Transform _playerTransform;
     protected bool _isAggro = false;
 
     protected virtual void Awake()
     {
+        _monsterAnimController = GetComponent<MonsterAnimatorController>();
+        //[TODO] _playerTransform 찾기 일단은 직접 등록으로
         _currentHp = _maxHp;
 
         for (int i = 0; i < Skills.Count; i++)

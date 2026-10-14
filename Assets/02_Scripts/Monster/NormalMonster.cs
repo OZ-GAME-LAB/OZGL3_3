@@ -3,61 +3,81 @@
 public class NormalMonster : MonsterBase
 {
     [Header("Patrol Settings")]
-    public Transform groundCheck;
-    public Transform wallCheck;
-    public LayerMask groundLayer;
-    private bool movingRight = true;
+    [SerializeField] private Transform _groundCheck;
+    [SerializeField] private float _checkGroundRadius = 0.2f;
+    [SerializeField] private Transform _wallCheck;
+    [SerializeField] private LayerMask _groundLayer;
+
+    private Rigidbody2D _rigidbody2D;
+    private bool _isMovingRight = false;
+    private bool _isGrounded = false;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
 
     protected override void Update()
     {
         base.Update();
 
-        if (isAggro)
+        if (_isAggro)
         {
-            // 플레이어 추적 및 스킬 사용 시도
             TraceAndAttack();
         }
         else
         {
-            // 평소 정찰
             Patrol();
         }
     }
 
     private void Patrol()
     {
-        // 낭떠러지 및 벽 감지
-        bool isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f, groundLayer);
-        bool isBlocked = Physics2D.Raycast(wallCheck.position, movingRight ? Vector2.right : Vector2.left, 0.5f, groundLayer);
+        _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkGroundRadius, _groundLayer);
+        bool isBlocked = Physics2D.Raycast(_wallCheck.position, _isMovingRight ? Vector2.right : Vector2.left, 0.5f, _groundLayer);
 
-        if (!isGrounded || isBlocked)
+        if (!_isGrounded || isBlocked)
         {
-            movingRight = !movingRight;
-            transform.Rotate(0f, 180f, 0f); // 방향 전환
+            _isMovingRight = !_isMovingRight;
+            Flip();
         }
 
-        float dir = movingRight ? 1f : -1f;
-        transform.Translate(Vector2.right * dir * moveSpeed * Time.deltaTime, Space.World);
+        float direction = _isMovingRight ? 1f : -1f;
+        _rigidbody2D.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody2D.linearVelocityY);
+    }
+
+    private void Flip()
+    {
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     private void TraceAndAttack()
     {
-        float distance = Vector2.Distance(transform.position, playerTransform.position);
+        float distance = Vector2.Distance(transform.position, _playerTransform.position);
 
-        // 사용 가능한 스킬이 있는지 확인
-        for (int i = 0; i < skills.Count; i++)
+        for (int i = 0; i < Skills.Count; i++)
         {
-            if (distance <= skills[i].range && skillCooldownTimers[i] <= 0f)
+            if (distance <= Skills[i].Range && _skillCooldownTimers[i] <= 0f)
             {
-                // 스킬 발동
-                skills[i].UseSkill(this, playerTransform);
-                skillCooldownTimers[i] = skills[i].cooldown;
-                return; // 한 프레임에 스킬 1개만 실행
+                Skills[i].UseSkill(this, _playerTransform);
+                _skillCooldownTimers[i] = Skills[i].CoolDown;
+                return;
             }
         }
 
-        // 스킬 범위 밖이면 플레이어를 향해 이동
-        Vector2 direction = (playerTransform.position - transform.position).normalized;
-        transform.Translate(new Vector2(direction.x, 0) * moveSpeed * Time.deltaTime, Space.World);
+        Vector2 direction = (_playerTransform.position - transform.position).normalized;
+        transform.Translate(new Vector2(direction.x, 0) * _moveSpeed * Time.deltaTime, Space.World);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (_groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(_groundCheck.position, _checkGroundRadius);
+        }
     }
 }
