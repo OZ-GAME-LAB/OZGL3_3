@@ -6,16 +6,26 @@ public class NormalMonster : MonsterBase
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private float _checkGroundRadius = 0.2f;
     [SerializeField] private Transform _wallCheck;
+    [SerializeField] private Transform _edgeCheck;
     [SerializeField] private LayerMask _groundLayer;
 
     private Rigidbody2D _rigidbody2D;
     private bool _isMovingRight = false;
     private bool _isGrounded = false;
+    private bool _isBlocked = false;
+    private bool _isGroundAhead = false;
+    private float _checkTimer;
+    private float _checkInterval = 0.1f;
 
     protected override void Awake()
     {
         base.Awake();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        _checkTimer = Random.Range(0f, _checkInterval);
     }
 
     protected override void Update()
@@ -34,17 +44,35 @@ public class NormalMonster : MonsterBase
 
     private void Patrol()
     {
-        _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkGroundRadius, _groundLayer);
-        bool isBlocked = Physics2D.Raycast(_wallCheck.position, _isMovingRight ? Vector2.right : Vector2.left, 0.5f, _groundLayer);
-
-        if (!_isGrounded || isBlocked)
-        {
-            _isMovingRight = !_isMovingRight;
-            Flip();
-        }
+        PreventMonsterFromDrop();
 
         float direction = _isMovingRight ? 1f : -1f;
         _rigidbody2D.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody2D.linearVelocityY);
+    }
+
+    private void PreventMonsterFromDrop()
+    {
+        _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkGroundRadius, _groundLayer);
+        _isGroundAhead = Physics2D.OverlapCircle(_edgeCheck.position, _checkGroundRadius, _groundLayer);
+        _isBlocked = Physics2D.Raycast(_wallCheck.position, _isMovingRight ? Vector2.right : Vector2.left, 0.5f, _groundLayer);
+
+        if (_isAggro)
+        {
+            return;
+        }
+
+        _checkTimer -= Time.deltaTime;
+        if (_checkTimer <= 0f)
+        {
+            _checkTimer = _checkInterval;
+
+
+            if (!_isGrounded || _isBlocked || !_isGroundAhead)
+            {
+                _isMovingRight = !_isMovingRight;
+                Flip();
+            }
+        }
     }
 
     private void Flip()
