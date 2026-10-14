@@ -84,20 +84,46 @@ public class NormalMonster : MonsterBase
 
     private void TraceAndAttack()
     {
+        PreventMonsterFromDrop();
+
         float distance = Vector2.Distance(transform.position, _playerTransform.position);
 
         for (int i = 0; i < Skills.Count; i++)
         {
             if (distance <= Skills[i].Range && _skillCooldownTimers[i] <= 0f)
             {
+                UpdateFacingDirection();
                 Skills[i].UseSkill(this, _playerTransform);
                 _skillCooldownTimers[i] = Skills[i].CoolDown;
                 return;
             }
         }
 
-        Vector2 direction = (_playerTransform.position - transform.position).normalized;
-        transform.Translate(new Vector2(direction.x, 0) * _moveSpeed * Time.deltaTime, Space.World);
+        if (!_isGrounded || _isBlocked || !_isGroundAhead)
+        {
+            UpdateFacingDirection();
+            _rigidbody2D.linearVelocity = new Vector2(0f, _rigidbody2D.linearVelocityY);
+        }
+
+        else
+        {
+            UpdateFacingDirection();
+
+            float direction = _isMovingRight ? 1f : -1f;
+            _rigidbody2D.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody2D.linearVelocityY);
+        }
+    }
+
+    private void UpdateFacingDirection()
+    {
+        float directionX = _playerTransform.position.x - transform.position.x;
+        bool isShouldMoveRight = directionX > 0f;
+
+        if (_isMovingRight != isShouldMoveRight)
+        {
+            _isMovingRight = isShouldMoveRight;
+            Flip();
+        }
     }
 
     private void OnDrawGizmosSelected()
