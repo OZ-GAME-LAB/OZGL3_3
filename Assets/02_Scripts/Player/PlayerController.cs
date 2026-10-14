@@ -16,15 +16,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask_Ground;
 
     [Header("Movement")]
-    [SerializeField] private float _walkSpeed = 2.5f;
-    [SerializeField] private float _runSpeed = 4f;
-    [SerializeField] private float _crouchSpeed = 1.2f;
+    [SerializeField] private float _walkSpeed = 4f;
+    [SerializeField] private float _runSpeed = 6f;
+    [SerializeField] private float _crouchSpeed = 2f;
     [SerializeField] private float _acceleration = 10f;
     [SerializeField] private float _deceleration = 14f;
-    [SerializeField] private float _jumpVelocity = 4f;
+    [SerializeField] private float _jumpVelocity = 5f;
 
     [Header("Ground Check")]
-    [SerializeField] private float _groundCheckRadius = 0.12f;
+    [SerializeField] private float _groundCheckRadius = 0.24f;
 
     [Header("Attack")]
     [SerializeField, Range(0f, 1f)] private float _comboInputStart = 0.2f;
