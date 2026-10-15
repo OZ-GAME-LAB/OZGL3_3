@@ -2,34 +2,34 @@
 using System.Threading;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerCombatHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
     [SerializeField] private string _targetTag;
     [SerializeField] private Vector2 _rangeOffset = new Vector2(0.2f, 0f);
     [SerializeField] private Vector2 _rangeSize = new Vector2(0.4f, 0.3f);
-    [SerializeField, Min(1)] private int _attackDamage = 1;
-
     private Rigidbody2D _rigidbody2D_Player;
+    private PlayerStats _playerStats;
     private readonly List<Collider2D> _overlapColliders = new List<Collider2D>();
     private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
 
+    private int _attackDamage => _playerStats.AttackDamage;
+
     private void Awake()
     {
-        _rigidbody2D_Player = GetComponent<Rigidbody2D>();
-
-        if (_spriteRenderer_Player == null)
+        if (_rigidbody2D_Player != null)
         {
-            _spriteRenderer_Player = GetComponent<SpriteRenderer>();
+            _rigidbody2D_Player = GetComponent<Rigidbody2D>();
+        }
+
+        if (_playerStats == null)
+        {
+            _playerStats = GetComponent<PlayerStats>();
         }
 
         if (_spriteRenderer_Player == null)
         {
-            Debug.LogError(
-                $"Awake: SpriteRenderer 참조를 확인하세요.",
-                this);
-            enabled = false;
+            _spriteRenderer_Player = GetComponent<SpriteRenderer>();
         }
     }
 
@@ -74,8 +74,8 @@ public class PlayerCombatHandler : MonoBehaviour
 
         return targets.Count;
     }
-    
-    //ToDO(이주헌): 몬스터 협업시 주석해제
+
+    //ToDO(이주헌) : 몬스터 협업시 주석해제
     //public int ApplyAttackDamage()
     //{
     //    FindTargetsInRange(_targetsInRange);

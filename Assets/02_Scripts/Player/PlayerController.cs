@@ -4,31 +4,35 @@
 [RequireComponent(typeof(PlayerInputHandler))]
 [RequireComponent(typeof(PlayerStatus))]
 [RequireComponent(typeof(PlayerCombatHandler))]
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Core")]
     [SerializeField] private Rigidbody2D _rigidbody2D_Player;
     [SerializeField] private PlayerInputHandler _playerInputHandler;
     [SerializeField] private PlayerCombatHandler _playerCombatHandler;
+    [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private Animator _animator_Player;
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
     [SerializeField] private Transform _transform_GroundCheck;
     [SerializeField] private LayerMask _layerMask_Ground;
 
-    [Header("Movement")]
-    [SerializeField] private float _walkSpeed = 4f;
-    [SerializeField] private float _runSpeed = 6f;
-    [SerializeField] private float _crouchSpeed = 2f;
+    [Header("MovementValue")]
     [SerializeField] private float _acceleration = 10f;
     [SerializeField] private float _deceleration = 14f;
-    [SerializeField] private float _jumpVelocity = 5f;
 
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.24f;
 
-    [Header("Attack")]
-    [SerializeField, Range(0f, 1f)] private float _comboInputStart = 0.2f;
-    [SerializeField, Range(0f, 1f)] private float _comboInputEnd = 0.78f;
+    [Header("InputTime")]
+    [SerializeField, Range(0f, 0.4f)] private float _comboInputStart = 0.2f;
+    [SerializeField, Range(0.4f, 0.8f)] private float _comboInputEnd = 0.78f;
+
+    private float _jumpValue => _playerStats.JumpValue;
+    private float _walkSpeed => _playerStats.WalkSpeed;
+    private float _runSpeed => _playerStats.RunSpeed;
+    private float _crouchSpeed => _playerStats.CrouchSpeed;
+
 
     private bool _isGrounded;
     private bool _attackRequested;
@@ -53,6 +57,11 @@ public class PlayerController : MonoBehaviour
             _playerCombatHandler = GetComponent<PlayerCombatHandler>();
         }
 
+        if (_playerStats == null)
+        {
+            _playerStats = GetComponent<PlayerStats>();
+        }
+
         if (_animator_Player == null)
         {
             _animator_Player = GetComponent<Animator>();
@@ -65,6 +74,7 @@ public class PlayerController : MonoBehaviour
 
         if (_playerInputHandler == null ||
             _playerCombatHandler == null ||
+            _playerStats == null ||
             _animator_Player == null ||
             _spriteRenderer_Player == null ||
             _transform_GroundCheck == null)
@@ -299,8 +309,6 @@ public class PlayerController : MonoBehaviour
 
         if (currentAttackStep >= 1 && currentAttackStep <= 3)
         {
-            //_playerCombatHandler.ApplyAttackDamage();
-
             if (_nextAttackDirection != 0)
             {
                 _spriteRenderer_Player.flipX = _nextAttackDirection < 0;
@@ -376,7 +384,7 @@ public class PlayerController : MonoBehaviour
         if (isStartingJump)
         {
             _rigidbody2D_Player.linearVelocity = new Vector2(
-                _rigidbody2D_Player.linearVelocity.x,_jumpVelocity);
+                _rigidbody2D_Player.linearVelocity.x,_jumpValue);
 
             _isGrounded = false;
         }
