@@ -1,14 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerStatus : MonoBehaviour
 {
-    [SerializeField, Min(1)] private int _maxHealth = 5;
-    [SerializeField, Min(1)] private int _maxSkillGauge = 100;
+    private PlayerStats _playerStats;
+    private int _lastMaxHealth;
+    private int _lastMaxSkillGauge;
 
-    public int MaxHealth => _maxHealth;
+    public int MaxHealth => _playerStats.MaxHealth;
     public int CurrentHealth { get; private set; }
-    public int MaxSkillGauge => _maxSkillGauge;
+    public int MaxSkillGauge => _playerStats.MaxSkillGauge;
     public int CurrentSkillGauge { get; private set; }
     public bool IsDead => CurrentHealth <= 0;
 
@@ -18,7 +20,55 @@ public class PlayerStatus : MonoBehaviour
 
     private void Awake()
     {
-        CurrentHealth = _maxHealth;
+        _playerStats = GetComponent<PlayerStats>();
+        _lastMaxHealth = MaxHealth;
+        _lastMaxSkillGauge = MaxSkillGauge;
+        CurrentHealth = MaxHealth;
+    }
+
+    private void OnEnable()
+    {
+        if (_playerStats != null)
+        {
+            _playerStats.OnStatsChanged += HandleStatsChanged;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (_playerStats != null)
+        {
+            _playerStats.OnStatsChanged -= HandleStatsChanged;
+        }
+    }
+
+    private void HandleStatsChanged()
+    {
+        int maxHealth = MaxHealth;
+        int maxSkillGauge = MaxSkillGauge;
+        int nextHealth = maxHealth > _lastMaxHealth
+            ? maxHealth
+            : Mathf.Clamp(CurrentHealth, 0, maxHealth);
+        int nextSkillGauge = Mathf.Clamp(CurrentSkillGauge, 0, maxSkillGauge);
+        bool healthChanged = CurrentHealth != nextHealth || _lastMaxHealth != maxHealth;
+        bool skillGaugeChanged =
+            CurrentSkillGauge != nextSkillGauge ||
+            _lastMaxSkillGauge != maxSkillGauge;
+
+        CurrentHealth = nextHealth;
+        CurrentSkillGauge = nextSkillGauge;
+        _lastMaxHealth = maxHealth;
+        _lastMaxSkillGauge = maxSkillGauge;
+
+        if (healthChanged)
+        {
+            OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
+        }
+
+        if (skillGaugeChanged)
+        {
+            OnSkillGaugeChanged?.Invoke(CurrentSkillGauge, maxSkillGauge);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -48,14 +98,14 @@ public class PlayerStatus : MonoBehaviour
 
     private void SetHealth(int health)
     {
-        int nextHealth = Mathf.Clamp(health, 0, _maxHealth);
+        int nextHealth = Mathf.Clamp(health, 0, MaxHealth);
         if (CurrentHealth == nextHealth)
         {
             return;
         }
 
         CurrentHealth = nextHealth;
-        OnHealthChanged?.Invoke(CurrentHealth, _maxHealth);
+        OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
     }
 
     // TODO(이주헌): 스킬 구현 후 재개
@@ -71,14 +121,14 @@ public class PlayerStatus : MonoBehaviour
 
     private void SetSkillGauge(int SkillGauge)
     {
-        int nextSkillGauge = Mathf.Clamp(SkillGauge, 0, _maxSkillGauge);
-        if (CurrentHealth == nextSkillGauge)
+        int nextSkillGauge = Mathf.Clamp(SkillGauge, 0, MaxSkillGauge);
+        if (CurrentSkillGauge == nextSkillGauge)
         {
             return;
         }
 
         CurrentSkillGauge = nextSkillGauge;
-        OnSkillGaugeChanged?.Invoke(CurrentSkillGauge, _maxSkillGauge);
+        OnSkillGaugeChanged?.Invoke(CurrentSkillGauge, MaxSkillGauge);
     }
 
 }
