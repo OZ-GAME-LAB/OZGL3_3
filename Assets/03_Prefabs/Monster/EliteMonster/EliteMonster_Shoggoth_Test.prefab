@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3874669690777419411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.25, z: 0}
+  m_LocalPosition: {x: -0.5, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5602583284590123232}
   - component: {fileID: 4215278070989427528}
   - component: {fileID: 8683366866423821959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EliteMonster_Shoggoth_Test
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -207,8 +207,10 @@ MonoBehaviour:
   _maxHp: 100
   _moveSpeed: 3
   _aggroRange: 7
+  _attackPatternCount: 2
   Skills:
   - {fileID: 11400000, guid: 5ec2ddf696ddb8f4fb1b83d14eee4fb9, type: 2}
+  - {fileID: 11400000, guid: 86b5e8a729adf6b49ba7ba51e9ab1121, type: 2}
   _playerTransform: {fileID: 0}
   _groundCheck: {fileID: 619035669189607197}
   _checkGroundRadius: 0.2
@@ -217,6 +219,9 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _attackDistance: 1
+  AnimController_NormalMonster: {fileID: 6931036689774495730}
+  _monsterType: 2
 --- !u!61 &8683366866423821959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -288,7 +293,7 @@ Transform:
   m_GameObject: {fileID: 6347243876154713213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -319,7 +324,7 @@ Transform:
   m_GameObject: {fileID: 8620201611780788753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0.05, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

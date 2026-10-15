@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfb9388467750b4a8e81b3db40fc184, type: 3}
+  m_Name: Shoggoth_SpawnAtSelf
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnAtBossSkill
+  CoolDown: 20
+  Range: 8
+  _minionPrefab: {fileID: 4017877715306620186, guid: e5406efc1f192a34ea161ad9cbd7c774, type: 3}
+  _spawnAmount: 0
