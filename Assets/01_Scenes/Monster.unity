@@ -7009,7 +7009,7 @@ Transform:
   m_GameObject: {fileID: 631147879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.6211, y: 5.91, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9.272771, y: 1.0644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19449,11 +19449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1525903587090699586, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1525903587090699586, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.08
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1525903587090699586, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19500,12 +19500,20 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4215278070989427528, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
+      propertyPath: _attackDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215278070989427528, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: _playerTransform
       value: 
       objectReference: {fileID: 1708864298}
     - target: {fileID: 5602583284590123232, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602583284590123232, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6347243876154713213, guid: ef78468792eb7b4479a5425072ffc633, type: 3}
       propertyPath: m_Layer
