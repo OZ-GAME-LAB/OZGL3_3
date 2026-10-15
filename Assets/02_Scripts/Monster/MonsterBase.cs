@@ -9,6 +9,7 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] private float _maxHp = 100f;
     [SerializeField] protected float _moveSpeed = 3f;
     [SerializeField] private float _aggroRange = 7f;
+    [SerializeField] private int _attackPatternCount = 2;
     protected float _currentHp;
 
 
@@ -48,6 +49,21 @@ public class MonsterBase : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, _playerTransform.position);
         _isAggro = distance <= _aggroRange;
+    }
+
+    public virtual void AttackTarget(float damage)  //[TODO] 데미지 데이터드리븐으로
+    {
+        int selectedNum = Random.Range(1, _attackPatternCount + 1);
+        if (selectedNum == 1)
+        {
+            _monsterAnimController.ChangeState(MonsterState.Attack_1);
+        }
+        else if (selectedNum == 2)
+        {
+            _monsterAnimController.ChangeState(MonsterState.Attack_2);
+        }
+        _monsterAnimController.ChangeState(MonsterState.Idle);
+        //[TODO] 플레이어에게 데미지 전달
     }
 
     public virtual void TakeDamage(float damage)

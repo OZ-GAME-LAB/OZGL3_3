@@ -79,6 +79,7 @@ public class MonsterAnimatorController : MonoBehaviour
 
     private void ResetAllAnimParameters()
     {
+        //[TODO] 파라미터 없을 경우 Warning 메시지 미출력
         Animator_Monster.SetBool("isAttack_1", false);
         Animator_Monster.SetBool("isAttack_2", false);
         Animator_Monster.SetBool("isUseSkill_1", false);
