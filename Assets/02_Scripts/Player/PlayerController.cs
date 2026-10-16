@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerInputHandler))]
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
     [SerializeField] private Transform _transform_GroundCheck;
     [SerializeField] private LayerMask _layerMask_Ground;
+    [SerializeField] private LayerMask _layerMask_Ladder;
 
     [Header("MovementValue")]
     [SerializeField] private float _acceleration = 10f;
@@ -23,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.24f;
+
+    [Header("Ladder")]
+    [SerializeField] private float _ladderCoolDown = 1f;
 
     [Header("InputTime")]
     [SerializeField, Range(0f, 0.4f)] private float _comboInputStart = 0.2f;
@@ -32,10 +37,19 @@ public class PlayerController : MonoBehaviour
     private float _walkSpeed => _playerStats.WalkSpeed;
     private float _runSpeed => _playerStats.RunSpeed;
     private float _crouchSpeed => _playerStats.CrouchSpeed;
+    private float _ladderSpeed => _playerStats.LadderSpeed;
 
+    private HashSet<Collider2D> _ladderTriggers;
+    private Collider2D _currentLadderCollider;
 
     private bool _isGrounded;
+    private bool _isLadder;
+    private bool _isNearLadeer;
     private bool _attackRequested;
+    private float _originalGravityScale;
+    private float _ladderDirection = 1f;
+    private float _ladderCoolDownTime;
+    private float _ladderJumpValue = 3f;
     private int _nextAttackDirection;
     private int _lastAttackStep;
     private PlayerState _currentState = PlayerState.Idle;
@@ -72,18 +86,32 @@ public class PlayerController : MonoBehaviour
             _spriteRenderer_Player = GetComponent<SpriteRenderer>();
         }
 
-        if (_playerInputHandler == null ||
+        if (_rigidbody2D_Player == null ||
+            _playerInputHandler == null ||
             _playerCombatHandler == null ||
             _playerStats == null ||
             _animator_Player == null ||
             _spriteRenderer_Player == null ||
             _transform_GroundCheck == null)
         {
-            Debug.LogError("Inspector참조를 확인하세요.",this);
-
+            Debug.LogError("Inspector참조를 확인하세요.", this);
             enabled = false;
             return;
         }
+        _originalGravityScale = _rigidbody2D_Player.gravityScale;
+
+        _ladderTriggers = new HashSet<Collider2D>();
+
+        if (_layerMask_Ground.value == 0)
+        {
+            _layerMask_Ground = LayerMask.GetMask("Ground");
+        }
+
+        if (_layerMask_Ladder.value == 0)
+        {
+            _layerMask_Ladder = LayerMask.GetMask("Ladder");
+        }
+
     }
 
     private void Update()
@@ -97,8 +125,48 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         CheckGrounded();
+        TryEnterLadder();
+
         _currentState = GetNextState();
         HandleState();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.isTrigger || !IsLadderLayer(other.gameObject.layer))
+        {
+            return;
+        }
+
+        _ladderTriggers.Add(other);
+
+        if (_currentLadderCollider == null)
+        {
+            _currentLadderCollider = other;
+        }
+
+        _isNearLadeer = _ladderTriggers.Count > 0;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other == null || _ladderTriggers == null ||
+            !_ladderTriggers.Remove(other))
+        {
+            return;
+        }
+
+        _isNearLadeer = _ladderTriggers.Count > 0;
+
+        if (!_isNearLadeer && _isLadder)
+        {
+            ExitLadder();
+        }
+    }
+
+    private bool IsLadderLayer(int layer)
+    {
+        return (_layerMask_Ladder.value & (1 << layer)) != 0;
     }
 
     private void UpdateFacingDirection()
@@ -121,11 +189,57 @@ public class PlayerController : MonoBehaviour
             _layerMask_Ground) != null;
     }
 
+    private void TryEnterLadder()
+    {
+        if (_isLadder ||
+            !_isNearLadeer ||
+            Time.time < _ladderCoolDownTime ||
+            _attackRequested ||
+            IsAttackStepChange())
+        {
+            return;
+        }
+
+        bool upPressed = _playerInputHandler.UpInput;
+        bool downPressed = _playerInputHandler.DownInput;
+
+        bool hasLadderInput = _isGrounded
+            ? upPressed != downPressed
+            : upPressed && !downPressed;
+
+        if ( (!hasLadderInput))
+        {
+            return;
+        }
+
+        _isLadder = true;
+
+        if (_currentLadderCollider != null)
+        {
+            Vector2 position = _rigidbody2D_Player.position;
+            position.x = _currentLadderCollider.bounds.center.x;
+            _rigidbody2D_Player.position = position;
+        }
+
+        _originalGravityScale =  _rigidbody2D_Player.gravityScale;
+        _rigidbody2D_Player.gravityScale = 0f;
+        _rigidbody2D_Player.linearVelocity = Vector2.zero;
+        _ladderDirection = upPressed ? 1f : -1f;
+
+        _playerInputHandler.ClearJumpInput();
+        _animator_Player.SetBool("IsLadder", true);
+    }
+
     private PlayerState GetNextState()
     {
         if (_attackRequested || IsAttackStepChange())
         {
             return PlayerState.ComboAttack;
+        }
+
+        if (_isLadder)
+        {
+            return PlayerState.Ladder;
         }
 
         if (!_isGrounded)
@@ -153,9 +267,14 @@ public class PlayerController : MonoBehaviour
             return PlayerState.Idle;
         }
 
-        return _playerInputHandler.RunInput
-            ? PlayerState.Run
-            : PlayerState.Walk;
+        if (_playerInputHandler.RunInput)
+        {
+            return PlayerState.Run;
+        }
+        else
+        {
+            return PlayerState.Walk;
+        }
     }
 
     private PlayerState GetAirState()
@@ -187,10 +306,14 @@ public class PlayerController : MonoBehaviour
                 _playerInputHandler.ClearJumpInput();
                 HandleCrouch();
                 break;
+            case PlayerState.Ladder:
+                HandleLadder();
+                break;
             case PlayerState.Jump:
             {
                 bool isStartingJump = _isGrounded &&
                     _playerInputHandler.ComsumeJumpInput();
+
                 _playerInputHandler.ClearJumpInput();
 
                 if (isStartingJump)
@@ -240,6 +363,79 @@ public class PlayerController : MonoBehaviour
         float targetSpeed = _playerInputHandler.MoveInput * _crouchSpeed;
         SetHorizontalSpeed(targetSpeed);
         UpdateAnimatorParameters(true);
+    }
+
+    private void HandleLadder()
+    {
+        float horizontalInput = _playerInputHandler.MoveInput;
+        bool isTryingLadderJump =
+            _playerInputHandler.JumpInput &&
+            Mathf.Abs(horizontalInput) > 0.01f;
+
+        _playerInputHandler.ClearJumpInput();
+
+        if (isTryingLadderJump)
+        {
+            JumpLadderOut(horizontalInput);
+            return;
+        }
+
+        float verticalInput =
+            (_playerInputHandler.UpInput ? 1f : 0f) -
+            (_playerInputHandler.DownInput ? 1f : 0f);
+
+        if (Mathf.Abs(verticalInput) > 0.01f)
+        { 
+            _ladderDirection = Mathf.Sign(verticalInput);
+
+            _rigidbody2D_Player.linearVelocity = new Vector2(
+                0f,
+                verticalInput * _ladderSpeed);
+
+            _animator_Player.SetFloat("LadderAnimSpeed", 1f);
+        }
+        else
+        {
+            _rigidbody2D_Player.linearVelocity = Vector2.zero;
+            _animator_Player.SetFloat("LadderAnimSpeed", 0f);
+        }
+
+        _animator_Player.SetFloat("LadderDirection", _ladderDirection);
+        UpdateAnimatorParameters(false);
+    }
+
+    private void JumpLadderOut(float horizontalInput)
+    {
+        float jumpDirection = Mathf.Sign(horizontalInput);
+
+        _isLadder = false;
+        _rigidbody2D_Player.gravityScale = _originalGravityScale;
+        _ladderCoolDownTime = Time.time + _ladderCoolDown;
+
+        _rigidbody2D_Player.linearVelocity = new Vector2(
+            jumpDirection * _ladderJumpValue,
+            _jumpValue);
+
+        _spriteRenderer_Player.flipX = jumpDirection < 0f;
+        _isGrounded = false;
+
+        _animator_Player.SetFloat("LadderAnimSpeed", 0f);
+        _animator_Player.SetBool("IsLadder", false);
+        _playerInputHandler.ClearJumpInput();
+
+        UpdateAnimatorParameters(false);
+    }
+
+    private void ExitLadder()
+    {
+        _isLadder = false;
+        _rigidbody2D_Player.gravityScale = _originalGravityScale;
+        _rigidbody2D_Player.linearVelocity = new Vector2(
+            _rigidbody2D_Player.linearVelocity.x,
+            0f);
+
+        _animator_Player.SetFloat("LadderAnimSpeed", 0f);
+        _animator_Player.SetBool("IsLadder", false);
     }
 
     private void HandleComboAttackInput()
@@ -448,14 +644,14 @@ public class PlayerController : MonoBehaviour
             Time.fixedDeltaTime);
 
         _animator_Player.SetBool("IsGrounded", _isGrounded);
-        _animator_Player.SetFloat("VerticalSpeed", _rigidbody2D_Player.linearVelocity.y);
         _animator_Player.SetBool("IsCrouching", isCrouching);
-
-        AnimatorStateInfo stateInfo = _animator_Player.GetCurrentAnimatorStateInfo(0);
-        if (GetComboAttackStep(stateInfo) != 0)
-        {
-            return;
-        }
+        _animator_Player.SetBool("IsLadder", _isLadder);
+        _animator_Player.SetFloat(
+            "LadderDirection",
+            _ladderDirection);
+        _animator_Player.SetFloat(
+            "VerticalSpeed",
+            _rigidbody2D_Player.linearVelocity.y);
     }
 
     private void OnDrawGizmos()

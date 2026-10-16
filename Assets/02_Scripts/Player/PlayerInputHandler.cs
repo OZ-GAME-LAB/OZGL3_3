@@ -7,6 +7,9 @@ public class PlayerInputHandler : MonoBehaviour
     public bool RunInput { get; private set; }
     public bool CrouchInput { get; private set; }
     public bool AttackInput { get; private set; }
+    public bool UpInput { get; private set; }
+    public bool DownInput { get; private set; }
+    public bool JumpInput { get; private set; }
     public bool JumpQueued { get; private set; }
 
     private bool _attackSign;
@@ -21,6 +24,9 @@ public class PlayerInputHandler : MonoBehaviour
             RunInput = false;
             CrouchInput = false;
             AttackInput = false;
+            UpInput = false;
+            DownInput = false;
+            JumpInput = false;
             JumpQueued = false;
             _attackSign = false;
             return;
@@ -34,15 +40,20 @@ public class PlayerInputHandler : MonoBehaviour
             keyboard.leftShiftKey.isPressed ||
             keyboard.rightShiftKey.isPressed;
 
-        CrouchInput = keyboard.downArrowKey.isPressed;
+        UpInput = keyboard.upArrowKey.isPressed;
+        DownInput = keyboard.downArrowKey.isPressed;
+        JumpInput = keyboard.cKey.isPressed;
+        CrouchInput = DownInput;
         AttackInput = keyboard.xKey.isPressed;
 
-        if (keyboard.upArrowKey.wasPressedThisFrame)
+        bool wasPressCKey = keyboard.cKey.wasPressedThisFrame;
+        if (wasPressCKey)
         {
             JumpQueued = true;
         }
 
-        if (keyboard.xKey.wasPressedThisFrame)
+        bool wasPressXKey = keyboard.xKey.wasPressedThisFrame;
+        if (wasPressXKey)
         {
             _attackSign = true;
         }
