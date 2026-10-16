@@ -221,7 +221,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _attackDistance: 1
-  _playerTransformCheckCollider: {fileID: 0}
+  _playerTransformCheckCollider: {fileID: 6298391838960095086}
   AnimController_NormalMonster: {fileID: 6931036689774495730}
   _monsterType: 2
 --- !u!61 &8683366866423821959
