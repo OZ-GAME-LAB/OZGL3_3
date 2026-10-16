@@ -63,14 +63,14 @@ public class MonsterSpawnManager : MonoBehaviour
 
     private void InitGeneratedEntityObject(int generatedId, GameObject gObj)
     {
-        Monster monster = gObj.GetComponent<Monster>();
+        NormalMonster monster = gObj.GetComponent<NormalMonster>();
         if (monster == null)
         {
             Debug.LogWarning($"생성된 {gObj.name}의 InstanceId를 대입할 수 있는 컴포넌트를 가져올 수 없습니다!");
             return;
         }
 
-        monster.InitEnemyInfo(generatedId);
+        //monster.InitEnemyInfo(generatedId);
     }
 
 
