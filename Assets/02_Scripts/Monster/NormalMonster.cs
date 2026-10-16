@@ -11,6 +11,7 @@ public class NormalMonster : MonsterBase
     [SerializeField] private Transform _edgeCheck;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private float _attackDistance = 1f;
+    [SerializeField] private CircleCollider2D _playerTransformCheckCollider;
 
     [Header("Anim Settings")]
     [SerializeField] private MonsterAnimatorController AnimController_NormalMonster;
@@ -24,6 +25,9 @@ public class NormalMonster : MonsterBase
     private float _checkTimer = 0.1f;
     private float _checkInterval = 0.1f;
     private bool _isSpawned = false;
+
+    private int _pendingSkillIndex = -1;
+    private bool _isUsingSkill = false;
 
     protected override void Awake()
     {
@@ -41,6 +45,8 @@ public class NormalMonster : MonsterBase
     {
         base.Update();
 
+        if (_isUsingSkill) return;
+
         if (_isAggro)
         {
             TraceAndAttack();
@@ -48,6 +54,14 @@ public class NormalMonster : MonsterBase
         else
         {
             Patrol();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && _playerTransform == null)
+        {
+            _playerTransform = collision.transform;
         }
     }
 
@@ -61,6 +75,13 @@ public class NormalMonster : MonsterBase
 
     private void PreventMonsterFromDrop()
     {
+        if (_monsterType == MonsterType.FlyingCreature)
+        {
+            _isGroundAhead = true;
+            _isGrounded = true;
+            _isBlocked = false;
+            return;
+        }
         if (_groundCheck == null)
         {
             Logger.LogError("[NormalMonster] _groundCheck가 Null입니다.");
@@ -76,10 +97,11 @@ public class NormalMonster : MonsterBase
             Logger.LogError("[NormalMonster] _wallCheck가 Null입니다.");
             return;
         }
+        
         _isGroundAhead = Physics2D.OverlapCircle(_edgeCheck.position, _checkGroundRadius, _groundLayer);
         _isBlocked = Physics2D.Raycast(_wallCheck.position, _isMovingRight ? Vector2.right : Vector2.left, 0.5f, _groundLayer);
 
-        if (_monsterType == MonsterType.Flying)
+        if (_monsterType == MonsterType.Flying || _monsterType == MonsterType.FlyingCreature)
         {
             _isGrounded = true;
         }
@@ -124,8 +146,14 @@ public class NormalMonster : MonsterBase
         if (Skills == null)
         {
             Logger.LogError("[NormalMonster] Skills가 Null입니다.");
-            return;
         }
+
+        if (_monsterType == MonsterType.FlyingCreature)
+        {
+            Vector2 direction = (_playerTransform.position - this.transform.position).normalized;
+            _rigidbody2D.linearVelocity = direction * _moveSpeed;
+        }
+
         PreventMonsterFromDrop();
 
         float distance = Vector2.Distance(transform.position, _playerTransform.position);
@@ -135,6 +163,12 @@ public class NormalMonster : MonsterBase
             if (distance <= Skills[i].Range && _skillCooldownTimers[i] <= 0f)
             {
                 UpdateFacingDirection();
+
+                _rigidbody2D.linearVelocity = new Vector2(0f, _rigidbody2D.linearVelocityY);
+
+                _pendingSkillIndex = i;
+                _isUsingSkill = true;
+
                 switch (i)
                 {
                     case 0:
@@ -163,8 +197,6 @@ public class NormalMonster : MonsterBase
                         }
                         break;
                 }
-                Skills[i].UseSkill(this, _playerTransform);
-                _skillCooldownTimers[i] = Skills[i].CoolDown;
                 return;
             }
         }
@@ -212,6 +244,15 @@ public class NormalMonster : MonsterBase
 
     public void OnAnimationEnd()
     {
+        if (_isUsingSkill && _pendingSkillIndex >= 0 && _pendingSkillIndex < Skills.Count)
+        {
+            Skills[_pendingSkillIndex].UseSkill(this, _playerTransform);
+            _skillCooldownTimers[_pendingSkillIndex] = Skills[_pendingSkillIndex].CoolDown;
+
+            _pendingSkillIndex = -1;
+        }
+
+        _isUsingSkill = false;
 
         if (_isSpawned && _playerTransform != null)
         {

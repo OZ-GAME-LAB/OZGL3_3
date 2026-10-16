@@ -19,6 +19,7 @@ public class MonsterBase : MonoBehaviour
 
     [SerializeField] protected Transform _playerTransform;
     protected bool _isAggro = false;
+    protected bool _isAttacking = false;
 
     protected virtual void Awake()
     {
@@ -53,6 +54,8 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void AttackTarget(float damage)  //[TODO] 데미지 데이터드리븐으로
     {
+        if (_isAttacking) return;
+        _isAttacking = true;
         int selectedNum = Random.Range(1, _attackPatternCount + 1);
         if (selectedNum == 1)
         {
@@ -62,8 +65,6 @@ public class MonsterBase : MonoBehaviour
         {
             _monsterAnimController.ChangeState(MonsterState.Attack_2);
         }
-        _monsterAnimController.ChangeState(MonsterState.Idle);
-        //[TODO] 플레이어에게 데미지 전달
     }
 
     public virtual void TakeDamage(float damage)
@@ -79,6 +80,18 @@ public class MonsterBase : MonoBehaviour
     protected virtual void Die()
     {
         _monsterAnimController.ChangeState(MonsterState.Dead);
+    }
+
+    public void OnDieAnimationEnd()
+    {
         Destroy(gameObject);
+    }
+
+    public void OnAttackAnimationEnd()
+    {
+        _isAttacking = false;
+        Logger.Log($"{this.name}가 플레이어한테 데미지 입힘");
+        _monsterAnimController.ChangeState(MonsterState.Idle);
+        //[TODO] 플레이어에게 데미지 전달
     }
 }
