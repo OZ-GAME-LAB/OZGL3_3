@@ -12,6 +12,11 @@ public class PlayerInputHandler : MonoBehaviour
     public bool JumpInput { get; private set; }
     public bool JumpQueued { get; private set; }
 
+    private float _doubleTapLimitTime = 0.25f;
+    private float _lastLeftPressTime = -1f;
+    private float _lastRightPressTime = -1f;
+    private float _lastMoveDirection = 1f;
+    private bool _isRunning;
     private bool _attackSign;
 
     public void ReadInput()
@@ -32,14 +37,62 @@ public class PlayerInputHandler : MonoBehaviour
             return;
         }
 
-        MoveInput =
-            (keyboard.rightArrowKey.isPressed ? 1f : 0f) -
-            (keyboard.leftArrowKey.isPressed ? 1f : 0f);
+        bool leftHeld = keyboard.leftArrowKey.isPressed;
+        bool rightHeld = keyboard.rightArrowKey.isPressed;
 
-        RunInput =
-            keyboard.leftShiftKey.isPressed ||
-            keyboard.rightShiftKey.isPressed;
+        bool leftPressed = keyboard.leftArrowKey.wasPressedThisFrame;
+        bool rightPressed = keyboard.rightArrowKey.wasPressedThisFrame;
 
+        if (leftPressed)
+        {
+            if (_lastLeftPressTime >= 0f &&
+                Time.time - _lastLeftPressTime <= _doubleTapLimitTime)
+            {
+                _isRunning = true;
+            }
+
+            _lastLeftPressTime = Time.time;
+        }
+
+        if (rightPressed)
+        {
+            if (_lastRightPressTime >= 0f &&
+                Time.time - _lastRightPressTime <= _doubleTapLimitTime)
+            {
+                _isRunning = true;
+            }
+
+            _lastRightPressTime = Time.time;
+        }
+
+        if (leftPressed && !rightPressed)
+        {
+            _lastMoveDirection = -1f;
+        }
+        else if (rightPressed && !leftPressed)
+        {
+            _lastMoveDirection = 1f;
+        }
+
+        if (leftHeld && rightHeld)
+        {
+            MoveInput = _lastMoveDirection;
+        }
+        else if (leftHeld)
+        {
+            MoveInput = -1f;
+        }
+        else if (rightHeld)
+        {
+            MoveInput = 1f;
+        }
+        else
+        {
+            MoveInput = 0f;
+            _isRunning = false;
+        }
+
+        RunInput = _isRunning && (leftHeld || rightHeld);
         UpInput = keyboard.upArrowKey.isPressed;
         DownInput = keyboard.downArrowKey.isPressed;
         JumpInput = keyboard.cKey.isPressed;

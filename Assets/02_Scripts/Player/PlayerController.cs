@@ -585,49 +585,18 @@ public class PlayerController : MonoBehaviour
             _isGrounded = false;
         }
 
-        HandleAirMovement();
         UpdateAnimatorParameters(false);
     }
 
     private void HandleFall()
     {
-        HandleAirMovement();
         UpdateAnimatorParameters(false);
-    }
-
-    private void HandleAirMovement()
-    {
-        float targetSpeed = 0f;
-
-        if (Mathf.Abs(_playerInputHandler.MoveInput) > 0.01f)
-        {
-            float speed = _playerInputHandler.RunInput
-                ? _runSpeed
-                : _walkSpeed;
-            targetSpeed = _playerInputHandler.MoveInput * speed;
-        }
-
-        SetHorizontalSpeed(targetSpeed);
     }
 
     private void SetHorizontalSpeed(float targetSpeed)
     {
-        bool isStoppingOrReversing =
-            Mathf.Abs(targetSpeed) < 0.01f ||
-            (Mathf.Abs(_rigidbody2D_Player.linearVelocity.x) > 0.01f &&
-             Mathf.Sign(targetSpeed) != Mathf.Sign(_rigidbody2D_Player.linearVelocity.x));
-
-        float changeRate = isStoppingOrReversing
-            ? _deceleration
-            : _acceleration;
-
-        float nextSpeed = Mathf.MoveTowards(
-            _rigidbody2D_Player.linearVelocity.x,
-            targetSpeed,
-            changeRate * Time.fixedDeltaTime);
-
         _rigidbody2D_Player.linearVelocity = new Vector2(
-            nextSpeed,
+            targetSpeed,
             _rigidbody2D_Player.linearVelocity.y);
     }
 

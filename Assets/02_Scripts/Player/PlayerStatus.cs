@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerStats))]
 public class PlayerStatus : MonoBehaviour
 {
     private PlayerStats _playerStats;
