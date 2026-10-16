@@ -15,4 +15,4 @@ MonoBehaviour:
   CoolDown: 20
   Range: 8
   _minionPrefab: {fileID: 4017877715306620186, guid: e5406efc1f192a34ea161ad9cbd7c774, type: 3}
-  _spawnAmount: 0
+  _spawnAmount: 4
