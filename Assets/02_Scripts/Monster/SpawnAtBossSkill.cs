@@ -14,11 +14,13 @@ public class SpawnAtBossSkill : MonsterSkill
             Logger.LogError("[SpawnAtBossSkill] _minionPrefab이 Null입니다.");
             return;
         }
-        while (_spawnAmount > 0)
+
+        int spawnAmount = _spawnAmount;
+        while (spawnAmount > 0)
         {
             Vector3 spawnPos = caster.transform.position + new Vector3(Random.Range(-_spawnOffset, _spawnOffset), 0, 0);
             Instantiate(_minionPrefab, spawnPos, Quaternion.identity);
-            _spawnAmount--;
+            spawnAmount--;
         }
     }
 }
