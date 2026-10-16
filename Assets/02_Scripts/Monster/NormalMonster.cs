@@ -11,7 +11,7 @@ public class NormalMonster : MonsterBase
     [SerializeField] private Transform _edgeCheck;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private float _attackDistance = 1f;
-    [SerializeField] private CircleCollider2D _playerTransformCheckCollider;
+    [SerializeField] private CircleCollider2D _playerTransformCheckCollider;    //[TODO] 플레이어가 OnTriggerExit하고나서 시간이 지나면 Destroy하기
 
     [Header("Anim Settings")]
     [SerializeField] private MonsterAnimatorController AnimController_NormalMonster;
@@ -45,7 +45,20 @@ public class NormalMonster : MonsterBase
     {
         base.Update();
 
-        if (_isUsingSkill) return;
+        if (_isUsingSkill)
+        {
+            if (_monsterType == MonsterType.FlyingCreature || _monsterType == MonsterType.Flying)
+            {
+                _rigidbody2D.linearVelocity = Vector2.zero;
+            }
+            return;
+        }
+
+        if (_isAttacking)
+        {
+            _rigidbody2D.linearVelocity = Vector2.zero;
+            return;
+        }
 
         if (_isAggro)
         {
@@ -53,7 +66,14 @@ public class NormalMonster : MonsterBase
         }
         else
         {
-            Patrol();
+            if (_monsterType == MonsterType.Flying || _monsterType == MonsterType.FlyingCreature)
+            {
+                _rigidbody2D.linearVelocity = Vector2.zero;
+            }
+            else
+            {
+                Patrol();
+            }
         }
     }
 
@@ -75,7 +95,7 @@ public class NormalMonster : MonsterBase
 
     private void PreventMonsterFromDrop()
     {
-        if (_monsterType == MonsterType.FlyingCreature)
+        if (_monsterType == MonsterType.FlyingCreature || _monsterType == MonsterType.Flying)
         {
             _isGroundAhead = true;
             _isGrounded = true;
@@ -100,15 +120,7 @@ public class NormalMonster : MonsterBase
         
         _isGroundAhead = Physics2D.OverlapCircle(_edgeCheck.position, _checkGroundRadius, _groundLayer);
         _isBlocked = Physics2D.Raycast(_wallCheck.position, _isMovingRight ? Vector2.right : Vector2.left, 0.5f, _groundLayer);
-
-        if (_monsterType == MonsterType.Flying || _monsterType == MonsterType.FlyingCreature)
-        {
-            _isGrounded = true;
-        }
-        else
-        {
-            _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkGroundRadius, _groundLayer);
-        }
+        _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkGroundRadius, _groundLayer);
 
         if (_isAggro)
         {
@@ -148,7 +160,7 @@ public class NormalMonster : MonsterBase
             Logger.LogError("[NormalMonster] Skills가 Null입니다.");
         }
 
-        if (_monsterType == MonsterType.FlyingCreature)
+        if (_monsterType == MonsterType.FlyingCreature || _monsterType == MonsterType.Flying)
         {
             Vector2 direction = (_playerTransform.position - this.transform.position).normalized;
             _rigidbody2D.linearVelocity = direction * _moveSpeed;
@@ -203,6 +215,7 @@ public class NormalMonster : MonsterBase
 
         if (distance <= _attackDistance)
         {
+            CheckAttackUseable();
             AttackTarget(10);   // [TODO] 데미지 데이터드리븐으로 처리
         }
 
@@ -223,7 +236,15 @@ public class NormalMonster : MonsterBase
 
     private void UpdateFacingDirection()
     {
+        if (_playerTransform == null)
+        {
+            Logger.LogError("[NormalMonster] PlayerTransform이 Null 입니다.");
+        }
+
         float directionX = _playerTransform.position.x - transform.position.x;
+
+        if (Mathf.Abs(directionX) < 0.2) return;
+
         bool isShouldMoveRight = directionX > 0f;
 
         if (_isMovingRight != isShouldMoveRight)
@@ -253,6 +274,11 @@ public class NormalMonster : MonsterBase
         }
 
         _isUsingSkill = false;
+
+        if (_monsterType == MonsterType.Flying || _monsterType == MonsterType.FlyingCreature)
+        {
+            _rigidbody2D.linearVelocity = Vector2.zero;
+        }
 
         if (_isSpawned && _playerTransform != null)
         {
