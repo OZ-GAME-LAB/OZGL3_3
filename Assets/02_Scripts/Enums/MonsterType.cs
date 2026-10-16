@@ -5,5 +5,7 @@ public enum MonsterType
     None,
     Ground,
     Flying,
-    Boss
+    Boss,
+    FlyingCreature,
+    GroundCreature
 }
