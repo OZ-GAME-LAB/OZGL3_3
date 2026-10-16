@@ -7,8 +7,16 @@ public class PlayerInputHandler : MonoBehaviour
     public bool RunInput { get; private set; }
     public bool CrouchInput { get; private set; }
     public bool AttackInput { get; private set; }
+    public bool UpInput { get; private set; }
+    public bool DownInput { get; private set; }
+    public bool JumpInput { get; private set; }
     public bool JumpQueued { get; private set; }
 
+    private float _doubleTapLimitTime = 0.25f;
+    private float _lastLeftPressTime = -1f;
+    private float _lastRightPressTime = -1f;
+    private float _lastMoveDirection = 1f;
+    private bool _isRunning;
     private bool _attackSign;
 
     public void ReadInput()
@@ -21,28 +29,84 @@ public class PlayerInputHandler : MonoBehaviour
             RunInput = false;
             CrouchInput = false;
             AttackInput = false;
+            UpInput = false;
+            DownInput = false;
+            JumpInput = false;
             JumpQueued = false;
             _attackSign = false;
             return;
         }
 
-        MoveInput =
-            (keyboard.rightArrowKey.isPressed ? 1f : 0f) -
-            (keyboard.leftArrowKey.isPressed ? 1f : 0f);
+        bool leftHeld = keyboard.leftArrowKey.isPressed;
+        bool rightHeld = keyboard.rightArrowKey.isPressed;
 
-        RunInput =
-            keyboard.leftShiftKey.isPressed ||
-            keyboard.rightShiftKey.isPressed;
+        bool leftPressed = keyboard.leftArrowKey.wasPressedThisFrame;
+        bool rightPressed = keyboard.rightArrowKey.wasPressedThisFrame;
 
-        CrouchInput = keyboard.downArrowKey.isPressed;
+        if (leftPressed)
+        {
+            if (_lastLeftPressTime >= 0f &&
+                Time.time - _lastLeftPressTime <= _doubleTapLimitTime)
+            {
+                _isRunning = true;
+            }
+
+            _lastLeftPressTime = Time.time;
+        }
+
+        if (rightPressed)
+        {
+            if (_lastRightPressTime >= 0f &&
+                Time.time - _lastRightPressTime <= _doubleTapLimitTime)
+            {
+                _isRunning = true;
+            }
+
+            _lastRightPressTime = Time.time;
+        }
+
+        if (leftPressed && !rightPressed)
+        {
+            _lastMoveDirection = -1f;
+        }
+        else if (rightPressed && !leftPressed)
+        {
+            _lastMoveDirection = 1f;
+        }
+
+        if (leftHeld && rightHeld)
+        {
+            MoveInput = _lastMoveDirection;
+        }
+        else if (leftHeld)
+        {
+            MoveInput = -1f;
+        }
+        else if (rightHeld)
+        {
+            MoveInput = 1f;
+        }
+        else
+        {
+            MoveInput = 0f;
+            _isRunning = false;
+        }
+
+        RunInput = _isRunning && (leftHeld || rightHeld);
+        UpInput = keyboard.upArrowKey.isPressed;
+        DownInput = keyboard.downArrowKey.isPressed;
+        JumpInput = keyboard.cKey.isPressed;
+        CrouchInput = DownInput;
         AttackInput = keyboard.xKey.isPressed;
 
-        if (keyboard.upArrowKey.wasPressedThisFrame)
+        bool wasPressCKey = keyboard.cKey.wasPressedThisFrame;
+        if (wasPressCKey)
         {
             JumpQueued = true;
         }
 
-        if (keyboard.xKey.wasPressedThisFrame)
+        bool wasPressXKey = keyboard.xKey.wasPressedThisFrame;
+        if (wasPressXKey)
         {
             _attackSign = true;
         }

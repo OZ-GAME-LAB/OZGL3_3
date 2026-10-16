@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField, Min(0f)] private float _baseWalkSpeed = 4f;
     [SerializeField, Min(0f)] private float _baseRunSpeed = 6f;
     [SerializeField, Min(0f)] private float _baseCrouchSpeed = 2f;
+    [SerializeField, Min(0f)] private float _baseLadderSpeed = 3f;
     [SerializeField, Min(1)] private int _baseAttackDamage = 1;
     [SerializeField, Min(1)] private int _baseMaxHealth = 5;
     [SerializeField, Min(1)] private int _baseMaxSkillGauge = 100;
@@ -18,10 +19,12 @@ public class PlayerStats : MonoBehaviour
     private float _walkSpeedBaseBonus = 1f;
     private float _runSpeedBaseBonus = 1f;
     private float _crouchSpeedBaseBonus = 1f;
+    private float _ladderSpeedBaseBonus = 1f;
     private float _jumpValueBonusValue;
     private float _walkSpeedBonusValue;
     private float _runSpeedBonusValue;
     private float _crouchSpeedBonusValue;
+    private float _ladderSpeedBonusValue;
     private int _attackDamage;
     private int _maxHealth;
     private int _maxSkillGauge;
@@ -35,6 +38,7 @@ public class PlayerStats : MonoBehaviour
     public float WalkSpeed { get { EnsureStatsCalculated(); return _baseWalkSpeed * _walkSpeedBaseBonus; } }
     public float RunSpeed { get { EnsureStatsCalculated(); return _baseRunSpeed * _runSpeedBaseBonus; } }
     public float CrouchSpeed { get { EnsureStatsCalculated(); return _baseCrouchSpeed * _crouchSpeedBaseBonus; } }
+    public float LadderSpeed { get { EnsureStatsCalculated(); return _baseLadderSpeed * _ladderSpeedBaseBonus; } }
     public int AttackDamage { get { EnsureStatsCalculated(); return _attackDamage; } }
     public int MaxHealth { get { EnsureStatsCalculated(); return _maxHealth; } }
     public int MaxSkillGauge { get { EnsureStatsCalculated(); return _maxSkillGauge; } }
@@ -57,6 +61,7 @@ public class PlayerStats : MonoBehaviour
         _walkSpeedBaseBonus = Mathf.Max(0f, 1f + _walkSpeedBonusValue);
         _runSpeedBaseBonus = Mathf.Max(0f, 1f + _runSpeedBonusValue);
         _crouchSpeedBaseBonus = Mathf.Max(0f, 1f + _crouchSpeedBonusValue);
+        _ladderSpeedBaseBonus = Mathf.Max(0f, 1f + _ladderSpeedBonusValue);
         _attackDamage = Mathf.Max(1, _baseAttackDamage + _attackDamageBonusValue);
         _maxHealth = Mathf.Max(1, _baseMaxHealth + _maxHealthBonusValue);
         _maxSkillGauge = Mathf.Max(1, _baseMaxSkillGauge + _maxSkillGaugeBonusValue);
@@ -70,6 +75,7 @@ public class PlayerStats : MonoBehaviour
         float walkSpeedBonusPercent,
         float runSpeedBonusPercent,
         float crouchSpeedBonusPercent,
+        float ladderSpeedBonusPercent,
         int attackDamageBonus,
         int maxHealthBonus,
         int maxSkillGaugeBonus,
@@ -79,6 +85,7 @@ public class PlayerStats : MonoBehaviour
         _walkSpeedBonusValue = walkSpeedBonusPercent;
         _runSpeedBonusValue = runSpeedBonusPercent;
         _crouchSpeedBonusValue = crouchSpeedBonusPercent;
+        _ladderSpeedBonusValue = ladderSpeedBonusPercent;
         _attackDamageBonusValue = attackDamageBonus;
         _maxHealthBonusValue = maxHealthBonus;
         _maxSkillGaugeBonusValue = maxSkillGaugeBonus;
