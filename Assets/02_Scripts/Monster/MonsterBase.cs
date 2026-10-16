@@ -16,10 +16,12 @@ public class MonsterBase : MonoBehaviour
     [Header("Skills")]
     public List<MonsterSkill> Skills = new List<MonsterSkill>();
     protected List<float> _skillCooldownTimers = new List<float>();
-
     [SerializeField] protected Transform _playerTransform;
     protected bool _isAggro = false;
     protected bool _isAttacking = false;
+    private float _attackCooldownTimer = 0f;
+    private float _attackCooldown = 2f;
+    private bool _isAttackUseable = false;
 
     protected virtual void Awake()
     {
@@ -41,6 +43,11 @@ public class MonsterBase : MonoBehaviour
                 _skillCooldownTimers[i] -= Time.deltaTime;
         }
 
+        if (_attackCooldownTimer > 0)
+        {
+            _attackCooldownTimer -= Time.deltaTime;
+        }
+
         CheckAggro();
     }
 
@@ -52,10 +59,27 @@ public class MonsterBase : MonoBehaviour
         _isAggro = distance <= _aggroRange;
     }
 
+    protected void CheckAttackUseable()
+    {
+        if (_attackCooldownTimer <= 0)
+        {
+            _isAttackUseable = true;
+        }
+        else
+        {
+            _isAttackUseable = false;
+        }
+    }
+
     public virtual void AttackTarget(float damage)  //[TODO] 데미지 데이터드리븐으로
     {
+        if ( _isAttackUseable == false) return;
         if (_isAttacking) return;
         _isAttacking = true;
+
+        _attackCooldownTimer = _attackCooldown;
+        _isAttackUseable = false;
+
         int selectedNum = Random.Range(1, _attackPatternCount + 1);
         if (selectedNum == 1)
         {
