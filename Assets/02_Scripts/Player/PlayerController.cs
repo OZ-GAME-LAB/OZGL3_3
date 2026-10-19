@@ -45,14 +45,16 @@ public class PlayerController : MonoBehaviour
     private bool _isLadder;
     private bool _isNearLadeer;
     private bool _attackRequested;
+
     private float _originalGravityScale;
     private float _ladderDirection = 1f;
     private float _ladderCoolDownTime;
     private float _ladderJumpValue = 3f;
+
     private int _nextAttackDirection;
     private int _lastAttackStep;
+
     private PlayerState _currentState = PlayerState.Idle;
-    private bool _isDead;
 
     private void Awake()
     {
@@ -120,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (_isDead)
+        if (_currentState == PlayerState.Died)
         {
             return;
         }
@@ -133,7 +135,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isDead)
+        if (_currentState == PlayerState.Died)
         {
             return;
         }
@@ -152,12 +154,11 @@ public class PlayerController : MonoBehaviour
 
     private void HandleDied()
     {
-        if (_isDead)
+        if (_currentState == PlayerState.Died)
         {
             return;
         }
 
-        _isDead = true;
         _currentState = PlayerState.Died;
         _attackRequested = false;
         _nextAttackDirection = 0;
