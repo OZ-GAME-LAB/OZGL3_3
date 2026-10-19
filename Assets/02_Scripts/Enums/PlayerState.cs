@@ -4,6 +4,7 @@
     Walk,
     Run,
     Crouch,
+    Ladder,
     Jump,
     Fall,
     ComboAttack,
