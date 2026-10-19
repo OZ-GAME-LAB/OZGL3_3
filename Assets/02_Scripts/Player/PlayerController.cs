@@ -3,9 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerInputHandler))]
-[RequireComponent(typeof(PlayerStatus))]
 [RequireComponent(typeof(PlayerCombatHandler))]
-[RequireComponent(typeof(PlayerStats))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Core")]
