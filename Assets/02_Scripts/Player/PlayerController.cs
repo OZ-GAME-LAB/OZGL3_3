@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private bool _isLadder;
     private bool _isNearLadeer;
     private bool _attackRequested;
+    private bool _isSubscribedToPlayerStatus;
 
     private float _originalGravityScale;
     private float _ladderDirection = 1f;
@@ -110,12 +111,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerStatus.Instance.OnDied += HandleDied;
+        TrySubscribeToPlayerStatus();
+    }
 
-        if (PlayerStatus.Instance.IsDead)
-        {
-            HandleDied();
-        }
+    private void Start()
+    {
+        TrySubscribeToPlayerStatus();
     }
 
     private void Update()
@@ -147,9 +148,47 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerStatus.Instance.OnDied -= HandleDied;
+        UnsubscribeFromPlayerStatus();
     }
 
+    private void TrySubscribeToPlayerStatus()
+    {
+        if (_isSubscribedToPlayerStatus)
+        {
+            return;
+        }
+
+        if (PlayerStatus.Instance == null)
+        {
+            Logger.LogWarning("PlayerStatus 인스턴스가 아직 준비되지 않았습니다.");
+            return;
+        }
+
+        PlayerStatus.Instance.OnDied += HandleDied;
+        _isSubscribedToPlayerStatus = true;
+
+        if (PlayerStatus.Instance.IsDead)
+        {
+            HandleDied();
+        }
+    }
+
+    private void UnsubscribeFromPlayerStatus()
+    {
+        if (!_isSubscribedToPlayerStatus)
+        {
+            return;
+        }
+
+        PlayerStatus playerStatus = PlayerStatus.Instance;
+
+        if (playerStatus != null)
+        {
+            playerStatus.OnDied -= HandleDied;
+        }
+
+        _isSubscribedToPlayerStatus = false;
+    }
     private void HandleDied()
     {
         if (_currentState == PlayerState.Died)
