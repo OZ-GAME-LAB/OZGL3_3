@@ -1,17 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour
+public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 {
-    private PlayerStats _playerStats;
     private int _lastMaxHealth;
     private int _lastMaxSkillGauge;
 
-    public int MaxHealth => _playerStats.MaxHealth;
-    public int CurrentHealth { get; private set; }
-    public int MaxSkillGauge => _playerStats.MaxSkillGauge;
-    public int CurrentSkillGauge { get; private set; }
+    public int MaxHealth => PlayerStats.Instance.MaxHealth;
+    public int MaxSkillGauge => PlayerStats.Instance.MaxSkillGauge;
+    
     public bool IsDead => CurrentHealth <= 0;
+
+    public int CurrentHealth { get; private set; }
+    public int CurrentSkillGauge { get; private set; }
 
     public event Action<int, int> OnHealthChanged;
     public event Action<int, int> OnSkillGaugeChanged;
@@ -19,7 +20,7 @@ public class PlayerStatus : MonoBehaviour
 
     private void Awake()
     {
-        _playerStats = GetComponent<PlayerStats>();
+        Init();
         _lastMaxHealth = MaxHealth;
         _lastMaxSkillGauge = MaxSkillGauge;
         CurrentHealth = MaxHealth;
@@ -27,18 +28,12 @@ public class PlayerStatus : MonoBehaviour
 
     private void OnEnable()
     {
-        if (_playerStats != null)
-        {
-            _playerStats.OnStatsChanged += HandleStatsChanged;
-        }
+        PlayerStats.Instance.OnStatsChanged += HandleStatsChanged;
     }
 
     private void OnDisable()
     {
-        if (_playerStats != null)
-        {
-            _playerStats.OnStatsChanged -= HandleStatsChanged;
-        }
+        PlayerStats.Instance.OnStatsChanged -= HandleStatsChanged;
     }
 
     private void HandleStatsChanged()
@@ -77,12 +72,19 @@ public class PlayerStatus : MonoBehaviour
             return;
         }
 
-        SetHealth(CurrentHealth - damage);
+        int finalDamage = GetChaosGaugeOverDamage(damage);
+
+        SetHealth(CurrentHealth - finalDamage);
 
         if (IsDead)
         {
             OnDied?.Invoke();
         }
+    }
+
+    public int GetChaosGaugeOverDamage(int damage)
+    {
+        return PlayerStats.Instance.ChaosGaugeOver ? damage * 2 : damage;
     }
 
     public void Heal(int amount)
