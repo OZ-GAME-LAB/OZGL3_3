@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody2D_Player;
     [SerializeField] private PlayerInputHandler _playerInputHandler;
     [SerializeField] private PlayerCombatHandler _playerCombatHandler;
-    [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private Animator _animator_Player;
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
     [SerializeField] private Transform _transform_GroundCheck;
@@ -33,11 +32,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0f, 0.4f)] private float _comboInputStart = 0.2f;
     [SerializeField, Range(0.4f, 0.8f)] private float _comboInputEnd = 0.78f;
 
-    private float _jumpValue => _playerStats.JumpValue;
-    private float _walkSpeed => _playerStats.WalkSpeed;
-    private float _runSpeed => _playerStats.RunSpeed;
-    private float _crouchSpeed => _playerStats.CrouchSpeed;
-    private float _ladderSpeed => _playerStats.LadderSpeed;
+    private float _jumpValue => PlayerStats.Instance.JumpValue;
+    private float _walkSpeed => PlayerStats.Instance.WalkSpeed;
+    private float _runSpeed => PlayerStats.Instance.RunSpeed;
+    private float _crouchSpeed => PlayerStats.Instance.CrouchSpeed;
+    private float _ladderSpeed => PlayerStats.Instance.LadderSpeed;
 
     private HashSet<Collider2D> _ladderTriggers;
     private Collider2D _currentLadderCollider;
@@ -71,11 +70,6 @@ public class PlayerController : MonoBehaviour
             _playerCombatHandler = GetComponent<PlayerCombatHandler>();
         }
 
-        if (_playerStats == null)
-        {
-            _playerStats = GetComponent<PlayerStats>();
-        }
-
         if (_animator_Player == null)
         {
             _animator_Player = GetComponent<Animator>();
@@ -89,12 +83,11 @@ public class PlayerController : MonoBehaviour
         if (_rigidbody2D_Player == null ||
             _playerInputHandler == null ||
             _playerCombatHandler == null ||
-            _playerStats == null ||
             _animator_Player == null ||
             _spriteRenderer_Player == null ||
             _transform_GroundCheck == null)
         {
-            Debug.LogError("Inspector참조를 확인하세요.", this);
+            Logger.LogError("Inspector참조를 확인하세요.");
             enabled = false;
             return;
         }
@@ -633,5 +626,4 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_transform_GroundCheck.position, _groundCheckRadius);
     }
-
 }
