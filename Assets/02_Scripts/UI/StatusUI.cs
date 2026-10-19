@@ -3,7 +3,7 @@ using UnityEngine;
 
 // 캐릭터 스텟 상태창: PlayerStats를 받아 스텟을 보여 준다.
 // 값이 바뀌면(PlayerStats.OnStatsChanged) 스스로 다시 그린다.
-public class StatUI : UIBase
+public class StatusUI : UIBase
 {
     [SerializeField] private TextMeshProUGUI Text_Attack;
     [SerializeField] private TextMeshProUGUI Text_Health;
@@ -14,17 +14,30 @@ public class StatUI : UIBase
 
     private PlayerStats _playerStats;
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.U))
+        {
+            UIManager.Instance.CloseStatusUI();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            UIManager.Instance.CloseStatusUI();
+        }
+    }
+
     private void OnDisable()
     {
         // UIManager는 UI를 파괴하지 않고 끄기만 하므로, 꺼질 때 구독을 반드시 해제한다.
-        DoUnsubscribe();
+        Unsubscribe();
         _playerStats = null;
     }
 
     // OnEnable은 항상 Init보다 먼저 실행되므로, 데이터가 필요한 처리는 여기서 시작한다.
     public void Init(PlayerStats playerStats)
     {
-        DoUnsubscribe();
+        Unsubscribe();
 
         if (playerStats == null)
         {
@@ -36,10 +49,10 @@ public class StatUI : UIBase
         _playerStats.OnStatsChanged += OnChangedStats;
 
         // 이벤트는 값이 바뀔 때만 오므로, 시작할 때 현재 값을 직접 한 번 그려 준다.
-        DoRefresh();
+        InitStat();
     }
 
-    private void DoUnsubscribe()
+    private void Unsubscribe()
     {
         if (_playerStats != null)
         {
@@ -49,10 +62,10 @@ public class StatUI : UIBase
 
     private void OnChangedStats()
     {
-        DoRefresh();
+        InitStat();
     }
 
-    private void DoRefresh()
+    private void InitStat()
     {
         Text_Attack.text = _playerStats.AttackDamage.ToString();
         Text_Health.text = _playerStats.MaxHealth.ToString();
