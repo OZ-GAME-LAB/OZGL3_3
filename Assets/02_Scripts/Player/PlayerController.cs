@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     private int _nextAttackDirection;
     private int _lastAttackStep;
     private PlayerState _currentState = PlayerState.Idle;
+    private bool _isDead;
 
     private void Awake()
     {
@@ -107,8 +108,23 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        PlayerStatus.Instance.OnDied += HandleDied;
+
+        if (PlayerStatus.Instance.IsDead)
+        {
+            HandleDied();
+        }
+    }
+
     private void Update()
     {
+        if (_isDead)
+        {
+            return;
+        }
+
         _playerInputHandler.ReadInput();
         HandleComboAttackState();
         UpdateFacingDirection();
@@ -117,11 +133,44 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_isDead)
+        {
+            return;
+        }
+
         CheckGrounded();
         TryEnterLadder();
 
         _currentState = GetNextState();
         HandleState();
+    }
+
+    private void OnDisable()
+    {
+        PlayerStatus.Instance.OnDied -= HandleDied;
+    }
+
+    private void HandleDied()
+    {
+        if (_isDead)
+        {
+            return;
+        }
+
+        _isDead = true;
+        _currentState = PlayerState.Died;
+        _attackRequested = false;
+        _nextAttackDirection = 0;
+
+        if (_isLadder)
+        {
+            ExitLadder();
+        }
+
+        _playerInputHandler.ClearInput();
+        _rigidbody2D_Player.linearVelocity = Vector2.zero;
+        _animator_Player.SetBool("ComboAttackSign", false);
+        _animator_Player.SetBool("IsDead", true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -329,6 +378,8 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.ComboAttack:
                 HandleAttackMovement();
+                break;
+            case PlayerState.Died:
                 break;
         }
     }

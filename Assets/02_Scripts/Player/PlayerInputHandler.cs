@@ -130,4 +130,18 @@ public class PlayerInputHandler : MonoBehaviour
     {
         JumpQueued = false;
     }
+
+    public void ClearInput()
+    {
+        MoveInput = 0f;
+        RunInput = false;
+        CrouchInput = false;
+        AttackInput = false;
+        UpInput = false;
+        DownInput = false;
+        JumpInput = false;
+        JumpQueued = false;
+        _isRunning = false;
+        _attackSign = false;
+    }
 }
