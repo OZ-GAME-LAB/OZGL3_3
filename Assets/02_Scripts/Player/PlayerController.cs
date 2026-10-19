@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody2D_Player;
     [SerializeField] private PlayerInputHandler _playerInputHandler;
     [SerializeField] private PlayerCombatHandler _playerCombatHandler;
-    [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private Animator _animator_Player;
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
     [SerializeField] private Transform _transform_GroundCheck;
@@ -33,11 +32,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0f, 0.4f)] private float _comboInputStart = 0.2f;
     [SerializeField, Range(0.4f, 0.8f)] private float _comboInputEnd = 0.78f;
 
-    private float _jumpValue => _playerStats.JumpValue;
-    private float _walkSpeed => _playerStats.WalkSpeed;
-    private float _runSpeed => _playerStats.RunSpeed;
-    private float _crouchSpeed => _playerStats.CrouchSpeed;
-    private float _ladderSpeed => _playerStats.LadderSpeed;
+    private float _jumpValue => PlayerStats.Instance.JumpValue;
+    private float _walkSpeed => PlayerStats.Instance.WalkSpeed;
+    private float _runSpeed => PlayerStats.Instance.RunSpeed;
+    private float _crouchSpeed => PlayerStats.Instance.CrouchSpeed;
+    private float _ladderSpeed => PlayerStats.Instance.LadderSpeed;
 
     private HashSet<Collider2D> _ladderTriggers;
     private Collider2D _currentLadderCollider;
@@ -46,12 +45,15 @@ public class PlayerController : MonoBehaviour
     private bool _isLadder;
     private bool _isNearLadeer;
     private bool _attackRequested;
+
     private float _originalGravityScale;
     private float _ladderDirection = 1f;
     private float _ladderCoolDownTime;
     private float _ladderJumpValue = 3f;
+
     private int _nextAttackDirection;
     private int _lastAttackStep;
+
     private PlayerState _currentState = PlayerState.Idle;
 
     private void Awake()
@@ -71,11 +73,6 @@ public class PlayerController : MonoBehaviour
             _playerCombatHandler = GetComponent<PlayerCombatHandler>();
         }
 
-        if (_playerStats == null)
-        {
-            _playerStats = GetComponent<PlayerStats>();
-        }
-
         if (_animator_Player == null)
         {
             _animator_Player = GetComponent<Animator>();
@@ -89,12 +86,11 @@ public class PlayerController : MonoBehaviour
         if (_rigidbody2D_Player == null ||
             _playerInputHandler == null ||
             _playerCombatHandler == null ||
-            _playerStats == null ||
             _animator_Player == null ||
             _spriteRenderer_Player == null ||
             _transform_GroundCheck == null)
         {
-            Debug.LogError("Inspector참조를 확인하세요.", this);
+            Logger.LogError("Inspector참조를 확인하세요.");
             enabled = false;
             return;
         }
@@ -114,8 +110,23 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        PlayerStatus.Instance.OnDied += HandleDied;
+
+        if (PlayerStatus.Instance.IsDead)
+        {
+            HandleDied();
+        }
+    }
+
     private void Update()
     {
+        if (_currentState == PlayerState.Died)
+        {
+            return;
+        }
+
         _playerInputHandler.ReadInput();
         HandleComboAttackState();
         UpdateFacingDirection();
@@ -124,11 +135,43 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_currentState == PlayerState.Died)
+        {
+            return;
+        }
+
         CheckGrounded();
         TryEnterLadder();
 
         _currentState = GetNextState();
         HandleState();
+    }
+
+    private void OnDisable()
+    {
+        PlayerStatus.Instance.OnDied -= HandleDied;
+    }
+
+    private void HandleDied()
+    {
+        if (_currentState == PlayerState.Died)
+        {
+            return;
+        }
+
+        _currentState = PlayerState.Died;
+        _attackRequested = false;
+        _nextAttackDirection = 0;
+
+        if (_isLadder)
+        {
+            ExitLadder();
+        }
+
+        _playerInputHandler.ClearInput();
+        _rigidbody2D_Player.linearVelocity = Vector2.zero;
+        _animator_Player.SetBool("ComboAttackSign", false);
+        _animator_Player.SetBool("IsDead", true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -336,6 +379,8 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.ComboAttack:
                 HandleAttackMovement();
+                break;
+            case PlayerState.Died:
                 break;
         }
     }
@@ -633,5 +678,4 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_transform_GroundCheck.position, _groundCheckRadius);
     }
-
 }

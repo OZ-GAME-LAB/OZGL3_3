@@ -2,137 +2,178 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerArtifactEquipment : MonoBehaviour
+public class PlayerArtifactEquipment : SingletonBehaviour<PlayerArtifactEquipment>
 {
+    // TODO(이주헌): 실제 아티팩트 데이터 구조 연결 후 변경
     [SerializeField] private List<string> _ownedArtifacts = new List<string>();
     [SerializeField] private List<string> _equippedArtifacts = new List<string>();
-
-    private PlayerStats _playerStats;
 
     public IReadOnlyList<string> OwnedArtifacts => _ownedArtifacts;
     public IReadOnlyList<string> EquippedArtifacts => _equippedArtifacts;
 
-    private void Awake()
-    {
-        if (_playerStats == null)
-        {
-            _playerStats = GetComponent<PlayerStats>();
-        }
-    }
-
-    //TODO(이주헌) : 인벤토리 및 아티팩트 구현 후 주석 해제, List<string> 은 임시
-    //public int CurrentChaosGauge
-    //{
-    //    get
-    //    {
-    //        int currentChaosGauge = 0;
-
-    //        foreach (string artifact in _equippedArtifacts)
-    //        {
-    //            if (artifact != null)
-    //                currentChaosGauge += artifact.ChaosGauge;
-    //        }
-    //        return currentChaosGauge;
-    //    }
-    //}
-
-    //public int MaxChaosGauge
-    //{
-    //    get
-    //    {
-    //        int maxChaosGauge = _playerStats.MaxChaosGauge
-
-    //        foreach (string artifact in _equippedArtifacts)
-    //        {
-    //            if (artifact != null)
-    //                maxChaosGauge += artifact.MaxChaosGaugeBonusValue;
-    //        }
-    //        return maxChaosGauge;
-    //    }
-    //}
-
     public event Action OnInventoryChanged;
     public event Action OnEquipmentChanged;
 
-    public bool GainArtifact(string artifact)
+    private void Awake()
     {
-        if (artifact == null)
+        Init();
+    }
+
+    public bool GetArtifact(string artifactId)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
         {
-            Debug.LogError("AcquireArtifact: 아티팩트가 null입니다.", this);
+            Logger.LogError("GetArtifact: 아티팩트 ID가 비어 있습니다.");
+
             return false;
         }
 
-        if (_ownedArtifacts.Contains(artifact))
+        if (_ownedArtifacts.Contains(artifactId))
         {
+            Logger.LogError("GetArtifact: 아티팩트 ID가 일치하지 않습니다.");
+
             return false;
         }
 
-        _ownedArtifacts.Add(artifact);
+        _ownedArtifacts.Add(artifactId);
         OnInventoryChanged?.Invoke();
+
         return true;
     }
 
-    //public bool EquipArtifact(string artifact)
-    //{
-    //    if (artifact == null)
-    //    {
-    //        Debug.LogError("EquipArtifact: 아티팩트가 null입니다.", this);
-    //        return false;
-    //    }
-
-    //    if (!_ownedArtifacts.Contains(artifact) || _equippedArtifacts.Contains(artifact))
-    //    {
-    //        return false;
-    //    }
-
-    //    if (CurrentChaosGauge + artifact.ChaosGaugeValue > MaxChaosGauge)
-    //    {
-    //        Debug.LogWarning($"카오스 게이지가 최대치 {MaxChaosGauge}을 초과합니다.", this);
-    //        return false;
-    //    }
-
-    //    _equippedArtifacts.Add(artifact);
-    //    OnEquipmentChanged?.Invoke();
-    //    return true;
-    //}
-
-    public bool UnequipArtifact(string artifact)
+    public bool EquipArtifact(string artifactId, float artifactValue)
     {
-        if (artifact == null)
+        if (string.IsNullOrWhiteSpace(artifactId))
         {
-            Debug.LogError("UnequipArtifact: 아티팩트가 null입니다.", this);
+            Logger.LogWarning("EquipArtifact: 아티팩트 ID가 비어 있습니다.");
+
             return false;
         }
 
-        if (!_equippedArtifacts.Remove(artifact))
+        if (!_ownedArtifacts.Contains(artifactId) || _equippedArtifacts.Contains(artifactId))
         {
+            Logger.LogWarning("EquipArtifact: 아티팩트 ID가 일치하지 않습니다.");
+
             return false;
         }
 
+        if (!ApplyArtifactBonus(artifactId, artifactValue, 1))
+        {
+            Logger.LogWarning("EquipArtifact: 아티팩트 보너스 회수에 실패했습니다.");
+
+            return false;
+        }
+
+        _equippedArtifacts.Add(artifactId);
         OnEquipmentChanged?.Invoke();
+
         return true;
     }
 
-    public bool RemoveArtifact(string artifact)
+    public bool UnequipArtifact(string artifactId, float artifactValue)
     {
-        if (artifact == null)
+        if (string.IsNullOrWhiteSpace(artifactId))
         {
-            Debug.LogError("RemoveArtifact: 아티팩트가 null입니다.", this);
+            Logger.LogWarning("UnequipArtifact: 아티팩트 ID가 비어 있습니다.");
+
             return false;
         }
 
-        if (!_ownedArtifacts.Contains(artifact))
+        if (!_equippedArtifacts.Contains(artifactId))
         {
+            Logger.LogWarning("UnequipArtifact: 아티팩트 ID가 일치하지 않습니다.");
+
             return false;
         }
 
-        bool wasEquipped = _equippedArtifacts.Remove(artifact);
-        _ownedArtifacts.Remove(artifact);
+        if (!ApplyArtifactBonus(artifactId, artifactValue, - 1))
+        {
+            Logger.LogWarning($"UnequipArtifact: 아티팩트 보너스 회수에 실패했습니다. " +
+                $"(ID: {artifactId}, Value: {artifactValue})");
+
+            return false;
+        }
+
+        _equippedArtifacts.Remove(artifactId);
+        OnEquipmentChanged?.Invoke();
+
+        return true;
+    }
+
+    public bool RemoveArtifact(string artifactId, float artifactValue)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
+        {
+            Logger.LogWarning("RemoveArtifact: 아티팩트 ID가 비어 있습니다.");
+            return false;
+        }
+
+        if (!_ownedArtifacts.Contains(artifactId))
+        {
+            Logger.LogWarning("RemoveArtifact: 아티팩트 ID가 일치하지 않습니다.");
+
+            return false;
+        }
+
+        if (_equippedArtifacts.Contains(artifactId))
+        {
+            if (!UnequipArtifact(artifactId, artifactValue))
+            {
+                Logger.LogWarning("RemoveArtifact: 아티팩트 회수에 실패했습니다.");
+
+                return false;
+            }
+        }
+
+        _ownedArtifacts.Remove(artifactId);
         OnInventoryChanged?.Invoke();
 
-        if (wasEquipped)
+        return true;
+    }
+
+    private bool ApplyArtifactBonus(string artifactId, float value, int apply)
+    {
+        switch (artifactId)
         {
-            OnEquipmentChanged?.Invoke();
+            case "JumpValue":
+                PlayerStats.Instance.ApplyArtifactBonus("JumpValue", value * apply);
+                break;
+
+            case "WalkSpeed":
+                PlayerStats.Instance.ApplyArtifactBonus("WalkSpeed", value * apply);
+                break;
+
+            case "RunSpeed":
+                PlayerStats.Instance.ApplyArtifactBonus("RunSpeed", value * apply);
+                break;
+
+            case "CrouchSpeed":
+                PlayerStats.Instance.ApplyArtifactBonus("CrouchSpeed", value * apply);
+                break;
+
+            case "LadderSpeed":
+                PlayerStats.Instance.ApplyArtifactBonus("LadderSpeed", value * apply);
+                break;
+
+            case "AttackDamage":
+                PlayerStats.Instance.ApplyArtifactBonus("AttackDamage", value * apply);
+                break;
+
+            case "MaxHealth":
+                PlayerStats.Instance.ApplyArtifactBonus("MaxHealth", value * apply);
+                break;
+
+            case "MaxSkillGauge":
+                PlayerStats.Instance.ApplyArtifactBonus("MaxSkillGauge", value * apply);
+                break;
+
+            case "MaxChaosGauge":
+                PlayerStats.Instance.ApplyArtifactBonus("MaxChaosGauge", value * apply);
+                break;
+
+            default:
+                Logger.LogWarning($"ApplyArtifactBonus: 등록되지 않은 아티팩트 ID입니다. ({artifactId})");
+                return false;
         }
 
         return true;

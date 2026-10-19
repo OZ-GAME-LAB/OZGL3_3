@@ -8,22 +8,16 @@ public class PlayerCombatHandler : MonoBehaviour
     [SerializeField] private Vector2 _rangeOffset = new Vector2(0.2f, 0f);
     [SerializeField] private Vector2 _rangeSize = new Vector2(0.4f, 0.3f);
     private Rigidbody2D _rigidbody2D_Player;
-    private PlayerStats _playerStats;
     private readonly List<Collider2D> _overlapColliders = new List<Collider2D>();
     private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
 
-    private int _attackDamage => _playerStats.AttackDamage;
+    private int _attackDamage => PlayerStats.Instance.AttackDamage;
 
     private void Awake()
     {
         if (_rigidbody2D_Player != null)
         {
             _rigidbody2D_Player = GetComponent<Rigidbody2D>();
-        }
-
-        if (_playerStats == null)
-        {
-            _playerStats = GetComponent<PlayerStats>();
         }
 
         if (_spriteRenderer_Player == null)
@@ -36,9 +30,7 @@ public class PlayerCombatHandler : MonoBehaviour
     {
         if (targets == null)
         {
-            Debug.LogError(
-                $"FindTargetsInRange: null입니다.",
-                this);
+            Logger.LogError($"FindTargetsInRange: null입니다.");
             return 0;
         }
 
@@ -103,9 +95,7 @@ public class PlayerCombatHandler : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(_targetTag))
         {
-            Debug.LogError(
-                $"HasTargetTagInParents: Target Tag가 비어 있습니다.",
-                this);
+            Logger.LogError($"HasTargetTagInParents: Target Tag가 비어 있습니다.");
             return false;
         }
 
