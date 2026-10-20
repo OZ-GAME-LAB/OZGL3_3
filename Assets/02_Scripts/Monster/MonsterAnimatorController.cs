@@ -8,7 +8,7 @@ public class MonsterAnimatorController : MonoBehaviour
     private MonsterState _currentAnimState;
     public void ChangeState(MonsterState newState)
     {
-        if (newState == MonsterState.Idle && _currentAnimState == MonsterState.Idle) return;
+        if (newState == _currentAnimState) return;
 
         _currentAnimState = newState;
 
@@ -69,6 +69,11 @@ public class MonsterAnimatorController : MonoBehaviour
                     Animator_Monster.SetBool("isDead", true);
                 }
                 break;
+            case MonsterState.Fall:
+                {
+                    Animator_Monster.SetBool("isFalling", true);
+                }
+                break;
             default:
                 {
                     ResetAllAnimParameters();
@@ -90,5 +95,6 @@ public class MonsterAnimatorController : MonoBehaviour
         Animator_Monster.SetBool("isHit", false);
         Animator_Monster.SetBool("isMoved", false);
         Animator_Monster.SetBool("isDead", false);
+        Animator_Monster.SetBool("isFalling", false);
     }
 }

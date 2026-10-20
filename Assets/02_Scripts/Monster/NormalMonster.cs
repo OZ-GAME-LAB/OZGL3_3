@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.Collections;
+using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -7,18 +8,15 @@ public class NormalMonster : MonsterBase
     [Header("Patrol Settings")]
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private float _checkGroundRadius = 0.2f;
-    [SerializeField] private Transform _wallCheck;
     [SerializeField] private Transform _edgeCheck;
     [SerializeField] private LayerMask _groundLayer;
-    [SerializeField] private float _attackDistance = 1f;
+    [SerializeField] private float _attackDistance = 3f;
     [SerializeField] private CircleCollider2D _playerTransformCheckCollider;    //[TODO] 플레이어가 OnTriggerExit하고나서 시간이 지나면 Destroy하기
 
     [Header("Anim Settings")]
     [SerializeField] private MonsterAnimatorController AnimController_NormalMonster;
     [SerializeField] private MonsterType _monsterType;
 
-    private Rigidbody2D _rigidbody2D;
-    private bool _isMovingRight = false;
     private bool _isGrounded = false;
     private bool _isBlocked = false;
     private bool _isGroundAhead = false;
@@ -33,6 +31,7 @@ public class NormalMonster : MonsterBase
     {
         base.Awake();
         _isSpawned = true;
+        AnimController_NormalMonster.ChangeState(MonsterState.Spawn);
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -89,8 +88,18 @@ public class NormalMonster : MonsterBase
     {
         PreventMonsterFromDrop();
 
+        if (!_isGrounded) return;
+
         float direction = _isMovingRight ? 1f : -1f;
         _rigidbody2D.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody2D.linearVelocityY);
+        if (Mathf.Abs(_rigidbody2D.linearVelocity.x) > 0)
+        {
+            AnimController_NormalMonster.ChangeState(MonsterState.Forward);
+        }
+        else
+        {
+            AnimController_NormalMonster.ChangeState(MonsterState.Idle);
+        }
     }
 
     private void PreventMonsterFromDrop()
@@ -112,14 +121,8 @@ public class NormalMonster : MonsterBase
             Logger.LogError("[NormalMonster] _edgeCheck가 Null입니다.");
             return;
         }
-        if (_wallCheck == null)
-        {
-            Logger.LogError("[NormalMonster] _wallCheck가 Null입니다.");
-            return;
-        }
         
         _isGroundAhead = Physics2D.OverlapCircle(_edgeCheck.position, _checkGroundRadius, _groundLayer);
-        _isBlocked = Physics2D.Raycast(_wallCheck.position, _isMovingRight ? Vector2.right : Vector2.left, 0.5f, _groundLayer);
         _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkGroundRadius, _groundLayer);
 
         if (_isAggro)
@@ -164,6 +167,15 @@ public class NormalMonster : MonsterBase
         {
             Vector2 direction = (_playerTransform.position - this.transform.position).normalized;
             _rigidbody2D.linearVelocity = direction * _moveSpeed;
+            if (Mathf.Abs(_rigidbody2D.linearVelocity.x) > 0)
+            {
+                AnimController_NormalMonster.ChangeState(MonsterState.Forward);
+            }
+            else
+            {
+                AnimController_NormalMonster.ChangeState(MonsterState.Idle);
+            }
+            return;
         }
 
         PreventMonsterFromDrop();
@@ -176,7 +188,6 @@ public class NormalMonster : MonsterBase
             {
                 UpdateFacingDirection();
 
-                _rigidbody2D.linearVelocity = new Vector2(0f, _rigidbody2D.linearVelocityY);
 
                 _pendingSkillIndex = i;
                 _isUsingSkill = true;
@@ -217,6 +228,7 @@ public class NormalMonster : MonsterBase
         {
             CheckAttackUseable();
             AttackTarget(10);   // [TODO] 데미지 데이터드리븐으로 처리
+            return;
         }
 
         if (!_isGrounded || _isBlocked || !_isGroundAhead)
@@ -229,13 +241,26 @@ public class NormalMonster : MonsterBase
         {
             UpdateFacingDirection();
 
-            float direction = _isMovingRight ? 1f : -1f;
-            _rigidbody2D.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody2D.linearVelocityY);
+            MoveToPlayer();
         }
+    }
+
+    private void MoveToPlayer()
+    {
+        float direction = _isMovingRight ? 1f : -1f;
+        float targetSpeed = direction * _moveSpeed;
+
+
+        _rigidbody2D.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody2D.linearVelocityY);
+        AnimController_NormalMonster.ChangeState(MonsterState.Forward);
     }
 
     private void UpdateFacingDirection()
     {
+        if (!_isGrounded)
+        {
+            AnimController_NormalMonster.ChangeState(MonsterState.Fall);
+        }
         if (_playerTransform == null)
         {
             Logger.LogError("[NormalMonster] PlayerTransform이 Null 입니다.");
@@ -280,7 +305,7 @@ public class NormalMonster : MonsterBase
             _rigidbody2D.linearVelocity = Vector2.zero;
         }
 
-        if (_isSpawned && _playerTransform != null)
+        if (_isSpawned)
         {
             AnimController_NormalMonster.ChangeState(MonsterState.Idle);
         }

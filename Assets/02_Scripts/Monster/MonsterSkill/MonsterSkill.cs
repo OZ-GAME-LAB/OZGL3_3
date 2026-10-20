@@ -6,5 +6,5 @@ public abstract class MonsterSkill : ScriptableObject
     public float CoolDown;
     public float Range;
 
-    public abstract void UseSkill(MonsterBase caster, Transform target);
+    public abstract void UseSkill(MonsterBase caster, Transform target = null);
 }

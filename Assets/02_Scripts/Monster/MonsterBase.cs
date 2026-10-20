@@ -7,8 +7,9 @@ public class MonsterBase : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] private float _maxHp = 100f;
-    [SerializeField] protected float _moveSpeed = 3f;
+    [SerializeField] public float _moveSpeed = 3f;
     [SerializeField] private float _aggroRange = 7f;
+    [SerializeField] private int _attackDamage = 10;
     [SerializeField] private int _attackPatternCount = 2;
     protected float _currentHp;
 
@@ -16,7 +17,11 @@ public class MonsterBase : MonoBehaviour
     [Header("Skills")]
     public List<MonsterSkill> Skills = new List<MonsterSkill>();
     protected List<float> _skillCooldownTimers = new List<float>();
-    [SerializeField] protected Transform _playerTransform;
+    [SerializeField] public Transform _playerTransform;
+
+    public Rigidbody2D _rigidbody2D;
+
+    protected bool _isMovingRight = false;
     protected bool _isAggro = false;
     protected bool _isAttacking = false;
     private float _attackCooldownTimer = 0f;
@@ -73,6 +78,7 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void AttackTarget(float damage)  //[TODO] 데미지 데이터드리븐으로
     {
+        _monsterAnimController.ChangeState(MonsterState.Idle);
         if ( _isAttackUseable == false) return;
         if (_isAttacking) return;
         _isAttacking = true;
@@ -91,10 +97,12 @@ public class MonsterBase : MonoBehaviour
         }
     }
 
+
     public virtual void TakeDamage(float damage)
     {
         _monsterAnimController.ChangeState(MonsterState.Hit);
         _currentHp -= damage;
+        Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
         if (_currentHp <= 0)
         {
             Die();
@@ -111,11 +119,17 @@ public class MonsterBase : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void OnApplyAttackDamage()
+    {
+        if (_playerTransform.TryGetComponent<PlayerStatus>(out var playerStatus))
+        {
+            playerStatus.TakeDamage(_attackDamage);
+        }
+    }
+
     public void OnAttackAnimationEnd()
     {
         _isAttacking = false;
-        Logger.Log($"{this.name}가 플레이어한테 데미지 입힘");
         _monsterAnimController.ChangeState(MonsterState.Idle);
-        //[TODO] 플레이어에게 데미지 전달
     }
 }
