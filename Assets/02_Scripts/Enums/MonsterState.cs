@@ -11,5 +11,6 @@
     Dead,
     Forward,
     Hit,
-    Spawn
+    Spawn,
+    Fall
 }
