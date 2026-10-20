@@ -94,7 +94,7 @@ public static class UIManagerExtension
             return;
         }
 
-        (uiBase as StatusUI)?.Init(PlayerState.Instance);
+        (uiBase as StatusUI)?.Init(PlayerStats.Instance);
     }
 
     public static void CloseStatusUI(this UIManager uiManager)
