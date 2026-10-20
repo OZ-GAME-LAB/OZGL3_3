@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerInputHandler))]
-[RequireComponent(typeof(PlayerStatus))]
 [RequireComponent(typeof(PlayerCombatHandler))]
-[RequireComponent(typeof(PlayerStats))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Core")]
@@ -18,15 +17,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask_Ground;
     [SerializeField] private LayerMask _layerMask_Ladder;
 
-    [Header("MovementValue")]
-    [SerializeField] private float _acceleration = 10f;
-    [SerializeField] private float _deceleration = 14f;
-
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.24f;
 
     [Header("Ladder")]
     [SerializeField] private float _ladderCoolDown = 1f;
+
+    [Header("Dash")]
+    [SerializeField, Min(0.01f)] private float _dashDistance = 4f;
+    [SerializeField, Min(0.01f)] private float _dashDuration = 0.12f;
+    [SerializeField, Min(0.01f)] private float _dashCoolDuration = 4f;
 
     [Header("InputTime")]
     [SerializeField, Range(0f, 0.4f)] private float _comboInputStart = 0.2f;
@@ -37,24 +37,40 @@ public class PlayerController : MonoBehaviour
     private float _runSpeed => PlayerStats.Instance.RunSpeed;
     private float _crouchSpeed => PlayerStats.Instance.CrouchSpeed;
     private float _ladderSpeed => PlayerStats.Instance.LadderSpeed;
+    private int _maxDashChance => PlayerStats.Instance.MaxDashChance;
+
+    public int CurrentDashCharges => _currentDashCharges;
+    public int MaxDashCharges => Mathf.Max(1, _maxDashChance);
 
     private HashSet<Collider2D> _ladderTriggers;
     private Collider2D _currentLadderCollider;
 
     private bool _isGrounded;
     private bool _isLadder;
+    private bool _isDashing;
     private bool _isNearLadeer;
     private bool _attackRequested;
+    private bool _isSubscribedToPlayerStatus;
+    private bool _dashChargesInitialized;
 
     private float _originalGravityScale;
     private float _ladderDirection = 1f;
     private float _ladderCoolDownTime;
+    private float _dashEndTime;
+    private float _dashRechargeTime;
+    private float _dashDirection;
+    private float _dashSpeed;
     private float _ladderJumpValue = 3f;
+
+    private int _currentDashCharges;
+    private int _lastDashMaxCharges;
 
     private int _nextAttackDirection;
     private int _lastAttackStep;
 
     private PlayerState _currentState = PlayerState.Idle;
+
+    public event Action<int, int, bool> OnDashChargesChanged;
 
     private void Awake()
     {
@@ -112,12 +128,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerStatus.Instance.OnDied += HandleDied;
+        //TODO(이주헌): 시점정리 전 임시
+        TrySubscribeToPlayerStatus();
+    }
 
-        if (PlayerStatus.Instance.IsDead)
-        {
-            HandleDied();
-        }
+    private void Start()
+    {
+        //TODO(이주헌): 시점정리 전 임시
+        TrySubscribeToPlayerStatus();
     }
 
     private void Update()
@@ -140,6 +158,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        UpdateDashCharges();
         CheckGrounded();
         TryEnterLadder();
 
@@ -149,29 +168,51 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerStatus.Instance.OnDied -= HandleDied;
+        if (_isDashing)
+        {
+            EndDash();
+        }
+        //TODO(이주헌): 시점정리 전 임시
+        UnsubscribeFromPlayerStatus();
     }
-
-    private void HandleDied()
+    //TODO(이주헌): 시점정리 전 임시
+    private void TrySubscribeToPlayerStatus()
     {
-        if (_currentState == PlayerState.Died)
+        if (_isSubscribedToPlayerStatus)
         {
             return;
         }
 
-        _currentState = PlayerState.Died;
-        _attackRequested = false;
-        _nextAttackDirection = 0;
-
-        if (_isLadder)
+        if (PlayerStatus.Instance == null)
         {
-            ExitLadder();
+            Logger.LogWarning("PlayerStatus 인스턴스가 아직 준비되지 않았습니다.");
+            return;
         }
 
-        _playerInputHandler.ClearInput();
-        _rigidbody2D_Player.linearVelocity = Vector2.zero;
-        _animator_Player.SetBool("ComboAttackSign", false);
-        _animator_Player.SetBool("IsDead", true);
+        PlayerStatus.Instance.OnDied += HandleDied;
+        _isSubscribedToPlayerStatus = true;
+
+        if (PlayerStatus.Instance.IsDead)
+        {
+            HandleDied();
+        }
+    }
+    //TODO(이주헌): 시점정리 전 임시
+    private void UnsubscribeFromPlayerStatus()
+    {
+        if (!_isSubscribedToPlayerStatus)
+        {
+            return;
+        }
+
+        PlayerStatus playerStatus = PlayerStatus.Instance;
+
+        if (playerStatus != null)
+        {
+            playerStatus.OnDied -= HandleDied;
+        }
+
+        _isSubscribedToPlayerStatus = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -235,6 +276,7 @@ public class PlayerController : MonoBehaviour
     private void TryEnterLadder()
     {
         if (_isLadder ||
+            _isDashing ||
             !_isNearLadeer ||
             Time.time < _ladderCoolDownTime ||
             _attackRequested ||
@@ -275,14 +317,32 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState GetNextState()
     {
+        if (_isDashing)
+        {
+            _playerInputHandler.ConsumeDashInput();
+            return PlayerState.Dash;
+        }
+
         if (_attackRequested || IsAttackStepChange())
         {
+            _playerInputHandler.ConsumeDashInput();
             return PlayerState.ComboAttack;
         }
 
         if (_isLadder)
         {
+            _playerInputHandler.ConsumeDashInput();
             return PlayerState.Ladder;
+        }
+
+        if (_playerInputHandler.DashQueued)
+        {
+            _playerInputHandler.ConsumeDashInput();
+
+            if (_currentDashCharges > 0)
+            {
+                return PlayerState.Dash;
+            }
         }
 
         if (!_isGrounded)
@@ -351,6 +411,9 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.Ladder:
                 HandleLadder();
+                break;
+            case PlayerState.Dash:
+                HandleDash();
                 break;
             case PlayerState.Jump:
             {
@@ -446,6 +509,114 @@ public class PlayerController : MonoBehaviour
         }
 
         _animator_Player.SetFloat("LadderDirection", _ladderDirection);
+        UpdateAnimatorParameters(false);
+    }
+
+    private void HandleDash()
+    {
+        if (!_isDashing)
+        {
+            StartDash();
+        }
+
+        if (Time.time >= _dashEndTime)
+        {
+            EndDash();
+            return;
+        }
+
+        _rigidbody2D_Player.linearVelocity = new Vector2(
+            _dashDirection * _dashSpeed,
+            0f);
+        UpdateAnimatorParameters(false);
+    }
+
+    private void StartDash()
+    {
+        _isDashing = true;
+        _dashDirection = Mathf.Abs(_playerInputHandler.MoveInput) > 0.01f
+            ? Mathf.Sign(_playerInputHandler.MoveInput)
+            : (_spriteRenderer_Player.flipX ? -1f : 1f);
+        float dashDuration = Mathf.Max(0.01f, _dashDuration);
+        _dashSpeed = Mathf.Max(0f, _dashDistance) / dashDuration;
+        _dashEndTime = Time.time + dashDuration;
+        if (_currentDashCharges == _lastDashMaxCharges)
+        {
+            _dashRechargeTime = Time.time + _dashCoolDuration;
+        }
+
+        _currentDashCharges--;
+        NotifyDashChargesChanged(true);
+        _rigidbody2D_Player.linearVelocity = new Vector2(
+            _rigidbody2D_Player.linearVelocity.x,
+            0f);
+        _animator_Player.SetBool("IsDash", true);
+    }
+
+    private void UpdateDashCharges()
+    {
+        int previousDashCharges = _currentDashCharges;
+        int previousMaxDashCharges = _lastDashMaxCharges;
+        int maxDashCharges = MaxDashCharges;
+
+        if (!_dashChargesInitialized)
+        {
+            _currentDashCharges = maxDashCharges;
+            _lastDashMaxCharges = maxDashCharges;
+            _dashChargesInitialized = true;
+            NotifyDashChargesChanged(false);
+            return;
+        }
+
+        if (maxDashCharges > _lastDashMaxCharges)
+        {
+            _currentDashCharges = Mathf.Min(
+                maxDashCharges,
+                _currentDashCharges + maxDashCharges - _lastDashMaxCharges);
+        }
+        else if (maxDashCharges < _lastDashMaxCharges)
+        {
+            _currentDashCharges = Mathf.Min(_currentDashCharges, maxDashCharges);
+        }
+
+        _lastDashMaxCharges = maxDashCharges;
+
+        if (_currentDashCharges >= maxDashCharges)
+        {
+            _dashRechargeTime = 0f;
+        }
+        else if (_dashRechargeTime <= 0f)
+        {
+            _dashRechargeTime = Time.time + _dashCoolDuration;
+        }
+        else if (Time.time >= _dashRechargeTime)
+        {
+            _currentDashCharges++;
+            _dashRechargeTime = _currentDashCharges < maxDashCharges
+                ? Time.time + _dashCoolDuration
+                : 0f;
+        }
+
+        if (_currentDashCharges != previousDashCharges ||
+            maxDashCharges != previousMaxDashCharges)
+        {
+            NotifyDashChargesChanged(false);
+        }
+    }
+
+    private void NotifyDashChargesChanged(bool wasDashUsed)
+    {
+        OnDashChargesChanged?.Invoke(
+            _currentDashCharges,
+            MaxDashCharges,
+            wasDashUsed);
+    }
+
+    private void EndDash()
+    {
+        _isDashing = false;
+        _rigidbody2D_Player.linearVelocity = Vector2.zero;
+        _animator_Player.SetBool("IsDash", false);
         UpdateAnimatorParameters(false);
     }
 
@@ -565,6 +736,33 @@ public class PlayerController : MonoBehaviour
         }
 
         _lastAttackStep = currentAttackStep;
+    }
+
+    private void HandleDied()
+    {
+        if (_currentState == PlayerState.Died)
+        {
+            return;
+        }
+
+        _currentState = PlayerState.Died;
+        _attackRequested = false;
+        _nextAttackDirection = 0;
+
+        if (_isDashing)
+        {
+            EndDash();
+        }
+
+        if (_isLadder)
+        {
+            ExitLadder();
+        }
+
+        _playerInputHandler.ClearInput();
+        _rigidbody2D_Player.linearVelocity = Vector2.zero;
+        _animator_Player.SetBool("ComboAttackSign", false);
+        _animator_Player.SetBool("IsDead", true);
     }
 
     private int GetComboAttackStep(AnimatorStateInfo stateInfo)

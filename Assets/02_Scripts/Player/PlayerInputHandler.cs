@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
@@ -6,6 +7,8 @@ public class PlayerInputHandler : MonoBehaviour
     public float MoveInput { get; private set; }
     public bool RunInput { get; private set; }
     public bool CrouchInput { get; private set; }
+    public bool DashInput { get; private set; }
+    public bool DashQueued { get; private set; }
     public bool AttackInput { get; private set; }
     public bool UpInput { get; private set; }
     public bool DownInput { get; private set; }
@@ -29,6 +32,8 @@ public class PlayerInputHandler : MonoBehaviour
             RunInput = false;
             CrouchInput = false;
             AttackInput = false;
+            DashInput = false;
+            DashQueued = false;
             UpInput = false;
             DownInput = false;
             JumpInput = false;
@@ -93,6 +98,12 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         RunInput = _isRunning && (leftHeld || rightHeld);
+        DashInput = keyboard.leftShiftKey.isPressed;
+        if (keyboard.leftShiftKey.wasPressedThisFrame)
+        {
+            DashQueued = true;
+        }
+
         UpInput = keyboard.upArrowKey.isPressed;
         DownInput = keyboard.downArrowKey.isPressed;
         JumpInput = keyboard.cKey.isPressed;
@@ -126,6 +137,13 @@ public class PlayerInputHandler : MonoBehaviour
         return wasPressed;
     }
 
+    public bool ConsumeDashInput()
+    {
+        bool wasPressed = DashQueued;
+        DashQueued = false;
+        return wasPressed;
+    }
+
     public void ClearJumpInput()
     {
         JumpQueued = false;
@@ -136,6 +154,8 @@ public class PlayerInputHandler : MonoBehaviour
         MoveInput = 0f;
         RunInput = false;
         CrouchInput = false;
+        DashInput = false;
+        DashQueued = false;
         AttackInput = false;
         UpInput = false;
         DownInput = false;

@@ -7,6 +7,7 @@
     Ladder,
     Jump,
     Fall,
+    Dash,
     ComboAttack,
     Died
 }
