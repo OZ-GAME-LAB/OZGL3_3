@@ -14092,7 +14092,7 @@ GameObject:
   - component: {fileID: 8907268016101598296}
   - component: {fileID: 3999462060646397183}
   - component: {fileID: 4986270598455163818}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: TM_Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20142,7 +20142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 592583744325054725, guid: 96f1757184ccc92448d2c5c0d50fc9b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.079999
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 592583744325054725, guid: 96f1757184ccc92448d2c5c0d50fc9b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20175,6 +20175,10 @@ PrefabInstance:
     - target: {fileID: 592583744325054725, guid: 96f1757184ccc92448d2c5c0d50fc9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558978127069598759, guid: 96f1757184ccc92448d2c5c0d50fc9b5, type: 3}
+      propertyPath: m_Size.y
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
