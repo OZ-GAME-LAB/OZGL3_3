@@ -6,10 +6,10 @@ public class MonsterBase : MonoBehaviour
     private MonsterAnimatorController _monsterAnimController;
 
     [Header("Stats")]
-    [SerializeField] private float _maxHp = 100f;
+    [SerializeField] private float _maxHp = 5f;
     [SerializeField] public float _moveSpeed = 3f;
     [SerializeField] private float _aggroRange = 7f;
-    [SerializeField] private int _attackDamage = 10;
+    [SerializeField] private int _attackDamage = 1;
     [SerializeField] private int _attackPatternCount = 2;
     protected float _currentHp;
 
