@@ -23,6 +23,7 @@ public class GameStartUI : UIBase
     private void OnClickStart()
     {
         UIManager.Instance.CloseGameStartUI();
+        UIManager.Instance.OpenMainHUD();
     }
 
     private void OnClickSetting()
