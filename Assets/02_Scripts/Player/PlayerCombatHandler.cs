@@ -7,15 +7,18 @@ public class PlayerCombatHandler : MonoBehaviour
     [SerializeField] private string _targetTag;
     [SerializeField] private Vector2 _rangeOffset = new Vector2(0.2f, 0f);
     [SerializeField] private Vector2 _rangeSize = new Vector2(0.4f, 0.3f);
+
     private Rigidbody2D _rigidbody2D_Player;
+
     private readonly List<Collider2D> _overlapColliders = new List<Collider2D>();
     private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
+    private readonly HashSet<NormalMonster> _damagedMonsters = new HashSet<NormalMonster>();
 
     private int _attackDamage => PlayerStats.Instance.AttackDamage;
 
     private void Awake()
     {
-        if (_rigidbody2D_Player != null)
+        if (_rigidbody2D_Player == null)
         {
             _rigidbody2D_Player = GetComponent<Rigidbody2D>();
         }
@@ -66,30 +69,29 @@ public class PlayerCombatHandler : MonoBehaviour
         return targets.Count;
     }
 
-    //ToDO(이주헌) : 몬스터 협업시 주석해제
-    //public int ApplyAttackDamage()
-    //{
-    //    FindTargetsInRange(_targetsInRange);
-    //    _damagedMonsters.Clear();
+    public int ApplyAttackDamage()
+    {
+        FindTargetsInRange(_targetsInRange);
+        _damagedMonsters.Clear();
 
-    //    foreach (Collider2D targetCollider in _targetsInRange)
-    //    {
-    //        Monster monster = targetCollider.GetComponentInParent<Monster>();
-    //        if (monster == null || !_damagedMonsters.Add(monster))
-    //        {
-    //            continue;
-    //        }
+        foreach (Collider2D targetCollider in _targetsInRange)
+        {
+            NormalMonster monster = targetCollider.GetComponentInParent<NormalMonster>();
+            if (monster == null || !_damagedMonsters.Add(monster))
+            {
+                continue;
+            }
 
-    //        monster.TakeDamage(_attackDamage);
-    //    }
+            monster.TakeDamage(_attackDamage);
+        }
 
-    //    return _damagedMonsters.Count;
-    //}
+        return _damagedMonsters.Count;
+    }
 
-    //public void AnimationAttackHit()
-    //{
-    //    ApplyAttackDamage();
-    //}
+    public void AnimationAttackHit()
+    {
+        ApplyAttackDamage();
+    }
 
     private bool HasTargetTagInParents(Transform targetTransform)
     {
