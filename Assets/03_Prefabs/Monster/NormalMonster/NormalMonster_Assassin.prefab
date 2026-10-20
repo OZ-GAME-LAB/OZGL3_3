@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 2789434556929343157}
   m_Layer: 7
   m_Name: NormalMonster_Assassin
-  m_TagString: Monster
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,9 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e46c5b7b3a70d4c8fd44629b446abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
-  _maxHp: 100
+  _maxHp: 5
   _moveSpeed: 3
   _aggroRange: 7
+  _attackDamage: 3
   _attackPatternCount: 1
   Skills:
   - {fileID: 11400000, guid: f92ee524cbac8a04b88075ed83ea52d4, type: 2}
