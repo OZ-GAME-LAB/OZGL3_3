@@ -10,6 +10,7 @@ public class PlayerStats : SingletonBehaviour<PlayerStats>
     [SerializeField, Min(0f)] private float _baseRunSpeed = 6f;
     [SerializeField, Min(0f)] private float _baseCrouchSpeed = 2f;
     [SerializeField, Min(0f)] private float _baseLadderSpeed = 3f;
+    [SerializeField, Min(1)] private int _baseMaxDashChance = 1;
     [SerializeField, Min(1)] private int _baseAttackDamage = 1;
     [SerializeField, Min(1)] private int _baseMaxHealth = 5;
     [SerializeField, Min(1)] private int _baseMaxSkillGauge = 100;
@@ -29,11 +30,13 @@ public class PlayerStats : SingletonBehaviour<PlayerStats>
     private float _crouchSpeedBonusValue;
     private float _ladderSpeedBonusValue;
 
+    private int _maxDashChance;
     private int _attackDamage;
     private int _maxHealth;
     private int _maxSkillGauge;
     private int _maxChaosGauge;
 
+    private int _maxDashChanceBonusValue;
     private int _attackDamageBonusValue;
     private int _maxHealthBonusValue;
     private int _maxSkillGaugeBonusValue;
@@ -47,6 +50,7 @@ public class PlayerStats : SingletonBehaviour<PlayerStats>
     public float CrouchSpeed{get { EnsureStatsCalculated(); return _baseCrouchSpeed * _crouchSpeedBaseBonus; }}
     public float LadderSpeed{get { EnsureStatsCalculated(); return _baseLadderSpeed * _ladderSpeedBaseBonus; }}
 
+    public int MaxDashChance{get { EnsureStatsCalculated(); return _maxDashChance; }}
     public int AttackDamage{get { EnsureStatsCalculated(); return _attackDamage; }}
     public int MaxHealth{get { EnsureStatsCalculated(); return _maxHealth; }}
     public int MaxSkillGauge{get { EnsureStatsCalculated(); return _maxSkillGauge; }}
@@ -72,6 +76,7 @@ public class PlayerStats : SingletonBehaviour<PlayerStats>
         RecalculateStat("RunSpeed");
         RecalculateStat("CrouchSpeed");
         RecalculateStat("LadderSpeed");
+        RecalculateStat("MaxDashChance");
         RecalculateStat("AttackDamage");
         RecalculateStat("MaxHealth");
         RecalculateStat("MaxSkillGauge");
@@ -103,6 +108,10 @@ public class PlayerStats : SingletonBehaviour<PlayerStats>
 
             case "LadderSpeed":
                 _ladderSpeedBaseBonus = Mathf.Max(0f, 1f + _ladderSpeedBonusValue);
+                break;
+
+            case "MaxDashChance":
+                _maxDashChance = Mathf.Max(1, _baseMaxDashChance + _maxDashChanceBonusValue);
                 break;
 
             case "AttackDamage":
@@ -153,6 +162,10 @@ public class PlayerStats : SingletonBehaviour<PlayerStats>
                 _ladderSpeedBonusValue += bonusValue;
                 break;
 
+            case "MaxDashChance":
+                _maxDashChanceBonusValue += Mathf.RoundToInt(bonusValue);
+                break;
+
             case "AttackDamage":
                 _attackDamageBonusValue += Mathf.RoundToInt(bonusValue);
                 break;
@@ -184,6 +197,7 @@ public class PlayerStats : SingletonBehaviour<PlayerStats>
         float runSpeedBonusPercent,
         float crouchSpeedBonusPercent,
         float ladderSpeedBonusPercent,
+        int maxDashChanceBonus,
         int attackDamageBonus,
         int maxHealthBonus,
         int maxSkillGaugeBonus,
@@ -194,6 +208,7 @@ public class PlayerStats : SingletonBehaviour<PlayerStats>
         _runSpeedBonusValue = runSpeedBonusPercent;
         _crouchSpeedBonusValue = crouchSpeedBonusPercent;
         _ladderSpeedBonusValue = ladderSpeedBonusPercent;
+        _maxDashChanceBonusValue = maxDashChanceBonus;
         _attackDamageBonusValue = attackDamageBonus;
         _maxHealthBonusValue = maxHealthBonus;
         _maxSkillGaugeBonusValue = maxSkillGaugeBonus;
