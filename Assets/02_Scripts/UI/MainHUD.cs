@@ -4,21 +4,13 @@ public class MainHUD : UIBase
 {
     private HeartPanel _heartPanel;
     private SkillGaugePanel _skillGaugePanel;
-
-    private PlayerStats playerStats;
+    private DashPanel _dashPanel;
 
     private void Awake()
     {
-        _heartPanel = GetComponentInChildren<HeartPanel>();
-        _skillGaugePanel = GetComponentInChildren<SkillGaugePanel>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            UIManager.Instance.OpenStatusUI(this.playerStats);
-        }
+        _heartPanel = GetComponentInChildren<HeartPanel>(true);
+        _skillGaugePanel = GetComponentInChildren<SkillGaugePanel>(true);
+        _dashPanel = GetComponentInChildren<DashPanel>(true);
     }
 
     private void OnEnable()
@@ -27,8 +19,34 @@ public class MainHUD : UIBase
 
         if (playerStatus == null)
         {
-            Logger.LogError("MainHUD : PlayerStaus가 없습니다.");
-            return;
+            Logger.LogError("MainHUD: PlayerStatus가 없습니다.");
+        }
+        else
+        {
+            if (_heartPanel != null)
+            {
+                _heartPanel.Init(playerStatus);
+            }
+
+            if (_skillGaugePanel != null)
+            {
+                _skillGaugePanel.Init(playerStatus);
+            }
+        }
+
+        // TODO(강혜창): PlayerController가 싱글톤이 되면 Find 대신 Instance 사용
+        if (_dashPanel != null)
+        {
+            _dashPanel.Init(FindFirstObjectByType<PlayerController>());
+        }
+    }
+
+    // TODO(강혜창): 입력은 플레이어 쪽(PlayerInputHandler)으로 옮기고 삭제
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            UIManager.Instance.OpenStatusUI(PlayerStats.Instance);
         }
     }
 }
