@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 7845289767674029628}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.22, z: 0}
+  m_LocalPosition: {x: 0, y: -0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -204,7 +204,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5216040749699226108}
@@ -307,7 +307,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -354,7 +354,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.33, y: 0.44}
+  m_Size: {x: 0.45, y: 1.3}
   m_Direction: 0
 --- !u!114 &7625512210186369076
 MonoBehaviour:
@@ -411,17 +411,20 @@ MonoBehaviour:
   _rigidbody2D_Player: {fileID: 1668115067453109502}
   _playerInputHandler: {fileID: 7625512210186369076}
   _playerCombatHandler: {fileID: 5442200020367547145}
-  _playerStats: {fileID: 8000000000000001001}
   _animator_Player: {fileID: 5126873320106332855}
   _spriteRenderer_Player: {fileID: 5592062722437639812}
   _transform_GroundCheck: {fileID: 5216040749699226108}
   _layerMask_Ground:
     serializedVersion: 2
     m_Bits: 64
-  _acceleration: 10
-  _deceleration: 14
-  _jumpVelocity: 4
+  _layerMask_Ladder:
+    serializedVersion: 2
+    m_Bits: 0
   _groundCheckRadius: 0.12
+  _ladderCoolDown: 1
+  _dashDistance: 4
+  _dashDuration: 0.12
+  _dashCoolDuration: 4
   _comboInputStart: 0.2
   _comboInputEnd: 0.78
 --- !u!114 &8000000000000001001
@@ -434,14 +437,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ae2661db83a483f8117fff1c8c18cb0, type: 3}
-  m_Name: ''
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  _baseWalkSpeed: 2.5
-  _baseRunSpeed: 4
-  _baseCrouchSpeed: 1.2
+  _baseJumpValue: 15
+  _baseWalkSpeed: 4
+  _baseRunSpeed: 6
+  _baseCrouchSpeed: 2
+  _baseLadderSpeed: 3
+  _baseMaxDashChance: 1
   _baseAttackDamage: 1
   _baseMaxHealth: 5
   _baseMaxSkillGauge: 100
+  _baseMaxChaosGauge: 10
 --- !u!114 &8000000000000001002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,8 +459,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e3655ae76794f999f2bbda2347c6741, type: 3}
-  m_Name: ''
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerArtifactEquipment
-  _maxEquippedArtifacts: 3
   _ownedArtifacts: []
   _equippedArtifacts: []
