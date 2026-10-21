@@ -88,8 +88,6 @@ public class NormalMonster : MonsterBase
     {
         PreventMonsterFromDrop();
 
-        if (!_isGrounded) return;
-
         float direction = _isMovingRight ? 1f : -1f;
         _rigidbody2D.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody2D.linearVelocityY);
         if (Mathf.Abs(_rigidbody2D.linearVelocity.x) > 0)
@@ -125,6 +123,12 @@ public class NormalMonster : MonsterBase
         _isGroundAhead = Physics2D.OverlapCircle(_edgeCheck.position, _checkGroundRadius, _groundLayer);
         _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _checkGroundRadius, _groundLayer);
 
+        if (!_isGrounded)
+        {
+            AnimController_NormalMonster.ChangeState(MonsterState.Fall);
+            return;
+        }
+
         if (_isAggro)
         {
             return;
@@ -153,11 +157,6 @@ public class NormalMonster : MonsterBase
 
     private void TraceAndAttack()
     {
-        if (_playerTransform == null)
-        {
-            Logger.LogError("[NormalMonster] _playerTransform이 Null입니다.");
-            return;
-        }
         if (Skills == null)
         {
             Logger.LogError("[NormalMonster] Skills가 Null입니다.");
@@ -167,6 +166,12 @@ public class NormalMonster : MonsterBase
         {
             Vector2 direction = (_playerTransform.position - this.transform.position).normalized;
             _rigidbody2D.linearVelocity = direction * _moveSpeed;
+            bool isShouldMoveRight = direction.x > 0;
+            if (_isMovingRight != isShouldMoveRight)
+            {
+                _isMovingRight = isShouldMoveRight;
+                Flip();
+            }
             if (Mathf.Abs(_rigidbody2D.linearVelocity.x) > 0)
             {
                 AnimController_NormalMonster.ChangeState(MonsterState.Forward);
@@ -175,10 +180,12 @@ public class NormalMonster : MonsterBase
             {
                 AnimController_NormalMonster.ChangeState(MonsterState.Idle);
             }
-            return;
         }
 
-        PreventMonsterFromDrop();
+        if (_monsterType != MonsterType.FlyingCreature && _monsterType != MonsterType.Flying)
+        {
+            PreventMonsterFromDrop();
+        }
 
         float distance = Vector2.Distance(transform.position, _playerTransform.position);
 
@@ -231,6 +238,8 @@ public class NormalMonster : MonsterBase
             return;
         }
 
+
+
         if (!_isGrounded || _isBlocked || !_isGroundAhead)
         {
             UpdateFacingDirection();
@@ -257,10 +266,7 @@ public class NormalMonster : MonsterBase
 
     private void UpdateFacingDirection()
     {
-        if (!_isGrounded)
-        {
-            AnimController_NormalMonster.ChangeState(MonsterState.Fall);
-        }
+        
         if (_playerTransform == null)
         {
             Logger.LogError("[NormalMonster] PlayerTransform이 Null 입니다.");
