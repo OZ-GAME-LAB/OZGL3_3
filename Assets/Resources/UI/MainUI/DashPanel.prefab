@@ -113,4 +113,4 @@ MonoBehaviour:
   _dashPrefab: {fileID: 735239941356660915, guid: 6ed89498175bc70419d39704ff43acc3, type: 3}
   _sprite_DashFull: {fileID: -947689277059884443, guid: 1331f2f450409334f842c108ad8e4186, type: 3}
   _sprite_DashEmpty: {fileID: -5846603404203461769, guid: db9257ee8aafb414ca10cc4c4616bf84, type: 3}
-  _worldOffset: {x: 0, y: -0.7, z: 0}
+  _worldOffset: {x: 0, y: -0.86, z: 0}
