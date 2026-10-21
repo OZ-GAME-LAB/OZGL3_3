@@ -16,11 +16,6 @@ public class StatusUI : UIBase
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.U))
-        {
-            UIManager.Instance.CloseStatusUI();
-        }
-
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             UIManager.Instance.CloseStatusUI();
