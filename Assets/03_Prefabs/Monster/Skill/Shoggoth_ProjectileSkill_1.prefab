@@ -192,5 +192,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f03ae6ac06e22a419918123e79f52ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExplosionProjectileSkill
-  _damage: 10
+  _damage: 1
   _lifeTime: 5
