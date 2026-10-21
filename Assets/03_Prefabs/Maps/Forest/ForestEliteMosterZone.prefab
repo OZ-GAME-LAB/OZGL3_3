@@ -7568,13 +7568,13 @@ GameObject:
   - component: {fileID: 9135648700724186863}
   - component: {fileID: 4103267874026087058}
   - component: {fileID: 985175983184994554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LadderExitPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &175652041938781197
 Transform:
   m_ObjectHideFlags: 0

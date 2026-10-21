@@ -12550,13 +12550,13 @@ GameObject:
   - component: {fileID: 7697553942582791459}
   - component: {fileID: 8461005029438658645}
   - component: {fileID: 430231278376980376}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: LadderExitPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6028441560758579326
 Transform:
   m_ObjectHideFlags: 0
@@ -13040,13 +13040,13 @@ GameObject:
   - component: {fileID: 1227347825057247527}
   - component: {fileID: 3626482882331125525}
   - component: {fileID: 7163329026446016264}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: LadderExitPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4614110281272171236
 Transform:
   m_ObjectHideFlags: 0

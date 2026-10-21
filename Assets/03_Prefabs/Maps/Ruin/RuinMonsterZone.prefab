@@ -717,10 +717,10 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -7.9888153, y: 15.992329}
-  - {x: -6.9818573, y: 16.971731}
-  - {x: -6.014145, y: 16.97664}
-  - {x: -4.9948883, y: 16.006771}
+  - {x: -8.140495, y: 15.898182}
+  - {x: -7.081238, y: 16.992651}
+  - {x: -5.872925, y: 16.98187}
+  - {x: -4.775215, y: 15.902164}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1006,8 +1006,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 2.977478, y: 12.98695}
-  - {x: 6.979698, y: 16.991474}
+  - {x: 2.6795197, y: 12.890116}
+  - {x: 6.830063, y: 16.89917}
+  - {x: 7.0591583, y: 16.900074}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -34140,13 +34141,13 @@ GameObject:
   - component: {fileID: 8732320838603030112}
   - component: {fileID: 8521735718761397334}
   - component: {fileID: 8130834235064674668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LadderExitPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &410860077107879321
 Transform:
   m_ObjectHideFlags: 0
@@ -34622,8 +34623,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 17.92669, y: -3.986637}
-  - {x: 20.004189, y: -6.053505}
+  - {x: 17.988731, y: -4.0980353}
+  - {x: 18.17752, y: -4.0971603}
+  - {x: 20.216225, y: -6.104907}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

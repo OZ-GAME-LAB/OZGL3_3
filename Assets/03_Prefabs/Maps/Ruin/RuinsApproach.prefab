@@ -6007,13 +6007,13 @@ GameObject:
   - component: {fileID: 3018525765538241079}
   - component: {fileID: 5906377603918362639}
   - component: {fileID: 1773365568825603920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LadderExitPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5927065918503925246
 Transform:
   m_ObjectHideFlags: 0
