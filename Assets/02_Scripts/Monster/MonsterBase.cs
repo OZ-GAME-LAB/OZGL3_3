@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿  using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterBase : MonoBehaviour
@@ -10,6 +10,7 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] public float _moveSpeed = 3f;
     [SerializeField] private float _aggroRange = 7f;
     [SerializeField] private int _attackDamage = 1;
+    [SerializeField] private float _attackRange = 2f;
     [SerializeField] private int _attackPatternCount = 2;
     protected float _currentHp;
 
@@ -24,12 +25,14 @@ public class MonsterBase : MonoBehaviour
     protected bool _isMovingRight = false;
     protected bool _isAggro = false;
     protected bool _isAttacking = false;
+    protected bool _isDead = false;
     private float _attackCooldownTimer = 0f;
     private float _attackCooldown = 2f;
     private bool _isAttackUseable = false;
 
     protected virtual void Awake()
     {
+        _isDead = false;
         _monsterAnimController = GetComponent<MonsterAnimatorController>();
         //[TODO] _playerTransform 찾기 일단은 직접 등록으로
         _currentHp = _maxHp;
@@ -54,6 +57,15 @@ public class MonsterBase : MonoBehaviour
         }
 
         CheckAggro();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && _playerTransform == null)
+        {
+            _playerTransform = collision.transform;
+            Logger.LogError("[MonsterBase] 플레이어트렌스폼 받아오기 성공");
+        }
     }
 
     protected void CheckAggro()
@@ -111,16 +123,21 @@ public class MonsterBase : MonoBehaviour
 
     protected virtual void Die()
     {
+        if (_isDead) return;
         _monsterAnimController.ChangeState(MonsterState.Dead);
     }
 
     public void OnDieAnimationEnd()
     {
+        _monsterAnimController.ChangeState(MonsterState.Idle);
+        _isDead = true;
         Destroy(gameObject);
     }
 
     public void OnApplyAttackDamage()
     {
+        float distance = Vector2.Distance(transform.position, _playerTransform.position);
+        if (distance > _attackRange) return;
         if (_playerTransform.TryGetComponent<PlayerStatus>(out var playerStatus))
         {
             playerStatus.TakeDamage(_attackDamage);

@@ -148,6 +148,7 @@ MonoBehaviour:
   _moveSpeed: 3
   _aggroRange: 7
   _attackDamage: 3
+  _attackRange: 2
   _attackPatternCount: 1
   Skills:
   - {fileID: 11400000, guid: f92ee524cbac8a04b88075ed83ea52d4, type: 2}
@@ -287,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7677964959825045703}
   - component: {fileID: 2714752216812054300}
+  - component: {fileID: 2002522475225857662}
   m_Layer: 0
   m_Name: PlayerCheckCollider
   m_TagString: Untagged
@@ -345,6 +347,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 2
+--- !u!114 &2002522475225857662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256618879844179718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fdadf2303acc740bfb1c02d09de6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTransformCheck
 --- !u!1 &8677492236835603557
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,7 +38,10 @@ public class StealthSkill : MonoBehaviour
     {
         float randomAttackTime = UnityEngine.Random.Range(3f, 5f);
         yield return new WaitForSeconds(randomAttackTime);
-        transform.position = _monsterBase._playerTransform.position;
+        if (_monsterBase._playerTransform != null)
+        {
+            transform.position = _monsterBase._playerTransform.position;
+        }
 
         ExitStealth();
     }

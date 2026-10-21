@@ -3,7 +3,7 @@
 public class ExplosionProjectileSkill : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float _damage = 10f;
+    [SerializeField] private int _damage = 1;
     [SerializeField] private float _lifeTime = 5f;
 
     private Rigidbody2D _rigidbody;
@@ -28,7 +28,10 @@ public class ExplosionProjectileSkill : MonoBehaviour
 
             if (collision.CompareTag("Player"))
             {
-                // [TODO] 플레이어에게 데미지 전달
+                if (collision.TryGetComponent<PlayerStatus>(out var playerStatus))
+                {
+                    playerStatus.TakeDamage(_damage);
+                }
             }
         }
     }
