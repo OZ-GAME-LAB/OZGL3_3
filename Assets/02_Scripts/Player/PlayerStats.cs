@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : SingletonBehaviour<PlayerStats>
 {
     [Header("Base Stats")]
-    [SerializeField, Min(0f)] private float _baseJumpValue = 5f;
+    [SerializeField, Min(0f)] private float _baseJumpValue = 15f;
     [SerializeField, Min(0f)] private float _baseWalkSpeed = 4f;
     [SerializeField, Min(0f)] private float _baseRunSpeed = 6f;
     [SerializeField, Min(0f)] private float _baseCrouchSpeed = 2f;
