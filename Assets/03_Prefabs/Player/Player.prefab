@@ -419,7 +419,7 @@ MonoBehaviour:
     m_Bits: 64
   _layerMask_Ladder:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   _groundCheckRadius: 0.12
   _ladderCoolDown: 1
   _dashDistance: 4

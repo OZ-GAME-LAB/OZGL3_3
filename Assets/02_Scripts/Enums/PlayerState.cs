@@ -9,5 +9,6 @@
     Fall,
     Dash,
     ComboAttack,
+    JumpAttack,
     Died
 }
