@@ -14614,6 +14614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd37c29ab84ceb24a9d5625418abbed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LadderZone
+  _dropThroughDuration: 0.35
 --- !u!1 &3040279462507013308
 GameObject:
   m_ObjectHideFlags: 0
@@ -14888,6 +14889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd37c29ab84ceb24a9d5625418abbed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LadderZone
+  _dropThroughDuration: 0.35
 --- !u!1 &3701786415673760172
 GameObject:
   m_ObjectHideFlags: 0
@@ -15137,7 +15139,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15185,7 +15187,7 @@ EdgeCollider2D:
   m_Points:
   - {x: 23.188639, y: 6.900314}
   - {x: 22.785542, y: 6.8952856}
-  - {x: 21.453085, y: 4.8941975}
+  - {x: 21.63918, y: 4.9921417}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -19078,7 +19080,7 @@ TilemapCollider2D:
   m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -19839,7 +19841,7 @@ TilemapCollider2D:
   m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0

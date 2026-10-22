@@ -5111,7 +5111,7 @@ TilemapCollider2D:
   m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -9777,6 +9777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd37c29ab84ceb24a9d5625418abbed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LadderZone
+  _dropThroughDuration: 0.35
 --- !u!1 &8065652152395369494
 GameObject:
   m_ObjectHideFlags: 0
