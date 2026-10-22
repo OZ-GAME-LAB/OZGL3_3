@@ -28,7 +28,9 @@ public class MonsterBase : MonoBehaviour
     protected bool _isDead = false;
     private float _attackCooldownTimer = 0f;
     private float _attackCooldown = 2f;
-    private bool _isAttackUseable = false;
+    protected bool _isAttackUseable = false;
+    protected bool _isUsingSkill = false;
+
 
     protected virtual void Awake()
     {
@@ -90,9 +92,10 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void AttackTarget(float damage)  //[TODO] 데미지 데이터드리븐으로
     {
-        _monsterAnimController.ChangeState(MonsterState.Idle);
-        if ( _isAttackUseable == false) return;
         if (_isAttacking) return;
+
+        _monsterAnimController.ChangeState(MonsterState.Idle);
+        
         _isAttacking = true;
 
         _attackCooldownTimer = _attackCooldown;
@@ -121,6 +124,11 @@ public class MonsterBase : MonoBehaviour
         }
     }
 
+    public void SetUsingSkill(bool isUsing)
+    {
+        _isUsingSkill = isUsing;
+    }
+
     protected virtual void Die()
     {
         if (_isDead) return;
@@ -147,6 +155,7 @@ public class MonsterBase : MonoBehaviour
     public void OnAttackAnimationEnd()
     {
         _isAttacking = false;
+        _isUsingSkill = false;
         _monsterAnimController.ChangeState(MonsterState.Idle);
     }
 }
