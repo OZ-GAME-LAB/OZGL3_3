@@ -228,28 +228,45 @@ public class PlayerController : MonoBehaviour
         }
 
         _ladderTriggers.Add(other);
-
-        if (_currentLadderCollider == null)
-        {
-            _currentLadderCollider = other;
-        }
-
+        UpdateCurrentLadderCollider();
         _isNearLadeer = _ladderTriggers.Count > 0;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other == null || _ladderTriggers == null ||
-            !_ladderTriggers.Remove(other))
+        if (_ladderTriggers == null)
         {
             return;
         }
 
+        _ladderTriggers.Remove(other);
+        UpdateCurrentLadderCollider();
         _isNearLadeer = _ladderTriggers.Count > 0;
 
         if (!_isNearLadeer && _isLadder)
         {
             ExitLadder();
+        }
+    }
+
+    private void UpdateCurrentLadderCollider()
+    {
+        _currentLadderCollider = null;
+        float nearestDistance = float.PositiveInfinity;
+
+        _ladderTriggers.RemoveWhere(collider => collider == null);
+
+        foreach (Collider2D ladderCollider in _ladderTriggers)
+        {
+            Vector2 ladderCenter = ladderCollider.bounds.center;
+            Vector2 offset = ladderCenter - _rigidbody2D_Player.position;
+            float distance = offset.sqrMagnitude;
+
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                _currentLadderCollider = ladderCollider;
+            }
         }
     }
 
