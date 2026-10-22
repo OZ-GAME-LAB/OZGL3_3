@@ -26,7 +26,6 @@ public class MonsterAnimatorController : MonoBehaviour
         switch (state)
         {
             case MonsterState.Idle:
-                ResetAllAnimParameters();
                 break;
             case MonsterState.Attack_1:
                 Animator_Monster.SetBool("isAttack_1", true);

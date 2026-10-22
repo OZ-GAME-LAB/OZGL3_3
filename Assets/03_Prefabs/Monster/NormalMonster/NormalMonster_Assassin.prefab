@@ -153,7 +153,7 @@ MonoBehaviour:
   Skills:
   - {fileID: 11400000, guid: f92ee524cbac8a04b88075ed83ea52d4, type: 2}
   _playerTransform: {fileID: 0}
-  _rigidbody2D: {fileID: 0}
+  _rigidbody2D: {fileID: 8943091864990608418}
   _groundCheck: {fileID: 5002138335853248083}
   _checkGroundRadius: 0.2
   _edgeCheck: {fileID: 8350702099230509209}
