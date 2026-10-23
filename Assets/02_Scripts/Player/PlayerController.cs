@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask_Ladder;
 
     [Header("Ground Check")]
-    [SerializeField] private float _groundCheckRadius = 0.24f;
+    [SerializeField] private float _groundCheckRadius = 0.2f;
 
     [Header("Ladder")]
     [SerializeField] private float _ladderCoolDown = 1f;

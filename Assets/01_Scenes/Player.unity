@@ -287,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2744268314719619380, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
       propertyPath: _groundCheckRadius
-      value: 0.24
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2744268314719619380, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
       propertyPath: _layerMask_Ladder.m_Bits
