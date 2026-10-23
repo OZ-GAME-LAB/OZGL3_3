@@ -4,33 +4,52 @@ using UnityEngine;
 
 public class FadeUI : UIBase
 {
+    public static event Action OnFadeBlack;
+
     [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private float _fadeOutDuration = 0.4f;
+    [SerializeField] private float _holdDuration = 0.1f;
+    [SerializeField] private float _fadeInDuration = 0.4f;
 
     private Coroutine _fadeCoroutine;
-
-    public float CurrentAlpha => _canvasGroup.alpha;
 
     private void OnDisable()
     {
         _fadeCoroutine = null;
     }
 
-    public void Play(float startAlpha, float targetAlpha, float duration, Action onComplete)
+    public void Play()
     {
+        // 이미 진행 중이면 무시한다.
         if (_fadeCoroutine != null)
         {
-            StopCoroutine(_fadeCoroutine);
+            return;
         }
 
-        _fadeCoroutine = StartCoroutine(DoFade(startAlpha, targetAlpha, duration, onComplete));
+        _fadeCoroutine = StartCoroutine(DoFadeInOut());
     }
 
-    private IEnumerator DoFade(float startAlpha, float targetAlpha, float duration, Action onComplete)
+    private IEnumerator DoFadeInOut()
     {
-        _canvasGroup.alpha = startAlpha;
-        _canvasGroup.blocksRaycasts = true;    // 페이드 중에는 클릭을 막는다.
+        _canvasGroup.blocksRaycasts = true;
 
+        yield return DoFade(0f, 1f, _fadeOutDuration);
+
+        OnFadeBlack?.Invoke();
+        yield return new WaitForSecondsRealtime(_holdDuration);
+
+        yield return DoFade(1f, 0f, _fadeInDuration);
+
+        _canvasGroup.blocksRaycasts = false;
+        _fadeCoroutine = null;
+
+        UIManager.Instance.CloseFadeUI();
+    }
+
+    private IEnumerator DoFade(float startAlpha, float targetAlpha, float duration)
+    {
         float elapsed = 0f;
+        _canvasGroup.alpha = startAlpha;
 
         while (elapsed < duration)
         {
@@ -40,9 +59,5 @@ public class FadeUI : UIBase
         }
 
         _canvasGroup.alpha = targetAlpha;
-        _canvasGroup.blocksRaycasts = targetAlpha > 0f;    // 검은 상태에서는 계속 막는다.
-        _fadeCoroutine = null;
-
-        onComplete?.Invoke();
     }
 }
