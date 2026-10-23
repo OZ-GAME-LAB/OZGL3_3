@@ -2652,7 +2652,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cce28eb9f0c9814393fd44b7475ad60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamagePlatform
-  _damageAmount: 10
+  _damageAmount: 1
+  _knockbackHorizontalSpeed: 5
+  _knockbackVerticalSpeed: 10
 --- !u!1 &3618425315255210315
 GameObject:
   m_ObjectHideFlags: 0
