@@ -113,8 +113,8 @@ public class PlayerInputHandler : MonoBehaviour
         AttackInput = keyboard.xKey.isPressed;
         BlockInput = keyboard.cKey.isPressed;
 
-        bool wasPressCKey = keyboard.spaceKey.wasPressedThisFrame;
-        if (wasPressCKey)
+        bool wasPressSpaceKey = keyboard.spaceKey.wasPressedThisFrame;
+        if (wasPressSpaceKey)
         {
             JumpQueued = true;
         }
@@ -160,6 +160,7 @@ public class PlayerInputHandler : MonoBehaviour
         DashInput = false;
         DashQueued = false;
         AttackInput = false;
+        BlockInput = false;
         UpInput = false;
         DownInput = false;
         JumpInput = false;
