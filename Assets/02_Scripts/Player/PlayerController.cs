@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask_Ladder;
 
     [Header("Ground Check")]
-    [SerializeField] private float _groundCheckRadius = 0.24f;
+    [SerializeField] private float _groundCheckRadius = 0.2f;
 
     [Header("Ladder")]
     [SerializeField] private float _ladderCoolDown = 1f;
@@ -50,6 +50,9 @@ public class PlayerController : MonoBehaviour
     private bool _isDashing;
     private bool _isNearLadeer;
     private bool _attackRequested;
+    private bool _isJumpAttack;
+    private bool _isBlocking;
+    private bool _jumpAttackAnimationEntered;
     private bool _isSubscribedToPlayerStatus;
     private bool _dashChargesInitialized;
 
@@ -64,6 +67,8 @@ public class PlayerController : MonoBehaviour
 
     private int _currentDashCharges;
     private int _lastDashMaxCharges;
+    private int _jumpAttacksUsed;
+    private int _airDashesUsed;
 
     private int _nextAttackDirection;
     private int _lastAttackStep;
@@ -146,6 +151,7 @@ public class PlayerController : MonoBehaviour
         }
 
         _playerInputHandler.ReadInput();
+        UpdateJumpAttackState();
         HandleComboAttackState();
         UpdateFacingDirection();
         HandleComboAttackInput();
@@ -163,6 +169,7 @@ public class PlayerController : MonoBehaviour
         TryEnterLadder();
 
         _currentState = GetNextState();
+        UpdateBlockState();
         HandleState();
     }
 
@@ -171,6 +178,11 @@ public class PlayerController : MonoBehaviour
         if (_isDashing)
         {
             EndDash();
+        }
+
+        if (_isBlocking)
+        {
+            SetBlocking(false);
         }
         //TODO(이주헌): 시점정리 전 임시
         UnsubscribeFromPlayerStatus();
@@ -223,28 +235,45 @@ public class PlayerController : MonoBehaviour
         }
 
         _ladderTriggers.Add(other);
-
-        if (_currentLadderCollider == null)
-        {
-            _currentLadderCollider = other;
-        }
-
+        UpdateCurrentLadderCollider();
         _isNearLadeer = _ladderTriggers.Count > 0;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other == null || _ladderTriggers == null ||
-            !_ladderTriggers.Remove(other))
+        if (_ladderTriggers == null)
         {
             return;
         }
 
+        _ladderTriggers.Remove(other);
+        UpdateCurrentLadderCollider();
         _isNearLadeer = _ladderTriggers.Count > 0;
 
         if (!_isNearLadeer && _isLadder)
         {
             ExitLadder();
+        }
+    }
+
+    private void UpdateCurrentLadderCollider()
+    {
+        _currentLadderCollider = null;
+        float nearestDistance = float.PositiveInfinity;
+
+        _ladderTriggers.RemoveWhere(collider => collider == null);
+
+        foreach (Collider2D ladderCollider in _ladderTriggers)
+        {
+            Vector2 ladderCenter = ladderCollider.bounds.center;
+            Vector2 offset = ladderCenter - _rigidbody2D_Player.position;
+            float distance = offset.sqrMagnitude;
+
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                _currentLadderCollider = ladderCollider;
+            }
         }
     }
 
@@ -267,10 +296,17 @@ public class PlayerController : MonoBehaviour
 
     private void CheckGrounded()
     {
+        bool wasGrounded = _isGrounded;
         _isGrounded = Physics2D.OverlapCircle(
             _transform_GroundCheck.position,
             _groundCheckRadius,
             _layerMask_Ground) != null;
+
+        if (!wasGrounded && _isGrounded)
+        {
+            _jumpAttacksUsed = 0;
+            _airDashesUsed = 0;
+        }
     }
 
     private void TryEnterLadder()
@@ -280,6 +316,7 @@ public class PlayerController : MonoBehaviour
             !_isNearLadeer ||
             Time.time < _ladderCoolDownTime ||
             _attackRequested ||
+            _isJumpAttack ||
             IsAttackStepChange())
         {
             return;
@@ -323,6 +360,11 @@ public class PlayerController : MonoBehaviour
             return PlayerState.Dash;
         }
 
+        if (_isJumpAttack)
+        {
+            return PlayerState.JumpAttack;
+        }
+
         if (_attackRequested || IsAttackStepChange())
         {
             _playerInputHandler.ConsumeDashInput();
@@ -355,6 +397,11 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState GetGroundedState()
     {
+        if (_playerInputHandler.BlockInput)
+        {
+            return PlayerState.Block;
+        }
+
         if (_playerInputHandler.CrouchInput)
         {
             return PlayerState.Crouch;
@@ -405,6 +452,10 @@ public class PlayerController : MonoBehaviour
             case PlayerState.Run:
                 HandleRun();
                 break;
+            case PlayerState.Block:
+                _playerInputHandler.ClearJumpInput();
+                HandleBlock();
+                break;
             case PlayerState.Crouch:
                 _playerInputHandler.ClearJumpInput();
                 HandleCrouch();
@@ -443,6 +494,9 @@ public class PlayerController : MonoBehaviour
             case PlayerState.ComboAttack:
                 HandleAttackMovement();
                 break;
+            case PlayerState.JumpAttack:
+                HandleJumpAttackMovement();
+                break;
             case PlayerState.Died:
                 break;
         }
@@ -463,6 +517,34 @@ public class PlayerController : MonoBehaviour
     private void HandleRun()
     {
         SetHorizontalSpeed(_playerInputHandler.MoveInput * _runSpeed);
+        UpdateAnimatorParameters(false);
+    }
+
+    private void UpdateBlockState()
+    {
+        bool shouldBlock = _currentState == PlayerState.Block;
+        if (_isBlocking == shouldBlock)
+        {
+            return;
+        }
+
+        SetBlocking(shouldBlock);
+    }
+
+    private void SetBlocking(bool isBlocking)
+    {
+        _isBlocking = isBlocking;
+        _animator_Player.SetBool("IsBlocking", isBlocking);
+
+        if (PlayerStatus.Instance != null)
+        {
+            PlayerStatus.Instance.SetBlocking(isBlocking);
+        }
+    }
+
+    private void HandleBlock()
+    {
+        SetHorizontalSpeed(0f);
         UpdateAnimatorParameters(false);
     }
 
@@ -546,6 +628,11 @@ public class PlayerController : MonoBehaviour
         }
 
         _currentDashCharges--;
+        if (!_isGrounded)
+        {
+            _airDashesUsed++;
+        }
+
         NotifyDashChargesChanged(true);
         _rigidbody2D_Player.linearVelocity = new Vector2(
             _rigidbody2D_Player.linearVelocity.x,
@@ -659,6 +746,12 @@ public class PlayerController : MonoBehaviour
         AnimatorStateInfo stateInfo = _animator_Player.GetCurrentAnimatorStateInfo(0);
         int attackStep = GetComboAttackStep(stateInfo);
 
+        if (_isJumpAttack)
+        {
+            _playerInputHandler.ConsumeAttackInput();
+            return;
+        }
+
         if (attackStep >= 1 && attackStep <= 3)
         {
             float normalizedTime = stateInfo.normalizedTime % 1f;
@@ -702,6 +795,18 @@ public class PlayerController : MonoBehaviour
             _attackRequested = true;
             _currentState = PlayerState.ComboAttack;
         }
+        else if (!_isGrounded &&
+            !_isDashing &&
+            !_isLadder &&
+            _jumpAttacksUsed < _airDashesUsed + 1)
+        {
+            _jumpAttacksUsed++;
+            _nextAttackDirection = 0;
+            _isJumpAttack = true;
+            _jumpAttackAnimationEntered = false;
+            _animator_Player.SetTrigger("JumpAttack");
+            _currentState = PlayerState.JumpAttack;
+        }
     }
 
     private void HandleComboAttackState()
@@ -738,6 +843,45 @@ public class PlayerController : MonoBehaviour
         _lastAttackStep = currentAttackStep;
     }
 
+    private void HandleJumpAttackMovement()
+    {
+        _playerInputHandler.ClearJumpInput();
+        SetHorizontalSpeed(_playerInputHandler.MoveInput * _walkSpeed);
+        UpdateAnimatorParameters(false);
+    }
+
+    private void UpdateJumpAttackState()
+    {
+        if (!_isJumpAttack)
+        {
+            return;
+        }
+
+        AnimatorStateInfo stateInfo = _animator_Player.GetCurrentAnimatorStateInfo(0);
+        bool isInJumpAttackState = stateInfo.IsName("PlayerAnim_JumpAttack");
+
+        if (_animator_Player.IsInTransition(0))
+        {
+            AnimatorStateInfo nextState = _animator_Player.GetNextAnimatorStateInfo(0);
+            isInJumpAttackState |= nextState.IsName("PlayerAnim_JumpAttack");
+        }
+
+        if (isInJumpAttackState)
+        {
+            _jumpAttackAnimationEntered = true;
+        }
+        else if (_jumpAttackAnimationEntered)
+        {
+            _isJumpAttack = false;
+            _jumpAttackAnimationEntered = false;
+        }
+        else if (_isGrounded)
+        {
+            _animator_Player.ResetTrigger("JumpAttack");
+            _isJumpAttack = false;
+        }
+    }
+
     private void HandleDied()
     {
         if (_currentState == PlayerState.Died)
@@ -747,6 +891,8 @@ public class PlayerController : MonoBehaviour
 
         _currentState = PlayerState.Died;
         _attackRequested = false;
+        _isJumpAttack = false;
+        _jumpAttackAnimationEntered = false;
         _nextAttackDirection = 0;
 
         if (_isDashing)
@@ -759,9 +905,15 @@ public class PlayerController : MonoBehaviour
             ExitLadder();
         }
 
+        if (_isBlocking)
+        {
+            SetBlocking(false);
+        }
+
         _playerInputHandler.ClearInput();
         _rigidbody2D_Player.linearVelocity = Vector2.zero;
         _animator_Player.SetBool("ComboAttackSign", false);
+        _animator_Player.ResetTrigger("JumpAttack");
         _animator_Player.SetBool("IsDead", true);
     }
 

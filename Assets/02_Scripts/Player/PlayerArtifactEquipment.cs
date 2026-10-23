@@ -159,6 +159,10 @@ public class PlayerArtifactEquipment : SingletonBehaviour<PlayerArtifactEquipmen
                 PlayerStats.Instance.ApplyArtifactBonus("AttackDamage", value * apply);
                 break;
 
+            case "MaxDashChance":
+                PlayerStats.Instance.ApplyArtifactBonus("MaxDashChance", value * apply);
+                break;
+
             case "MaxHealth":
                 PlayerStats.Instance.ApplyArtifactBonus("MaxHealth", value * apply);
                 break;
