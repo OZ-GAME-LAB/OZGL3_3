@@ -10,6 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashQueued { get; private set; }
     public bool AttackInput { get; private set; }
+    public bool BlockInput { get; private set; }
     public bool UpInput { get; private set; }
     public bool DownInput { get; private set; }
     public bool JumpInput { get; private set; }
@@ -32,6 +33,7 @@ public class PlayerInputHandler : MonoBehaviour
             RunInput = false;
             CrouchInput = false;
             AttackInput = false;
+            BlockInput = false;
             DashInput = false;
             DashQueued = false;
             UpInput = false;
@@ -98,19 +100,20 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         RunInput = _isRunning && (leftHeld || rightHeld);
-        DashInput = keyboard.leftShiftKey.isPressed;
-        if (keyboard.leftShiftKey.wasPressedThisFrame)
+        DashInput = keyboard.vKey.isPressed;
+        if (keyboard.vKey.wasPressedThisFrame)
         {
             DashQueued = true;
         }
 
         UpInput = keyboard.upArrowKey.isPressed;
         DownInput = keyboard.downArrowKey.isPressed;
-        JumpInput = keyboard.cKey.isPressed;
+        JumpInput = keyboard.spaceKey.isPressed;
         CrouchInput = DownInput;
         AttackInput = keyboard.xKey.isPressed;
+        BlockInput = keyboard.cKey.isPressed;
 
-        bool wasPressCKey = keyboard.cKey.wasPressedThisFrame;
+        bool wasPressCKey = keyboard.spaceKey.wasPressedThisFrame;
         if (wasPressCKey)
         {
             JumpQueued = true;

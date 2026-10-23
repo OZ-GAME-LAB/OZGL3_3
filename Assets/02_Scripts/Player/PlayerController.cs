@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     private bool _isNearLadeer;
     private bool _attackRequested;
     private bool _isJumpAttack;
+    private bool _isBlocking;
     private bool _jumpAttackAnimationEntered;
     private bool _isSubscribedToPlayerStatus;
     private bool _dashChargesInitialized;
@@ -168,6 +169,7 @@ public class PlayerController : MonoBehaviour
         TryEnterLadder();
 
         _currentState = GetNextState();
+        UpdateBlockState();
         HandleState();
     }
 
@@ -176,6 +178,11 @@ public class PlayerController : MonoBehaviour
         if (_isDashing)
         {
             EndDash();
+        }
+
+        if (_isBlocking)
+        {
+            SetBlocking(false);
         }
         //TODO(이주헌): 시점정리 전 임시
         UnsubscribeFromPlayerStatus();
@@ -390,6 +397,11 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState GetGroundedState()
     {
+        if (_playerInputHandler.BlockInput)
+        {
+            return PlayerState.Block;
+        }
+
         if (_playerInputHandler.CrouchInput)
         {
             return PlayerState.Crouch;
@@ -439,6 +451,10 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.Run:
                 HandleRun();
+                break;
+            case PlayerState.Block:
+                _playerInputHandler.ClearJumpInput();
+                HandleBlock();
                 break;
             case PlayerState.Crouch:
                 _playerInputHandler.ClearJumpInput();
@@ -501,6 +517,34 @@ public class PlayerController : MonoBehaviour
     private void HandleRun()
     {
         SetHorizontalSpeed(_playerInputHandler.MoveInput * _runSpeed);
+        UpdateAnimatorParameters(false);
+    }
+
+    private void UpdateBlockState()
+    {
+        bool shouldBlock = _currentState == PlayerState.Block;
+        if (_isBlocking == shouldBlock)
+        {
+            return;
+        }
+
+        SetBlocking(shouldBlock);
+    }
+
+    private void SetBlocking(bool isBlocking)
+    {
+        _isBlocking = isBlocking;
+        _animator_Player.SetBool("IsBlocking", isBlocking);
+
+        if (PlayerStatus.Instance != null)
+        {
+            PlayerStatus.Instance.SetBlocking(isBlocking);
+        }
+    }
+
+    private void HandleBlock()
+    {
+        SetHorizontalSpeed(0f);
         UpdateAnimatorParameters(false);
     }
 
@@ -859,6 +903,11 @@ public class PlayerController : MonoBehaviour
         if (_isLadder)
         {
             ExitLadder();
+        }
+
+        if (_isBlocking)
+        {
+            SetBlocking(false);
         }
 
         _playerInputHandler.ClearInput();
