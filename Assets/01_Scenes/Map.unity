@@ -260,6 +260,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &856398577 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2891345074959307099, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
+  m_PrefabInstance: {fileID: 1487435742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1254995585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,11 +287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741948451712684839, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 187.73
+      value: 184.89
       objectReference: {fileID: 0}
     - target: {fileID: 3741948451712684839, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.64
+      value: 20.58
       objectReference: {fileID: 0}
     - target: {fileID: 3741948451712684839, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -337,6 +342,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2891345074959307099, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296191859795627938, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577701953424059435, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5124390479956697668, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
       propertyPath: m_Name
       value: All Map
@@ -381,6 +398,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7465963137373046948, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
+      propertyPath: LayerMask_Ground.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465963137373046948, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
+      propertyPath: LayerMask_Player.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465963137373046948, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
+      propertyPath: _collider2D_Children_DropTrap
+      value: 
+      objectReference: {fileID: 856398577}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
