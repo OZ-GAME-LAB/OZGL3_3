@@ -13433,7 +13433,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3134317063313877604, guid: 75a08664dc0897c4b98c49ff15f00093, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.41
+      value: 6.59
       objectReference: {fileID: 0}
     - target: {fileID: 3134317063313877604, guid: 75a08664dc0897c4b98c49ff15f00093, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13474,6 +13474,10 @@ PrefabInstance:
     - target: {fileID: 8142638918446839393, guid: 75a08664dc0897c4b98c49ff15f00093, type: 3}
       propertyPath: m_Name
       value: bg_Cloude1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155195740148689993, guid: 75a08664dc0897c4b98c49ff15f00093, type: 3}
+      propertyPath: m_Size.x
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13621,9 +13625,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: bg_Cloude2
       objectReference: {fileID: 0}
+    - target: {fileID: 5670944727657184227, guid: 7f8b088d7ce521d42b6631f4b67fc06f, type: 3}
+      propertyPath: m_Size.x
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 7249583465665607196, guid: 7f8b088d7ce521d42b6631f4b67fc06f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.41
+      value: 6.590004
       objectReference: {fileID: 0}
     - target: {fileID: 7249583465665607196, guid: 7f8b088d7ce521d42b6631f4b67fc06f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13743,7 +13751,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3730194718630407432, guid: 6bf178d9e34bdec429cad1e15596c6cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.19
+      value: 6.590004
       objectReference: {fileID: 0}
     - target: {fileID: 3730194718630407432, guid: 6bf178d9e34bdec429cad1e15596c6cd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13784,6 +13792,10 @@ PrefabInstance:
     - target: {fileID: 6480861991941613462, guid: 6bf178d9e34bdec429cad1e15596c6cd, type: 3}
       propertyPath: m_Name
       value: bg_Cloude3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795606383948758152, guid: 6bf178d9e34bdec429cad1e15596c6cd, type: 3}
+      propertyPath: m_Size.x
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
