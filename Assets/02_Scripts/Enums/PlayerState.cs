@@ -8,6 +8,8 @@
     Jump,
     Fall,
     Dash,
+    Block,
     ComboAttack,
+    JumpAttack,
     Died
 }

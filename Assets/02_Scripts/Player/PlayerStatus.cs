@@ -3,20 +3,24 @@ using UnityEngine;
 
 public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 {
-    private int _lastMaxHealth;
-    private int _lastMaxSkillGauge;
-
     public int MaxHealth => PlayerStats.Instance.MaxHealth;
     public int MaxSkillGauge => PlayerStats.Instance.MaxSkillGauge;
     
-    public bool IsDead => CurrentHealth <= 0;
-
     public int CurrentHealth { get; private set; }
     public int CurrentSkillGauge { get; private set; }
+
+    public bool IsDead => CurrentHealth <= 0;
+    public bool IsBlocking { get; private set; }
+
+    private int _lastMaxHealth;
+    private int _lastMaxSkillGauge;
+
+    private float _blockDamageReduction = 1f;
 
     public event Action<int, int> OnHealthChanged;
     public event Action<int, int> OnSkillGaugeChanged;
     public event Action OnDied;
+    public event Action OnBlock;
 
     private void Awake()
     {
@@ -65,6 +69,7 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
         }
     }
 
+    // TODO(이주헌): Vcetor2 attackPosition 인자를 넣어서 방향에 따라 block판정을 넣을 예정
     public void TakeDamage(int damage)
     {
         if (damage <= 0 || IsDead)
@@ -74,12 +79,26 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 
         int finalDamage = GetChaosGaugeOverDamage(damage);
 
+        if (IsBlocking)
+        {
+            finalDamage = Mathf.CeilToInt(finalDamage * (1f - _blockDamageReduction));
+            if (finalDamage <= 0)
+            {
+                return;
+            }
+        }
+
         SetHealth(CurrentHealth - finalDamage);
 
         if (IsDead)
         {
             OnDied?.Invoke();
         }
+    }
+
+    public void SetBlocking(bool isBlocking)
+    {
+        IsBlocking = isBlocking;
     }
 
     public int GetChaosGaugeOverDamage(int damage)
