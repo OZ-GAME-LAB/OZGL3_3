@@ -81,7 +81,7 @@ public static class UIManagerExtension
         uiManager.CloseUI(UIRootType.PopupUI, UIType.SimplePopupUI);
     }
 
-    public static void OpenStatusUI(this UIManager uiManager, PlayerStats playerStats)
+    public static void OpenStatusUI(this UIManager uiManager, PlayerStatSet playerStats)
     {
         if (uiManager.IsOpenUI(UIType.StatusUI) == true)
         {
@@ -96,7 +96,7 @@ public static class UIManagerExtension
             return;
         }
 
-        (uiBase as StatusUI)?.Init(PlayerStats.Instance);
+        (uiBase as StatusUI)?.Init(PlayerStatSet.Instance);
     }
 
     public static void CloseStatusUI(this UIManager uiManager)
