@@ -47,5 +47,10 @@ public class MainHUD : UIBase
         {
             UIManager.Instance.OpenStatusUI(PlayerStats.Instance);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIManager.Instance.OpenPauseUI();
+        }
     }
 }

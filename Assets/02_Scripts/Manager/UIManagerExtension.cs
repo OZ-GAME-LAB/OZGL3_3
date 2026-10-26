@@ -17,7 +17,8 @@ public enum UIType
     SimplePopupUI,
     MainHUD,
     StatusUI,
-    FadeUI
+    FadeUI,
+    PauseUI
 }
 
 public static class UIManagerExtension
@@ -135,5 +136,20 @@ public static class UIManagerExtension
     public static void CloseFadeUI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.VeryFrontUI, UIType.FadeUI);
+    }
+
+    public static void OpenPauseUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.PauseUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void ClosePauseUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.PauseUI);
     }
 }
