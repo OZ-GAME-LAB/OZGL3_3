@@ -1,12 +1,20 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 [RequireComponent(typeof(Collider2D))]
 public class MapChange : MonoBehaviour
 {
     private const string STRING_PLAYER_TAG = "Player";
 
+    private static bool _isTransitioning;
+
     [Header("Destination")]
     [SerializeField] private Transform Transform_DestinationPoint;
+
+    [Header("Fade Settings")]
+    [SerializeField, Min(0f)] private float Float_FadeDuration = 0.5f;
+    [SerializeField, Min(0f)] private float Float_TransitionCooldown = 0.5f;
 
     private Collider2D _collider2D_MapChange;
 
@@ -24,7 +32,14 @@ public class MapChange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D Collider2D_Other)
     {
-        if (!TryGetPlayerTransform(Collider2D_Other, out Transform Transform_Player))
+        if (_isTransitioning)
+        {
+            return;
+        }
+
+        if (!TryGetPlayerTransform(
+                Collider2D_Other,
+                out Transform Transform_Player))
         {
             return;
         }
@@ -34,7 +49,39 @@ public class MapChange : MonoBehaviour
             return;
         }
 
-        DoMovePlayer(Transform_Player);
+        _isTransitioning = true;
+        DoChangeMapAsync(Transform_Player).Forget();
+    }
+
+    private async UniTaskVoid DoChangeMapAsync(
+        Transform Transform_Player)
+    {
+        try
+        {
+            // 페이드 애니메이션 시작
+            UIManager.Instance.OpenFadeUI();
+
+            // 설정한 시간만큼 대기
+            await UniTask.Delay(
+                TimeSpan.FromSeconds(Float_FadeDuration));
+
+            if (Transform_Player == null ||
+                Transform_DestinationPoint == null)
+            {
+                return;
+            }
+
+            // 대기 완료 후 플레이어 이동
+            DoMovePlayer(Transform_Player);
+
+            // 도착 직후 다른 맵 전환 트리거가 실행되는 현상 방지
+            await UniTask.Delay(
+                TimeSpan.FromSeconds(Float_TransitionCooldown));
+        }
+        finally
+        {
+            _isTransitioning = false;
+        }
     }
 
     private bool TryGetPlayerTransform(

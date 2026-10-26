@@ -184,3 +184,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapChange
   Transform_DestinationPoint: {fileID: 0}
+  Float_FadeDuration: 0.5
+  Float_TransitionCooldown: 0.5
