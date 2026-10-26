@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerCombatHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
-    [SerializeField] private string _targetTag;
-    [SerializeField] private Vector2 _rangeOffset = new Vector2(0.2f, 0f);
-    [SerializeField] private Vector2 _rangeSize = new Vector2(0.4f, 0.3f);
+    [SerializeField] private string _targetTag = "Enmey";
+    [SerializeField] private Vector2 _rangeOffset = new Vector2(0.4f, 0f);
+    [SerializeField] private Vector2 _rangeSize = new Vector2(1.2f, 0.9f);
 
     private Rigidbody2D _rigidbody2D_Player;
 
@@ -14,7 +14,7 @@ public class PlayerCombatHandler : MonoBehaviour
     private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
     private readonly HashSet<NormalMonster> _damagedMonsters = new HashSet<NormalMonster>();
 
-    private int _attackDamage => PlayerStats.Instance.AttackDamage;
+    private int _attackDamage => PlayerStatSet.Instance.AttackDamage;
 
     private void Awake()
     {

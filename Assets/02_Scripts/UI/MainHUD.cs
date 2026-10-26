@@ -41,12 +41,11 @@ public class MainHUD : UIBase
         }
     }
 
-    // TODO(강혜창): 입력은 플레이어 쪽(PlayerInputHandler)으로 옮기고 삭제
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            UIManager.Instance.OpenStatusUI(PlayerStats.Instance);
+            UIManager.Instance.OpenStatusUI(PlayerStatSet.Instance);
         }
     }
 }

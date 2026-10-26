@@ -12,7 +12,7 @@ public class StatusUI : UIBase
     [SerializeField] private TextMeshProUGUI Text_Jump;
     [SerializeField] private TextMeshProUGUI Text_Chaos;
 
-    private PlayerStats _playerStats;
+    private PlayerStatSet _playerStats;
 
     private void Update()
     {
@@ -30,7 +30,7 @@ public class StatusUI : UIBase
     }
 
     // OnEnable은 항상 Init보다 먼저 실행되므로, 데이터가 필요한 처리는 여기서 시작한다.
-    public void Init(PlayerStats playerStats)
+    public void Init(PlayerStatSet playerStats)
     {
         Unsubscribe();
 

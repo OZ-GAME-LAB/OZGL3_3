@@ -16,7 +16,8 @@ public enum UIType
     MainUI,
     SimplePopupUI,
     MainHUD,
-    StatusUI
+    StatusUI,
+    FadeUI
 }
 
 public static class UIManagerExtension
@@ -79,7 +80,7 @@ public static class UIManagerExtension
         uiManager.CloseUI(UIRootType.PopupUI, UIType.SimplePopupUI);
     }
 
-    public static void OpenStatusUI(this UIManager uiManager, PlayerStats playerStats)
+    public static void OpenStatusUI(this UIManager uiManager, PlayerStatSet playerStats)
     {
         if (uiManager.IsOpenUI(UIType.StatusUI) == true)
         {
@@ -94,7 +95,7 @@ public static class UIManagerExtension
             return;
         }
 
-        (uiBase as StatusUI)?.Init(PlayerStats.Instance);
+        (uiBase as StatusUI)?.Init(PlayerStatSet.Instance);
     }
 
     public static void CloseStatusUI(this UIManager uiManager)
@@ -115,5 +116,24 @@ public static class UIManagerExtension
     public static void CloseMainHUDI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.MainUI, UIType.MainHUD);
+    }
+
+    public static void OpenFadeUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.VeryFrontUI, UIType.FadeUI);
+        FadeUI fadeUI = uiBase as FadeUI;
+
+        if (fadeUI == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+
+        fadeUI.Play();
+    }
+
+    public static void CloseFadeUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.VeryFrontUI, UIType.FadeUI);
     }
 }
