@@ -43,14 +43,33 @@ public class MainHUD : UIBase
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (UIManager.Instance.IsOpenUI(UIType.PauseUI))
+            {
+                UIManager.Instance.ClosePauseUI();
+            }
+            else if (UIManager.Instance.IsOpenUI(UIType.StatusUI))
+            {
+                UIManager.Instance.CloseStatusUI();
+            }
+            else
+            {
+                UIManager.Instance.OpenPauseUI();
+            }
+
+            return;
+        }
+
+        // 일시정지 중에는 다른 창을 열지 않는다.
+        if (UIManager.Instance.IsOpenUI(UIType.PauseUI))
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.U))
         {
             UIManager.Instance.OpenStatusUI(PlayerStatSet.Instance);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UIManager.Instance.OpenPauseUI();
         }
     }
 }
