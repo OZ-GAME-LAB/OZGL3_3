@@ -6,6 +6,7 @@ public class PlayerStateContext
     public Animator Animator { get; }
     public SpriteRenderer SpriteRenderer { get; }
     public PlayerInputHandler Input { get; }
+    public PlayerVisualOffset Visual { get; }
 
     public float Facing => SpriteRenderer.flipX ? -1f : 1f;
 
@@ -19,12 +20,14 @@ public class PlayerStateContext
         Rigidbody2D rigidbody,
         Animator animator,
         SpriteRenderer spriteRenderer,
-        PlayerInputHandler input)
+        PlayerInputHandler input,
+        PlayerVisualOffset visual)
     {
         Rigidbody = rigidbody;
         Animator = animator;
         SpriteRenderer = spriteRenderer;
         Input = input;
+        Visual = visual;
     }
     public void ResetAirActions()
     {
