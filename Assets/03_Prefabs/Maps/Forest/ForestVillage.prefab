@@ -15613,13 +15613,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8374135729802627529}
     m_Modifications:
+    - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.446
+      objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name
-      value: "\uB9F5 \uC774\uB3D9 \uD2B8\uB9AC\uAC70"
+      value: MapTrigger(StartZone)
       objectReference: {fileID: 0}
     - target: {fileID: 4423574046277077171, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12.097096
+      value: 12.701951
       objectReference: {fileID: 0}
     - target: {fileID: 4423574046277077171, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15627,7 +15635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423574046277077171, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.75
+      value: 7.91
       objectReference: {fileID: 0}
     - target: {fileID: 4423574046277077171, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.z

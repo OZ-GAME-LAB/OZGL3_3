@@ -4621,7 +4621,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.5482559, y: 0.48221207}
+  m_Offset: {x: 1.5482559, y: -2.0294151}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4631,7 +4631,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 36.73584, y: 24.78912}
+  m_Size: {x: 36.73584, y: 19.765865}
   m_EdgeRadius: 0
 --- !u!1 &6154674118439695483
 GameObject:
@@ -15746,9 +15746,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6157627569029330422}
     m_Modifications:
+    - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.327
+      objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name
-      value: "\uB9F5 \uC774\uB3D9 \uD2B8\uB9AC\uAC70"
+      value: MapTrigger(ForestMonsterZone2)
       objectReference: {fileID: 0}
     - target: {fileID: 4423574046277077171, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalScale.y
