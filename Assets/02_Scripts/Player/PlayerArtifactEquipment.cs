@@ -133,53 +133,13 @@ public class PlayerArtifactEquipment : SingletonBehaviour<PlayerArtifactEquipmen
 
     private bool ApplyArtifactBonus(string artifactId, float value, int apply)
     {
-        switch (artifactId)
+        if (!PlayerStatSet.TryParseStatType(artifactId, out PlayerStatType statType))
         {
-            case "JumpValue":
-                PlayerStats.Instance.ApplyArtifactBonus("JumpValue", value * apply);
-                break;
-
-            case "WalkSpeed":
-                PlayerStats.Instance.ApplyArtifactBonus("WalkSpeed", value * apply);
-                break;
-
-            case "RunSpeed":
-                PlayerStats.Instance.ApplyArtifactBonus("RunSpeed", value * apply);
-                break;
-
-            case "CrouchSpeed":
-                PlayerStats.Instance.ApplyArtifactBonus("CrouchSpeed", value * apply);
-                break;
-
-            case "LadderSpeed":
-                PlayerStats.Instance.ApplyArtifactBonus("LadderSpeed", value * apply);
-                break;
-
-            case "AttackDamage":
-                PlayerStats.Instance.ApplyArtifactBonus("AttackDamage", value * apply);
-                break;
-
-            case "MaxDashChance":
-                PlayerStats.Instance.ApplyArtifactBonus("MaxDashChance", value * apply);
-                break;
-
-            case "MaxHealth":
-                PlayerStats.Instance.ApplyArtifactBonus("MaxHealth", value * apply);
-                break;
-
-            case "MaxSkillGauge":
-                PlayerStats.Instance.ApplyArtifactBonus("MaxSkillGauge", value * apply);
-                break;
-
-            case "MaxChaosGauge":
-                PlayerStats.Instance.ApplyArtifactBonus("MaxChaosGauge", value * apply);
-                break;
-
-            default:
-                Logger.LogWarning($"ApplyArtifactBonus: 등록되지 않은 아티팩트 ID입니다. ({artifactId})");
-                return false;
+            Logger.LogWarning($"ApplyArtifactBonus: 등록되지 않은 아티팩트 ID입니다. ({artifactId})");
+            return false;
         }
 
+        PlayerStatSet.Instance.ApplyArtifactBonus(statType, value * apply);
         return true;
     }
 }
