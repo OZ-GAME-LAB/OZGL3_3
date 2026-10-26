@@ -20,6 +20,7 @@ public class PlayerInputHandler : MonoBehaviour
     private float _lastLeftPressTime = -1f;
     private float _lastRightPressTime = -1f;
     private float _lastMoveDirection = 1f;
+
     private bool _isRunning;
     private bool _attackSign;
 

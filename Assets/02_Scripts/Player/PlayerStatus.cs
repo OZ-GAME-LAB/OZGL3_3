@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 {
-    public int MaxHealth => PlayerStats.Instance.MaxHealth;
-    public int MaxSkillGauge => PlayerStats.Instance.MaxSkillGauge;
+    public int MaxHealth => PlayerStatSet.Instance.MaxHealth;
+    public int MaxSkillGauge => PlayerStatSet.Instance.MaxSkillGauge;
     
     public int CurrentHealth { get; private set; }
     public int CurrentSkillGauge { get; private set; }
@@ -32,12 +32,12 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 
     private void OnEnable()
     {
-        PlayerStats.Instance.OnStatsChanged += HandleStatsChanged;
+        PlayerStatSet.Instance.OnStatsChanged += HandleStatsChanged;
     }
 
     private void OnDisable()
     {
-        PlayerStats.Instance.OnStatsChanged -= HandleStatsChanged;
+        PlayerStatSet.Instance.OnStatsChanged -= HandleStatsChanged;
     }
 
     private void HandleStatsChanged()
@@ -103,7 +103,7 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 
     public int GetChaosGaugeOverDamage(int damage)
     {
-        return PlayerStats.Instance.ChaosGaugeOver ? damage * 2 : damage;
+        return PlayerStatSet.Instance.ChaosGaugeOver ? damage * 2 : damage;
     }
 
     public void Heal(int amount)

@@ -14,7 +14,7 @@ public class PlayerCombatHandler : MonoBehaviour
     private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
     private readonly HashSet<NormalMonster> _damagedMonsters = new HashSet<NormalMonster>();
 
-    private int _attackDamage => PlayerStats.Instance.AttackDamage;
+    private int _attackDamage => PlayerStatSet.Instance.AttackDamage;
 
     private void Awake()
     {

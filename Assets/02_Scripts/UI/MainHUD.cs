@@ -46,7 +46,7 @@ public class MainHUD : UIBase
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            UIManager.Instance.OpenStatusUI(PlayerStats.Instance);
+            UIManager.Instance.OpenStatusUI(PlayerStatSet.Instance);
         }
     }
 }
