@@ -9,4 +9,6 @@
     JumpValue,
     MaxSkillGauge,
     MaxChaosGauge,
+    LadderSpeed,
+    MaxDashChance,
 }
