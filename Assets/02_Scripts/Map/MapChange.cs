@@ -16,12 +16,10 @@ public class MapChange : MonoBehaviour
     [SerializeField, Min(0f)] private float Float_FadeDuration = 0.5f;
     [SerializeField, Min(0f)] private float Float_TransitionCooldown = 0.5f;
 
-    private Collider2D _collider2D_MapChange;
-
     private void Awake()
     {
-        _collider2D_MapChange = GetComponent<Collider2D>();
-        _collider2D_MapChange.isTrigger = true;
+        Collider2D Collider2D_MapChange = GetComponent<Collider2D>();
+        Collider2D_MapChange.isTrigger = true;
 
         if (Transform_DestinationPoint == null)
         {
@@ -58,10 +56,35 @@ public class MapChange : MonoBehaviour
     {
         try
         {
-            // 페이드 애니메이션 시작
+            // 현재 맵과 목적지 맵 검색
+            MapRoot MapRoot_Current =
+                GetComponentInParent<MapRoot>(true);
+
+            MapRoot MapRoot_Destination =
+                Transform_DestinationPoint
+                    .GetComponentInParent<MapRoot>(true);
+
+            if (MapRoot_Current == null ||
+                MapRoot_Destination == null)
+            {
+                Logger.LogWarning(
+                    "MapChange: 현재 맵 또는 목적지 맵의 MapRoot를 찾을 수 없습니다.");
+
+                return;
+            }
+
+            // 페이드 UI 실행
+            if (UIManager.Instance == null)
+            {
+                Logger.LogWarning(
+                    "MapChange: UIManager를 찾을 수 없습니다.");
+
+                return;
+            }
+
             UIManager.Instance.OpenFadeUI();
 
-            // 설정한 시간만큼 대기
+            // 페이드 애니메이션 시간만큼 대기
             await UniTask.Delay(
                 TimeSpan.FromSeconds(Float_FadeDuration));
 
@@ -71,10 +94,16 @@ public class MapChange : MonoBehaviour
                 return;
             }
 
-            // 대기 완료 후 플레이어 이동
+            // MapRoot에 맵 전환 요청
+            if (!MapRoot_Current.DoSwitchMap(MapRoot_Destination))
+            {
+                return;
+            }
+
+            // 목적지 위치로 플레이어 이동
             DoMovePlayer(Transform_Player);
 
-            // 도착 직후 다른 맵 전환 트리거가 실행되는 현상 방지
+            // 연속 맵 전환 방지
             await UniTask.Delay(
                 TimeSpan.FromSeconds(Float_TransitionCooldown));
         }
@@ -110,6 +139,7 @@ public class MapChange : MonoBehaviour
         }
 
         Transform_Player = Transform_PlayerRoot;
+
         return true;
     }
 

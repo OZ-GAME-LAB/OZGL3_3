@@ -14899,6 +14899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3191230560453944160}
+  - component: {fileID: 633327698221124456}
   m_Layer: 0
   m_Name: ForestMonsterZone1
   m_TagString: Untagged
@@ -14925,6 +14926,18 @@ Transform:
   - {fileID: 7771138536575808562}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &633327698221124456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3701786415673760172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fa84d89eedce4428fbb461fa42c28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapRoot
 --- !u!1 &3767900772197418152
 GameObject:
   m_ObjectHideFlags: 0
@@ -21850,7 +21863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423574046277077171, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.83
+      value: 15.46
       objectReference: {fileID: 0}
     - target: {fileID: 4423574046277077171, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.z
