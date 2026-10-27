@@ -1,4 +1,5 @@
-﻿  using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterBase : MonoBehaviour
@@ -12,7 +13,7 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] private int _attackDamage = 1;
     [SerializeField] private float _attackRange = 2f;
     [SerializeField] private int _attackPatternCount = 2;
-    protected float _currentHp;
+    protected float _currentHp { get; private set; }
 
 
     [Header("Skills")]
@@ -26,13 +27,17 @@ public class MonsterBase : MonoBehaviour
     protected bool _isAggro = false;
     protected bool _isAttacking = false;
     protected bool _isDead = false;
+    public bool _isHit = false;
     private float _attackCooldownTimer = 0f;
     private float _attackCooldown = 2f;
-    private bool _isAttackUseable = false;
+    public bool _isAttackUseable = false;
+    protected bool _isUsingSkill = false;
+
+    public event Action<float, float> OnHpChanged;
+
 
     protected virtual void Awake()
     {
-        _isDead = false;
         _monsterAnimController = GetComponent<MonsterAnimatorController>();
         //[TODO] _playerTransform 찾기 일단은 직접 등록으로
         _currentHp = _maxHp;
@@ -41,6 +46,11 @@ public class MonsterBase : MonoBehaviour
         {
             _skillCooldownTimers.Add(0f);
         }
+    }
+
+    private void OnEnable()
+    {
+        _isDead = false;
     }
 
     protected virtual void Update()
@@ -90,15 +100,16 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void AttackTarget(float damage)  //[TODO] 데미지 데이터드리븐으로
     {
-        _monsterAnimController.ChangeState(MonsterState.Idle);
-        if ( _isAttackUseable == false) return;
         if (_isAttacking) return;
+
+        _monsterAnimController.ChangeState(MonsterState.Idle);
+        
         _isAttacking = true;
 
         _attackCooldownTimer = _attackCooldown;
         _isAttackUseable = false;
 
-        int selectedNum = Random.Range(1, _attackPatternCount + 1);
+        int selectedNum = UnityEngine.Random.Range(1, _attackPatternCount + 1);
         if (selectedNum == 1)
         {
             _monsterAnimController.ChangeState(MonsterState.Attack_1);
@@ -112,13 +123,24 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        _monsterAnimController.ChangeState(MonsterState.Hit);
+        if (_isHit || _isDead) return;
+        _isHit = true;
         _currentHp -= damage;
+        OnHpChanged?.Invoke(_currentHp, _maxHp);
         Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
         if (_currentHp <= 0)
         {
             Die();
         }
+        else
+        {
+            _monsterAnimController.ChangeState(MonsterState.Hit);
+        }
+    }
+
+    public void SetUsingSkill(bool isUsing)
+    {
+        _isUsingSkill = isUsing;
     }
 
     protected virtual void Die()
@@ -134,6 +156,12 @@ public class MonsterBase : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void OnHitAnimationEnd()
+    {
+        _monsterAnimController.ChangeState(MonsterState.Idle);
+        _isHit = false;
+    }
+
     public void OnApplyAttackDamage()
     {
         float distance = Vector2.Distance(transform.position, _playerTransform.position);
@@ -147,6 +175,7 @@ public class MonsterBase : MonoBehaviour
     public void OnAttackAnimationEnd()
     {
         _isAttacking = false;
+        _isUsingSkill = false;
         _monsterAnimController.ChangeState(MonsterState.Idle);
     }
 }
