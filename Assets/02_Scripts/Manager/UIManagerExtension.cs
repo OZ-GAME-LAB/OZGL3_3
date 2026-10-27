@@ -136,7 +136,7 @@ public static class UIManagerExtension
 
     public static void CloseFadeUI(this UIManager uiManager)
     {
-        uiManager.CloseUI(UIRootType.VeryFrontUI, UIType.FadeUI);
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.FadeUI);
     }
 
     public static void OpenPauseUI(this UIManager uiManager)
@@ -151,7 +151,7 @@ public static class UIManagerExtension
 
     public static void ClosePauseUI(this UIManager uiManager)
     {
-        uiManager.CloseUI(UIRootType.PopupUI, UIType.PauseUI);
+        uiManager.CloseUI(UIRootType.VeryFrontUI, UIType.PauseUI);
     }
 
     public static void OpenSettingPopupUI(this UIManager uiManager)
