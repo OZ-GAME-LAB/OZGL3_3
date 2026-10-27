@@ -4,13 +4,14 @@ public class MonsterAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator Animator_Monster;
 
-    private MonsterState _currentAnimState = (MonsterState)(-1);
+    private bool _isAnimationPlaying { get; set; } = false;
+
+    private MonsterState _currentAnimState;
     
     public void ChangeState(MonsterState newState)
     {
         if (newState == _currentAnimState)
         {
-            ApplyStateParameters(newState);
             return;
         }
 
@@ -55,12 +56,14 @@ public class MonsterAnimatorController : MonoBehaviour
                 Animator_Monster.SetBool("isMoved", true);
                 break;
             case MonsterState.Dead:
-                Animator_Monster.SetBool("isDead", true);
+                //Animator_Monster.SetBool("isDead", true);
+                Animator_Monster.SetTrigger("isDie");
                 break;
             case MonsterState.Fall:
                 Animator_Monster.SetBool("isFalling", true);
                 break;
         }
+        _isAnimationPlaying = false;
     }
 
     private void ResetAllAnimParameters()
@@ -76,5 +79,6 @@ public class MonsterAnimatorController : MonoBehaviour
         Animator_Monster.SetBool("isMoved", false);
         Animator_Monster.SetBool("isDead", false);
         Animator_Monster.SetBool("isFalling", false);
+        Animator_Monster.ResetTrigger("isDie");
     }
 }

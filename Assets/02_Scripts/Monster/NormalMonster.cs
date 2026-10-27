@@ -51,6 +51,12 @@ public class NormalMonster : MonsterBase
             return;
         }
 
+        if (_isHit)
+        {
+            _rigidbody2D.linearVelocity = Vector2.zero;
+            return;
+        }
+
         if (_isAttacking)
         {
             _rigidbody2D.linearVelocity = Vector2.zero;
