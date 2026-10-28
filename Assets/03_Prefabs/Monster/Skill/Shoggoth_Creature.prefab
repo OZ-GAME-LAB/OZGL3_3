@@ -81,12 +81,14 @@ MonoBehaviour:
   _maxHp: 1
   _moveSpeed: 3
   _aggroRange: 8
-  _attackDamage: 1
+  _attackDamage: 0
   _attackRange: 2
   _attackPatternCount: 1
   Skills: []
   _playerTransform: {fileID: 0}
   _rigidbody2D: {fileID: 0}
+  _isHit: 0
+  _isAttackUseable: 0
   _groundCheck: {fileID: 0}
   _checkGroundRadius: 0.2
   _edgeCheck: {fileID: 0}
