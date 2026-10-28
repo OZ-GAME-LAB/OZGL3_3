@@ -41,12 +41,12 @@ public class SettingPopupUI : UIBase
 
     private void OnChangedBgm(float value)
     {
-        _soundManager.SetBGMVolume(value);
+        //_soundManager.SetBGMVolume(value);
     }
 
     private void OnChangedSfx(float value)
     {
-        _soundManager.SetSFXVolume(value);
+        //_soundManager.SetSFXVolume(value);
     }
 
     private void OnClickClose()

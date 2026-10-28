@@ -31,7 +31,7 @@ public class PauseUI : UIBase
 
     private void OnClickSetting()
     {
-        // TODO(강혜창): SettingUI 만든 뒤 연결
+        UIManager.Instance.OpenSettingPopupUI();
     }
 
     private void OnClickQuit()
