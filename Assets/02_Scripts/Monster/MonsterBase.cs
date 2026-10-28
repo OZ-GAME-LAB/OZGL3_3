@@ -39,6 +39,7 @@ public class MonsterBase : MonoBehaviour
     protected virtual void Awake()
     {
         _monsterAnimController = GetComponent<MonsterAnimatorController>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         //[TODO] _playerTransform 찾기 일단은 직접 등록으로
         _currentHp = _maxHp;
 
@@ -55,6 +56,7 @@ public class MonsterBase : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (_isDead) return;
         for (int i = 0; i < _skillCooldownTimers.Count; i++)
         {
             if (_skillCooldownTimers[i] > 0)
@@ -149,6 +151,13 @@ public class MonsterBase : MonoBehaviour
     {
         if (_isDead) return;
         _isDead = true;
+
+        if (_rigidbody2D != null)
+        {
+            _rigidbody2D.linearVelocity = Vector2.zero;
+            _rigidbody2D.simulated = false;
+        }
+
         _monsterAnimController.ChangeState(MonsterState.Dead);
         Logger.LogError($"몬스터{this.name}가 죽었습니다.");
     }
