@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Visual")]
     [SerializeField] private PlayerVisualOffset _visualOffset;
-    [SerializeField] private float _crouchVisualOffsetY = -0.5f;
+    [SerializeField] private float _crouchVisualOffsetY = -0.37f;
 
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.2f;
