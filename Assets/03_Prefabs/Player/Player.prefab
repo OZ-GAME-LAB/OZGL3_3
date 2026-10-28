@@ -452,9 +452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcf66747e4245dab07368957bab429e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCombatHandler
-  _spriteRenderer_Player: {fileID: 2745021952113304549}
-  _targetTag: 
-  _rangeOffset: {x: 0.7, y: 0}
+  _spriteRenderer_Player: {fileID: 0}
+  _targetTag: Enemy
+  _rangeOffset: {x: 0.4, y: 0}
   _rangeSize: {x: 1.2, y: 0.9}
 --- !u!114 &2744268314719619380
 MonoBehaviour:
@@ -481,7 +481,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _visualOffset: {fileID: 1151277764611316810}
-  _crouchVisualOffsetY: -0.3
+  _crouchVisualOffsetY: -0.37
   _groundCheckRadius: 0.2
   _ladderCoolDown: 1
   _dashDistance: 4
