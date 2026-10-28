@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[DefaultExecutionOrder(10000)]
 public class BgParallax : MonoBehaviour
 {
     private const float FLOAT_PARALLAX_START_DELAY = 0.1f;
