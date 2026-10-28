@@ -169,7 +169,6 @@ public class MonsterBase : MonoBehaviour
 
     public void OnHitAnimationEnd()
     {
-        _monsterAnimController.ChangeState(MonsterState.Idle);
         _isHit = false;
     }
 
