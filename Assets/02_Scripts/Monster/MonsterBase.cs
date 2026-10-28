@@ -148,14 +148,13 @@ public class MonsterBase : MonoBehaviour
     protected virtual void Die()
     {
         if (_isDead) return;
+        _isDead = true;
         _monsterAnimController.ChangeState(MonsterState.Dead);
         Logger.LogError($"몬스터{this.name}가 죽었습니다.");
     }
 
     public void OnDieAnimationEnd()
     {
-        _monsterAnimController.ChangeState(MonsterState.Idle);
-        _isDead = true;
         Destroy(gameObject);
     }
 
