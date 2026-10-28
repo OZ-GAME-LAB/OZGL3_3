@@ -1,90 +1,72 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonsterAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator Animator_Monster;
 
+    private bool _isAnimationPlaying { get; set; } = false;
+
     private MonsterState _currentAnimState;
+    
     public void ChangeState(MonsterState newState)
     {
-        if (newState == _currentAnimState) return;
+        if (newState == _currentAnimState)
+        {
+            return;
+        }
 
         _currentAnimState = newState;
 
-        switch (_currentAnimState)
+        ResetAllAnimParameters();
+
+        ApplyStateParameters(_currentAnimState);
+    }
+
+    private void ApplyStateParameters(MonsterState state)
+    {
+        switch (state)
         {
             case MonsterState.Idle:
-                {
-                    ResetAllAnimParameters();
-                }
                 break;
             case MonsterState.Attack_1:
-                {
-                    Animator_Monster.SetBool("isAttack_1", true);
-                }
+                Animator_Monster.SetBool("isAttack_1", true);
                 break;
             case MonsterState.Attack_2:
-                {
-                    Animator_Monster.SetBool("isAttack_2", true);
-                }
+                Animator_Monster.SetBool("isAttack_2", true);
                 break;
             case MonsterState.Skill_1:
-                {
-                    Animator_Monster.SetBool("isUseSkill_1", true);
-                }
+                Animator_Monster.SetBool("isUseSkill_1", true);
                 break;
             case MonsterState.Skill_2:
-                {
-                    Animator_Monster.SetBool("isUseSkill_2", true);
-                }
+                Animator_Monster.SetBool("isUseSkill_2", true);
                 break;
             case MonsterState.Skill_3:
-                {
-                    Animator_Monster.SetBool("isUseSkill_3", true);
-                }
+                Animator_Monster.SetBool("isUseSkill_3", true);
                 break;
             case MonsterState.Skill_4:
-                {
-                    Animator_Monster.SetBool("isUseSkill_4", true);
-                }
+                Animator_Monster.SetBool("isUseSkill_4", true);
                 break;
             case MonsterState.Spawn:
-                {
-                    Animator_Monster.SetBool("isSpawned", true);
-                }
+                Animator_Monster.SetBool("isSpawned", true);
                 break;
             case MonsterState.Hit:
-                {
-                    Animator_Monster.SetBool("isHit", true);
-                }
+                Animator_Monster.SetBool("isHit", true);
                 break;
             case MonsterState.Forward:
-                {
-                    Animator_Monster.SetBool("isMoved", true);
-                }
+                Animator_Monster.SetBool("isMoved", true);
                 break;
             case MonsterState.Dead:
-                {
-                    Animator_Monster.SetBool("isDead", true);
-                }
+                Animator_Monster.SetBool("isDead", true);
                 break;
             case MonsterState.Fall:
-                {
-                    Animator_Monster.SetBool("isFalling", true);
-                }
-                break;
-            default:
-                {
-                    ResetAllAnimParameters();
-                }
+                Animator_Monster.SetBool("isFalling", true);
                 break;
         }
+        _isAnimationPlaying = false;
     }
 
     private void ResetAllAnimParameters()
     {
-        //[TODO] 파라미터 없을 경우 Warning 메시지 미출력
         Animator_Monster.SetBool("isAttack_1", false);
         Animator_Monster.SetBool("isAttack_2", false);
         Animator_Monster.SetBool("isUseSkill_1", false);
