@@ -441,11 +441,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb4d8b594364de041bc55f5c4673a016, type: 3}
---- !u!212 &2029156161 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5592062722437639812, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-  m_PrefabInstance: {fileID: 7717059143385250490}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7717059143385250490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454,38 +449,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 134690688467730855, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: orthographic size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1668115067453109502, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: m_GravityScale
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1668115067453109502, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744268314719619380, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _jumpVelocity
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744268314719619380, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _groundCheckRadius
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744268314719619380, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _layerMask_Ladder.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741948451712684839, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741948451712684839, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3741948451712684839, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -55.1
@@ -525,42 +488,6 @@ PrefabInstance:
     - target: {fileID: 3741948451712684839, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442200020367547145, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _targetTag
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442200020367547145, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _rangeSize.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442200020367547145, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _rangeSize.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442200020367547145, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _rangeOffset.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442200020367547145, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _spriteRenderer_Player
-      value: 
-      objectReference: {fileID: 2029156161}
-    - target: {fileID: 8000000000000001001, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _baseRunSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000000000000001001, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _baseJumpValue
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000000000000001001, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _baseWalkSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000000000000001001, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
-      propertyPath: _baseCrouchSpeed
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9180396538732130846, guid: 4a93be8d81b436f44a6d7ce20c9a38f0, type: 3}
       propertyPath: m_Name
