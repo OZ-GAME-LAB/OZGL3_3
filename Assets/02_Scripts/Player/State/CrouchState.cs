@@ -1,6 +1,21 @@
 ﻿public class CrouchState : GroundMoveState
 {
-    public CrouchState(PlayerStateContext ctx) : base(ctx) { }
+    private readonly float _visualOffsetY;
+
+    public CrouchState(PlayerStateContext ctx, float visualOffsetY) : base(ctx)
+    {
+        _visualOffsetY = visualOffsetY;
+    }
+
+    public override void StateEnter()
+    {
+        Ctx.Visual?.SetOffsetY(_visualOffsetY);
+    }
+
+    public override void StateExit()
+    {
+        Ctx.Visual?.SetOffsetY(0f);
+    }
 
     protected override float GetTargetSpeed()
     {

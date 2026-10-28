@@ -25,7 +25,7 @@ public class PlayerCombatHandler : MonoBehaviour
 
         if (_spriteRenderer_Player == null)
         {
-            _spriteRenderer_Player = GetComponent<SpriteRenderer>();
+            _spriteRenderer_Player = GetComponentInChildren<SpriteRenderer>();
         }
     }
 

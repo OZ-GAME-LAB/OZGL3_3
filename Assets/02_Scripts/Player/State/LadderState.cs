@@ -72,6 +72,14 @@ public class LadderState : PlayerStateBase
             return;
         }
 
+        if (downPressed &&
+            !upPressed &&
+            _currentCollider != null &&
+            _currentCollider.TryGetComponent(out LadderZone ladderZone))
+        {
+            ladderZone.DropThrough();
+        }
+
         IsClimbing = true;
 
         if (_currentCollider != null)
