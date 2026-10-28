@@ -12,16 +12,14 @@ public class SettingPopupUI : UIBase
 
     private void OnEnable()
     {
-        // TODO(강혜창): SoundManager 접근 경로 확인 (GameManager.Instance.Sound는 추측)
-        _soundManager = GameManager.Sound;
-
-        if (_soundManager == null)
+        if (GameManager.Instance == null)
         {
-            Logger.LogError("SettingUI: SoundManager가 없습니다.");
+            Logger.LogError("SettingUI: GameManager가 씬에 없습니다.");
             return;
         }
 
-        // 저장된 값을 보여 주되, 이벤트는 울리지 않게 넣는다.
+        _soundManager = GameManager.Sound;
+
         Slider_Bgm.SetValueWithoutNotify(_soundManager.BGMVolume);
         Slider_Sfx.SetValueWithoutNotify(_soundManager.SFXVolume);
 
@@ -32,7 +30,6 @@ public class SettingPopupUI : UIBase
 
     private void OnDisable()
     {
-        // UIManager는 UI를 파괴하지 않고 끄기만 하므로, 꺼질 때 반드시 해제한다.
         Slider_Bgm.onValueChanged.RemoveListener(OnChangedBgm);
         Slider_Sfx.onValueChanged.RemoveListener(OnChangedSfx);
         Button_Close.UnBindAllOnClickButtonEvent();
@@ -41,12 +38,12 @@ public class SettingPopupUI : UIBase
 
     private void OnChangedBgm(float value)
     {
-        //_soundManager.SetBGMVolume(value);
+        _soundManager.SetBGMVolume(value);
     }
 
     private void OnChangedSfx(float value)
     {
-        //_soundManager.SetSFXVolume(value);
+        _soundManager.SetSFXVolume(value);
     }
 
     private void OnClickClose()
