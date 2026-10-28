@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DashPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 5095774812441417700, guid: bbcf1750cb04d8c4a8c5b332f523f317, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5215623872736425352, guid: bbcf1750cb04d8c4a8c5b332f523f317, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
