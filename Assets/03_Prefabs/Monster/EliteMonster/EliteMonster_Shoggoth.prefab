@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e46c5b7b3a70d4c8fd44629b446abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
-  _maxHp: 100
+  _maxHp: 5
   _moveSpeed: 3
   _aggroRange: 7
-  _attackDamage: 1
+  _attackDamage: 0
   _attackRange: 2
   _attackPatternCount: 2
   Skills:
@@ -183,6 +183,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 86b5e8a729adf6b49ba7ba51e9ab1121, type: 2}
   _playerTransform: {fileID: 0}
   _rigidbody2D: {fileID: 5602583284590123232}
+  _isHit: 0
+  _isAttackUseable: 0
   _groundCheck: {fileID: 0}
   _checkGroundRadius: 0.2
   _edgeCheck: {fileID: 0}
