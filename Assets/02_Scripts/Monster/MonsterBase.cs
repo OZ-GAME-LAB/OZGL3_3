@@ -131,7 +131,7 @@ public class MonsterBase : MonoBehaviour
         _isHit = true;
         _currentHp -= damage;
         OnHpChanged?.Invoke(_currentHp, _maxHp);
-        Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
+        //Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
         if (_currentHp <= 0)
         {
             Die();
@@ -159,7 +159,7 @@ public class MonsterBase : MonoBehaviour
         }
 
         _monsterAnimController.ChangeState(MonsterState.Dead);
-        Logger.LogError($"몬스터{this.name}가 죽었습니다.");
+        //Logger.LogError($"몬스터{this.name}가 죽었습니다.");
     }
 
     public void OnDieAnimationEnd()
