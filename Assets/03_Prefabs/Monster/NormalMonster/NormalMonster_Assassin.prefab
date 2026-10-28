@@ -147,13 +147,15 @@ MonoBehaviour:
   _maxHp: 5
   _moveSpeed: 3
   _aggroRange: 7
-  _attackDamage: 3
+  _attackDamage: 0
   _attackRange: 2
   _attackPatternCount: 1
   Skills:
   - {fileID: 11400000, guid: f92ee524cbac8a04b88075ed83ea52d4, type: 2}
   _playerTransform: {fileID: 0}
-  _rigidbody2D: {fileID: 0}
+  _rigidbody2D: {fileID: 8943091864990608418}
+  _isHit: 0
+  _isAttackUseable: 0
   _groundCheck: {fileID: 5002138335853248083}
   _checkGroundRadius: 0.2
   _edgeCheck: {fileID: 8350702099230509209}

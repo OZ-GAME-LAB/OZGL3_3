@@ -23,9 +23,7 @@ public class NormalMonster : MonsterBase
     private float _checkTimer = 0.1f;
     private float _checkInterval = 0.1f;
     private bool _isSpawned = false;
-
     private int _pendingSkillIndex = -1;
-    private bool _isUsingSkill = false;
 
     protected override void Awake()
     {
@@ -46,10 +44,16 @@ public class NormalMonster : MonsterBase
 
         if (_isUsingSkill)
         {
-            if (_monsterType == MonsterType.FlyingCreature || _monsterType == MonsterType.Flying)
+            if (_monsterType == MonsterType.Flying)
             {
                 _rigidbody2D.linearVelocity = Vector2.zero;
             }
+            return;
+        }
+
+        if (_isHit)
+        {
+            _rigidbody2D.linearVelocity = Vector2.zero;
             return;
         }
 
@@ -65,7 +69,7 @@ public class NormalMonster : MonsterBase
         }
         else
         {
-            if (_monsterType == MonsterType.Flying || _monsterType == MonsterType.FlyingCreature)
+            if (_monsterType == MonsterType.Flying)
             {
                 _rigidbody2D.linearVelocity = Vector2.zero;
             }
@@ -199,6 +203,8 @@ public class NormalMonster : MonsterBase
                 _pendingSkillIndex = i;
                 _isUsingSkill = true;
 
+                _skillCooldownTimers[i] = Skills[i].CoolDown;
+
                 switch (i)
                 {
                     case 0:
@@ -234,8 +240,11 @@ public class NormalMonster : MonsterBase
         if (distance <= _attackDistance)
         {
             CheckAttackUseable();
-            AttackTarget(10);   // [TODO] 데미지 데이터드리븐으로 처리
-            return;
+            if (_isAttackUseable)
+            {
+                AttackTarget(0);   // [TODO] 데미지 데이터드리븐으로 처리
+                return;
+            }
         }
 
 
@@ -299,7 +308,6 @@ public class NormalMonster : MonsterBase
         if (_isUsingSkill && _pendingSkillIndex >= 0 && _pendingSkillIndex < Skills.Count)
         {
             Skills[_pendingSkillIndex].UseSkill(this, _playerTransform);
-            _skillCooldownTimers[_pendingSkillIndex] = Skills[_pendingSkillIndex].CoolDown;
 
             _pendingSkillIndex = -1;
         }
