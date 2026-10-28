@@ -56,8 +56,7 @@ public class MonsterAnimatorController : MonoBehaviour
                 Animator_Monster.SetBool("isMoved", true);
                 break;
             case MonsterState.Dead:
-                //Animator_Monster.SetBool("isDead", true);
-                Animator_Monster.SetTrigger("isDie");
+                Animator_Monster.SetBool("isDead", true);
                 break;
             case MonsterState.Fall:
                 Animator_Monster.SetBool("isFalling", true);
@@ -79,6 +78,5 @@ public class MonsterAnimatorController : MonoBehaviour
         Animator_Monster.SetBool("isMoved", false);
         Animator_Monster.SetBool("isDead", false);
         Animator_Monster.SetBool("isFalling", false);
-        Animator_Monster.ResetTrigger("isDie");
     }
 }
