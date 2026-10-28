@@ -10,7 +10,7 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] private float _maxHp = 5f;
     [SerializeField] public float _moveSpeed = 3f;
     [SerializeField] private float _aggroRange = 7f;
-    [SerializeField] private int _attackDamage = 1;
+    [SerializeField] private int _attackDamage = 0;
     [SerializeField] private float _attackRange = 2f;
     [SerializeField] private int _attackPatternCount = 2;
     protected float _currentHp { get; private set; }
@@ -124,6 +124,8 @@ public class MonsterBase : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         if (_isHit || _isDead) return;
+        _isAttacking = false;
+        _isUsingSkill = false;
         _isHit = true;
         _currentHp -= damage;
         OnHpChanged?.Invoke(_currentHp, _maxHp);
@@ -147,6 +149,7 @@ public class MonsterBase : MonoBehaviour
     {
         if (_isDead) return;
         _monsterAnimController.ChangeState(MonsterState.Dead);
+        Logger.LogError($"몬스터{this.name}가 죽었습니다.");
     }
 
     public void OnDieAnimationEnd()
