@@ -217,7 +217,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -7382,25 +7382,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 7146617369250951123}
-    m_ColliderPaths:
-    - - X: -220000000
-        Y: 60000000
-      - X: 750000000
-        Y: 60000000
-      - X: 750000000
-        Y: -10000000
-      - X: 770000000
-        Y: -10000000
-      - X: 770000000
-        Y: 80000000
-      - X: -240000000
-        Y: 80000000
-      - X: -240000000
-        Y: -50000000
-      - X: -220000000
-        Y: -50000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -22.000029, y: -5}
@@ -7424,13 +7406,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7364254029430070462}
+  - component: {fileID: 3080953543413722443}
   m_Layer: 0
   m_Name: RuinMonsterZone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7364254029430070462
 Transform:
   m_ObjectHideFlags: 0
@@ -7450,6 +7433,18 @@ Transform:
   - {fileID: 6779034821402065235}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3080953543413722443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479879280742905939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fa84d89eedce4428fbb461fa42c28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapRoot
 --- !u!1 &3577631765177662707
 GameObject:
   m_ObjectHideFlags: 0
@@ -13251,17 +13246,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1810697730976780243}
-    m_ColliderPaths:
-    - - X: 770000000
-        Y: -50000000
-      - X: -240000000
-        Y: -50000000
-      - X: -240000000
-        Y: -100000000
-      - X: 770000000
-        Y: -100000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 76.99997, y: -10}
@@ -34660,9 +34645,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 5075645684910440528}
-    m_ColliderPaths: []
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
