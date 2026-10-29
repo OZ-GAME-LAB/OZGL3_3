@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class DataTableManager
 {
-    
+    private Dictionary<string, PlayerSkillData> _playerSkillTable = new();
+
     public void LoadAllData()
     {
-
+        _playerSkillTable = LoadData<PlayerSkillData>("PlayerSkillData");
     }
 
     #region Getters
+
+    public bool TryGetPlayerSkill(string id, out PlayerSkillData data)
+    {
+        return _playerSkillTable.TryGetValue(id, out data);
+    }
 
     #endregion
 
