@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     private PlayerStateMachine _stateMachine;
     private PlayerStateContext _context;
 
+    [Header("Visual")]
+    [SerializeField] private PlayerVisualOffset _visualOffset;
+    [SerializeField] private float _crouchVisualOffsetY = -0.37f;
+
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.2f;
 
@@ -82,12 +86,12 @@ public class PlayerController : MonoBehaviour
 
         if (_animator_Player == null)
         {
-            _animator_Player = GetComponent<Animator>();
+            _animator_Player = GetComponentInChildren<Animator>();
         }
 
         if (_spriteRenderer_Player == null)
         {
-            _spriteRenderer_Player = GetComponent<SpriteRenderer>();
+            _spriteRenderer_Player = GetComponentInChildren<SpriteRenderer>();
         }
 
         if (_rigidbody2D_Player == null ||
@@ -195,7 +199,8 @@ public class PlayerController : MonoBehaviour
             _rigidbody2D_Player,
             _animator_Player,
             _spriteRenderer_Player,
-            _playerInputHandler
+            _playerInputHandler,
+            _visualOffset
             );
 
         _dashCharge = new PlayerDashCharge(_dashCoolDuration);
@@ -211,7 +216,7 @@ public class PlayerController : MonoBehaviour
         _stateMachine.RegisterState(PlayerState.Idle, new IdleState(_context));
         _stateMachine.RegisterState(PlayerState.Walk, new WalkState(_context));
         _stateMachine.RegisterState(PlayerState.Run, new RunState(_context));
-        _stateMachine.RegisterState(PlayerState.Crouch, new CrouchState(_context));
+        _stateMachine.RegisterState(PlayerState.Crouch, new CrouchState(_context, _crouchVisualOffsetY));
         _stateMachine.RegisterState(PlayerState.Block, new BlockState(_context));
         _stateMachine.RegisterState(PlayerState.Jump, new JumpState(_context));
         _stateMachine.RegisterState(PlayerState.Fall, new FallState(_context));

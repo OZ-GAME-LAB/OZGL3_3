@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerCombatHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
-    [SerializeField] private string _targetTag = "Enmey";
+    [SerializeField] private string _targetTag = "Enemy";
     [SerializeField] private Vector2 _rangeOffset = new Vector2(0.4f, 0f);
     [SerializeField] private Vector2 _rangeSize = new Vector2(1.2f, 0.9f);
 
@@ -25,7 +25,7 @@ public class PlayerCombatHandler : MonoBehaviour
 
         if (_spriteRenderer_Player == null)
         {
-            _spriteRenderer_Player = GetComponent<SpriteRenderer>();
+            _spriteRenderer_Player = GetComponentInChildren<SpriteRenderer>();
         }
     }
 

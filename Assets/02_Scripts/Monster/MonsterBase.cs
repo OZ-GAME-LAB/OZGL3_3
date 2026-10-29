@@ -39,6 +39,7 @@ public class MonsterBase : MonoBehaviour
     protected virtual void Awake()
     {
         _monsterAnimController = GetComponent<MonsterAnimatorController>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         //[TODO] _playerTransform 찾기 일단은 직접 등록으로
         _currentHp = _maxHp;
 
@@ -55,6 +56,7 @@ public class MonsterBase : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (_isDead) return;
         for (int i = 0; i < _skillCooldownTimers.Count; i++)
         {
             if (_skillCooldownTimers[i] > 0)
@@ -129,7 +131,7 @@ public class MonsterBase : MonoBehaviour
         _isHit = true;
         _currentHp -= damage;
         OnHpChanged?.Invoke(_currentHp, _maxHp);
-        Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
+        //Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
         if (_currentHp <= 0)
         {
             Die();
@@ -148,21 +150,27 @@ public class MonsterBase : MonoBehaviour
     protected virtual void Die()
     {
         if (_isDead) return;
+        _isDead = true;
+
+        if (_rigidbody2D != null)
+        {
+            _rigidbody2D.linearVelocity = Vector2.zero;
+            _rigidbody2D.simulated = false;
+        }
+
         _monsterAnimController.ChangeState(MonsterState.Dead);
-        Logger.LogError($"몬스터{this.name}가 죽었습니다.");
+        //Logger.LogError($"몬스터{this.name}가 죽었습니다.");
     }
 
     public void OnDieAnimationEnd()
     {
-        _monsterAnimController.ChangeState(MonsterState.Idle);
-        _isDead = true;
         Destroy(gameObject);
     }
 
     public void OnHitAnimationEnd()
     {
-        _monsterAnimController.ChangeState(MonsterState.Idle);
         _isHit = false;
+        _monsterAnimController.ChangeState(MonsterState.Idle);
     }
 
     public void OnApplyAttackDamage()

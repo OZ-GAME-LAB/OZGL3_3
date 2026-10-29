@@ -2,6 +2,7 @@
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityPipeline.Microsoft.CodeAnalysis.CSharp.Syntax;
 
 public class NormalMonster : MonsterBase
 {
@@ -40,6 +41,7 @@ public class NormalMonster : MonsterBase
 
     protected override void Update()
     {
+        if (_isDead) return;
         base.Update();
 
         if (_isUsingSkill)
@@ -269,7 +271,7 @@ public class NormalMonster : MonsterBase
         float targetSpeed = direction * _moveSpeed;
 
 
-        _rigidbody2D.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody2D.linearVelocityY);
+        _rigidbody2D.linearVelocity = new Vector2(targetSpeed, _rigidbody2D.linearVelocityY);
         AnimController_NormalMonster.ChangeState(MonsterState.Forward);
     }
 
@@ -305,6 +307,8 @@ public class NormalMonster : MonsterBase
 
     public void OnAnimationEnd()
     {
+        if (_isDead) return;
+
         if (_isUsingSkill && _pendingSkillIndex >= 0 && _pendingSkillIndex < Skills.Count)
         {
             Skills[_pendingSkillIndex].UseSkill(this, _playerTransform);

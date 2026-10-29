@@ -28,7 +28,7 @@ public class StealthSkill : MonoBehaviour
     }
 
     public void OnEnterStealthSkillAnimation()
-    {
+    {//[TODO] 바로 스킬 사용하지 못하도록 수정
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 0f);
 
         _monsterBase._isAttackUseable = false;
