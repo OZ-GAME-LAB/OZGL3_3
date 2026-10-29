@@ -9,6 +9,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashQueued { get; private set; }
     public bool AttackInput { get; private set; }
+    public bool HealSkillQueued { get; private set; }
     public bool BlockInput { get; private set; }
     public bool UpInput { get; private set; }
     public bool DownInput { get; private set; }
@@ -40,6 +41,7 @@ public class PlayerInputHandler : MonoBehaviour
             DownInput = false;
             JumpInput = false;
             JumpQueued = false;
+            HealSkillQueued = false;
             _attackSign = false;
             return;
         }
@@ -124,6 +126,11 @@ public class PlayerInputHandler : MonoBehaviour
         {
             _attackSign = true;
         }
+
+        if (keyboard.dKey.wasPressedThisFrame)
+        {
+            HealSkillQueued = true;
+        }
     }
 
     public bool ComsumeJumpInput()
@@ -147,6 +154,13 @@ public class PlayerInputHandler : MonoBehaviour
         return wasPressed;
     }
 
+    public bool ConsumeHealSkillInput()
+    {
+        bool wasPressed = HealSkillQueued;
+        HealSkillQueued = false;
+        return wasPressed;
+    }
+
     public void ClearJumpInput()
     {
         JumpQueued = false;
@@ -165,6 +179,7 @@ public class PlayerInputHandler : MonoBehaviour
         DownInput = false;
         JumpInput = false;
         JumpQueued = false;
+        HealSkillQueued = false;
         _isRunning = false;
         _attackSign = false;
     }

@@ -11,5 +11,6 @@
     Block,
     ComboAttack,
     JumpAttack,
+    Heal,
     Died
 }

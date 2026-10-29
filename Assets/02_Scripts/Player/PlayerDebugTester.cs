@@ -15,7 +15,8 @@ public class PlayerDebugTester : MonoBehaviour
         {
             return;
         }
-        // K: 자살치트키, J: 자해치트키, H: 자힐치트키
+
+        // K: 자살치트키, J: 자해치트키, H: 자힐치트키 , L: 게이지회복치트키
         if (keyboard.kKey.wasPressedThisFrame)
         {
             status.TakeDamage(status.MaxHealth * 2);
@@ -31,10 +32,16 @@ public class PlayerDebugTester : MonoBehaviour
         if (keyboard.hKey.wasPressedThisFrame)
         {
             status.Heal(1);
-            Logger.Log($"[Debug] 회복 치트키 (HP: {status.CurrentHealth}/{status.MaxHealth})");
+            Logger.Log($"[Debug] 체력회복 치트키 (HP: {status.CurrentHealth}/{status.MaxHealth})");
         }
 
-        // 1: 최대 체력 +1, 2: 이동 속도 +50%, 3: 대시 횟수 +1, 4: 공격력 +1
+        if (keyboard.lKey.wasPressedThisFrame)
+        {
+            status.AddSkillGauge(10);
+            Logger.Log($"[Debug] 게이지회복 치트키 (스킬게이지: {status.CurrentSkillGauge}/{status.MaxSkillGauge})");
+        }
+
+        // 1: 최대 체력 +1, 2: 달리기 속도 +50%, 3: 대시 횟수 +1, 4: 공격력 +1
         if (keyboard.digit1Key.wasPressedThisFrame)
         {
             PlayerStatSet.Instance.ApplyArtifactBonus(PlayerStatType.MaxHealth, 1f);
@@ -43,8 +50,8 @@ public class PlayerDebugTester : MonoBehaviour
 
         if (keyboard.digit2Key.wasPressedThisFrame)
         {
-            PlayerStatSet.Instance.ApplyArtifactBonus(PlayerStatType.WalkSpeed, 0.5f);
-            Logger.Log($"[Debug] WalkSpeed = {PlayerStatSet.Instance.WalkSpeed}");
+            PlayerStatSet.Instance.ApplyArtifactBonus(PlayerStatType.RunSpeed, 0.2f);
+            Logger.Log($"[Debug] RunSpeed = {PlayerStatSet.Instance.RunSpeed}");
         }
 
         if (keyboard.digit3Key.wasPressedThisFrame)
