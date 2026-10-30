@@ -28,7 +28,8 @@ public class GameStartUI : UIBase
 
     private void OnClickSetting()
     {
-        //TODO(강혜창) : 셋팅 팝업 UI 열기
+        UIManager.Instance.OpenSettingPopupUI();
+
     }
 
     private void OnClickExit()
