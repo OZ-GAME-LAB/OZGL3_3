@@ -68,8 +68,10 @@ public class PlayerController : MonoBehaviour
     private LadderState _ladderState;
     private PlayerAttackFlow _attackFlow;
     private PlayerHealSkill _playerHealSkill;
+    private PlayerGuaredeAttackSkill _playerGuardedAttackSkill;
 
     private bool _isLadder => _ladderState != null && _ladderState.IsClimbing;
+    private bool IsDiedState => _stateMachine.CurrentType == PlayerState.Died;
 
     public event Action<int, int, bool> OnDashChargesChanged;
 
@@ -110,6 +112,11 @@ public class PlayerController : MonoBehaviour
             GetComponent<PlayerStatus>(),
             _animator_Player);
 
+        _playerGuardedAttackSkill = new PlayerGuaredeAttackSkill(
+            GetComponent<PlayerStatus>(),
+            _animator_Player,
+            _playerCombatHandler);
+
         if (_layerMask_Ground.value == 0)
         {
             _layerMask_Ground = LayerMask.GetMask("Ground");
@@ -135,9 +142,7 @@ public class PlayerController : MonoBehaviour
         TrySubscribeToPlayerStatus();
     }
 
-    private bool IsDiedState => _stateMachine.CurrentType == PlayerState.Died;
-
-    private void Update()
+  private void Update()
     {
         if (IsDiedState)
         {
@@ -161,6 +166,16 @@ public class PlayerController : MonoBehaviour
         }
 
         if (_playerHealSkill.IsSkillActive)
+        {
+            return;
+        }
+
+        if(_playerInputHandler.ConsumeGuardedAttackSkillInput())
+        {
+            _playerGuardedAttackSkill.TryUse();
+        }
+
+        if(_playerGuardedAttackSkill.IsSkillActive)
         {
             return;
         }
@@ -193,6 +208,16 @@ public class PlayerController : MonoBehaviour
     public void AnimationHealEnd()
     {
         _playerHealSkill.AnimationEnd();
+    }
+
+    public void AnimationGuardedAttackHit()
+    {
+        _playerGuardedAttackSkill.AnimationSkillEffect();
+    }
+
+    public void AnimationGuardedAttackHitEnd()
+    {
+        _playerGuardedAttackSkill.AnimationEnd();
     }
 
     private void OnDisable()
