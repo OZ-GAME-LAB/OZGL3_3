@@ -69,7 +69,13 @@ public class PlayerCombatHandler : MonoBehaviour
         return targets.Count;
     }
 
-    public int ApplyAttackDamage()
+    public int ApplySkillAttackDamage(float damageMultiplier)
+    {
+        int skillDamage = Mathf.RoundToInt(_attackDamage * damageMultiplier);
+        return ApplyAttackDamage(skillDamage);
+    }
+
+    private int ApplyAttackDamage(int damage)
     {
         FindTargetsInRange(_targetsInRange);
         _damagedMonsters.Clear();
@@ -82,7 +88,7 @@ public class PlayerCombatHandler : MonoBehaviour
                 continue;
             }
 
-            monster.TakeDamage(_attackDamage);
+            monster.TakeDamage(damage);
         }
 
         return _damagedMonsters.Count;
@@ -90,7 +96,7 @@ public class PlayerCombatHandler : MonoBehaviour
 
     public void AnimationAttackHit()
     {
-        ApplyAttackDamage();
+        ApplyAttackDamage(_attackDamage);
     }
 
     private bool HasTargetTagInParents(Transform targetTransform)

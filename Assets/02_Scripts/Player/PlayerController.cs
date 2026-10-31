@@ -67,8 +67,11 @@ public class PlayerController : MonoBehaviour
 
     private LadderState _ladderState;
     private PlayerAttackFlow _attackFlow;
+    private PlayerHealSkill _playerHealSkill;
+    private PlayerGuaredeAttackSkill _playerGuardedAttackSkill;
 
     private bool _isLadder => _ladderState != null && _ladderState.IsClimbing;
+    private bool IsDiedState => _stateMachine.CurrentType == PlayerState.Died;
 
     public event Action<int, int, bool> OnDashChargesChanged;
 
@@ -105,6 +108,15 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        _playerHealSkill = new PlayerHealSkill(
+            GetComponent<PlayerStatus>(),
+            _animator_Player);
+
+        _playerGuardedAttackSkill = new PlayerGuaredeAttackSkill(
+            GetComponent<PlayerStatus>(),
+            _animator_Player,
+            _playerCombatHandler);
+
         if (_layerMask_Ground.value == 0)
         {
             _layerMask_Ground = LayerMask.GetMask("Ground");
@@ -130,17 +142,44 @@ public class PlayerController : MonoBehaviour
         TrySubscribeToPlayerStatus();
     }
 
-    private bool IsDiedState => _stateMachine.CurrentType == PlayerState.Died;
-
-    private void Update()
+  private void Update()
     {
         if (IsDiedState)
         {
             return;
         }
 
+        if (_playerHealSkill.IsSkillActive || _stateMachine.CurrentType == PlayerState.Heal)
+        {
+            _playerInputHandler.ClearInput();
+            return;
+        }
+
         _playerInputHandler.ReadInput();
         _attackFlow.UpdateState();
+        if (_playerInputHandler.ConsumeHealSkillInput())
+        {
+            if (IsGroundedSkillState(_stateMachine.CurrentType) && _isGrounded)
+            {
+                _playerHealSkill.TryUse();
+            }
+        }
+
+        if (_playerHealSkill.IsSkillActive)
+        {
+            return;
+        }
+
+        if(_playerInputHandler.ConsumeGuardedAttackSkillInput())
+        {
+            _playerGuardedAttackSkill.TryUse();
+        }
+
+        if(_playerGuardedAttackSkill.IsSkillActive)
+        {
+            return;
+        }
+
         UpdateFacingDirection();
         _attackFlow.HandleInput();
     }
@@ -161,9 +200,33 @@ public class PlayerController : MonoBehaviour
         UpdateAnimatorParameters();
     }
 
+    public void AnimationHeal()
+    {
+        _playerHealSkill.AnimationEffect();
+    }
+
+    public void AnimationHealEnd()
+    {
+        _playerHealSkill.AnimationEnd();
+    }
+
+    public void AnimationGuardedAttackHit()
+    {
+        _playerGuardedAttackSkill.AnimationSkillEffect();
+    }
+
+    public void AnimationGuardedAttackHitEnd()
+    {
+        _playerGuardedAttackSkill.AnimationEnd();
+    }
+
     private void OnDisable()
     {
-        if (_stateMachine != null && _stateMachine.CurrentType == PlayerState.Block)
+        _playerHealSkill?.Cancel();
+
+        if (_stateMachine != null &&
+            (_stateMachine.CurrentType == PlayerState.Block ||
+             _stateMachine.CurrentType == PlayerState.Heal))
         {
             _stateMachine.ChangeStateSign(PlayerState.Idle);
         }
@@ -224,6 +287,7 @@ public class PlayerController : MonoBehaviour
         _stateMachine.RegisterState(PlayerState.Ladder, _ladderState);
         _stateMachine.RegisterState(PlayerState.ComboAttack, new ComboAttackState(_context));
         _stateMachine.RegisterState(PlayerState.JumpAttack, new JumpAttackState(_context));
+        _stateMachine.RegisterState(PlayerState.Heal, new HealState(_context));
         _stateMachine.RegisterState(PlayerState.Died, new DiedState(_context));
 
         _stateMachine.ChangeStateSign(PlayerState.Idle);
@@ -285,7 +349,8 @@ public class PlayerController : MonoBehaviour
 
     private void TryEnterLadder()
     {
-        if (_isDashing ||
+        if (_playerHealSkill.IsSkillActive ||
+            _isDashing ||
             _attackFlow.IsJumpAttack ||
             _attackFlow.IsComboAttack)
         {
@@ -297,6 +362,11 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState GetNextState()
     {
+        if (_playerHealSkill.IsSkillActive)
+        {
+            return PlayerState.Heal;
+        }
+
         if (_isDashing)
         {
             _playerInputHandler.ConsumeDashInput();
@@ -390,8 +460,17 @@ public class PlayerController : MonoBehaviour
         }
 
         _attackFlow?.ResetFlags();
+        _playerHealSkill?.Cancel();
 
         _stateMachine.ChangeStateSign(PlayerState.Died);
+    }
+
+    private static bool IsGroundedSkillState(PlayerState state)
+    {
+        return state == PlayerState.Idle ||
+               state == PlayerState.Walk ||
+               state == PlayerState.Run ||
+               state == PlayerState.Crouch;
     }
 
     private void UpdateAnimatorParameters()

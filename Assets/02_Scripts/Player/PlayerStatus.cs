@@ -116,6 +116,34 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
         SetHealth(CurrentHealth + amount);
     }
 
+    public bool TryUseSkillGauge(int amount)
+    {
+        if (amount < 0)
+        {
+            Logger.LogError($"스킬 게이지 사용량이 음수입니다. ({amount})");
+            return false;
+        }
+
+        if (CurrentSkillGauge < amount)
+        {
+            return false;
+        }
+
+        SetSkillGauge(CurrentSkillGauge - amount);
+        return true;
+    }
+
+    public void AddSkillGauge(int amount)
+    {
+        if (amount <= 0)
+        {
+            Logger.LogError($"스킬 게이지 획득량은 0보다 커야 합니다. ({amount})");
+            return;
+        }
+
+        SetSkillGauge(CurrentSkillGauge + amount);
+    }
+
     private void SetHealth(int health)
     {
         int nextHealth = Mathf.Clamp(health, 0, MaxHealth);
@@ -126,17 +154,6 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 
         CurrentHealth = nextHealth;
         OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
-    }
-
-    // TODO(이주헌): 스킬 구현 후 재개
-    private void UseSkillGauge()
-    {
-
-    }
-
-    private void GetSkillGauge()
-    {
-
     }
 
     private void SetSkillGauge(int SkillGauge)
