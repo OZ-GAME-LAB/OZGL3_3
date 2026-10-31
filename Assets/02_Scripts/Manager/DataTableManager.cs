@@ -6,10 +6,13 @@ using UnityEngine;
 public class DataTableManager
 {
     private Dictionary<string, PlayerSkillData> _playerSkillTable = new();
+    private Dictionary<string, AreaTextData> _areaTextTable = new();
+
 
     public void LoadAllData()
     {
         _playerSkillTable = LoadData<PlayerSkillData>("PlayerSkillData");
+        _areaTextTable = LoadData<AreaTextData>("AreaTextTable");
     }
 
     #region Getters
@@ -17,6 +20,11 @@ public class DataTableManager
     public bool TryGetPlayerSkill(string id, out PlayerSkillData data)
     {
         return _playerSkillTable.TryGetValue(id, out data);
+    }
+
+    public bool TryGetAreaSprite(string id, out AreaTextData data)
+    {
+        return _areaTextTable.TryGetValue(id, out data);
     }
 
     #endregion
