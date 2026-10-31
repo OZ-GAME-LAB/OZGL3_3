@@ -1,27 +1,38 @@
 ﻿using UnityEngine;
-using Cysharp.Threading.Tasks;
 
 public class BgParallax : MonoBehaviour
 {
+    private const float FLOAT_PARALLAX_START_DELAY = 0.1f;
+
     [Header("Parallax Settings")]
     [SerializeField]
     private Vector2 Vector2_ParallaxEffect =
         new Vector2(0.2f, 0.15f);
 
-    private Transform _transformCamera;
-    private Vector3 _vector3StartPosition;
-    private Vector3 _vector3CameraStartPosition;
+    private Transform _cameraTransform;
+    private MapRoot _mapRootOwner;
 
-    private bool _isParallaxReady;
+    private Vector3 _previousCameraPosition;
+    private float _parallaxStartTime;
 
     private void Awake()
     {
-        // 배경의 원래 위치를 보존
-        _vector3StartPosition = transform.position;
+        // 부모 계층에서 MapRoot 자동 검색
+        _mapRootOwner = GetComponentInParent<MapRoot>(true);
 
-        Camera cameraMain = Camera.main;
+        if (_mapRootOwner == null)
+        {
+            Logger.LogError(
+                "BgParallax: 부모 계층에서 MapRoot를 찾을 수 없습니다.");
 
-        if (cameraMain == null)
+            enabled = false;
+            return;
+        }
+
+        // Main Camera 참조
+        Camera Camera_Main = Camera.main;
+
+        if (Camera_Main == null)
         {
             Logger.LogError(
                 "BgParallax: Main Camera를 찾을 수 없습니다.");
@@ -30,65 +41,56 @@ public class BgParallax : MonoBehaviour
             return;
         }
 
-        _transformCamera = cameraMain.transform;
+        _cameraTransform = Camera_Main.transform;
     }
 
     private void OnEnable()
     {
-        if (_transformCamera == null)
+        // 활성화 후 지정한 시간 동안 패럴랙스 시작 대기
+        _parallaxStartTime =
+            Time.time + FLOAT_PARALLAX_START_DELAY;
+
+        if (_cameraTransform != null)
         {
-            return;
+            _previousCameraPosition = _cameraTransform.position;
         }
-
-        // 이전 패럴랙스 이동으로 밀린 배경을 원래 위치로 복구
-        transform.position = _vector3StartPosition;
-
-        // 카메라 기준점을 다시 설정할 때까지 이동 계산 중지
-        _isParallaxReady = false;
-
-        DoResetCameraStartPositionAsync().Forget();
-    }
-
-    private async UniTaskVoid DoResetCameraStartPositionAsync()
-    {
-        // 플레이어 이동 및 카메라 갱신이 진행된 프레임의 끝까지 대기
-        await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
-
-        if (this == null ||
-            !isActiveAndEnabled ||
-            _transformCamera == null)
-        {
-            return;
-        }
-
-        // 새 맵 기준 카메라 위치 저장
-        _vector3CameraStartPosition = _transformCamera.position;
-
-        _isParallaxReady = true;
-    }
-
-    private void OnDisable()
-    {
-        _isParallaxReady = false;
-
-        // 다음 활성화를 위해 배경 위치 복구
-        transform.position = _vector3StartPosition;
     }
 
     private void LateUpdate()
     {
-        if (!_isParallaxReady || _transformCamera == null)
+        if (_cameraTransform == null ||
+            _mapRootOwner == null ||
+            !_mapRootOwner.gameObject.activeInHierarchy)
         {
             return;
         }
 
-        Vector3 vector3CameraOffset =
-            _transformCamera.position - _vector3CameraStartPosition;
+        Vector3 Vector3_CameraCurrentPosition =
+            _cameraTransform.position;
 
-        transform.position = _vector3StartPosition + new Vector3(
-            vector3CameraOffset.x * Vector2_ParallaxEffect.x,
-            vector3CameraOffset.y * Vector2_ParallaxEffect.y,
+        // 대기 중에는 배경을 이동하지 않고 카메라 좌표만 갱신
+        if (Time.time < _parallaxStartTime)
+        {
+            _previousCameraPosition =
+                Vector3_CameraCurrentPosition;
+
+            return;
+        }
+
+        // 이전 프레임 대비 카메라 이동량 계산
+        Vector3 Vector3_CameraOffset =
+            Vector3_CameraCurrentPosition -
+            _previousCameraPosition;
+
+        // 카메라 이동량에 패럴랙스 비율 적용
+        transform.position += new Vector3(
+            Vector3_CameraOffset.x * Vector2_ParallaxEffect.x,
+            Vector3_CameraOffset.y * Vector2_ParallaxEffect.y,
             0f
         );
+
+        // 다음 프레임 계산을 위해 카메라 위치 갱신
+        _previousCameraPosition =
+            Vector3_CameraCurrentPosition;
     }
 }
