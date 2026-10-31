@@ -17,7 +17,7 @@ public class AreaTracker
     {
         isFirstVisit = false;
 
-        if (CurrentZoneId != zoneId)
+        if (string.IsNullOrEmpty(zoneId) == false && CurrentZoneId != zoneId)
         {
             CurrentZoneId = zoneId;
             OnZoneChanged?.Invoke(zoneId);

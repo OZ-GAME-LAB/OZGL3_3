@@ -24,6 +24,15 @@ public class GameStartUI : UIBase
     {
         UIManager.Instance.CloseGameStartUI();
         UIManager.Instance.OpenMainHUD();
+
+        // 시작할 때 현재 구간 로고를 보여 준다.
+        //TODO 강혜창 : 플레이어 생성 시점 확인 후 재설정 
+        string regionId = GameManager.Area.CurrentRegionId;
+
+        if (string.IsNullOrEmpty(regionId) == false)
+        {
+            UIManager.Instance.OpenAreaSpriteUI(regionId);
+        }
     }
 
     private void OnClickSetting()

@@ -12,7 +12,7 @@ public class DataTableManager
     public void LoadAllData()
     {
         _playerSkillTable = LoadData<PlayerSkillData>("PlayerSkillData");
-        _areaTextTable = LoadData<AreaTextData>("AreaTextTable");
+        _areaTextTable = LoadData<AreaTextData>("AreaText");
     }
 
     #region Getters
