@@ -1,0 +1,22 @@
+[
+  {
+    "Id": "Area_Andigma",
+    "SpritePath": "Sprites/Area/Andigma"
+  },
+  {
+    "Id": "Area_AstraForest",
+    "SpritePath": "Sprites/Area/AstraForest"
+  },
+  {
+    "Id": "Area_RuinEntrance",
+    "SpritePath": "Sprites/Area/RuinEntrance"
+  },
+  {
+    "Id": "Area_GuardianHall",
+    "SpritePath": "Sprites/Area/GuardianHall"
+  },
+  {
+    "Id": "Area_SealedSnowMountain",
+    "SpritePath": "Sprites/Area/SealedSnowMountain"
+  }
+]
