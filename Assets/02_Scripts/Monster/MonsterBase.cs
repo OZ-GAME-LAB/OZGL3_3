@@ -16,7 +16,9 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] private Vector2 _attackBoxSize = new Vector2(1f, 0.5f);    //[TODO] 어택박스 사이즈, 오프셋 데이터드리븐으로 받아오기
     [SerializeField] private Vector2 _attackBoxOffset = new Vector2(1f, 0.5f);
     [SerializeField] private LayerMask _playerLayer;
-    
+    [SerializeField] protected bool _isOnlyUseSkill = false;
+    [SerializeField] protected bool _isAssassin = false;
+
     protected float _currentHp { get; private set; }
 
 
@@ -38,7 +40,7 @@ public class MonsterBase : MonoBehaviour
     public bool _isAttackUseable = false;
     public bool _isSkillUseable = false;
     protected bool _isUsingSkill = false;
-    [SerializeField] protected bool _isAssassin = false;
+    
 
     public event Action<float, float> OnHpChanged;
 

@@ -60,7 +60,7 @@ public class NormalMonster : MonsterBase
             return;
         }
 
-        if (_isAttacking)
+        if (_isAttacking && _isOnlyUseSkill == false)
         {
             _rigidbody2D.linearVelocity = Vector2.zero;
             return;
@@ -242,6 +242,8 @@ public class NormalMonster : MonsterBase
 
         if (distance <= _attackDistance)
         {
+            if (_isOnlyUseSkill) return;
+
             CheckAttackUseable();
             if (_isAttackUseable)
             {
