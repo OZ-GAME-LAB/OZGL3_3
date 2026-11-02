@@ -36,7 +36,9 @@ public class MonsterBase : MonoBehaviour
     private float _attackCooldownTimer = 0f;
     private float _attackCooldown = 2f;
     public bool _isAttackUseable = false;
+    public bool _isSkillUseable = false;
     protected bool _isUsingSkill = false;
+    [SerializeField] protected bool _isAssassin = false;
 
     public event Action<float, float> OnHpChanged;
 
@@ -45,8 +47,8 @@ public class MonsterBase : MonoBehaviour
     {
         _monsterAnimController = GetComponent<MonsterAnimatorController>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        //[TODO] _playerTransform 찾기 일단은 직접 등록으로
         _currentHp = _maxHp;
+        _isSkillUseable = false;
 
         for (int i = 0; i < Skills.Count; i++)
         {
@@ -81,7 +83,6 @@ public class MonsterBase : MonoBehaviour
         if (collision.CompareTag("Player") && _playerTransform == null)
         {
             _playerTransform = collision.transform;
-            Logger.LogError("[MonsterBase] 플레이어트렌스폼 받아오기 성공");
         }
     }
 
@@ -105,7 +106,7 @@ public class MonsterBase : MonoBehaviour
         }
     }
 
-    public virtual void AttackTarget()  //[TODO] 데미지 데이터드리븐으로
+    public virtual void AttackTarget()
     {
         if (_isAttacking) return;
 
@@ -125,6 +126,9 @@ public class MonsterBase : MonoBehaviour
         {
             _monsterAnimController.ChangeState(MonsterState.Attack_2);
         }
+
+        if (_isSkillUseable) return;
+        _isSkillUseable = true;
     }
 
 
