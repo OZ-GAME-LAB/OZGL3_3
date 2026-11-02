@@ -2,14 +2,14 @@
 
 public abstract class GroundMoveState : PlayerStateBase
 {
-    protected GroundMoveState(PlayerStateContext ctx) : base(ctx) { }
+    protected GroundMoveState(PlayerStateContext playerContext) : base(playerContext) { }
 
     protected abstract float GetTargetSpeed();
 
     public override void StateFixedUpdate()
     {
-        Ctx.Rigidbody.linearVelocity = new Vector2(
+        PlayerContext.Rigidbody.linearVelocity = new Vector2(
             GetTargetSpeed(),
-            Ctx.Rigidbody.linearVelocity.y);
+            PlayerContext.Rigidbody.linearVelocity.y);
     }
 }

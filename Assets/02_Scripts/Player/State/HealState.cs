@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HealState : PlayerStateBase
 {
@@ -6,7 +6,7 @@ public class HealState : PlayerStateBase
 
     public override void StateFixedUpdate()
     {
-        Ctx.Input.ClearJumpInput();
-        Ctx.Rigidbody.linearVelocity = new Vector2(0f, Ctx.Rigidbody.linearVelocity.y);
+        PlayerContext.Input.ClearJumpInput();
+        PlayerContext.Rigidbody.linearVelocity = new Vector2(0f, PlayerContext.Rigidbody.linearVelocity.y);
     }
 }

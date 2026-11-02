@@ -1,10 +1,10 @@
 ﻿public abstract class PlayerStateBase
 {
-    protected readonly PlayerStateContext Ctx;
+    protected readonly PlayerStateContext PlayerContext;
 
-    protected PlayerStateBase(PlayerStateContext ctx)
+    protected PlayerStateBase(PlayerStateContext playerContext)
     {
-        Ctx = ctx;
+        PlayerContext = playerContext;
     }
 
     public virtual void StateEnter() { }
