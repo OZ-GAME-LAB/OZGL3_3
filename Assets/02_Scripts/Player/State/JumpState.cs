@@ -2,25 +2,25 @@
 
 public class JumpState : PlayerStateBase
 {
-    public JumpState(PlayerStateContext ctx) : base(ctx) { }
+    public JumpState(PlayerStateContext playerContext) : base(playerContext) { }
 
     public override void StateFixedUpdate()
     {
-        Ctx.TryJump();
+        PlayerContext.TryJump();
 
-        float horizontalSpeed = Ctx.Rigidbody.linearVelocity.x;
+        float horizontalSpeed = PlayerContext.Rigidbody.linearVelocity.x;
 
-        if (Mathf.Abs(Ctx.Input.MoveInput) > 0.01f)
+        if (Mathf.Abs(PlayerContext.Input.MoveInput) > 0.01f)
         {
-            float moveSpeed = Ctx.Input.RunInput
+            float moveSpeed = PlayerContext.Input.RunInput
                 ? PlayerStatSet.Instance.RunSpeed
                 : PlayerStatSet.Instance.WalkSpeed;
 
-            horizontalSpeed = Ctx.Input.MoveInput * moveSpeed;
+            horizontalSpeed = PlayerContext.Input.MoveInput * moveSpeed;
         }
 
-        Ctx.Rigidbody.linearVelocity = new Vector2(
+        PlayerContext.Rigidbody.linearVelocity = new Vector2(
             horizontalSpeed,
-            Ctx.Rigidbody.linearVelocity.y);
+            PlayerContext.Rigidbody.linearVelocity.y);
     }
 }

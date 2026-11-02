@@ -20,10 +20,10 @@ public class LadderState : PlayerStateBase
     public float Direction { get; private set; } = 1f;
 
     public LadderState(
-        PlayerStateContext ctx,
+        PlayerStateContext playerContext,
         LayerMask ladderLayerMask,
         float coolDown
-        ): base(ctx)
+        ): base(playerContext)
     {
         _ladderLayerMask = ladderLayerMask;
         _coolDown = coolDown;
@@ -60,10 +60,10 @@ public class LadderState : PlayerStateBase
             return;
         }
 
-        bool upPressed = Ctx.Input.UpInput;
-        bool downPressed = Ctx.Input.DownInput;
+        bool upPressed = PlayerContext.Input.UpInput;
+        bool downPressed = PlayerContext.Input.DownInput;
 
-        bool hasLadderInput = Ctx.IsGrounded
+        bool hasLadderInput = PlayerContext.IsGrounded
             ? upPressed != downPressed
             : upPressed && !downPressed;
 
@@ -84,18 +84,18 @@ public class LadderState : PlayerStateBase
 
         if (_currentCollider != null)
         {
-            Vector2 position = Ctx.Rigidbody.position;
+            Vector2 position = PlayerContext.Rigidbody.position;
             position.x = _currentCollider.bounds.center.x;
-            Ctx.Rigidbody.position = position;
+            PlayerContext.Rigidbody.position = position;
         }
 
-        _originalGravityScale = Ctx.Rigidbody.gravityScale;
-        Ctx.Rigidbody.gravityScale = 0f;
-        Ctx.Rigidbody.linearVelocity = Vector2.zero;
+        _originalGravityScale = PlayerContext.Rigidbody.gravityScale;
+        PlayerContext.Rigidbody.gravityScale = 0f;
+        PlayerContext.Rigidbody.linearVelocity = Vector2.zero;
         Direction = upPressed ? 1f : -1f;
 
-        Ctx.Input.ClearJumpInput();
-        Ctx.Animator.SetBool("IsLadder", true);
+        PlayerContext.Input.ClearJumpInput();
+        PlayerContext.Animator.SetBool("IsLadder", true);
     }
 
     public override void StateExit()
@@ -108,12 +108,12 @@ public class LadderState : PlayerStateBase
 
     public override void StateFixedUpdate()
     {
-        float horizontalInput = Ctx.Input.MoveInput;
+        float horizontalInput = PlayerContext.Input.MoveInput;
         bool isTryingLadderJump =
-            Ctx.Input.JumpQueued &&
+            PlayerContext.Input.JumpQueued &&
             Mathf.Abs(horizontalInput) > 0.01f;
 
-        Ctx.Input.ClearJumpInput();
+        PlayerContext.Input.ClearJumpInput();
 
         if (isTryingLadderJump)
         {
@@ -122,26 +122,26 @@ public class LadderState : PlayerStateBase
         }
 
         float verticalInput =
-            (Ctx.Input.UpInput ? 1f : 0f) -
-            (Ctx.Input.DownInput ? 1f : 0f);
+            (PlayerContext.Input.UpInput ? 1f : 0f) -
+            (PlayerContext.Input.DownInput ? 1f : 0f);
 
         if (Mathf.Abs(verticalInput) > 0.01f)
         {
             Direction = Mathf.Sign(verticalInput);
 
-            Ctx.Rigidbody.linearVelocity = new Vector2(
+            PlayerContext.Rigidbody.linearVelocity = new Vector2(
                 0f,
                 verticalInput * PlayerStatSet.Instance.LadderSpeed);
 
-            Ctx.Animator.SetFloat("LadderAnimSpeed", 1f);
+            PlayerContext.Animator.SetFloat("LadderAnimSpeed", 1f);
         }
         else
         {
-            Ctx.Rigidbody.linearVelocity = Vector2.zero;
-            Ctx.Animator.SetFloat("LadderAnimSpeed", 0f);
+            PlayerContext.Rigidbody.linearVelocity = Vector2.zero;
+            PlayerContext.Animator.SetFloat("LadderAnimSpeed", 0f);
         }
 
-        Ctx.Animator.SetFloat("LadderDirection", Direction);
+        PlayerContext.Animator.SetFloat("LadderDirection", Direction);
     }
 
     private void JumpOutLadder(float horizontalInput)
@@ -149,29 +149,29 @@ public class LadderState : PlayerStateBase
         float jumpDirection = Mathf.Sign(horizontalInput);
 
         IsClimbing = false;
-        Ctx.Rigidbody.gravityScale = _originalGravityScale;
+        PlayerContext.Rigidbody.gravityScale = _originalGravityScale;
         _coolDownEndTime = Time.time + _coolDown;
 
-        Ctx.Rigidbody.linearVelocity = new Vector2(
+        PlayerContext.Rigidbody.linearVelocity = new Vector2(
             jumpDirection * LadderJumpSpeedX,
             PlayerStatSet.Instance.JumpValue);
 
-        Ctx.SpriteRenderer.flipX = jumpDirection < 0f;
-        Ctx.IsGrounded = false;
+        PlayerContext.SpriteRenderer.flipX = jumpDirection < 0f;
+        PlayerContext.IsGrounded = false;
 
-        Ctx.Animator.SetFloat("LadderAnimSpeed", 0f);
-        Ctx.Animator.SetBool("IsLadder", false);
-        Ctx.Input.ClearJumpInput();
+        PlayerContext.Animator.SetFloat("LadderAnimSpeed", 0f);
+        PlayerContext.Animator.SetBool("IsLadder", false);
+        PlayerContext.Input.ClearJumpInput();
     }
 
     private void Release()
     {
         IsClimbing = false;
-        Ctx.Rigidbody.gravityScale = _originalGravityScale;
-        Ctx.Rigidbody.linearVelocity = new Vector2(Ctx.Rigidbody.linearVelocity.x, 0f);
+        PlayerContext.Rigidbody.gravityScale = _originalGravityScale;
+        PlayerContext.Rigidbody.linearVelocity = new Vector2(PlayerContext.Rigidbody.linearVelocity.x, 0f);
 
-        Ctx.Animator.SetFloat("LadderAnimSpeed", 0f);
-        Ctx.Animator.SetBool("IsLadder", false);
+        PlayerContext.Animator.SetFloat("LadderAnimSpeed", 0f);
+        PlayerContext.Animator.SetBool("IsLadder", false);
     }
 
     private void RefreshCurrentCollider()
@@ -183,7 +183,7 @@ public class LadderState : PlayerStateBase
 
         foreach (Collider2D ladderCollider in _triggers)
         {
-            Vector2 offset = (Vector2)ladderCollider.bounds.center - Ctx.Rigidbody.position;
+            Vector2 offset = (Vector2)ladderCollider.bounds.center - PlayerContext.Rigidbody.position;
             float distance = offset.sqrMagnitude;
 
             if (distance < nearestDistance)

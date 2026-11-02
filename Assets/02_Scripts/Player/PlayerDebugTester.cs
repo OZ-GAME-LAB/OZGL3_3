@@ -17,7 +17,7 @@ public class PlayerDebugTester : MonoBehaviour
             return;
         }
 
-        // K: 자살치트키, J: 자해치트키, H: 자힐치트키 , L: 게이지회복치트키
+        // K: 자살치트키, J: 자해치트키, H: 자힐치트키 , L: 게이지회복치트키, O: 더블점프 잠금해제
         if (keyboard.kKey.wasPressedThisFrame)
         {
             status.TakeDamage(status.MaxHealth * 2);
