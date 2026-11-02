@@ -10,12 +10,13 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] private float _maxHp = 5f;
     [SerializeField] public float _moveSpeed = 3f;
     [SerializeField] private float _aggroRange = 7f;
-    [SerializeField] private int _attackDamage = 0;
+    [SerializeField] private int _attackDamage = 1;
     [SerializeField] private float _attackRange = 2f;
     [SerializeField] private int _attackPatternCount = 2;
-    [SerializeField] private Vector2 _attackBoxSize = new Vector2(2f, 1.5f);
-    [SerializeField] private Vector2 _attackBoxOffset = new Vector2(1f, 0f);
+    [SerializeField] private Vector2 _attackBoxSize = new Vector2(1f, 0.5f);    //[TODO] 어택박스 사이즈, 오프셋 데이터드리븐으로 받아오기
+    [SerializeField] private Vector2 _attackBoxOffset = new Vector2(1f, 0.5f);
     [SerializeField] private LayerMask _playerLayer;
+    
     protected float _currentHp { get; private set; }
 
 
@@ -31,6 +32,7 @@ public class MonsterBase : MonoBehaviour
     protected bool _isAttacking = false;
     protected bool _isDead = false;
     public bool _isHit = false;
+    public bool _isUsingStealthSkill = false;
     private float _attackCooldownTimer = 0f;
     private float _attackCooldown = 2f;
     public bool _isAttackUseable = false;
@@ -103,7 +105,7 @@ public class MonsterBase : MonoBehaviour
         }
     }
 
-    public virtual void AttackTarget(float damage)  //[TODO] 데미지 데이터드리븐으로
+    public virtual void AttackTarget()  //[TODO] 데미지 데이터드리븐으로
     {
         if (_isAttacking) return;
 
@@ -128,7 +130,7 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        if (_isDead) return;
+        if (_isDead || _isUsingStealthSkill) return;
         _isAttacking = false;
         _isUsingSkill = false;
         _currentHp -= damage;
@@ -140,7 +142,7 @@ public class MonsterBase : MonoBehaviour
         }
         else
         {
-            if (_isHit) return;
+            if (_isHit || _isUsingSkill) return;
             _isHit = true;
             _monsterAnimController.ChangeState(MonsterState.Hit);
         }
@@ -189,6 +191,7 @@ public class MonsterBase : MonoBehaviour
             if (hitCollider.TryGetComponent<PlayerStatus>(out var playerStatus))
             {
                 playerStatus.TakeDamage(_attackDamage);
+                Logger.LogError("플레이어가 데미지를 입었습니다.");
             }
         }
     }
@@ -200,7 +203,7 @@ public class MonsterBase : MonoBehaviour
         _monsterAnimController.ChangeState(MonsterState.Idle);
     }
 
-    protected virtual void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         float direction = _isMovingRight ? 1f : -1f;

@@ -32,7 +32,7 @@ public class StealthSkill : MonoBehaviour
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 0f);
 
         _monsterBase._isAttackUseable = false;
-        _monsterBase._isHit = true;
+        _monsterBase._isUsingStealthSkill = true;
 
         StartCoroutine(CoStealthAttack());
     }
@@ -54,6 +54,6 @@ public class StealthSkill : MonoBehaviour
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1f);
         AnimController_NormalMonster.ChangeState(MonsterState.Skill_2);
         _monsterBase._isAttackUseable = true;
-        _monsterBase._isHit = false;
+        _monsterBase._isUsingStealthSkill = false;
     }
 }

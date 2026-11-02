@@ -244,7 +244,7 @@ public class NormalMonster : MonsterBase
             CheckAttackUseable();
             if (_isAttackUseable)
             {
-                AttackTarget(0);   // [TODO] 데미지 데이터드리븐으로 처리
+                AttackTarget();   // [TODO] 데미지 데이터드리븐으로 처리
                 return;
             }
         }

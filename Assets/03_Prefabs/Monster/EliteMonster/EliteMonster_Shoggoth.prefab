@@ -179,6 +179,11 @@ MonoBehaviour:
   _attackDamage: 0
   _attackRange: 2
   _attackPatternCount: 2
+  _attackBoxSize: {x: 2, y: 1.5}
+  _attackBoxOffset: {x: 1, y: 0}
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
   Skills:
   - {fileID: 11400000, guid: 5ec2ddf696ddb8f4fb1b83d14eee4fb9, type: 2}
   - {fileID: 11400000, guid: 86b5e8a729adf6b49ba7ba51e9ab1121, type: 2}
