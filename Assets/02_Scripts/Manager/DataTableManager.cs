@@ -1,10 +1,14 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class DataTableManager
 {
+    private Dictionary<string, PlayerSkillData> _playerSkillTable = new();
+    private Dictionary<string, AreaTextData> _areaTextTable = new();
+
+
     public IReadOnlyDictionary<string, ShopData> Shop { get; private set; }
     public IReadOnlyDictionary<string, ArtifactData> Artifact { get; private set; }
     public IReadOnlyDictionary<string, DialogueGroupData> DialogueGroup { get; private set; }
@@ -22,9 +26,21 @@ public class DataTableManager
         DialogueCondition = LoadData<DialogueConditionData>(nameof(DialogueConditionData));
         DialogueNotification = LoadData<DialogueNotificationData>(nameof(DialogueNotificationData));
         DialogueTrigger = LoadData<DialogueTriggerData>(nameof(DialogueTriggerData));
+
+        _playerSkillTable = LoadData<PlayerSkillData>("PlayerSkillData");
+        _areaTextTable = LoadData<AreaTextData>("AreaText");
+    }
+    #region Getters
+
+    public bool TryGetPlayerSkill(string id, out PlayerSkillData data)
+    {
+        return _playerSkillTable.TryGetValue(id, out data);
     }
 
-    #region Getters
+    public bool TryGetAreaSprite(string id, out AreaTextData data)
+    {
+        return _areaTextTable.TryGetValue(id, out data);
+    }
 
 
     #endregion

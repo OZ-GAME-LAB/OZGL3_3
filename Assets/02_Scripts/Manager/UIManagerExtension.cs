@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum UIRootType
 {
@@ -17,6 +17,10 @@ public enum UIType
     SimplePopupUI,
     MainHUD,
     StatusUI,
+    FadeUI,
+    PauseUI,
+    SettingPopupUI,
+    AreaSpriteUI,
     ShopUI,
     ArtifactUI,
     DialoaguetUI
@@ -82,7 +86,7 @@ public static class UIManagerExtension
         uiManager.CloseUI(UIRootType.PopupUI, UIType.SimplePopupUI);
     }
 
-    public static void OpenStatusUI(this UIManager uiManager, PlayerStats playerStats)
+    public static void OpenStatusUI(this UIManager uiManager, PlayerStatSet playerStats)
     {
         if (uiManager.IsOpenUI(UIType.StatusUI) == true)
         {
@@ -97,7 +101,7 @@ public static class UIManagerExtension
             return;
         }
 
-        (uiBase as StatusUI)?.Init(PlayerStats.Instance);
+        (uiBase as StatusUI)?.Init(PlayerStatSet.Instance);
     }
 
     public static void CloseStatusUI(this UIManager uiManager)
@@ -213,4 +217,72 @@ public static class UIManagerExtension
         uiManager.CloseUI(UIRootType.ContentUI, UIType.DialoaguetUI);
     }
 
+
+    public static void OpenFadeUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.VeryFrontUI, UIType.FadeUI);
+        FadeUI fadeUI = uiBase as FadeUI;
+
+        if (fadeUI == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+
+        fadeUI.Play();
+    }
+
+    public static void CloseFadeUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.FadeUI);
+    }
+
+    public static void OpenPauseUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.PauseUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void ClosePauseUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.VeryFrontUI, UIType.PauseUI);
+    }
+
+    public static void OpenSettingPopupUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.SettingPopupUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseSettingPopupUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.SettingPopupUI);
+    }
+
+    public static void OpenAreaSpriteUI(this UIManager uiManager, string id)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.AreaSpriteUI);
+        AreaSpriteUI areaSpriteUI = uiBase as AreaSpriteUI;
+
+        if (areaSpriteUI == null)
+        {
+            Logger.LogError("AreaSpriteUI가 생성되지 않았습니다.");
+            return;
+        }
+
+        areaSpriteUI.Init(id);
+    }
+
+    public static void CloseAreaSpriteUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.AreaSpriteUI);
+    }
 }

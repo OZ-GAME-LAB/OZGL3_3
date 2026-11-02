@@ -1,0 +1,24 @@
+[
+  {
+    "Id": "GuradedAttack_Attack",
+    "Name": "GuradedAttack",
+    "Type": "Attack",
+    "TriggerName": "IsGuradedAttackSign",
+    "StateName": "IsGuradedAttack",
+    "needGauge": 30,
+    "Amount1": 1,
+    "RangeOffset": "0.8, 0",
+    "RangeSize": "2, 1.2"
+  },
+  {
+    "Id": "HollyHeal_Buff",
+    "Name": "HollyHeal",
+    "Type": "Buff",
+    "TriggerName": "IsHollyHealSign",
+    "StateName": "IsHollyHeal",
+    "needGauge": 50,
+    "Amount1": 2,
+    "RangeOffset": "0, 0",
+    "RangeSize": "0, 0"
+  }
+]

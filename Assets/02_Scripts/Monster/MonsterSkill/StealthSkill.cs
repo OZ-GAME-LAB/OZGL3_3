@@ -28,8 +28,11 @@ public class StealthSkill : MonoBehaviour
     }
 
     public void OnEnterStealthSkillAnimation()
-    {
+    {//[TODO] 바로 스킬 사용하지 못하도록 수정
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 0f);
+
+        _monsterBase._isAttackUseable = false;
+        _monsterBase._isHit = true;
 
         StartCoroutine(CoStealthAttack());
     }
@@ -47,8 +50,10 @@ public class StealthSkill : MonoBehaviour
     }
 
     private void ExitStealth()
-    {
+    {//[TODO] 나타나는 위치가 땅바닥이 없는 경우 떨어져서 죽는다
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1f);
         AnimController_NormalMonster.ChangeState(MonsterState.Skill_2);
+        _monsterBase._isAttackUseable = true;
+        _monsterBase._isHit = false;
     }
 }

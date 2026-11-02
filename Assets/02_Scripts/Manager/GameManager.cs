@@ -8,6 +8,8 @@ public class GameManager : SingletonBehaviour<GameManager>
     public static UserDataManager UserData { get { return Instance._userDataManager; } }
     public static NpcManager Npc { get { return Instance._npcManager; } }
 
+    public static AreaTracker Area { get { return Instance._areaTracker; } }
+    private AreaTracker _areaTracker = new AreaTracker();
 
     #region Manager Variables
 

@@ -41,12 +41,35 @@ public class MainHUD : UIBase
         }
     }
 
-    // TODO(강혜창): 입력은 플레이어 쪽(PlayerInputHandler)으로 옮기고 삭제
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (UIManager.Instance.IsOpenUI(UIType.PauseUI))
+            {
+                UIManager.Instance.ClosePauseUI();
+            }
+            else if (UIManager.Instance.IsOpenUI(UIType.StatusUI))
+            {
+                UIManager.Instance.CloseStatusUI();
+            }
+            else
+            {
+                UIManager.Instance.OpenPauseUI();
+            }
+
+            return;
+        }
+
+        // 일시정지 중에는 다른 창을 열지 않는다.
+        if (UIManager.Instance.IsOpenUI(UIType.PauseUI))
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.U))
         {
-            UIManager.Instance.OpenStatusUI(PlayerStats.Instance);
+            UIManager.Instance.OpenStatusUI(PlayerStatSet.Instance);
         }
     }
 }

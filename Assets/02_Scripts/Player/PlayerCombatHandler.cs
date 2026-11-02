@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerCombatHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
-    [SerializeField] private string _targetTag;
-    [SerializeField] private Vector2 _rangeOffset = new Vector2(0.2f, 0f);
-    [SerializeField] private Vector2 _rangeSize = new Vector2(0.4f, 0.3f);
+    [SerializeField] private string _targetTag = "Enemy";
+    [SerializeField] private Vector2 _rangeOffset = new Vector2(0.4f, 0f);
+    [SerializeField] private Vector2 _rangeSize = new Vector2(1.2f, 0.9f);
 
     private Rigidbody2D _rigidbody2D_Player;
 
@@ -14,7 +14,7 @@ public class PlayerCombatHandler : MonoBehaviour
     private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
     private readonly HashSet<NormalMonster> _damagedMonsters = new HashSet<NormalMonster>();
 
-    private int _attackDamage => PlayerStats.Instance.AttackDamage;
+    private int _attackDamage => PlayerStatSet.Instance.AttackDamage;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class PlayerCombatHandler : MonoBehaviour
 
         if (_spriteRenderer_Player == null)
         {
-            _spriteRenderer_Player = GetComponent<SpriteRenderer>();
+            _spriteRenderer_Player = GetComponentInChildren<SpriteRenderer>();
         }
     }
 
@@ -69,7 +69,13 @@ public class PlayerCombatHandler : MonoBehaviour
         return targets.Count;
     }
 
-    public int ApplyAttackDamage()
+    public int ApplySkillAttackDamage(float damageMultiplier)
+    {
+        int skillDamage = Mathf.RoundToInt(_attackDamage * damageMultiplier);
+        return ApplyAttackDamage(skillDamage);
+    }
+
+    private int ApplyAttackDamage(int damage)
     {
         FindTargetsInRange(_targetsInRange);
         _damagedMonsters.Clear();
@@ -82,7 +88,7 @@ public class PlayerCombatHandler : MonoBehaviour
                 continue;
             }
 
-            monster.TakeDamage(_attackDamage);
+            monster.TakeDamage(damage);
         }
 
         return _damagedMonsters.Count;
@@ -90,7 +96,7 @@ public class PlayerCombatHandler : MonoBehaviour
 
     public void AnimationAttackHit()
     {
-        ApplyAttackDamage();
+        ApplyAttackDamage(_attackDamage);
     }
 
     private bool HasTargetTagInParents(Transform targetTransform)

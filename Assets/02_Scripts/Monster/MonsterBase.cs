@@ -1,4 +1,5 @@
-﻿  using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterBase : MonoBehaviour
@@ -9,10 +10,13 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] private float _maxHp = 5f;
     [SerializeField] public float _moveSpeed = 3f;
     [SerializeField] private float _aggroRange = 7f;
-    [SerializeField] private int _attackDamage = 1;
+    [SerializeField] private int _attackDamage = 0;
     [SerializeField] private float _attackRange = 2f;
     [SerializeField] private int _attackPatternCount = 2;
-    protected float _currentHp;
+    [SerializeField] private Vector2 _attackBoxSize = new Vector2(2f, 1.5f);
+    [SerializeField] private Vector2 _attackBoxOffset = new Vector2(1f, 0f);
+    [SerializeField] private LayerMask _playerLayer;
+    protected float _currentHp { get; private set; }
 
 
     [Header("Skills")]
@@ -26,14 +30,19 @@ public class MonsterBase : MonoBehaviour
     protected bool _isAggro = false;
     protected bool _isAttacking = false;
     protected bool _isDead = false;
+    public bool _isHit = false;
     private float _attackCooldownTimer = 0f;
     private float _attackCooldown = 2f;
-    private bool _isAttackUseable = false;
+    public bool _isAttackUseable = false;
+    protected bool _isUsingSkill = false;
+
+    public event Action<float, float> OnHpChanged;
+
 
     protected virtual void Awake()
     {
-        _isDead = false;
         _monsterAnimController = GetComponent<MonsterAnimatorController>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         //[TODO] _playerTransform 찾기 일단은 직접 등록으로
         _currentHp = _maxHp;
 
@@ -43,8 +52,14 @@ public class MonsterBase : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        _isDead = false;
+    }
+
     protected virtual void Update()
     {
+        if (_isDead) return;
         for (int i = 0; i < _skillCooldownTimers.Count; i++)
         {
             if (_skillCooldownTimers[i] > 0)
@@ -90,15 +105,16 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void AttackTarget(float damage)  //[TODO] 데미지 데이터드리븐으로
     {
-        _monsterAnimController.ChangeState(MonsterState.Idle);
-        if ( _isAttackUseable == false) return;
         if (_isAttacking) return;
+
+        _monsterAnimController.ChangeState(MonsterState.Idle);
+        
         _isAttacking = true;
 
         _attackCooldownTimer = _attackCooldown;
         _isAttackUseable = false;
 
-        int selectedNum = Random.Range(1, _attackPatternCount + 1);
+        int selectedNum = UnityEngine.Random.Range(1, _attackPatternCount + 1);
         if (selectedNum == 1)
         {
             _monsterAnimController.ChangeState(MonsterState.Attack_1);
@@ -112,41 +128,84 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        _monsterAnimController.ChangeState(MonsterState.Hit);
+        if (_isDead) return;
+        _isAttacking = false;
+        _isUsingSkill = false;
         _currentHp -= damage;
-        Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
+        OnHpChanged?.Invoke(_currentHp, _maxHp);
+        //Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
         if (_currentHp <= 0)
         {
             Die();
         }
+        else
+        {
+            if (_isHit) return;
+            _isHit = true;
+            _monsterAnimController.ChangeState(MonsterState.Hit);
+        }
+    }
+
+    public void SetUsingSkill(bool isUsing)
+    {
+        _isUsingSkill = isUsing;
     }
 
     protected virtual void Die()
     {
         if (_isDead) return;
+        _isDead = true;
+
+        if (_rigidbody2D != null)
+        {
+            _rigidbody2D.linearVelocity = Vector2.zero;
+            _rigidbody2D.simulated = false;
+        }
+
         _monsterAnimController.ChangeState(MonsterState.Dead);
+        //Logger.LogError($"몬스터{this.name}가 죽었습니다.");
     }
 
     public void OnDieAnimationEnd()
     {
-        _monsterAnimController.ChangeState(MonsterState.Idle);
-        _isDead = true;
         Destroy(gameObject);
+    }
+
+    public void OnHitAnimationEnd()
+    {
+        _isHit = false;
+        _monsterAnimController.ChangeState(MonsterState.Idle);
     }
 
     public void OnApplyAttackDamage()
     {
-        float distance = Vector2.Distance(transform.position, _playerTransform.position);
-        if (distance > _attackRange) return;
-        if (_playerTransform.TryGetComponent<PlayerStatus>(out var playerStatus))
+        float direction = _isMovingRight ? 1f : -1f;
+        Vector2 boxCenter = (Vector2)transform.position + new Vector2(_attackBoxOffset.x * direction, _attackBoxOffset.y);
+
+        Collider2D hitCollider = Physics2D.OverlapBox(boxCenter, _attackBoxSize, 0f, _playerLayer);
+
+        if (hitCollider != null)
         {
-            playerStatus.TakeDamage(_attackDamage);
+            if (hitCollider.TryGetComponent<PlayerStatus>(out var playerStatus))
+            {
+                playerStatus.TakeDamage(_attackDamage);
+            }
         }
     }
 
     public void OnAttackAnimationEnd()
     {
         _isAttacking = false;
+        _isUsingSkill = false;
         _monsterAnimController.ChangeState(MonsterState.Idle);
+    }
+
+    protected virtual void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        float direction = _isMovingRight ? 1f : -1f;
+        Vector2 boxCenter = (Vector2)transform.position + new Vector2(_attackBoxOffset.x * direction, _attackBoxOffset.y);
+
+        Gizmos.DrawWireCube(boxCenter, _attackBoxSize);
     }
 }

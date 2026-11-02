@@ -8,6 +8,10 @@
     Jump,
     Fall,
     Dash,
+    Block,
     ComboAttack,
+    JumpAttack,
+    GuardedAttack,
+    Heal,
     Died
 }
