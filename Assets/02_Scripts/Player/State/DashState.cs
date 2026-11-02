@@ -13,11 +13,11 @@ public class DashState : PlayerStateBase
     public bool IsDashing { get; private set; }
 
     public DashState(
-        PlayerStateContext ctx,
+        PlayerStateContext playerContext,
         PlayerDashCharge charge,
         float dashDistance,
         float dashDuration
-        ) : base(ctx)
+        ) : base(playerContext)
     {
         _charge = charge;
         _dashDistance = dashDistance;
@@ -34,6 +34,8 @@ public class DashState : PlayerStateBase
 
     public override void StateFixedUpdate()
     {
+        PlayerContext.Input.ClearJumpInput();
+
         if (!IsDashing)
         {
             Begin();
@@ -45,37 +47,37 @@ public class DashState : PlayerStateBase
             return;
         }
 
-        Ctx.Rigidbody.linearVelocity = new Vector2(_dashDirection * _dashSpeed, 0f);
+        PlayerContext.Rigidbody.linearVelocity = new Vector2(_dashDirection * _dashSpeed, 0f);
     }
 
     private void Begin()
     {
         IsDashing = true;
 
-        float moveInput = Ctx.Input.MoveInput;
+        float moveInput = PlayerContext.Input.MoveInput;
         _dashDirection = Mathf.Abs(moveInput) > 0.01f
             ? Mathf.Sign(moveInput)
-            : Ctx.Facing;
+            : PlayerContext.Facing;
 
         float duration = Mathf.Max(0.01f, _dashDuration);
         _dashSpeed = Mathf.Max(0f, _dashDistance) / duration;
         _dashEndTime = Time.time + duration;
 
-        _charge.Consume();
+        _charge.ConsumeDashCharge();
 
-        if (!Ctx.IsGrounded)
+        if (!PlayerContext.IsGrounded)
         {
-            Ctx.AirDashesUsed++;
+            PlayerContext.AirDashesUsed++;
         }
 
-        Ctx.Rigidbody.linearVelocity = new Vector2(Ctx.Rigidbody.linearVelocity.x, 0f);
-        Ctx.Animator.SetBool("IsDash", true);
+        PlayerContext.Rigidbody.linearVelocity = new Vector2(PlayerContext.Rigidbody.linearVelocity.x, 0f);
+        PlayerContext.Animator.SetBool("IsDash", true);
     }
 
     private void End()
     {
         IsDashing = false;
-        Ctx.Rigidbody.linearVelocity = Vector2.zero;
-        Ctx.Animator.SetBool("IsDash", false);
+        PlayerContext.Rigidbody.linearVelocity = Vector2.zero;
+        PlayerContext.Animator.SetBool("IsDash", false);
     }
 }

@@ -2,7 +2,7 @@
 
 public class PlayerAttackFlow
 {
-    private readonly PlayerStateContext _ctx;
+    private readonly PlayerStateContext _playerContext;
     private readonly DashState _dashState;
     private readonly LadderState _ladderState;
     private readonly float _comboInputStart;
@@ -18,13 +18,13 @@ public class PlayerAttackFlow
     public bool IsComboAttack => _attackRequested || IsAttackStepChange();
 
     public PlayerAttackFlow(
-        PlayerStateContext ctx,
+        PlayerStateContext playerContext,
         DashState dashState,
         LadderState ladderState,
         float comboInputStart,
         float comboInputEnd)
     {
-        _ctx = ctx;
+        _playerContext = playerContext;
         _dashState = dashState;
         _ladderState = ladderState;
         _comboInputStart = comboInputStart;
@@ -39,12 +39,12 @@ public class PlayerAttackFlow
 
     public void HandleInput()
     {
-        AnimatorStateInfo stateInfo = _ctx.Animator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo stateInfo = _playerContext.Animator.GetCurrentAnimatorStateInfo(0);
         int attackStep = GetComboAttackStep(stateInfo);
 
         if (_isJumpAttack)
         {
-            _ctx.Input.ConsumeAttackInput();
+            _playerContext.Input.ConsumeAttackInput();
             return;
         }
 
@@ -55,50 +55,50 @@ public class PlayerAttackFlow
                 normalizedTime >= _comboInputStart &&
                 normalizedTime <= _comboInputEnd;
 
-            if (!_ctx.Input.AttackInput)
+            if (!_playerContext.Input.AttackInput)
             {
-                _ctx.Animator.SetBool("ComboAttackSign", false);
+                _playerContext.Animator.SetBool("ComboAttackSign", false);
             }
             else if (isComboInputWindow)
             {
-                _ctx.Animator.SetBool("ComboAttackSign", true);
+                _playerContext.Animator.SetBool("ComboAttackSign", true);
             }
 
             if (isComboInputWindow &&
-                _ctx.Input.AttackInput &&
-                Mathf.Abs(_ctx.Input.MoveInput) > 0.01f)
+                _playerContext.Input.AttackInput &&
+                Mathf.Abs(_playerContext.Input.MoveInput) > 0.01f)
             {
-                _nextAttackDirection = _ctx.Input.MoveInput < 0f ? -1 : 1;
+                _nextAttackDirection = _playerContext.Input.MoveInput < 0f ? -1 : 1;
             }
 
-            _ctx.Input.ConsumeAttackInput();
+            _playerContext.Input.ConsumeAttackInput();
             return;
         }
 
-        if (!_ctx.Input.ConsumeAttackInput())
+        if (!_playerContext.Input.ConsumeAttackInput())
         {
             return;
         }
 
         if (stateInfo.IsName("LocoMotion") &&
-            !_ctx.Animator.IsInTransition(0) &&
-            _ctx.IsGrounded)
+            !_playerContext.Animator.IsInTransition(0) &&
+            _playerContext.IsGrounded)
         {
             _nextAttackDirection = 0;
-            _ctx.Animator.SetBool("ComboAttackSign", false);
-            _ctx.Animator.SetTrigger("ComboAttack");
+            _playerContext.Animator.SetBool("ComboAttackSign", false);
+            _playerContext.Animator.SetTrigger("ComboAttack");
             _attackRequested = true;
         }
-        else if (!_ctx.IsGrounded &&
+        else if (!_playerContext.IsGrounded &&
             !_dashState.IsDashing &&
             !_ladderState.IsClimbing &&
-            _ctx.JumpAttacksUsed < _ctx.AirDashesUsed + 1)
+            _playerContext.JumpAttacksUsed < _playerContext.AirDashesUsed + 1)
         {
-            _ctx.JumpAttacksUsed++;
+            _playerContext.JumpAttacksUsed++;
             _nextAttackDirection = 0;
             _isJumpAttack = true;
             _jumpAttackAnimationEntered = false;
-            _ctx.Animator.SetTrigger("JumpAttack");
+            _playerContext.Animator.SetTrigger("JumpAttack");
         }
     }
 
@@ -112,16 +112,16 @@ public class PlayerAttackFlow
 
     public bool IsAttackStepChange()
     {
-        AnimatorStateInfo currentState = _ctx.Animator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo currentState = _playerContext.Animator.GetCurrentAnimatorStateInfo(0);
 
         if (GetComboAttackStep(currentState) != 0)
         {
             return true;
         }
 
-        if (_ctx.Animator.IsInTransition(0))
+        if (_playerContext.Animator.IsInTransition(0))
         {
-            AnimatorStateInfo nextState = _ctx.Animator.GetNextAnimatorStateInfo(0);
+            AnimatorStateInfo nextState = _playerContext.Animator.GetNextAnimatorStateInfo(0);
             return GetComboAttackStep(nextState) != 0;
         }
 
@@ -130,7 +130,7 @@ public class PlayerAttackFlow
 
     private void HandleComboAttackState()
     {
-        AnimatorStateInfo stateInfo = _ctx.Animator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo stateInfo = _playerContext.Animator.GetCurrentAnimatorStateInfo(0);
         int currentAttackStep = GetComboAttackStep(stateInfo);
 
         if (currentAttackStep == _lastAttackStep)
@@ -147,16 +147,16 @@ public class PlayerAttackFlow
         {
             if (_nextAttackDirection != 0)
             {
-                _ctx.SpriteRenderer.flipX = _nextAttackDirection < 0;
+                _playerContext.SpriteRenderer.flipX = _nextAttackDirection < 0;
                 _nextAttackDirection = 0;
             }
 
-            _ctx.Animator.SetBool("ComboAttackSign", false);
+            _playerContext.Animator.SetBool("ComboAttackSign", false);
         }
         else
         {
             _nextAttackDirection = 0;
-            _ctx.Animator.SetBool("ComboAttackSign", false);
+            _playerContext.Animator.SetBool("ComboAttackSign", false);
         }
 
         _lastAttackStep = currentAttackStep;
@@ -169,12 +169,12 @@ public class PlayerAttackFlow
             return;
         }
 
-        AnimatorStateInfo stateInfo = _ctx.Animator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo stateInfo = _playerContext.Animator.GetCurrentAnimatorStateInfo(0);
         bool isInJumpAttackState = stateInfo.IsName("PlayerAnim_JumpAttack");
 
-        if (_ctx.Animator.IsInTransition(0))
+        if (_playerContext.Animator.IsInTransition(0))
         {
-            AnimatorStateInfo nextState = _ctx.Animator.GetNextAnimatorStateInfo(0);
+            AnimatorStateInfo nextState = _playerContext.Animator.GetNextAnimatorStateInfo(0);
             isInJumpAttackState |= nextState.IsName("PlayerAnim_JumpAttack");
         }
 
@@ -187,9 +187,9 @@ public class PlayerAttackFlow
             _isJumpAttack = false;
             _jumpAttackAnimationEntered = false;
         }
-        else if (_ctx.IsGrounded)
+        else if (_playerContext.IsGrounded)
         {
-            _ctx.Animator.ResetTrigger("JumpAttack");
+            _playerContext.Animator.ResetTrigger("JumpAttack");
             _isJumpAttack = false;
         }
     }

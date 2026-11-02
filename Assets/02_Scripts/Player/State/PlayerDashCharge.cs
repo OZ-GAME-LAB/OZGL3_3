@@ -9,55 +9,55 @@ public class PlayerDashCharge
     private float _rechargeTime;
     private int _lastMax;
 
-    public int Current { get; private set; }
-    public int Max => Mathf.Max(1, PlayerStatSet.Instance.MaxDashChance);
-    public bool HasCharge => Current > 0;
+    public int CurrentDashCharge { get; private set; }
+    public int MaxDashCharge => Mathf.Max(1, PlayerStatSet.Instance.MaxDashChance);
+    public bool HasDashCharge => CurrentDashCharge > 0;
 
-    public event Action<int, int, bool> Changed;
+    public event Action<int, int, bool> DashChanceChanged;
 
     public PlayerDashCharge(float coolDuration)
     {
         _coolDuration = coolDuration;
     }
 
-    public void Consume()
+    public void ConsumeDashCharge()
     {
-        if (Current == _lastMax)
+        if (CurrentDashCharge == _lastMax)
         {
             _rechargeTime = Time.time + _coolDuration;
         }
 
-        Current--;
-        Notify(true);
+        CurrentDashCharge--;
+        NotifyDashCharge(true);
     }
 
-    public void Tick()
+    public void UpdateDashCharge()
     {
-        int previous = Current;
+        int previous = CurrentDashCharge;
         int previousMax = _lastMax;
-        int max = Max;
+        int max = MaxDashCharge;
 
         if (!_initialized)
         {
-            Current = max;
+            CurrentDashCharge = max;
             _lastMax = max;
             _initialized = true;
-            Notify(false);
+            NotifyDashCharge(false);
             return;
         }
 
         if (max > _lastMax)
         {
-            Current = Mathf.Min(max, Current + max - _lastMax);
+            CurrentDashCharge = Mathf.Min(max, CurrentDashCharge + max - _lastMax);
         }
         else if (max < _lastMax)
         {
-            Current = Mathf.Min(Current, max);
+            CurrentDashCharge = Mathf.Min(CurrentDashCharge, max);
         }
 
         _lastMax = max;
 
-        if (Current >= max)
+        if (CurrentDashCharge >= max)
         {
             _rechargeTime = 0f;
         }
@@ -67,20 +67,20 @@ public class PlayerDashCharge
         }
         else if (Time.time >= _rechargeTime)
         {
-            Current++;
-            _rechargeTime = Current < max
+            CurrentDashCharge++;
+            _rechargeTime = CurrentDashCharge < max
                 ? Time.time + _coolDuration
                 : 0f;
         }
 
-        if (Current != previous || max != previousMax)
+        if (CurrentDashCharge != previous || max != previousMax)
         {
-            Notify(false);
+            NotifyDashCharge(false);
         }
     }
 
-    private void Notify(bool wasUsed)
+    private void NotifyDashCharge(bool wasUsed)
     {
-        Changed?.Invoke(Current, Max, wasUsed);
+        DashChanceChanged?.Invoke(CurrentDashCharge, MaxDashCharge, wasUsed);
     }
 }

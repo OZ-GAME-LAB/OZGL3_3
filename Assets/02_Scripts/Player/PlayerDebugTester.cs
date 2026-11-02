@@ -5,6 +5,7 @@ public class PlayerDebugTester : MonoBehaviour
 {
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
     [SerializeField] private int _testDamage = 1;
+    [SerializeField] private PlayerController _playerController;
 
     private void Update()
     {
@@ -16,7 +17,7 @@ public class PlayerDebugTester : MonoBehaviour
             return;
         }
 
-        // K: 자살치트키, J: 자해치트키, H: 자힐치트키 , L: 게이지회복치트키
+        // K: 자살치트키, J: 자해치트키, H: 자힐치트키 , L: 게이지회복치트키, O: 더블점프 잠금해제
         if (keyboard.kKey.wasPressedThisFrame)
         {
             status.TakeDamage(status.MaxHealth * 2);
@@ -64,6 +65,24 @@ public class PlayerDebugTester : MonoBehaviour
         {
             PlayerStatSet.Instance.ApplyArtifactBonus($"{PlayerStatType.AttackDamage}", 1f);
             Logger.Log($"[Debug] AttackDamage = {PlayerStatSet.Instance.AttackDamage}");
+        }
+
+        if (keyboard.oKey.wasPressedThisFrame)
+        {
+            if (_playerController == null)
+            {
+                _playerController = FindFirstObjectByType<PlayerController>();
+            }
+
+            if (_playerController == null)
+            {
+                Logger.LogWarning("[Debug] PlayerController를 찾을 수 없어 더블 점프를 해금하지 못했습니다.");
+                return;
+            }
+
+            bool unlocked = !_playerController.IsDoubleJumpUnlocked;
+            _playerController.SetDoubleJumpUnlocked(unlocked);
+            Logger.Log($"[Debug] 더블 점프 해금: {unlocked}");
         }
     }
 #endif

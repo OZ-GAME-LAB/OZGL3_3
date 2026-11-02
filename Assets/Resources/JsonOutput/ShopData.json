@@ -1,0 +1,80 @@
+[
+  {
+    "Id": "Shop_Item_001",
+    "ItemId": "ARTIFACT_001",
+    "Price": 200,
+    "Desc": "이동 속도 30% 증가"
+  },
+  {
+    "Id": "Shop_Item_002",
+    "ItemId": "ARTIFACT_002",
+    "Price": 300,
+    "Desc": "최대 체력 1 증가 "
+  },
+  {
+    "Id": "Shop_Item_003",
+    "ItemId": "ARTIFACT_003",
+    "Price": 400,
+    "Desc": "최대 체력 2 증가"
+  },
+  {
+    "Id": "Shop_Item_004",
+    "ItemId": "ARTIFACT_005",
+    "Price": 500,
+    "Desc": "카운트/블록 시 20% 확률로 체력 회복"
+  },
+  {
+    "Id": "Shop_Item_005",
+    "ItemId": "ARTIFACT_006",
+    "Price": 500,
+    "Desc": "블록 후 스킬 게이지 증가"
+  },
+  {
+    "Id": "Shop_Item_006",
+    "ItemId": "ARTIFACT_007",
+    "Price": 700,
+    "Desc": "스킬 게이지 증가폭 상승"
+  },
+  {
+    "Id": "Shop_Item_007",
+    "ItemId": "ARTIFACT_008",
+    "Price": 900,
+    "Desc": "스킬 게이지 소모율 감소"
+  },
+  {
+    "Id": "Shop_Item_008",
+    "ItemId": "ARTIFACT_009",
+    "Price": 1200,
+    "Desc": "대시 거리 증가"
+  },
+  {
+    "Id": "Shop_Item_009",
+    "ItemId": "ARTIFACT_010",
+    "Price": 1200,
+    "Desc": "구르기 쿨타임 감소"
+  },
+  {
+    "Id": "Shop_Item_010",
+    "ItemId": "ARTIFACT_011",
+    "Price": 1200,
+    "Desc": "숙이기 후 일정 1초 동안 공격력 증가"
+  },
+  {
+    "Id": "Shop_Item_011",
+    "ItemId": "ARTIFACT_012",
+    "Price": 1600,
+    "Desc": "블록 후 1초 동안 공격력 증가"
+  },
+  {
+    "Id": "Shop_Item_012",
+    "ItemId": "ITEM_001",
+    "Price": 1200,
+    "Desc": "일반 공격 강화 재료"
+  },
+  {
+    "Id": "Shop_Item_013",
+    "ItemId": "ITEM_002",
+    "Price": 1200,
+    "Desc": "스킬 강화 재료"
+  }
+]

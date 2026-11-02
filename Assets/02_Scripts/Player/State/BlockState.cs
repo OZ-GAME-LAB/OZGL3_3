@@ -2,7 +2,7 @@
 
 public class BlockState : PlayerStateBase
 {
-    public BlockState(PlayerStateContext ctx) : base(ctx) { }
+    public BlockState(PlayerStateContext playerContext) : base(playerContext) { }
 
     public override void StateEnter()
     {
@@ -16,13 +16,13 @@ public class BlockState : PlayerStateBase
 
     public override void StateFixedUpdate()
     {
-        Ctx.Input.ClearJumpInput();
-        Ctx.Rigidbody.linearVelocity = new Vector2(0f, Ctx.Rigidbody.linearVelocity.y);
+        PlayerContext.Input.ClearJumpInput();
+        PlayerContext.Rigidbody.linearVelocity = new Vector2(0f, PlayerContext.Rigidbody.linearVelocity.y);
     }
 
     private void SetBlocking(bool isBlocking)
     {
-        Ctx.Animator.SetBool("IsBlocking", isBlocking);
+        PlayerContext.Animator.SetBool("IsBlocking", isBlocking);
 
         if (PlayerStatus.Instance != null)
         {
