@@ -34,6 +34,8 @@ public class DashState : PlayerStateBase
 
     public override void StateFixedUpdate()
     {
+        Ctx.Input.ClearJumpInput();
+
         if (!IsDashing)
         {
             Begin();

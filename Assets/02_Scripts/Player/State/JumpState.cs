@@ -6,8 +6,7 @@ public class JumpState : PlayerStateBase
 
     public override void StateFixedUpdate()
     {
-        bool isStartingJump = Ctx.IsGrounded && Ctx.Input.ComsumeJumpInput();
-        Ctx.Input.ClearJumpInput();
+        Ctx.TryJump();
 
         float horizontalSpeed = Ctx.Rigidbody.linearVelocity.x;
 
@@ -20,15 +19,8 @@ public class JumpState : PlayerStateBase
             horizontalSpeed = Ctx.Input.MoveInput * moveSpeed;
         }
 
-        float verticalSpeed = isStartingJump
-            ? PlayerStatSet.Instance.JumpValue
-            : Ctx.Rigidbody.linearVelocity.y;
-
-        Ctx.Rigidbody.linearVelocity = new Vector2(horizontalSpeed, verticalSpeed);
-
-        if (isStartingJump)
-        {
-            Ctx.IsGrounded = false;
-        }
+        Ctx.Rigidbody.linearVelocity = new Vector2(
+            horizontalSpeed,
+            Ctx.Rigidbody.linearVelocity.y);
     }
 }

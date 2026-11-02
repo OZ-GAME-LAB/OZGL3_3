@@ -65,6 +65,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool IsDoubleJumpUnlocked =>
+        _context != null && _context.IsDoubleJumpUnlocked;
+
     private LadderState _ladderState;
     private PlayerAttackFlow _attackFlow;
     private PlayerHealSkill _playerHealSkill;
@@ -471,6 +474,17 @@ public class PlayerController : MonoBehaviour
                state == PlayerState.Walk ||
                state == PlayerState.Run ||
                state == PlayerState.Crouch;
+    }
+
+    public void SetDoubleJumpUnlocked(bool unlocked)
+    {
+        if (_context == null)
+        {
+            Logger.LogError("PlayerStateContext가 null입니다.");
+            return;
+        }
+
+        _context.IsDoubleJumpUnlocked = unlocked;
     }
 
     private void UpdateAnimatorParameters()

@@ -4,6 +4,6 @@
 
     public override void StateFixedUpdate()
     {
-        Ctx.Input.ClearJumpInput();
+        Ctx.TryJump();
     }
 }

@@ -6,7 +6,7 @@ public class JumpAttackState : PlayerStateBase
 
     public override void StateFixedUpdate()
     {
-        Ctx.Input.ClearJumpInput();
+        Ctx.TryJump();
 
         float horizontalSpeed = Ctx.Rigidbody.linearVelocity.x;
 

@@ -11,8 +11,10 @@ public class PlayerStateContext
     public float Facing => SpriteRenderer.flipX ? -1f : 1f;
 
     public bool IsGrounded { get; set; }
+    public bool IsDoubleJumpUnlocked { get; set; }
     
     public int AirDashesUsed { get; set; }
+    public int AirJumpsUsed { get; private set; }
     public int JumpAttacksUsed { get; set; }
 
 
@@ -29,9 +31,50 @@ public class PlayerStateContext
         Input = input;
         Visual = visual;
     }
+
     public void ResetAirActions()
     {
         JumpAttacksUsed = 0;
         AirDashesUsed = 0;
+        ResetAirJumps();
+    }
+
+    public bool TryJump()
+    {
+        if (!Input.ComsumeJumpInput())
+        {
+            return false;
+        }
+
+        if (IsGrounded)
+        {
+            AirJumpsUsed = 0;
+            IsGrounded = false;
+        }
+        else if (!TryUseAirJump(IsDoubleJumpUnlocked))
+        {
+            return false;
+        }
+
+        Rigidbody.linearVelocity = new Vector2(
+            Rigidbody.linearVelocity.x,
+            PlayerStatSet.Instance.JumpValue);
+        return true;
+    }
+
+    public bool TryUseAirJump(bool canDoubleJump)
+    {
+        if (!canDoubleJump || AirJumpsUsed >= 1)
+        {
+            return false;
+        }
+
+        AirJumpsUsed++;
+        return true;
+    }
+
+    public void ResetAirJumps()
+    {
+        AirJumpsUsed = 0;
     }
 }
