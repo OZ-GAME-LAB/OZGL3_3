@@ -1,0 +1,415 @@
+[
+  {
+    "Id": "MS_COND_0001",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_RIA_INTRO:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0002",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_RIA_INTRO:true",
+    "NextConditionId": "MS_COND_0003"
+  },
+  {
+    "Id": "MS_COND_0003",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_EDAN_INTRO:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0004",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_EDAN_INTRO:true",
+    "NextConditionId": "MS_COND_0005"
+  },
+  {
+    "Id": "MS_COND_0005",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_ORBEN_CLUE:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0006",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_ORBEN_CLUE:true",
+    "NextConditionId": "MS_COND_0007"
+  },
+  {
+    "Id": "MS_COND_0007",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_EDAN_DEPART:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0008",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_EDAN_DEPART:true",
+    "NextConditionId": "MS_COND_0009"
+  },
+  {
+    "Id": "MS_COND_0009",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_RIA_FAREWELL:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0010",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_EDAN_DEPART:true",
+    "NextConditionId": "MS_COND_0011"
+  },
+  {
+    "Id": "MS_COND_0011",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_OUTRO:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0012",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_ORBEN_CLUE:true",
+    "NextConditionId": "MS_COND_0013"
+  },
+  {
+    "Id": "MS_COND_0013",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_OUTRO:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0014",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_RIA_FAREWELL:true",
+    "NextConditionId": "MS_COND_0015"
+  },
+  {
+    "Id": "MS_COND_0015",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_RELIC:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0016",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_RIA_FAREWELL:true",
+    "NextConditionId": "MS_COND_0017"
+  },
+  {
+    "Id": "MS_COND_0017",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_ENTRY:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0018",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_ENTRY:true",
+    "NextConditionId": "MS_COND_0019"
+  },
+  {
+    "Id": "MS_COND_0019",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_KYLE_GUIDE:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0020",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_KYLE_GUIDE:true",
+    "NextConditionId": "MS_COND_0021"
+  },
+  {
+    "Id": "MS_COND_0021",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_CLEAR:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0022",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_KYLE_GUIDE:true",
+    "NextConditionId": "MS_COND_0023"
+  },
+  {
+    "Id": "MS_COND_0023",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_COMBAT_INTRO:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0024",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_COMBAT_INTRO:true",
+    "NextConditionId": "MS_COND_0025"
+  },
+  {
+    "Id": "MS_COND_0025",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "MS_CH1_COMBAT_CLEARED:true",
+    "NextConditionId": "MS_COND_0026"
+  },
+  {
+    "Id": "MS_COND_0026",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_CLEAR:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0027",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_CLEAR:true",
+    "NextConditionId": "MS_COND_0028"
+  },
+  {
+    "Id": "MS_COND_0028",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_RELIC:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0029",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_CLEAR:true",
+    "NextConditionId": "MS_COND_0030"
+  },
+  {
+    "Id": "MS_COND_0030",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_KYLE_AFTER:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0031",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_RELIC:true",
+    "NextConditionId": "MS_COND_0032"
+  },
+  {
+    "Id": "MS_COND_0032",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_OUTRO:false",
+    "NextConditionId": "MS_COND_0033"
+  },
+  {
+    "Id": "MS_COND_0033",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_RIA_CH1_REPORT:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0034",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_RELIC:true",
+    "NextConditionId": "MS_COND_0035"
+  },
+  {
+    "Id": "MS_COND_0035",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_ENTRY:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0036",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_ENTRY:true",
+    "NextConditionId": "MS_COND_0037"
+  },
+  {
+    "Id": "MS_COND_0037",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_ELIN_GUIDE:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0038",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_ELIN_GUIDE:true",
+    "NextConditionId": "MS_COND_0039"
+  },
+  {
+    "Id": "MS_COND_0039",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_RECORD:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0040",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_ELIN_GUIDE:true",
+    "NextConditionId": "MS_COND_0041"
+  },
+  {
+    "Id": "MS_COND_0041",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_COMBAT_INTRO:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0042",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_COMBAT_INTRO:true",
+    "NextConditionId": "MS_COND_0043"
+  },
+  {
+    "Id": "MS_COND_0043",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "MS_CH2_COMBAT_CLEARED:true",
+    "NextConditionId": "MS_COND_0044"
+  },
+  {
+    "Id": "MS_COND_0044",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_CLEAR:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0045",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_CLEAR:true",
+    "NextConditionId": "MS_COND_0046"
+  },
+  {
+    "Id": "MS_COND_0046",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_RECORD:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0047",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_RECORD:true",
+    "NextConditionId": "MS_COND_0048"
+  },
+  {
+    "Id": "MS_COND_0048",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_ELIN_REPORT:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0049",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_ELIN_REPORT:true",
+    "NextConditionId": "MS_COND_0050"
+  },
+  {
+    "Id": "MS_COND_0050",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_OUTRO:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0051",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_OUTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0052",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_OUTRO:true",
+    "NextConditionId": "MS_COND_0053"
+  },
+  {
+    "Id": "MS_COND_0053",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_RIA_CH2_REPORT:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0054",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_OUTRO:true",
+    "NextConditionId": "MS_COND_0055"
+  },
+  {
+    "Id": "MS_COND_0055",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MS_EDAN_CH2_REPORT:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0056",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_COMBAT_INTRO:true",
+    "NextConditionId": "MS_COND_0057"
+  },
+  {
+    "Id": "MS_COND_0057",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_CLEAR:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0058",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_COMBAT_INTRO:true",
+    "NextConditionId": "MS_COND_0059"
+  },
+  {
+    "Id": "MS_COND_0059",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_CLEAR:false",
+    "NextConditionId": null
+  }
+]

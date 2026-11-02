@@ -1,0 +1,16 @@
+{
+    "_storyStage": 2,
+    "_flags": [
+        "RIA_INTRO",
+        "DOCTOR_TALKED",
+        "START_JOURNEY"
+    ],
+    "_events": [],
+    "_completedDialogueGroupIds": [
+        "RIA_00",
+        "EDAN_00",
+        "ORBEN_00",
+        "RIA_01",
+        "EDAN_01"
+    ]
+}

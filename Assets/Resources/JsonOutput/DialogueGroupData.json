@@ -1,0 +1,245 @@
+[
+  {
+    "Id": "MS_RIA_INTRO",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "MS_RIA_INTRO_001",
+    "ConditionId": "MS_COND_0001",
+    "IsRepeatable": false,
+    "Notes": "도입: 리아의 병과 주인공의 동기",
+    "Priority": 100
+  },
+  {
+    "Id": "MS_EDAN_INTRO",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "MS_EDAN_INTRO_001",
+    "ConditionId": "MS_COND_0002",
+    "IsRepeatable": false,
+    "Notes": "에단이 오르벤에게 확인을 요청",
+    "Priority": 100
+  },
+  {
+    "Id": "MS_ORBEN_CLUE",
+    "NpcId": "NPC_ORBEN",
+    "StartDialogueId": "MS_ORBEN_CLUE_001",
+    "ConditionId": "MS_COND_0004",
+    "IsRepeatable": false,
+    "Notes": "치료 단서의 출처와 숲→유적 경로 확인",
+    "Priority": 100
+  },
+  {
+    "Id": "MS_EDAN_DEPART",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "MS_EDAN_DEPART_001",
+    "ConditionId": "MS_COND_0006",
+    "IsRepeatable": false,
+    "Notes": "오르벤과 대화한 뒤에만 열리는 에단의 출발 안내",
+    "Priority": 100
+  },
+  {
+    "Id": "MS_RIA_FAREWELL",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "MS_RIA_FAREWELL_001",
+    "ConditionId": "MS_COND_0008",
+    "IsRepeatable": false,
+    "Notes": "출발 인사 후 챕터 1 진입 허용",
+    "Priority": 100
+  },
+  {
+    "Id": "MS_EDAN_WAIT",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "MS_EDAN_WAIT_001",
+    "ConditionId": "MS_COND_0010",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "MS_ORBEN_REPEAT",
+    "NpcId": "NPC_ORBEN",
+    "StartDialogueId": "MS_ORBEN_REPEAT_001",
+    "ConditionId": "MS_COND_0012",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "MS_RIA_WAIT",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "MS_RIA_WAIT_001",
+    "ConditionId": "MS_COND_0014",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "CH1_ENTRY",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH1_ENTRY_001",
+    "ConditionId": "MS_COND_0016",
+    "IsRepeatable": false,
+    "Notes": "챕터 1: 메마른 숲 진입",
+    "Priority": 100
+  },
+  {
+    "Id": "CH1_KYLE_GUIDE",
+    "NpcId": "NPC_KYLE",
+    "StartDialogueId": "CH1_KYLE_GUIDE_001",
+    "ConditionId": "MS_COND_0018",
+    "IsRepeatable": false,
+    "Notes": "숲의 몬스터 3종과 전투 구역 안내",
+    "Priority": 100
+  },
+  {
+    "Id": "CH1_KYLE_REPEAT",
+    "NpcId": "NPC_KYLE",
+    "StartDialogueId": "CH1_KYLE_REPEAT_001",
+    "ConditionId": "MS_COND_0020",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "CH1_COMBAT_INTRO",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH1_COMBAT_INTRO_001",
+    "ConditionId": "MS_COND_0022",
+    "IsRepeatable": false,
+    "Notes": "챕터 1 전투 시작 전 안내; 완료 트리거를 전투 시스템에 전달",
+    "Priority": 100
+  },
+  {
+    "Id": "CH1_CLEAR",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH1_CLEAR_001",
+    "ConditionId": "MS_COND_0024",
+    "IsRepeatable": false,
+    "Notes": "전투 완료를 외부에서 보고받은 뒤에만 재생",
+    "Priority": 100
+  },
+  {
+    "Id": "CH1_RELIC",
+    "NpcId": "OBJECT_FOREST_RELIC",
+    "StartDialogueId": "CH1_RELIC_001",
+    "ConditionId": "MS_COND_0027",
+    "IsRepeatable": false,
+    "Notes": "챕터 1 완료: 유적으로 이어지는 첫 단서 확보",
+    "Priority": 100
+  },
+  {
+    "Id": "CH1_KYLE_AFTER",
+    "NpcId": "NPC_KYLE",
+    "StartDialogueId": "CH1_KYLE_AFTER_001",
+    "ConditionId": "MS_COND_0029",
+    "IsRepeatable": false,
+    "Notes": "선택 대화: 전투 후 기록과 엘린 안내",
+    "Priority": 150
+  },
+  {
+    "Id": "MS_RIA_CH1_REPORT",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "MS_RIA_CH1_REPORT_001",
+    "ConditionId": "MS_COND_0031",
+    "IsRepeatable": false,
+    "Notes": "선택 대화: 첫 단서 획득 후 리아에게 보고",
+    "Priority": 150
+  },
+  {
+    "Id": "CH2_ENTRY",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH2_ENTRY_001",
+    "ConditionId": "MS_COND_0034",
+    "IsRepeatable": false,
+    "Notes": "챕터 2: 오래된 유적 진입",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_ELIN_GUIDE",
+    "NpcId": "NPC_ELIN",
+    "StartDialogueId": "CH2_ELIN_GUIDE_001",
+    "ConditionId": "MS_COND_0036",
+    "IsRepeatable": false,
+    "Notes": "유적의 몬스터 3종과 기록실 조사 안내",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_ELIN_REPEAT",
+    "NpcId": "NPC_ELIN",
+    "StartDialogueId": "CH2_ELIN_REPEAT_001",
+    "ConditionId": "MS_COND_0038",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "CH2_COMBAT_INTRO",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH2_COMBAT_INTRO_001",
+    "ConditionId": "MS_COND_0040",
+    "IsRepeatable": false,
+    "Notes": "챕터 2 전투 시작 전 안내; 전투 중 대사 없음",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_CLEAR",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH2_CLEAR_001",
+    "ConditionId": "MS_COND_0042",
+    "IsRepeatable": false,
+    "Notes": "챕터 2 전투 완료 후 조사 목표 안내",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_RECORD",
+    "NpcId": "OBJECT_RUIN_RECORD",
+    "StartDialogueId": "CH2_RECORD_001",
+    "ConditionId": "MS_COND_0045",
+    "IsRepeatable": false,
+    "Notes": "치료제의 실재를 뒷받침하는 단서; 꽃 획득이나 정체 공개 없음",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_ELIN_REPORT",
+    "NpcId": "NPC_ELIN",
+    "StartDialogueId": "CH2_ELIN_REPORT_001",
+    "ConditionId": "MS_COND_0047",
+    "IsRepeatable": false,
+    "Notes": "챕터 2 조사 결과 확인 후 이번 플레이 범위 마무리",
+    "Priority": 100
+  },
+  {
+    "Id": "MS_OUTRO",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "MS_OUTRO_001",
+    "ConditionId": "MS_COND_0049",
+    "IsRepeatable": false,
+    "Notes": "플레이 구간 완료; 게임 전체의 엔딩이 아님",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_ELIN_DONE",
+    "NpcId": "NPC_ELIN",
+    "StartDialogueId": "CH2_ELIN_DONE_001",
+    "ConditionId": "MS_COND_0051",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "MS_RIA_CH2_REPORT",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "MS_RIA_CH2_REPORT_001",
+    "ConditionId": "MS_COND_0052",
+    "IsRepeatable": false,
+    "Notes": "선택 대화: 치료가 완료되지 않은 상태로 귀환 보고",
+    "Priority": 150
+  },
+  {
+    "Id": "MS_EDAN_CH2_REPORT",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "MS_EDAN_CH2_REPORT_001",
+    "ConditionId": "MS_COND_0054",
+    "IsRepeatable": false,
+    "Notes": "선택 대화: 치료 진행 중이라는 사실 유지",
+    "Priority": 150
+  }
+]
