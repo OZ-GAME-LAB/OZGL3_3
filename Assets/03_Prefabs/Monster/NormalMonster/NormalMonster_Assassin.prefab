@@ -161,7 +161,10 @@ MonoBehaviour:
   _playerTransform: {fileID: 0}
   _rigidbody2D: {fileID: 8943091864990608418}
   _isHit: 0
+  _isUsingStealthSkill: 0
   _isAttackUseable: 0
+  _isSkillUseable: 0
+  _isAssassin: 1
   _groundCheck: {fileID: 5002138335853248083}
   _checkGroundRadius: 0.2
   _edgeCheck: {fileID: 8350702099230509209}

@@ -200,8 +200,8 @@ public class NormalMonster : MonsterBase
         {
             if (distance <= Skills[i].Range && _skillCooldownTimers[i] <= 0f)
             {
+                if (_isAssassin && _isSkillUseable == false) continue;
                 UpdateFacingDirection();
-
 
                 _pendingSkillIndex = i;
                 _isUsingSkill = true;
