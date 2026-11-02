@@ -1,62 +1,72 @@
 [
   {
-    "Id": "NOTI_VISIT_DOCTOR",
-    "Message": "진료소의 에단을 만나자.",
+    "Id": "NOTI_MS_RIA_INTRO",
+    "Message": "진료소의 에단에게 리아의 상태를 물어보자.",
     "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_FIND_ORBEN",
-    "Message": "우물가의 오르벤에게 전설을 물어보자.",
+    "Id": "NOTI_MS_EDAN_INTRO",
+    "Message": "우물가의 오르벤에게 치료용 꽃의 기록을 물어보자.",
     "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_GO_FOREST",
-    "Message": "메마른 숲을 지나 버려진 예배당으로 향하자.",
+    "Id": "NOTI_MS_ORBEN_CLUE",
+    "Message": "에단에게 돌아가 유적의 기록과 숲길에 관해 전하자.",
     "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_FIND_BELLTOWER",
-    "Message": "무너진 종탑 아래 예배당 통로를 찾자.",
+    "Id": "NOTI_MS_EDAN_DEPART",
+    "Message": "리아에게 인사한 뒤 북쪽 숲으로 향하자.",
     "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_DASH_UNLOCKED",
-    "Message": "새 능력 획득: 공중 대시",
-    "Type": "Skill"
-  },
-  {
-    "Id": "NOTI_GO_SNOW",
-    "Message": "동쪽의 무너진 다리를 넘어 설산으로 향하자.",
+    "Id": "NOTI_MS_RIA_FAREWELL",
+    "Message": "북쪽 숲 입구로 이동하자.",
     "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_FIND_SANCTUM",
-    "Message": "얼음 협곡을 지나 오래된 성소를 찾자.",
+    "Id": "NOTI_CH1_ENTRY",
+    "Message": "숲길을 따라 이동하고, 예배당으로 가는 통로를 찾자.",
     "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_JUMP_UNLOCKED",
-    "Message": "새 능력 획득: 이단 점프",
-    "Type": "Skill"
-  },
-  {
-    "Id": "NOTI_GO_SUMMIT",
-    "Message": "설산 정상의 마지막 봉인으로 향하자.",
+    "Id": "NOTI_CH1_KYLE_GUIDE",
+    "Message": "예배당 앞 전투 구역으로 이동하자.",
     "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_CHOOSE_ENDING",
-    "Message": "봉인의 운명을 결정하자.",
+    "Id": "NOTI_CH1_CLEAR",
+    "Message": "예배당의 기록 조각을 조사하자.",
     "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_ENDING_HEAL",
-    "Message": "엔딩: 단 한 사람을 위한 기적",
-    "Type": "Ending"
+    "Id": "NOTI_CH1_RELIC",
+    "Message": "예배당 동쪽 통로를 지나 유적 입구로 이동하자.",
+    "Type": "MainQuest"
   },
   {
-    "Id": "NOTI_ENDING_SEAL",
-    "Message": "엔딩: 잊혀진 군주의 귀환",
-    "Type": "Ending"
+    "Id": "NOTI_CH2_ENTRY",
+    "Message": "유적 입구의 엘린에게 기록 조각을 보여 주자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_CH2_ELIN_GUIDE",
+    "Message": "유적 회랑의 전투 구역으로 이동하자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_CH2_CLEAR",
+    "Message": "기록실의 석판을 조사하자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_CH2_RECORD",
+    "Message": "엘린에게 돌아가 석판의 표식을 확인하자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_MS_OUTRO",
+    "Message": "챕터 2 완료: 유적에서 치료의 단서를 확보했다.",
+    "Type": "MainQuest"
   }
 ]
