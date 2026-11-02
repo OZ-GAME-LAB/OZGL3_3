@@ -110,7 +110,7 @@ public class LadderState : PlayerStateBase
     {
         float horizontalInput = Ctx.Input.MoveInput;
         bool isTryingLadderJump =
-            Ctx.Input.JumpInput &&
+            Ctx.Input.JumpQueued &&
             Mathf.Abs(horizontalInput) > 0.01f;
 
         Ctx.Input.ClearJumpInput();
