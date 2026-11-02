@@ -1,0 +1,443 @@
+[
+  {
+    "Id": "RIA_00",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "RIA_00_001",
+    "ConditionId": "COND_0001",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "RIA_01",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "RIA_01_001",
+    "ConditionId": "COND_0002",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "RIA_02",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "RIA_02_001",
+    "ConditionId": "COND_0003",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "RIA_03",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "RIA_03_001",
+    "ConditionId": "COND_0005",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "EDAN_00",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "EDAN_00_001",
+    "ConditionId": "COND_0007",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "EDAN_01",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "EDAN_01_001",
+    "ConditionId": "COND_0009",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "EDAN_02",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "EDAN_02_001",
+    "ConditionId": "COND_0010",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "EDAN_REPEAT",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "EDAN_REPEAT_001",
+    "ConditionId": "COND_0012",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "ORBEN_00",
+    "NpcId": "NPC_ORBEN",
+    "StartDialogueId": "ORBEN_00_001",
+    "ConditionId": "COND_0014",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ORBEN_01",
+    "NpcId": "NPC_ORBEN",
+    "StartDialogueId": "ORBEN_01_001",
+    "ConditionId": "COND_0016",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "ORBEN_02",
+    "NpcId": "NPC_ORBEN",
+    "StartDialogueId": "ORBEN_02_001",
+    "ConditionId": "COND_0017",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ORBEN_03",
+    "NpcId": "NPC_ORBEN",
+    "StartDialogueId": "ORBEN_03_001",
+    "ConditionId": "COND_0019",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "KYLE_00",
+    "NpcId": "NPC_KYLE",
+    "StartDialogueId": "KYLE_00_001",
+    "ConditionId": "COND_0021",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "KYLE_01",
+    "NpcId": "NPC_KYLE",
+    "StartDialogueId": "KYLE_01_001",
+    "ConditionId": "COND_0023",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "KYLE_02",
+    "NpcId": "NPC_KYLE",
+    "StartDialogueId": "KYLE_02_001",
+    "ConditionId": "COND_0025",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "VARKAN_PRE",
+    "NpcId": "BOSS_VARKAN",
+    "StartDialogueId": "VARKAN_PRE_001",
+    "ConditionId": "COND_0026",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "VARKAN_POST",
+    "NpcId": "BOSS_VARKAN",
+    "StartDialogueId": "VARKAN_POST_001",
+    "ConditionId": "COND_0028",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 300
+  },
+  {
+    "Id": "MEMORY_01",
+    "NpcId": "MEMORY",
+    "StartDialogueId": "MEMORY_01_001",
+    "ConditionId": "COND_0030",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "MEMORY_01B",
+    "NpcId": "MEMORY",
+    "StartDialogueId": "MEMORY_01B_001",
+    "ConditionId": "COND_0032",
+    "IsRepeatable": false,
+    "Notes": "MEMORY_01 다음 자동 재생. 이후 독백과 순례자 등장",
+    "Priority": 100
+  },
+  {
+    "Id": "PLAYER_01",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "PLAYER_01_001",
+    "ConditionId": "COND_0034",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "PILGRIM_00",
+    "NpcId": "NPC_PILGRIM",
+    "StartDialogueId": "PILGRIM_00_001",
+    "ConditionId": "COND_0036",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "PILGRIM_01",
+    "NpcId": "NPC_PILGRIM",
+    "StartDialogueId": "PILGRIM_01_001",
+    "ConditionId": "COND_0038",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "ELIN_00",
+    "NpcId": "NPC_ELIN",
+    "StartDialogueId": "ELIN_00_001",
+    "ConditionId": "COND_0040",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ELIN_01",
+    "NpcId": "NPC_ELIN",
+    "StartDialogueId": "ELIN_01_001",
+    "ConditionId": "COND_0042",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ELIN_02",
+    "NpcId": "NPC_ELIN",
+    "StartDialogueId": "ELIN_02_001",
+    "ConditionId": "COND_0045",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "ELIN_03",
+    "NpcId": "NPC_ELIN",
+    "StartDialogueId": "ELIN_03_001",
+    "ConditionId": "COND_0047",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "PRIEST_00",
+    "NpcId": "NPC_PRIEST",
+    "StartDialogueId": "PRIEST_00_001",
+    "ConditionId": "COND_0048",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "PRIEST_01",
+    "NpcId": "NPC_PRIEST",
+    "StartDialogueId": "PRIEST_01_001",
+    "ConditionId": "COND_0050",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "PRIEST_02",
+    "NpcId": "NPC_PRIEST",
+    "StartDialogueId": "PRIEST_02_001",
+    "ConditionId": "COND_0053",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "PRIEST_03",
+    "NpcId": "NPC_PRIEST",
+    "StartDialogueId": "PRIEST_03_001",
+    "ConditionId": "COND_0055",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "SERIA_PRE",
+    "NpcId": "BOSS_SERIA",
+    "StartDialogueId": "SERIA_PRE_001",
+    "ConditionId": "COND_0056",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "SERIA_HALF",
+    "NpcId": "BOSS_SERIA",
+    "StartDialogueId": "SERIA_HALF_001",
+    "ConditionId": "COND_0058",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 200
+  },
+  {
+    "Id": "SERIA_POST",
+    "NpcId": "BOSS_SERIA",
+    "StartDialogueId": "SERIA_POST_001",
+    "ConditionId": "COND_0060",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 300
+  },
+  {
+    "Id": "MEMORY_02A",
+    "NpcId": "MEMORY",
+    "StartDialogueId": "MEMORY_02A_001",
+    "ConditionId": "COND_0062",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "PLAYER_02",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "PLAYER_02_001",
+    "ConditionId": "COND_0064",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ECHO_00",
+    "NpcId": "NPC_ECHO",
+    "StartDialogueId": "ECHO_00_001",
+    "ConditionId": "COND_0066",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ECHO_01",
+    "NpcId": "NPC_ECHO",
+    "StartDialogueId": "ECHO_01_001",
+    "ConditionId": "COND_0068",
+    "IsRepeatable": true,
+    "Notes": null,
+    "Priority": 0
+  },
+  {
+    "Id": "ARKEON_00",
+    "NpcId": "BOSS_ARKEON",
+    "StartDialogueId": "ARKEON_00_001",
+    "ConditionId": "COND_0070",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ARKEON_01",
+    "NpcId": "BOSS_ARKEON",
+    "StartDialogueId": "ARKEON_01_001",
+    "ConditionId": "COND_0072",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ARKEON_02",
+    "NpcId": "BOSS_ARKEON",
+    "StartDialogueId": "ARKEON_02_001",
+    "ConditionId": "COND_0075",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 100
+  },
+  {
+    "Id": "ARKEON_HALF",
+    "NpcId": "BOSS_ARKEON",
+    "StartDialogueId": "ARKEON_HALF_001",
+    "ConditionId": "COND_0078",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 200
+  },
+  {
+    "Id": "ARKEON_POST",
+    "NpcId": "BOSS_ARKEON",
+    "StartDialogueId": "ARKEON_POST_001",
+    "ConditionId": "COND_0080",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 300
+  },
+  {
+    "Id": "ENDING_PROMPT",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "ENDING_PROMPT_001",
+    "ConditionId": "COND_0082",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 1000
+  },
+  {
+    "Id": "ENDING_A_00",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "ENDING_A_00_001",
+    "ConditionId": "COND_0084",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 1000
+  },
+  {
+    "Id": "ENDING_A_01",
+    "NpcId": "NPC_RIA",
+    "StartDialogueId": "ENDING_A_01_001",
+    "ConditionId": "COND_0086",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 1000
+  },
+  {
+    "Id": "ENDING_A_02",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "ENDING_A_02_001",
+    "ConditionId": "COND_0087",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 1000
+  },
+  {
+    "Id": "ENDING_B_00",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "ENDING_B_00_001",
+    "ConditionId": "COND_0089",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 1000
+  },
+  {
+    "Id": "ENDING_B_01",
+    "NpcId": "BOSS_ARKEON",
+    "StartDialogueId": "ENDING_B_01_001",
+    "ConditionId": "COND_0091",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 1000
+  },
+  {
+    "Id": "ENDING_B_02",
+    "NpcId": "NPC_EDAN",
+    "StartDialogueId": "ENDING_B_02_001",
+    "ConditionId": "COND_0092",
+    "IsRepeatable": false,
+    "Notes": null,
+    "Priority": 1000
+  }
+]

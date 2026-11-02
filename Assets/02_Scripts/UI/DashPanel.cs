@@ -77,9 +77,9 @@ public class DashPanel : MonoBehaviour
             // LateUpdate 안, localPoint를 적용한 직후에 임시로 추가 (확인 후 삭제)
             if (Time.frameCount % 60 == 0)
             {
-                Logger.Log($"DashPanel: player={_playerController.transform.position}, " +
-                           $"screen={screenPoint}, local={localPoint}, camera={_camera.name}, " +
-                           $"canvasMode={_canvas.renderMode}");
+                //Logger.Log($"DashPanel: player={_playerController.transform.position}, " +
+                //           $"screen={screenPoint}, local={localPoint}, camera={_camera.name}, " +
+                //           $"canvasMode={_canvas.renderMode}");
             }
         }
     }

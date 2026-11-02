@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool JumpInput { get; private set; }
     public bool JumpQueued { get; private set; }
 
+    public event Action<Vector2> OnInteractionRequested;
+
     private float _doubleTapLimitTime = 0.25f;
     private float _lastLeftPressTime = -1f;
     private float _lastRightPressTime = -1f;
@@ -26,7 +29,12 @@ public class PlayerInputHandler : MonoBehaviour
     {
         Keyboard keyboard = Keyboard.current;
 
-        if (keyboard == null)
+        if (keyboard != null && keyboard.spaceKey.wasPressedThisFrame)
+        {
+            OnInteractionRequested?.Invoke(transform.position);
+        }
+
+        if (keyboard == null || (GameManager.Instance != null && GameManager.Npc.BlocksGameplayInput))
         {
             MoveInput = 0f;
             RunInput = false;

@@ -1,0 +1,62 @@
+[
+  {
+    "Id": "NOTI_VISIT_DOCTOR",
+    "Message": "진료소의 에단을 만나자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_FIND_ORBEN",
+    "Message": "우물가의 오르벤에게 전설을 물어보자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_GO_FOREST",
+    "Message": "메마른 숲을 지나 버려진 예배당으로 향하자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_FIND_BELLTOWER",
+    "Message": "무너진 종탑 아래 예배당 통로를 찾자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_DASH_UNLOCKED",
+    "Message": "새 능력 획득: 공중 대시",
+    "Type": "Skill"
+  },
+  {
+    "Id": "NOTI_GO_SNOW",
+    "Message": "동쪽의 무너진 다리를 넘어 설산으로 향하자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_FIND_SANCTUM",
+    "Message": "얼음 협곡을 지나 오래된 성소를 찾자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_JUMP_UNLOCKED",
+    "Message": "새 능력 획득: 이단 점프",
+    "Type": "Skill"
+  },
+  {
+    "Id": "NOTI_GO_SUMMIT",
+    "Message": "설산 정상의 마지막 봉인으로 향하자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_CHOOSE_ENDING",
+    "Message": "봉인의 운명을 결정하자.",
+    "Type": "MainQuest"
+  },
+  {
+    "Id": "NOTI_ENDING_HEAL",
+    "Message": "엔딩: 단 한 사람을 위한 기적",
+    "Type": "Ending"
+  },
+  {
+    "Id": "NOTI_ENDING_SEAL",
+    "Message": "엔딩: 잊혀진 군주의 귀환",
+    "Type": "Ending"
+  }
+]

@@ -1,0 +1,702 @@
+[
+  {
+    "Id": "COND_0001",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "0",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0002",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "2",
+    "NextConditionId": "COND_0093"
+  },
+  {
+    "Id": "COND_0003",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "3",
+    "NextConditionId": "COND_0004"
+  },
+  {
+    "Id": "COND_0004",
+    "ConditionType": "StoryStage",
+    "Operator": "Less",
+    "Value": "5",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0005",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "5",
+    "NextConditionId": "COND_0006"
+  },
+  {
+    "Id": "COND_0006",
+    "ConditionType": "StoryStage",
+    "Operator": "Less",
+    "Value": "7",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0007",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "0",
+    "NextConditionId": "COND_0008"
+  },
+  {
+    "Id": "COND_0008",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "RIA_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0009",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "2",
+    "NextConditionId": "COND_0094"
+  },
+  {
+    "Id": "COND_0010",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "3",
+    "NextConditionId": "COND_0011"
+  },
+  {
+    "Id": "COND_0011",
+    "ConditionType": "StoryStage",
+    "Operator": "Less",
+    "Value": "5",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0012",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "2",
+    "NextConditionId": "COND_0013"
+  },
+  {
+    "Id": "COND_0013",
+    "ConditionType": "StoryStage",
+    "Operator": "Less",
+    "Value": "3",
+    "NextConditionId": "COND_0095"
+  },
+  {
+    "Id": "COND_0014",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "1",
+    "NextConditionId": "COND_0015"
+  },
+  {
+    "Id": "COND_0015",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "DOCTOR_TALKED:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0016",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "2",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0017",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "3",
+    "NextConditionId": "COND_0018"
+  },
+  {
+    "Id": "COND_0018",
+    "ConditionType": "StoryStage",
+    "Operator": "Less",
+    "Value": "5",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0019",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "5",
+    "NextConditionId": "COND_0020"
+  },
+  {
+    "Id": "COND_0020",
+    "ConditionType": "StoryStage",
+    "Operator": "Less",
+    "Value": "7",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0021",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "2",
+    "NextConditionId": "COND_0022"
+  },
+  {
+    "Id": "COND_0022",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "KYLE_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0023",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "2",
+    "NextConditionId": "COND_0024"
+  },
+  {
+    "Id": "COND_0024",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "KYLE_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0025",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "3",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0026",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "2",
+    "NextConditionId": "COND_0027"
+  },
+  {
+    "Id": "COND_0027",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "VARKAN_PRE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0028",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "VARKAN_DEFEATED:true",
+    "NextConditionId": "COND_0029"
+  },
+  {
+    "Id": "COND_0029",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "VARKAN_POST:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0030",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "VARKAN_MEMORY:true",
+    "NextConditionId": "COND_0031"
+  },
+  {
+    "Id": "COND_0031",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "MEMORY_01:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0032",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "VARKAN_MEMORY:true",
+    "NextConditionId": "COND_0033"
+  },
+  {
+    "Id": "COND_0033",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "MEMORY_01B:true",
+    "NextConditionId": "COND_0096"
+  },
+  {
+    "Id": "COND_0034",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "GRANT_DASH:true",
+    "NextConditionId": "COND_0035"
+  },
+  {
+    "Id": "COND_0035",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "PLAYER_01:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0036",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "3",
+    "NextConditionId": "COND_0037"
+  },
+  {
+    "Id": "COND_0037",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "PILGRIM_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0038",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "3",
+    "NextConditionId": "COND_0039"
+  },
+  {
+    "Id": "COND_0039",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "PILGRIM_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0040",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "4",
+    "NextConditionId": "COND_0041"
+  },
+  {
+    "Id": "COND_0041",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ELIN_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0042",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "4",
+    "NextConditionId": "COND_0043"
+  },
+  {
+    "Id": "COND_0043",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "ELIN_INTRO:true",
+    "NextConditionId": "COND_0044"
+  },
+  {
+    "Id": "COND_0044",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ELIN_POWER_TALK:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0045",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "4",
+    "NextConditionId": "COND_0046"
+  },
+  {
+    "Id": "COND_0046",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "ELIN_POWER_TALK:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0047",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "5",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0048",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "4",
+    "NextConditionId": "COND_0049"
+  },
+  {
+    "Id": "COND_0049",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "PRIEST_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0050",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "4",
+    "NextConditionId": "COND_0051"
+  },
+  {
+    "Id": "COND_0051",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "PRIEST_INTRO:true",
+    "NextConditionId": "COND_0052"
+  },
+  {
+    "Id": "COND_0052",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "PRIEST_LORE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0053",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "4",
+    "NextConditionId": "COND_0054"
+  },
+  {
+    "Id": "COND_0054",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "PRIEST_LORE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0055",
+    "ConditionType": "StoryStage",
+    "Operator": "GreaterOrEqual",
+    "Value": "5",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0056",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "4",
+    "NextConditionId": "COND_0057"
+  },
+  {
+    "Id": "COND_0057",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "SERIA_PRE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0058",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "SERIA_HP_HALF:true",
+    "NextConditionId": "COND_0059"
+  },
+  {
+    "Id": "COND_0059",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "SERIA_HALF:true",
+    "NextConditionId": "COND_0097"
+  },
+  {
+    "Id": "COND_0060",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "SERIA_DEFEATED:true",
+    "NextConditionId": "COND_0061"
+  },
+  {
+    "Id": "COND_0061",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "SERIA_POST:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0062",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "SERIA_MEMORY:true",
+    "NextConditionId": "COND_0063"
+  },
+  {
+    "Id": "COND_0063",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "MEMORY_02A:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0064",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "GRANT_DOUBLE_JUMP:true",
+    "NextConditionId": "COND_0065"
+  },
+  {
+    "Id": "COND_0065",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "PLAYER_02:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0066",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "5",
+    "NextConditionId": "COND_0067"
+  },
+  {
+    "Id": "COND_0067",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ECHO_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0068",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "5",
+    "NextConditionId": "COND_0069"
+  },
+  {
+    "Id": "COND_0069",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "ECHO_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0070",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "5",
+    "NextConditionId": "COND_0071"
+  },
+  {
+    "Id": "COND_0071",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ARKEON_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0072",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "5",
+    "NextConditionId": "COND_0073"
+  },
+  {
+    "Id": "COND_0073",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "ARKEON_INTRO:true",
+    "NextConditionId": "COND_0074"
+  },
+  {
+    "Id": "COND_0074",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ARKEON_TRUTH:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0075",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "5",
+    "NextConditionId": "COND_0076"
+  },
+  {
+    "Id": "COND_0076",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "ARKEON_TRUTH:true",
+    "NextConditionId": "COND_0077"
+  },
+  {
+    "Id": "COND_0077",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ARKEON_BATTLE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0078",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ARKEON_HP_HALF:true",
+    "NextConditionId": "COND_0079"
+  },
+  {
+    "Id": "COND_0079",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ARKEON_HALF:true",
+    "NextConditionId": "COND_0099"
+  },
+  {
+    "Id": "COND_0080",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ARKEON_DEFEATED:true",
+    "NextConditionId": "COND_0081"
+  },
+  {
+    "Id": "COND_0081",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ARKEON_POST:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0082",
+    "ConditionType": "StoryStage",
+    "Operator": "Equal",
+    "Value": "6",
+    "NextConditionId": "COND_0083"
+  },
+  {
+    "Id": "COND_0083",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ENDING_SELECTED:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0084",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ENDING_CHOICE_HEAL:true",
+    "NextConditionId": "COND_0085"
+  },
+  {
+    "Id": "COND_0085",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ENDING_SELECTED:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0086",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ENDING_A_VILLAGE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0087",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ENDING_A_VILLAGE:true",
+    "NextConditionId": "COND_0088"
+  },
+  {
+    "Id": "COND_0088",
+    "ConditionType": "Flag",
+    "Operator": "Equal",
+    "Value": "ENDING_A_RIA_DONE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0089",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ENDING_CHOICE_SEAL:true",
+    "NextConditionId": "COND_0090"
+  },
+  {
+    "Id": "COND_0090",
+    "ConditionType": "Flag",
+    "Operator": "NotEqual",
+    "Value": "ENDING_SELECTED:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0091",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ENDING_B_GUARDIANS:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0092",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ENDING_B_VILLAGE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0093",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "ORBEN_00:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0094",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "ORBEN_00:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0095",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "EDAN_01:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0096",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "MEMORY_01:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0097",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "SERIA_DEFEATED:false",
+    "NextConditionId": "COND_0098"
+  },
+  {
+    "Id": "COND_0098",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "SERIA_PRE:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "COND_0099",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "ARKEON_DEFEATED:false",
+    "NextConditionId": "COND_0100"
+  },
+  {
+    "Id": "COND_0100",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "ARKEON_02:true",
+    "NextConditionId": null
+  }
+]
