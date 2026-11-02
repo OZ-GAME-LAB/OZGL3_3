@@ -13,6 +13,9 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] private int _attackDamage = 0;
     [SerializeField] private float _attackRange = 2f;
     [SerializeField] private int _attackPatternCount = 2;
+    [SerializeField] private Vector2 _attackBoxSize = new Vector2(2f, 1.5f);
+    [SerializeField] private Vector2 _attackBoxOffset = new Vector2(1f, 0f);
+    [SerializeField] private LayerMask _playerLayer;
     protected float _currentHp { get; private set; }
 
 
@@ -125,10 +128,9 @@ public class MonsterBase : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        if (_isHit || _isDead) return;
+        if (_isDead) return;
         _isAttacking = false;
         _isUsingSkill = false;
-        _isHit = true;
         _currentHp -= damage;
         OnHpChanged?.Invoke(_currentHp, _maxHp);
         //Debug.LogError($"몬스터가 플레이어에게 {damage}데미지를 입었습니다.");
@@ -138,6 +140,8 @@ public class MonsterBase : MonoBehaviour
         }
         else
         {
+            if (_isHit) return;
+            _isHit = true;
             _monsterAnimController.ChangeState(MonsterState.Hit);
         }
     }
@@ -175,11 +179,17 @@ public class MonsterBase : MonoBehaviour
 
     public void OnApplyAttackDamage()
     {
-        float distance = Vector2.Distance(transform.position, _playerTransform.position);
-        if (distance > _attackRange) return;
-        if (_playerTransform.TryGetComponent<PlayerStatus>(out var playerStatus))
+        float direction = _isMovingRight ? 1f : -1f;
+        Vector2 boxCenter = (Vector2)transform.position + new Vector2(_attackBoxOffset.x * direction, _attackBoxOffset.y);
+
+        Collider2D hitCollider = Physics2D.OverlapBox(boxCenter, _attackBoxSize, 0f, _playerLayer);
+
+        if (hitCollider != null)
         {
-            playerStatus.TakeDamage(_attackDamage);
+            if (hitCollider.TryGetComponent<PlayerStatus>(out var playerStatus))
+            {
+                playerStatus.TakeDamage(_attackDamage);
+            }
         }
     }
 
@@ -188,5 +198,14 @@ public class MonsterBase : MonoBehaviour
         _isAttacking = false;
         _isUsingSkill = false;
         _monsterAnimController.ChangeState(MonsterState.Idle);
+    }
+
+    protected virtual void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        float direction = _isMovingRight ? 1f : -1f;
+        Vector2 boxCenter = (Vector2)transform.position + new Vector2(_attackBoxOffset.x * direction, _attackBoxOffset.y);
+
+        Gizmos.DrawWireCube(boxCenter, _attackBoxSize);
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class UIManager : SingletonBehaviour<UIManager>
 {
+    public static event System.Action OnInitialized;
+
     [SerializeField] private Canvas Canvas_BgRoot;
     [SerializeField] private Canvas Canvas_MainRoot;
     [SerializeField] private Canvas Canvas_ContentRoot;
@@ -15,6 +17,10 @@ public class UIManager : SingletonBehaviour<UIManager>
     protected override void Init()
     {
         base.Init();
+        if (Instance == this)
+        {
+            OnInitialized?.Invoke();
+        }
     }
 
     private void Start()

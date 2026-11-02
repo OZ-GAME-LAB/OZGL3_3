@@ -2,29 +2,29 @@
 {
     private readonly float _visualOffsetY;
 
-    public CrouchState(PlayerStateContext ctx, float visualOffsetY) : base(ctx)
+    public CrouchState(PlayerStateContext playerContext, float visualOffsetY) : base(playerContext)
     {
         _visualOffsetY = visualOffsetY;
     }
 
     public override void StateEnter()
     {
-        Ctx.Visual?.SetOffsetY(_visualOffsetY);
+        PlayerContext.Visual?.SetOffsetY(_visualOffsetY);
     }
 
     public override void StateExit()
     {
-        Ctx.Visual?.SetOffsetY(0f);
+        PlayerContext.Visual?.SetOffsetY(0f);
     }
 
     protected override float GetTargetSpeed()
     {
-        return Ctx.Input.MoveInput * PlayerStatSet.Instance.CrouchSpeed;
+        return PlayerContext.Input.MoveInput * PlayerStatSet.Instance.CrouchSpeed;
     }
 
     public override void StateFixedUpdate()
     {
-        Ctx.Input.ClearJumpInput();
+        PlayerContext.Input.ClearJumpInput();
         base.StateFixedUpdate();
     }
 }

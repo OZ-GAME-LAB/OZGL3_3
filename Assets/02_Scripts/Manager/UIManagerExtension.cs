@@ -20,7 +20,10 @@ public enum UIType
     FadeUI,
     PauseUI,
     SettingPopupUI,
-    AreaSpriteUI
+    AreaSpriteUI,
+    ShopUI,
+    ArtifactUI,
+    DialoaguetUI
 }
 
 public static class UIManagerExtension
@@ -106,7 +109,7 @@ public static class UIManagerExtension
         uiManager.CloseUI(UIRootType.PopupUI, UIType.StatusUI);
     }
 
-        public static void OpenMainHUD(this UIManager uiManager)
+    public static void OpenMainHUD(this UIManager uiManager)
     {
         var uiBase = uiManager.OpenUI(UIRootType.MainUI, UIType.MainHUD);
         if (uiBase == null)
@@ -120,6 +123,100 @@ public static class UIManagerExtension
     {
         uiManager.CloseUI(UIRootType.MainUI, UIType.MainHUD);
     }
+
+    public static bool OpenShopUI(this UIManager uiManager, NpcManager npc = null, string npcId = null, Sprite portrait = null)
+    {
+        npc ??= GameManager.Npc;
+        if (!npc.TryOpen(NpcType.Shop, npcId, portrait))
+        {
+            return false;
+        }
+
+        UIBase uiBase = uiManager.OpenUI(UIRootType.ContentUI, UIType.ShopUI);
+        if (uiBase is not ShopUI ui)
+        {
+            uiManager.CloseUI(UIRootType.ContentUI, UIType.ShopUI);
+            npc.Close();
+            Logger.LogError("ShopUI에 ShopUI 컴포넌트와 UI 참조를 연결해야 합니다.");
+            return false;
+        }
+
+        ui.Init(npc);
+        return true;
+    }
+
+    public static void CloseShopUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.ContentUI, UIType.ShopUI);
+    }
+
+    public static bool OpenArtifactUI(this UIManager uiManager, NpcManager npc = null, string npcId = null, Sprite portrait = null)
+    {
+        npc ??= GameManager.Npc;
+        if (!npc.TryOpen(NpcType.Artifact, npcId, portrait))
+        {
+            return false;
+        }
+
+        UIBase uiBase = uiManager.OpenUI(UIRootType.ContentUI, UIType.ArtifactUI);
+        if (uiBase is not ArtifactUI ui)
+        {
+            uiManager.CloseUI(UIRootType.ContentUI, UIType.ArtifactUI);
+            npc.Close();
+            Logger.LogError("ArtifactUI에 ArtifactUI 컴포넌트와 UI 참조를 연결해야 합니다.");
+            return false;
+        }
+
+        ui.Init(npc);
+        return true;
+    }
+
+    public static void CloseArtifactUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.ContentUI, UIType.ArtifactUI);
+    }
+
+    public static bool OpenDialoaguetUI(this UIManager uiManager, NpcManager npc = null, string npcId = null, Sprite portrait = null)
+    {
+        npc ??= GameManager.Npc;
+        if (!npc.TryOpen(NpcType.Story, npcId, portrait))
+        {
+            return false;
+        }
+
+        return ShowDialogueUI(uiManager, npc);
+    }
+
+    public static bool OpenDialogueGroupUI(this UIManager uiManager, NpcManager npc, string dialogueGroupId, Sprite portrait = null)
+    {
+        if (!npc.TryOpenGroup(dialogueGroupId, portrait))
+        {
+            return false;
+        }
+
+        return ShowDialogueUI(uiManager, npc);
+    }
+
+    private static bool ShowDialogueUI(UIManager uiManager, NpcManager npc)
+    {
+        UIBase uiBase = uiManager.OpenUI(UIRootType.ContentUI, UIType.DialoaguetUI);
+        if (uiBase is not DialogueUI ui)
+        {
+            uiManager.CloseUI(UIRootType.ContentUI, UIType.DialoaguetUI);
+            npc.Close();
+            Logger.LogError("DialoaguetUI에 DialogueUI 컴포넌트와 UI 참조를 연결해야 합니다.");
+            return false;
+        }
+
+        ui.Init(npc);
+        return true;
+    }
+
+    public static void CloseDialoagueUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.ContentUI, UIType.DialoaguetUI);
+    }
+
 
     public static void OpenFadeUI(this UIManager uiManager)
     {
