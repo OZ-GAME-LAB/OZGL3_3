@@ -162,7 +162,7 @@ public class NormalMonster : MonsterBase
     }
 
     private void TraceAndAttack()
-    {
+    {//[TODO] 타격판정 변경 (바라보는쪽으로 때리도록)
         if (Skills == null)
         {
             Logger.LogError("[NormalMonster] Skills가 Null입니다.");
@@ -276,7 +276,7 @@ public class NormalMonster : MonsterBase
     }
 
     private void UpdateFacingDirection()
-    {
+    {//[TODO] 스킬사용중에도 계속 바라보도록
         
         if (_playerTransform == null)
         {
