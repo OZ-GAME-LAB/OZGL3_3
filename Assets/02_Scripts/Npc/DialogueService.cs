@@ -18,6 +18,7 @@ public class DialogueService
 
     public float CharactersPerSecond { get; set; } = 30f;
     public bool IsActive => _group != null;
+    public bool HasPendingGroups => _pendingGroupIds.Count > 0;
     public DialogueGroupData CurrentGroup => _group;
     public DialogueData CurrentLine => IsActive ? _lines[_lineIndex] : null;
     public int VisibleCharacterCount { get; private set; }
@@ -31,6 +32,7 @@ public class DialogueService
     public event Action<DialogueNotificationData> OnNotification;
     public event Action<DialogueTriggerData> OnTrigger;
     public event Action OnProgressed;
+    public event Action OnRequested;
 
     public DialogueService(DataTableManager tables, UserDataManager userData)
     {
@@ -94,6 +96,7 @@ public class DialogueService
         }
 
         _pendingGroupIds.Add(group.DialogueGroupId);
+        OnRequested?.Invoke();
         return true;
     }
 

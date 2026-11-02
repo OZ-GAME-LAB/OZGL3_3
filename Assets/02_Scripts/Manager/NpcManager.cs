@@ -31,6 +31,7 @@ public class NpcManager : IDisposable
     public Color EquipmentTint => Artifacts.IsOverloaded ? _overloadedColor : Color.white;
 
     public event Action OnChanged;
+    public event Action OnScreenChanged;
 
     public NpcManager(DataTableManager tables, UserDataManager userData)
     {
@@ -77,6 +78,7 @@ public class NpcManager : IDisposable
     {
         _isChoosingEnding = isOpen;
         NotifyChanged();
+        OnScreenChanged?.Invoke();
     }
 
     private void Open(NpcType type, string npcId, Sprite portrait)
@@ -87,6 +89,7 @@ public class NpcManager : IDisposable
         OpenedFrame = Time.frameCount;
         Artifacts.ResetAttempts();
         NotifyChanged();
+        OnScreenChanged?.Invoke();
     }
 
     public void Close()
@@ -103,6 +106,7 @@ public class NpcManager : IDisposable
         Artifacts.ResetAttempts();
         Dialogue.Cancel();
         NotifyChanged();
+        OnScreenChanged?.Invoke();
     }
 
     public void Dispose()

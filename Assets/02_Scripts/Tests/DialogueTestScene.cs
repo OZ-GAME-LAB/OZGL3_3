@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -36,6 +37,7 @@ public class DialogueTestScene : MonoBehaviour
     private string _focusedGroupId;
     private int _selectedIndex;
     private bool _cancelled;
+    private Coroutine _pendingDialogue;
 
     private void Awake()
     {
@@ -58,15 +60,6 @@ public class DialogueTestScene : MonoBehaviour
     private void Update()
     {
         _activeDialogue?.Tick(Time.unscaledDeltaTime);
-        if (!_previewToggle.isOn && !(_activeDialogue?.IsActive ?? false))
-        {
-            string pending = _flowDialogue.TakePendingGroup();
-            if (pending != null)
-            {
-                StartDialogue(pending, false);
-            }
-        }
-
         Keyboard keyboard = Keyboard.current;
         if (keyboard == null)
         {
@@ -176,6 +169,7 @@ public class DialogueTestScene : MonoBehaviour
         _flowDialogue.OnProgressed += RefreshStations;
         _flowDialogue.OnTrigger += HandleTrigger;
         _flowDialogue.OnNotification += HandleNotification;
+        _flowDialogue.OnRequested += SchedulePendingDialogue;
         _previewDialogue.OnChanged += RefreshDialogue;
         _previewDialogue.OnFinished += HandleFinished;
         _activeDialogue = _flowDialogue;
@@ -198,6 +192,7 @@ public class DialogueTestScene : MonoBehaviour
             ? "개별 보기: 선택한 대화만 조건을 무시하고 재생합니다. 실제 테스트 진행은 바뀌지 않습니다."
             : "진행 모드: JSON의 실제 조건과 트리거를 적용합니다.";
         RefreshStations();
+        SchedulePendingDialogue();
     }
 
     public void PreviousLocation() => Focus(Math.Max(0, _selectedIndex - 1));
@@ -248,6 +243,32 @@ public class DialogueTestScene : MonoBehaviour
         }
         RefreshDialogue();
         RefreshStations();
+        SchedulePendingDialogue();
+    }
+
+    private void SchedulePendingDialogue()
+    {
+        if (_pendingDialogue != null || _previewToggle.isOn || !_flowDialogue.HasPendingGroups
+            || (_activeDialogue?.IsActive ?? false))
+        {
+            return;
+        }
+        _pendingDialogue = StartCoroutine(OpenPendingDialogue());
+    }
+
+    private IEnumerator OpenPendingDialogue()
+    {
+        yield return null;
+        _pendingDialogue = null;
+        if (_previewToggle.isOn || (_activeDialogue?.IsActive ?? false))
+        {
+            yield break;
+        }
+        string pending = _flowDialogue.TakePendingGroup();
+        if (pending != null)
+        {
+            StartDialogue(pending, false);
+        }
     }
 
     private void HandleTrigger(DialogueTriggerData trigger)
@@ -352,11 +373,17 @@ public class DialogueTestScene : MonoBehaviour
     private void Unsubscribe()
     {
         if (_flowDialogue == null) return;
+        if (_pendingDialogue != null)
+        {
+            StopCoroutine(_pendingDialogue);
+            _pendingDialogue = null;
+        }
         _flowDialogue.OnChanged -= RefreshDialogue;
         _flowDialogue.OnFinished -= HandleFinished;
         _flowDialogue.OnProgressed -= RefreshStations;
         _flowDialogue.OnTrigger -= HandleTrigger;
         _flowDialogue.OnNotification -= HandleNotification;
+        _flowDialogue.OnRequested -= SchedulePendingDialogue;
         _previewDialogue.OnChanged -= RefreshDialogue;
         _previewDialogue.OnFinished -= HandleFinished;
     }
