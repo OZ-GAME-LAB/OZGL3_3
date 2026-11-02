@@ -23,7 +23,7 @@ public enum UIType
     AreaSpriteUI,
     ShopUI,
     ArtifactUI,
-    DialoaguetUI
+    DialoagueUI
 }
 
 public static class UIManagerExtension
@@ -199,10 +199,10 @@ public static class UIManagerExtension
 
     private static bool ShowDialogueUI(UIManager uiManager, NpcManager npc)
     {
-        UIBase uiBase = uiManager.OpenUI(UIRootType.ContentUI, UIType.DialoaguetUI);
+        UIBase uiBase = uiManager.OpenUI(UIRootType.ContentUI, UIType.DialoagueUI);
         if (uiBase is not DialogueUI ui)
         {
-            uiManager.CloseUI(UIRootType.ContentUI, UIType.DialoaguetUI);
+            uiManager.CloseUI(UIRootType.ContentUI, UIType.DialoagueUI);
             npc.Close();
             Logger.LogError("DialoaguetUI에 DialogueUI 컴포넌트와 UI 참조를 연결해야 합니다.");
             return false;
@@ -214,7 +214,7 @@ public static class UIManagerExtension
 
     public static void CloseDialoagueUI(this UIManager uiManager)
     {
-        uiManager.CloseUI(UIRootType.ContentUI, UIType.DialoaguetUI);
+        uiManager.CloseUI(UIRootType.ContentUI, UIType.DialoagueUI);
     }
 
 
