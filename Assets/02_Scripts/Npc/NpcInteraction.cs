@@ -31,9 +31,9 @@ public class NpcInteraction : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerStats.Instance != null)
+        if (PlayerStatSet.Instance != null)
         {
-            _playerInputHandler = PlayerStats.Instance.GetComponent<PlayerInputHandler>();
+            _playerInputHandler = PlayerStatSet.Instance.GetComponent<PlayerInputHandler>();
             _playerInputHandler.OnInteractionRequested += HandleInteractionRequested;
         }
 
