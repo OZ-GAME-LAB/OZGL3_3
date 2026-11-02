@@ -176,7 +176,7 @@ MonoBehaviour:
   _maxHp: 5
   _moveSpeed: 3
   _aggroRange: 7
-  _attackDamage: 0
+  _attackDamage: 1
   _attackRange: 2
   _attackPatternCount: 2
   _attackBoxSize: {x: 2, y: 1.5}
@@ -190,7 +190,10 @@ MonoBehaviour:
   _playerTransform: {fileID: 0}
   _rigidbody2D: {fileID: 5602583284590123232}
   _isHit: 0
+  _isUsingStealthSkill: 0
   _isAttackUseable: 0
+  _isSkillUseable: 0
+  _isAssassin: 0
   _groundCheck: {fileID: 0}
   _checkGroundRadius: 0.2
   _edgeCheck: {fileID: 0}
