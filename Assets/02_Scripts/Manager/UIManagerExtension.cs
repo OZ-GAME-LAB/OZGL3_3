@@ -19,7 +19,8 @@ public enum UIType
     StatusUI,
     FadeUI,
     PauseUI,
-    SettingPopupUI
+    SettingPopupUI,
+    AreaSpriteUI
 }
 
 public static class UIManagerExtension
@@ -167,5 +168,24 @@ public static class UIManagerExtension
     public static void CloseSettingPopupUI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.PopupUI, UIType.SettingPopupUI);
+    }
+
+    public static void OpenAreaSpriteUI(this UIManager uiManager, string id)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.AreaSpriteUI);
+        AreaSpriteUI areaSpriteUI = uiBase as AreaSpriteUI;
+
+        if (areaSpriteUI == null)
+        {
+            Logger.LogError("AreaSpriteUI가 생성되지 않았습니다.");
+            return;
+        }
+
+        areaSpriteUI.Init(id);
+    }
+
+    public static void CloseAreaSpriteUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.AreaSpriteUI);
     }
 }

@@ -138,3 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeUI
   _canvasGroup: {fileID: 7467474284912584262}
+  _fadeOutDuration: 0.4
+  _holdDuration: 0.5
+  _fadeInDuration: 0.4

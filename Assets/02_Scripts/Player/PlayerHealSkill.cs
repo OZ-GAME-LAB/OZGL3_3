@@ -1,11 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerHealSkill : PlayerSkillBase
 {
-    private const string HealSkillId = "HollyHeal_Buff";
-
     public PlayerHealSkill(PlayerStatus playerStatus, Animator animator)
-        : base(HealSkillId, playerStatus, animator)
+        : base(Const.HealSkillId, playerStatus, animator)
     {
     }
 

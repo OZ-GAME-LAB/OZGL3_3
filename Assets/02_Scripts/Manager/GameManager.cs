@@ -4,7 +4,8 @@ public class GameManager : SingletonBehaviour<GameManager>
 {
     public static DataTableManager DataTable { get { return Instance._dataTable; } }
     public static SoundManager Sound { get { return Instance._soundManager; } }
-
+    public static AreaTracker Area { get { return Instance._areaTracker; } }
+    private AreaTracker _areaTracker = new AreaTracker();
 
     #region Manager Variables
 

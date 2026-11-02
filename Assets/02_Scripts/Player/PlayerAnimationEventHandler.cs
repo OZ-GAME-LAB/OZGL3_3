@@ -50,4 +50,26 @@ public class PlayerAnimationEventHandler : MonoBehaviour
 
         _playerController.AnimationHealEnd();
     }
+
+    public void AnimationGuardedAttack()
+    {
+        if (_combatHandler == null)
+        {
+            Logger.LogError("AnimationHeal: PlayerCombatHandler 찾을 수 없습니다.");
+            return;
+        }
+
+        _playerController.AnimationGuardedAttackHit();
+    }
+
+    public void AnimationGuardedAttackEnd()
+    {
+        if (_playerController == null)
+        {
+            Logger.LogError("AnimationHealEnd: PlayerController를 찾을 수 없습니다.");
+            return;
+        }
+
+        _playerController.AnimationGuardedAttackHitEnd();
+    }
 }

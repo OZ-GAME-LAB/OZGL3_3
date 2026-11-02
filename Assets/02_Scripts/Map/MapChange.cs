@@ -94,14 +94,14 @@ public class MapChange : MonoBehaviour
                 return;
             }
 
+            // 목적지 위치로 플레이어 이동
+            DoMovePlayer(Transform_Player);
+
             // MapRoot에 맵 전환 요청
             if (!MapRoot_Current.DoSwitchMap(MapRoot_Destination))
             {
                 return;
             }
-
-            // 목적지 위치로 플레이어 이동
-            DoMovePlayer(Transform_Player);
 
             // 연속 맵 전환 방지
             await UniTask.Delay(

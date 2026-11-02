@@ -67,6 +67,16 @@ public abstract class PlayerSkillBase
         _isEffectApplied = true;
     }
 
+    public void AnimationSkillEffect()
+    {
+        if (!IsSkillActive || _isEffectApplied)
+        {
+            return;
+        }
+
+        ApplyEffect(SkillData);
+    }
+
     public void AnimationEnd()
     {
         IsSkillActive = false;
