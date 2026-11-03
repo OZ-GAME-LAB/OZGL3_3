@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public enum UIRootType
 {
@@ -23,7 +24,9 @@ public enum UIType
     AreaSpriteUI,
     ShopUI,
     ArtifactUI,
-    DialoaguetUI
+    DialoaguetUI,
+    SaveProfileUI,
+    ConfirmPopupUI
 }
 
 public static class UIManagerExtension
@@ -284,5 +287,39 @@ public static class UIManagerExtension
     public static void CloseAreaSpriteUI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.PopupUI, UIType.AreaSpriteUI);
+    }
+
+    public static void OpenSaveSlotUI(this UIManager uiManager)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.ContentUI, UIType.SaveProfileUI);
+        if (uiBase == null)
+        {
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
+            return;
+        }
+    }
+
+    public static void CloseSaveSlotUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.ContentUI, UIType.SaveProfileUI);
+    }
+
+    public static void OpenConfirmPopup(this UIManager uiManager, string message, Action onConfirm, Action onCancel = null)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.ConfirmPopupUI);
+        ConfirmPopupUI popup = uiBase as ConfirmPopupUI;
+
+        if (popup == null)
+        {
+            Logger.LogError("ConfirmPopupUI가 생성되지 않았습니다.");
+            return;
+        }
+
+        popup.Init(message, onConfirm, onCancel);
+    }
+
+    public static void CloseConfirmPopupUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.ConfirmPopupUI);
     }
 }
