@@ -1,6 +1,6 @@
 ﻿public class FallState : PlayerStateBase
 {
-    public FallState(PlayerStateContext ctx) : base(ctx) { }
+    public FallState(PlayerStateContext playerContext) : base(playerContext) { }
 
     public override void StateFixedUpdate()
     {

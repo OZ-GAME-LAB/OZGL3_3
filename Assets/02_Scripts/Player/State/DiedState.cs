@@ -1,6 +1,6 @@
 ﻿public class DiedState : PlayerStateBase
 {
-    public DiedState(PlayerStateContext ctx) : base(ctx) { }
+    public DiedState(PlayerStateContext playerContext) : base(playerContext) { }
 
     public override void StateEnter()
     {
