@@ -16,15 +16,18 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
     private int _lastMaxSkillGauge;
 
     private float _blockDamageReduction = 1f;
+    private SpriteRenderer _spriteRenderer_Player;
 
     public event Action<int, int> OnHealthChanged;
     public event Action<int, int> OnSkillGaugeChanged;
+    public event Action<Vector2?, Vector2?> OnDamaged;
     public event Action OnDied;
     public event Action OnBlock;
 
     private void Awake()
     {
         Init();
+        _spriteRenderer_Player = GetComponentInChildren<SpriteRenderer>();
         _lastMaxHealth = MaxHealth;
         _lastMaxSkillGauge = MaxSkillGauge;
         CurrentHealth = MaxHealth;
@@ -69,8 +72,10 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
         }
     }
 
-    // TODO(이주헌): Vcetor2 attackPosition 인자를 넣어서 방향에 따라 block판정을 넣을 예정
-    public void TakeDamage(int damage)
+    public void TakeDamage(
+        int damage,
+        Vector2? attackPosition = null,
+        Vector2? knockbackVelocity = null)
     {
         if (damage <= 0 || IsDead)
         {
@@ -79,9 +84,11 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 
         int finalDamage = GetChaosGaugeOverDamage(damage);
 
-        if (IsBlocking)
+        if (IsBlocking && IsAttackInFront(attackPosition))
         {
             finalDamage = Mathf.CeilToInt(finalDamage * (1f - _blockDamageReduction));
+            OnBlock?.Invoke();
+
             if (finalDamage <= 0)
             {
                 return;
@@ -94,6 +101,37 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
         {
             OnDied?.Invoke();
         }
+        else
+        {
+            OnDamaged?.Invoke(attackPosition, knockbackVelocity);
+        }
+    }
+
+    private bool IsAttackInFront(Vector2? attackPosition)
+    {
+        if (!attackPosition.HasValue)
+        {
+            return true;
+        }
+
+        if (_spriteRenderer_Player == null)
+        {
+            Logger.LogError("SpriteRenderer가 null입니다.");
+            return false;
+        }
+
+        float directionToAttacker =
+            attackPosition.Value.x - transform.position.x;
+
+        if (Mathf.Approximately(directionToAttacker, 0f))
+        {
+            return true;
+        }
+
+        bool isFacingRight = !_spriteRenderer_Player.flipX;
+        return isFacingRight
+            ? directionToAttacker > 0f
+            : directionToAttacker < 0f;
     }
 
     public void SetBlocking(bool isBlocking)

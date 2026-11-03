@@ -2,7 +2,7 @@
 
 public class HealState : PlayerStateBase
 {
-    public HealState(PlayerStateContext ctx) : base(ctx) { }
+    public HealState(PlayerStateContext playerContext) : base(playerContext) { }
 
     public override void StateFixedUpdate()
     {

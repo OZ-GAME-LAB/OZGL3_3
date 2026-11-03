@@ -36,6 +36,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Min(0.01f)] private float _dashDuration = 0.12f;
     [SerializeField, Min(0.01f)] private float _dashCoolDuration = 4f;
 
+    [Header("Hurt")]
+    [SerializeField, Min(0f)] private float _hurtKnockbackX = 4f;
+    [SerializeField, Min(0f)] private float _hurtKnockbackY = 4f;
+    [SerializeField, Min(0.01f)] private float _hurtMaxDuration = 0.8f;
+    [SerializeField, Min(0.01f)] private float _hurtOverlayDuration = 0.4f;
+
     [Header("InputTime")]
     [SerializeField, Range(0f, 0.4f)] private float _comboInputStart = 0.2f;
     [SerializeField, Range(0.4f, 0.8f)] private float _comboInputEnd = 0.78f;
@@ -50,6 +56,10 @@ public class PlayerController : MonoBehaviour
 
     private PlayerDashCharge _dashCharge;
     private DashState _dashState;
+    private HurtState _hurtState;
+    private int _hurtOverlayLayerIndex = -1;
+    private float _hurtOverlayEndTime;
+    private bool _isHurtOverlayActive;
 
     private bool _isDashing => _dashState != null && _dashState.IsDashing;
 
@@ -111,6 +121,16 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        _hurtOverlayLayerIndex = _animator_Player.GetLayerIndex("Hurt Overlay");
+        if (_hurtOverlayLayerIndex < 0)
+        {
+            Logger.LogError("Animator에 Hurt Overlay 레이어가 없습니다.");
+        }
+        else
+        {
+            _animator_Player.SetLayerWeight(_hurtOverlayLayerIndex, 0f);
+        }
+
         _playerHealSkill = new PlayerHealSkill(
             GetComponent<PlayerStatus>(),
             _animator_Player);
@@ -145,10 +165,18 @@ public class PlayerController : MonoBehaviour
         TrySubscribeToPlayerStatus();
     }
 
-  private void Update()
+    private void Update()
     {
+        UpdateHurtOverlay();
+
         if (IsDiedState)
         {
+            return;
+        }
+
+        if (_stateMachine.CurrentType == PlayerState.Hurt)
+        {
+            _playerInputHandler.ClearInput();
             return;
         }
 
@@ -226,10 +254,12 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         _playerHealSkill?.Cancel();
+        StopHurtOverlay();
 
         if (_stateMachine != null &&
             (_stateMachine.CurrentType == PlayerState.Block ||
-             _stateMachine.CurrentType == PlayerState.Heal))
+             _stateMachine.CurrentType == PlayerState.Heal ||
+             _stateMachine.CurrentType == PlayerState.Hurt))
         {
             _stateMachine.ChangeStateSign(PlayerState.Idle);
         }
@@ -252,6 +282,7 @@ public class PlayerController : MonoBehaviour
         }
 
         PlayerStatus.Instance.OnDied += HandleDied;
+        PlayerStatus.Instance.OnDamaged += HandleDamaged;
         _isSubscribedToPlayerStatus = true;
 
         if (PlayerStatus.Instance.IsDead)
@@ -291,6 +322,12 @@ public class PlayerController : MonoBehaviour
         _stateMachine.RegisterState(PlayerState.ComboAttack, new ComboAttackState(_playerContext));
         _stateMachine.RegisterState(PlayerState.JumpAttack, new JumpAttackState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Heal, new HealState(_playerContext));
+        _hurtState = new HurtState(
+            _playerContext,
+            _hurtKnockbackX,
+            _hurtKnockbackY,
+            _hurtMaxDuration);
+        _stateMachine.RegisterState(PlayerState.Hurt, _hurtState);
         _stateMachine.RegisterState(PlayerState.Died, new DiedState(_playerContext));
 
         _stateMachine.ChangeStateSign(PlayerState.Idle);
@@ -309,6 +346,7 @@ public class PlayerController : MonoBehaviour
         if (playerStatus != null)
         {
             playerStatus.OnDied -= HandleDied;
+            playerStatus.OnDamaged -= HandleDamaged;
         }
 
         _isSubscribedToPlayerStatus = false;
@@ -354,6 +392,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerHealSkill.IsSkillActive ||
             _isDashing ||
+            _stateMachine.CurrentType == PlayerState.Hurt ||
             _attackFlow.IsJumpAttack ||
             _attackFlow.IsComboAttack)
         {
@@ -365,6 +404,12 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState GetNextState()
     {
+        if (_stateMachine.CurrentType == PlayerState.Hurt &&
+            !_hurtState.IsFinished)
+        {
+            return PlayerState.Hurt;
+        }
+
         if (_playerHealSkill.IsSkillActive)
         {
             return PlayerState.Heal;
@@ -464,8 +509,95 @@ public class PlayerController : MonoBehaviour
 
         _attackFlow?.ResetFlags();
         _playerHealSkill?.Cancel();
+        StopHurtOverlay();
 
         _stateMachine.ChangeStateSign(PlayerState.Died);
+    }
+
+    private void HandleDamaged(
+        Vector2? damageSourcePosition,
+        Vector2? knockbackVelocity)
+    {
+        if (_stateMachine == null || IsDiedState)
+        {
+            return;
+        }
+
+        if (_isDashing || _playerGuardedAttackSkill.IsSkillActive)
+        {
+            return;
+        }
+
+        if (_playerHealSkill.IsSkillActive ||
+            _stateMachine.CurrentType == PlayerState.Heal)
+        {
+            PlayHurtOverlay();
+            return;
+        }
+
+        if (knockbackVelocity.HasValue)
+        {
+            _hurtState.SetKnockbackVelocity(knockbackVelocity.Value);
+        }
+        else
+        {
+            float knockbackDirection = -_playerContext.Facing;
+            if (damageSourcePosition.HasValue)
+            {
+                float sourceDeltaX =
+                    _rigidbody2D_Player.position.x - damageSourcePosition.Value.x;
+
+                if (!Mathf.Approximately(sourceDeltaX, 0f))
+                {
+                    knockbackDirection = Mathf.Sign(sourceDeltaX);
+                }
+            }
+
+            _hurtState.SetKnockbackDirection(knockbackDirection);
+        }
+
+        if (_stateMachine.CurrentType == PlayerState.Hurt)
+        {
+            _hurtState.ApplyKnockback();
+            return;
+        }
+
+        _attackFlow.ResetFlags();
+        _animator_Player.ResetTrigger("ComboAttack");
+        _animator_Player.ResetTrigger("JumpAttack");
+        _stateMachine.ChangeStateSign(PlayerState.Hurt);
+    }
+
+    private void PlayHurtOverlay()
+    {
+        if (_hurtOverlayLayerIndex < 0)
+        {
+            return;
+        }
+
+        _isHurtOverlayActive = true;
+        _hurtOverlayEndTime =
+            Time.time + _hurtOverlayDuration;
+        _animator_Player.SetLayerWeight(_hurtOverlayLayerIndex, 1f);
+        _animator_Player.Play("PlayerAnim_HurtOverlay", _hurtOverlayLayerIndex, 0f);
+    }
+
+    private void UpdateHurtOverlay()
+    {
+        if (_isHurtOverlayActive &&
+            Time.time >= _hurtOverlayEndTime)
+        {
+            StopHurtOverlay();
+        }
+    }
+
+    private void StopHurtOverlay()
+    {
+        _isHurtOverlayActive = false;
+        if (_hurtOverlayLayerIndex >= 0 && _animator_Player != null)
+        {
+            _animator_Player.SetLayerWeight(_hurtOverlayLayerIndex, 0f);
+        }
     }
 
     private static bool IsGroundedSkillState(PlayerState state)
