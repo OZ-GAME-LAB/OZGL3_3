@@ -1568,8 +1568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamagePlatform
   _damageAmount: 1
-  _knockbackHorizontalSpeed: 5
-  _knockbackVerticalSpeed: 10
+  _effectCooldown: 1
 --- !u!1 &2083385845646958948
 GameObject:
   m_ObjectHideFlags: 0
@@ -4384,9 +4383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289623650265e5641b674425f744733c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapChange
+  Enum_PortalType: 1
   Transform_DestinationPoint: {fileID: 0}
   Float_FadeDuration: 0.5
-  Float_TransitionCooldown: 0.5
+  Float_PortalCooldown: 0.5
 --- !u!1 &6039505449675039660
 GameObject:
   m_ObjectHideFlags: 0
