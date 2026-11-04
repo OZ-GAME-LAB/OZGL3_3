@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -31,6 +32,9 @@ public class PlayerController : MonoBehaviour
     private bool _isCrouchActionActive;
     private float _crouchReadyTime;
 
+    private float _healSkillCooldownEndTime;
+    private float _guardedAttackSkillCooldownEndTime;
+
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.2f;
 
@@ -57,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
     public int CurrentDashCharges => _dashCharge != null ? _dashCharge.CurrentDashCharge : 0;
     public int MaxDashCharges => Mathf.Max(1, _maxDashChance);
+    public float HealSkillCooldownRemaining => Mathf.Max(0f, _healSkillCooldownEndTime - Time.time);
+    public float GuardedAttackSkillCooldownRemaining => Mathf.Max(0f, _guardedAttackSkillCooldownEndTime - Time.time);
 
     private bool _isSubscribedToPlayerStatus;
 
@@ -93,6 +99,8 @@ public class PlayerController : MonoBehaviour
     private bool IsDiedState => _stateMachine.CurrentType == PlayerState.Died;
 
     public event Action<int, int, bool> OnDashChargesChanged;
+    public event Action<string, float> OnSkillCooldownStarted;
+    public event Action<string> OnSkillCooldownEnded;
 
     private void Awake()
     {
@@ -198,9 +206,15 @@ public class PlayerController : MonoBehaviour
         _attackFlow.UpdateState();
         if (_playerInputHandler.ConsumeHealSkillInput())
         {
-            if (IsGroundedSkillState(_stateMachine.CurrentType) && _isGrounded)
+            if (IsGroundedSkillState(_stateMachine.CurrentType) &&
+                _isGrounded &&
+                HealSkillCooldownRemaining <= 0f &&
+                _playerHealSkill.TryUse())
             {
-                _playerHealSkill.TryUse();
+                StartSkillCooldown(
+                    Const.HealSkillId,
+                    _playerHealSkill.CooldownDuration,
+                    ref _healSkillCooldownEndTime);
             }
         }
 
@@ -211,7 +225,14 @@ public class PlayerController : MonoBehaviour
 
         if(_playerInputHandler.ConsumeGuardedAttackSkillInput())
         {
-            _playerGuardedAttackSkill.TryUse();
+            if (GuardedAttackSkillCooldownRemaining <= 0f &&
+                _playerGuardedAttackSkill.TryUse())
+            {
+                StartSkillCooldown(
+                    Const.GuardedAttackSkillId,
+                    _playerGuardedAttackSkill.CooldownDuration,
+                    ref _guardedAttackSkillCooldownEndTime);
+            }
         }
 
         if(_playerGuardedAttackSkill.IsSkillActive)
@@ -270,6 +291,65 @@ public class PlayerController : MonoBehaviour
     public void AnimationHealEnd()
     {
         _playerHealSkill.AnimationEnd();
+    }
+
+    private void StartSkillCooldown(string skillId, float duration, ref float cooldownEndTime)
+    {
+        cooldownEndTime = Time.time + duration;
+        OnSkillCooldownStarted?.Invoke(skillId, duration);
+        StartCoroutine(NotifySkillCooldownEnded(skillId, duration, cooldownEndTime));
+    }
+
+    private IEnumerator NotifySkillCooldownEnded(string skillId, float duration, float expectedEndTime)
+    {
+        yield return new WaitForSeconds(duration);
+
+        if (skillId == Const.HealSkillId)
+        {
+            if (_healSkillCooldownEndTime != expectedEndTime)
+            {
+                yield break;
+            }
+
+            float remaining = HealSkillCooldownRemaining;
+            if (remaining > 0f)
+            {
+                yield return new WaitForSeconds(remaining);
+            }
+
+            if (_healSkillCooldownEndTime != expectedEndTime)
+            {
+                yield break;
+            }
+
+            _healSkillCooldownEndTime = 0f;
+        }
+        else if (skillId == Const.GuardedAttackSkillId)
+        {
+            if (_guardedAttackSkillCooldownEndTime != expectedEndTime)
+            {
+                yield break;
+            }
+
+            float remaining = GuardedAttackSkillCooldownRemaining;
+            if (remaining > 0f)
+            {
+                yield return new WaitForSeconds(remaining);
+            }
+
+            if (_guardedAttackSkillCooldownEndTime != expectedEndTime)
+            {
+                yield break;
+            }
+
+            _guardedAttackSkillCooldownEndTime = 0f;
+        }
+        else
+        {
+            yield break;
+        }
+
+        OnSkillCooldownEnded?.Invoke(skillId);
     }
 
     public void AnimationGuardedAttackHit()
