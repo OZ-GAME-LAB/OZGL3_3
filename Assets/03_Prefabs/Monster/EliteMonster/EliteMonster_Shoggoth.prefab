@@ -176,16 +176,26 @@ MonoBehaviour:
   _maxHp: 5
   _moveSpeed: 3
   _aggroRange: 7
-  _attackDamage: 0
+  _attackDamage: 1
   _attackRange: 2
   _attackPatternCount: 2
+  _attackBoxSize: {x: 2, y: 1.5}
+  _attackBoxOffset: {x: 1, y: 0}
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _isOnlyUseSkill: 0
+  _isAssassin: 0
+  _monsterType: 2
   Skills:
   - {fileID: 11400000, guid: 5ec2ddf696ddb8f4fb1b83d14eee4fb9, type: 2}
   - {fileID: 11400000, guid: 86b5e8a729adf6b49ba7ba51e9ab1121, type: 2}
   _playerTransform: {fileID: 0}
   _rigidbody2D: {fileID: 5602583284590123232}
   _isHit: 0
+  _isUsingStealthSkill: 0
   _isAttackUseable: 0
+  _isSkillUseable: 0
   _groundCheck: {fileID: 0}
   _checkGroundRadius: 0.2
   _edgeCheck: {fileID: 0}
@@ -195,7 +205,6 @@ MonoBehaviour:
   _attackDistance: 2
   _playerTransformCheckCollider: {fileID: 7281743496177089556}
   AnimController_NormalMonster: {fileID: 6931036689774495730}
-  _monsterType: 2
 --- !u!61 &8683366866423821959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -255,7 +264,7 @@ GameObject:
   - component: {fileID: 8320251362542454838}
   m_Layer: 0
   m_Name: PlayerCheckCollider
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
