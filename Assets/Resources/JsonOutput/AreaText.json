@@ -1,5 +1,9 @@
 [
   {
+    "Id": "Area_AstraForestVillage",
+    "SpritePath": null
+  },
+  {
     "Id": "Area_Andigma",
     "SpritePath": "Sprites/Area/Andigma"
   },
@@ -8,12 +12,56 @@
     "SpritePath": "Sprites/Area/AstraForest"
   },
   {
+    "Id": "Area_AstraForestMountain ",
+    "SpritePath": null
+  },
+  {
+    "Id": "Area_AstraArtifactChamber",
+    "SpritePath": null
+  },
+  {
+    "Id": "Area_AstraArcaneHall",
+    "SpritePath": null
+  },
+  {
+    "Id": "Area_AstraForgottenBorder",
+    "SpritePath": null
+  },
+  {
+    "Id": "Area_AstraForestPier",
+    "SpritePath": null
+  },
+  {
     "Id": "Area_RuinEntrance",
     "SpritePath": "Sprites/Area/RuinEntrance"
   },
   {
+    "Id": "Area_RuinAbandoned",
+    "SpritePath": null
+  },
+  {
+    "Id": "Area_RuinArtifactChamber",
+    "SpritePath": null
+  },
+  {
+    "Id": "Area_RuinAncientChamber",
+    "SpritePath": null
+  },
+  {
+    "Id": "Area_RuinCorridor",
+    "SpritePath": null
+  },
+  {
+    "Id": "Area_RuinArcaneHall",
+    "SpritePath": null
+  },
+  {
     "Id": "Area_GuardianHall",
     "SpritePath": "Sprites/Area/GuardianHall"
+  },
+  {
+    "Id": null,
+    "SpritePath": null
   },
   {
     "Id": "Area_SealedSnowMountain",

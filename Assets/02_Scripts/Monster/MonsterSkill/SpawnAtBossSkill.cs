@@ -19,7 +19,7 @@ public class SpawnAtBossSkill : MonsterSkill
         while (spawnAmount > 0)
         {
             Vector3 spawnPos = caster.transform.position + new Vector3(Random.Range(-_spawnOffset, _spawnOffset), 0, 0);
-            Instantiate(_minionPrefab, spawnPos, Quaternion.identity);
+            MonsterSpawnManager.Instance.RequestSpawnEnemy(_minionPrefab,spawnPos,caster.transform.rotation);
             spawnAmount--;
         }
     }
