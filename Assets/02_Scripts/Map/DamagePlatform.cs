@@ -1,16 +1,13 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
 public class DamagePlatform : MonoBehaviour
 {
     private const string PLAYER_TAG = "Player";
-    private const float EFFECT_COOLDOWN = 1f;
 
     [Header("Damage")]
     [SerializeField, Min(0)] private int _damageAmount = 1;
-
-    [Header("Knockback")]
-    [SerializeField, Min(0f)] private float _knockbackHorizontalSpeed = 4f;
-    [SerializeField, Min(0f)] private float _knockbackVerticalSpeed = 6f;
+    [SerializeField, Min(0f)] private float _effectCooldown = 1f;
 
     private float _nextEffectTime;
 
@@ -45,28 +42,9 @@ public class DamagePlatform : MonoBehaviour
             return;
         }
 
-        _nextEffectTime = Time.time + EFFECT_COOLDOWN;
+        _nextEffectTime = Time.time + _effectCooldown;
+
         playerStatus.TakeDamage(_damageAmount);
-
-        Rigidbody2D rigidbody2DPlayer =
-            collider2DOther.attachedRigidbody;
-
-        if (rigidbody2DPlayer == null)
-        {
-            return;
-        }
-
-        float knockbackDirectionX = Mathf.Sign(
-            rigidbody2DPlayer.position.x - transform.position.x);
-
-        if (Mathf.Approximately(knockbackDirectionX, 0f))
-        {
-            knockbackDirectionX = 1f;
-        }
-
-        rigidbody2DPlayer.linearVelocity = new Vector2(
-            knockbackDirectionX * _knockbackHorizontalSpeed,
-            _knockbackVerticalSpeed);
     }
 
     private bool IsPlayerCollider(Collider2D collider2DOther)

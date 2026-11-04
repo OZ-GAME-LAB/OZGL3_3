@@ -80,14 +80,22 @@ MonoBehaviour:
   _maxHp: 1
   _moveSpeed: 3
   _aggroRange: 8
-  _attackDamage: 0
+  _attackDamage: 1
   _attackRange: 2
   _attackPatternCount: 1
+  _attackBoxSize: {x: 0.3, y: 0.3}
+  _attackBoxOffset: {x: 0.1, y: 0.53}
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
   Skills: []
   _playerTransform: {fileID: 0}
   _rigidbody2D: {fileID: 2983231304542844046}
   _isHit: 0
+  _isUsingStealthSkill: 0
   _isAttackUseable: 0
+  _isSkillUseable: 0
+  _isAssassin: 0
   _groundCheck: {fileID: 0}
   _checkGroundRadius: 0.2
   _edgeCheck: {fileID: 0}
@@ -249,7 +257,7 @@ GameObject:
   - component: {fileID: 3085627940242920318}
   - component: {fileID: 7847118203010627078}
   - component: {fileID: 510132226880775149}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PlayerCheckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
