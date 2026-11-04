@@ -16,7 +16,6 @@ public class NormalMonster : MonsterBase
 
     [Header("Anim Settings")]
     [SerializeField] private MonsterAnimatorController AnimController_NormalMonster;
-    [SerializeField] private MonsterType _monsterType;
 
     private bool _isGrounded = false;
     private bool _isBlocked = false;
@@ -48,6 +47,7 @@ public class NormalMonster : MonsterBase
         {
             if (_monsterType == MonsterType.Flying)
             {
+                UpdateFacingDirection();
                 _rigidbody2D.linearVelocity = Vector2.zero;
             }
             return;
@@ -59,7 +59,7 @@ public class NormalMonster : MonsterBase
             return;
         }
 
-        if (_isAttacking)
+        if (_isAttacking && _isOnlyUseSkill == false)
         {
             _rigidbody2D.linearVelocity = Vector2.zero;
             return;
@@ -162,7 +162,7 @@ public class NormalMonster : MonsterBase
     }
 
     private void TraceAndAttack()
-    {//[TODO] 타격판정 변경 (바라보는쪽으로 때리도록)
+    {
         if (Skills == null)
         {
             Logger.LogError("[NormalMonster] Skills가 Null입니다.");
@@ -199,8 +199,8 @@ public class NormalMonster : MonsterBase
         {
             if (distance <= Skills[i].Range && _skillCooldownTimers[i] <= 0f)
             {
+                if (_isAssassin && _isSkillUseable == false) continue;
                 UpdateFacingDirection();
-
 
                 _pendingSkillIndex = i;
                 _isUsingSkill = true;
@@ -241,10 +241,12 @@ public class NormalMonster : MonsterBase
 
         if (distance <= _attackDistance)
         {
+            if (_isOnlyUseSkill) return;
+
             CheckAttackUseable();
             if (_isAttackUseable)
             {
-                AttackTarget(0);   // [TODO] 데미지 데이터드리븐으로 처리
+                AttackTarget();
                 return;
             }
         }
@@ -276,7 +278,7 @@ public class NormalMonster : MonsterBase
     }
 
     private void UpdateFacingDirection()
-    {//[TODO] 스킬사용중에도 계속 바라보도록
+    {
         
         if (_playerTransform == null)
         {
