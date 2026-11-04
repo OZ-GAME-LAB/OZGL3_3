@@ -2,7 +2,7 @@
 
 public class JumpAttackState : PlayerStateBase
 {
-    public JumpAttackState(PlayerStateContext ctx) : base(ctx) { }
+    public JumpAttackState(PlayerStateContext playerContext) : base(playerContext) { }
 
     public override void StateFixedUpdate()
     {
