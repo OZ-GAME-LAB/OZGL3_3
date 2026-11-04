@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Globalization;
 using UnityEngine;
 
@@ -13,6 +13,7 @@ public class PlayerSkillData : BaseData
     public float Amount1;
     public string RangeOffset;
     public string RangeSize;
+    public int CoolDown;
 
     public bool TryGetRangeOffset(out Vector2 value)
     {

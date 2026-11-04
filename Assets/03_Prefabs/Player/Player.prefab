@@ -481,7 +481,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _visualOffset: {fileID: 1151277764611316810}
-  _crouchVisualOffsetY: -0.37
+  _crouchCooldown: 2
+  _crouchColliderOffsetY: -0.3
+  _crouchColliderHeight: 0.7
   _groundCheckRadius: 0.2
   _ladderCoolDown: 1
   _dashDistance: 4

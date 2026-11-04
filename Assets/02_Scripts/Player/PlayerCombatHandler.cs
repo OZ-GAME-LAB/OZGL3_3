@@ -88,7 +88,7 @@ public class PlayerCombatHandler : MonoBehaviour
 
         foreach (Collider2D targetCollider in _targetsInRange)
         {
-            NormalMonster monster = targetCollider.GetComponentInParent<NormalMonster>();
+            NormalMonster monster = targetCollider.GetComponent<NormalMonster>();
             if (monster == null || !_damagedMonsters.Add(monster))
             {
                 continue;
