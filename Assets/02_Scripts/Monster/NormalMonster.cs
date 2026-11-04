@@ -16,7 +16,6 @@ public class NormalMonster : MonsterBase
 
     [Header("Anim Settings")]
     [SerializeField] private MonsterAnimatorController AnimController_NormalMonster;
-    [SerializeField] private MonsterType _monsterType;
 
     private bool _isGrounded = false;
     private bool _isBlocked = false;
