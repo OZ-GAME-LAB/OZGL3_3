@@ -9,6 +9,7 @@ public abstract class PlayerSkillBase
     protected PlayerSkillData SkillData { get; private set; }
 
     public bool IsSkillActive { get; private set; }
+    public float CooldownDuration => SkillData != null ? SkillData.CoolDown : 0f;
 
     private bool _isEffectApplied;
 
