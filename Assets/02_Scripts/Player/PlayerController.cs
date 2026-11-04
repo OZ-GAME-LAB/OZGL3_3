@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -7,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStatus))]
 [RequireComponent(typeof(PlayerStatSet))]
 [RequireComponent(typeof(PlayerArtifactEquipment))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Core")]
@@ -23,7 +25,15 @@ public class PlayerController : MonoBehaviour
 
     [Header("Visual")]
     [SerializeField] private PlayerVisualOffset _visualOffset;
-    [SerializeField] private float _crouchVisualOffsetY = -0.37f;
+    [SerializeField, Min(0f)] private float _crouchCooldown = 2f;
+    [SerializeField] private float _crouchColliderOffsetY = -0.3f;
+    [SerializeField, Min(0.01f)] private float _crouchColliderHeight = 0.7f;
+    private CapsuleCollider2D _playerCollider;
+    private bool _isCrouchActionActive;
+    private float _crouchReadyTime;
+
+    private float _healSkillCooldownEndTime;
+    private float _guardedAttackSkillCooldownEndTime;
 
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.2f;
@@ -51,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
     public int CurrentDashCharges => _dashCharge != null ? _dashCharge.CurrentDashCharge : 0;
     public int MaxDashCharges => Mathf.Max(1, _maxDashChance);
+    public float HealSkillCooldownRemaining => Mathf.Max(0f, _healSkillCooldownEndTime - Time.time);
+    public float GuardedAttackSkillCooldownRemaining => Mathf.Max(0f, _guardedAttackSkillCooldownEndTime - Time.time);
 
     private bool _isSubscribedToPlayerStatus;
 
@@ -87,9 +99,13 @@ public class PlayerController : MonoBehaviour
     private bool IsDiedState => _stateMachine.CurrentType == PlayerState.Died;
 
     public event Action<int, int, bool> OnDashChargesChanged;
+    public event Action<string, float> OnSkillCooldownStarted;
+    public event Action<string> OnSkillCooldownEnded;
 
     private void Awake()
     {
+        _playerCollider = GetComponent<CapsuleCollider2D>();
+
         if (_rigidbody2D_Player == null)
         {
             _rigidbody2D_Player = GetComponent<Rigidbody2D>();
@@ -190,9 +206,15 @@ public class PlayerController : MonoBehaviour
         _attackFlow.UpdateState();
         if (_playerInputHandler.ConsumeHealSkillInput())
         {
-            if (IsGroundedSkillState(_stateMachine.CurrentType) && _isGrounded)
+            if (IsGroundedSkillState(_stateMachine.CurrentType) &&
+                _isGrounded &&
+                HealSkillCooldownRemaining <= 0f &&
+                _playerHealSkill.TryUse())
             {
-                _playerHealSkill.TryUse();
+                StartSkillCooldown(
+                    Const.HealSkillId,
+                    _playerHealSkill.CooldownDuration,
+                    ref _healSkillCooldownEndTime);
             }
         }
 
@@ -203,7 +225,14 @@ public class PlayerController : MonoBehaviour
 
         if(_playerInputHandler.ConsumeGuardedAttackSkillInput())
         {
-            _playerGuardedAttackSkill.TryUse();
+            if (GuardedAttackSkillCooldownRemaining <= 0f &&
+                _playerGuardedAttackSkill.TryUse())
+            {
+                StartSkillCooldown(
+                    Const.GuardedAttackSkillId,
+                    _playerGuardedAttackSkill.CooldownDuration,
+                    ref _guardedAttackSkillCooldownEndTime);
+            }
         }
 
         if(_playerGuardedAttackSkill.IsSkillActive)
@@ -226,8 +255,25 @@ public class PlayerController : MonoBehaviour
         CheckGrounded();
         TryEnterLadder();
 
-        _stateMachine.ChangeStateSign(GetNextState());
+        PlayerState currentState = _stateMachine.CurrentType;
+        PlayerState nextState = GetNextState();
+        if (currentState == PlayerState.Crouch &&
+            nextState != PlayerState.Crouch &&
+            _isCrouchActionActive)
+        {
+            _isCrouchActionActive = false;
+        }
+
+        _stateMachine.ChangeStateSign(nextState);
         _stateMachine.StateFixedUpdateSign();
+
+        if (_playerGuardedAttackSkill.IsSkillActive)
+        {
+            _rigidbody2D_Player.linearVelocity = new Vector2(
+                0f,
+                _rigidbody2D_Player.linearVelocity.y);
+        }
+
         UpdateAnimatorParameters();
     }
 
@@ -236,9 +282,74 @@ public class PlayerController : MonoBehaviour
         _playerHealSkill.AnimationEffect();
     }
 
+    public void AnimationCrouchEnd()
+    {
+        _isCrouchActionActive = false;
+        _crouchReadyTime = Time.time + _crouchCooldown;
+    }
+
     public void AnimationHealEnd()
     {
         _playerHealSkill.AnimationEnd();
+    }
+
+    private void StartSkillCooldown(string skillId, float duration, ref float cooldownEndTime)
+    {
+        cooldownEndTime = Time.time + duration;
+        OnSkillCooldownStarted?.Invoke(skillId, duration);
+        StartCoroutine(NotifySkillCooldownEnded(skillId, duration, cooldownEndTime));
+    }
+
+    private IEnumerator NotifySkillCooldownEnded(string skillId, float duration, float expectedEndTime)
+    {
+        yield return new WaitForSeconds(duration);
+
+        if (skillId == Const.HealSkillId)
+        {
+            if (_healSkillCooldownEndTime != expectedEndTime)
+            {
+                yield break;
+            }
+
+            float remaining = HealSkillCooldownRemaining;
+            if (remaining > 0f)
+            {
+                yield return new WaitForSeconds(remaining);
+            }
+
+            if (_healSkillCooldownEndTime != expectedEndTime)
+            {
+                yield break;
+            }
+
+            _healSkillCooldownEndTime = 0f;
+        }
+        else if (skillId == Const.GuardedAttackSkillId)
+        {
+            if (_guardedAttackSkillCooldownEndTime != expectedEndTime)
+            {
+                yield break;
+            }
+
+            float remaining = GuardedAttackSkillCooldownRemaining;
+            if (remaining > 0f)
+            {
+                yield return new WaitForSeconds(remaining);
+            }
+
+            if (_guardedAttackSkillCooldownEndTime != expectedEndTime)
+            {
+                yield break;
+            }
+
+            _guardedAttackSkillCooldownEndTime = 0f;
+        }
+        else
+        {
+            yield break;
+        }
+
+        OnSkillCooldownEnded?.Invoke(skillId);
     }
 
     public void AnimationGuardedAttackHit()
@@ -313,7 +424,9 @@ public class PlayerController : MonoBehaviour
         _stateMachine.RegisterState(PlayerState.Idle, new IdleState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Walk, new WalkState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Run, new RunState(_playerContext));
-        _stateMachine.RegisterState(PlayerState.Crouch, new CrouchState(_playerContext, _crouchVisualOffsetY));
+        _stateMachine.RegisterState(
+            PlayerState.Crouch,
+            new CrouchState(_playerContext, _playerCollider, _crouchColliderOffsetY, _crouchColliderHeight));
         _stateMachine.RegisterState(PlayerState.Block, new BlockState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Jump, new JumpState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Fall, new FallState(_playerContext));
@@ -404,6 +517,8 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState GetNextState()
     {
+        bool crouchPressed = _playerInputHandler.ConsumeCrouchInput();
+
         if (_stateMachine.CurrentType == PlayerState.Hurt &&
             !_hurtState.IsFinished)
         {
@@ -453,18 +568,25 @@ public class PlayerController : MonoBehaviour
             return GetAirState();
         }
 
-        return GetGroundedState();
+        if (_isCrouchActionActive &&
+            _stateMachine.CurrentType == PlayerState.Crouch)
+        {
+            return PlayerState.Crouch;
+        }
+
+        return GetGroundedState(crouchPressed);
     }
 
-    private PlayerState GetGroundedState()
+    private PlayerState GetGroundedState(bool crouchPressed)
     {
         if (_playerInputHandler.BlockInput)
         {
             return PlayerState.Block;
         }
 
-        if (_playerInputHandler.CrouchInput)
+        if (crouchPressed && Time.time >= _crouchReadyTime)
         {
+            _isCrouchActionActive = true;
             return PlayerState.Crouch;
         }
 

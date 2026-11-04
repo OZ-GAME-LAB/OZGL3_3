@@ -8,7 +8,8 @@
     "needGauge": 30,
     "Amount1": 1,
     "RangeOffset": "0.8, 0",
-    "RangeSize": "2, 1.2"
+    "RangeSize": "2, 1.2",
+    "CoolDown": 4
   },
   {
     "Id": "HollyHeal_Buff",
@@ -19,6 +20,7 @@
     "needGauge": 50,
     "Amount1": 2,
     "RangeOffset": "0, 0",
-    "RangeSize": "0, 0"
+    "RangeSize": "0, 0",
+    "CoolDown": 4
   }
 ]
