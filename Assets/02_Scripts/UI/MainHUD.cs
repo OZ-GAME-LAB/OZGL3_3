@@ -5,12 +5,14 @@ public class MainHUD : UIBase
     private HeartPanel _heartPanel;
     private SkillGaugePanel _skillGaugePanel;
     private DashPanel _dashPanel;
+    private SkillPanel _skillPanel;
 
     private void Awake()
     {
         _heartPanel = GetComponentInChildren<HeartPanel>(true);
         _skillGaugePanel = GetComponentInChildren<SkillGaugePanel>(true);
         _dashPanel = GetComponentInChildren<DashPanel>(true);
+        _skillPanel = GetComponentInChildren<SkillPanel>(true);
     }
 
     private void OnEnable()
@@ -38,6 +40,20 @@ public class MainHUD : UIBase
         if (_dashPanel != null)
         {
             _dashPanel.Init(FindFirstObjectByType<PlayerController>());
+        }
+
+        // 플레이어가 준비될 때까지 SkillPanel이 스스로 기다린다.
+        if (_skillPanel != null)
+        {
+            _skillPanel.Begin();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (_skillPanel != null)
+        {
+            _skillPanel.Release();
         }
     }
 
