@@ -30,7 +30,8 @@ public class ExplosionProjectileSkill : MonoBehaviour
             {
                 if (collision.TryGetComponent<PlayerStatus>(out var playerStatus))
                 {
-                    playerStatus.TakeDamage(_damage);
+                    float projectileIsFront = ((this.transform.position.x - collision.transform.position.x) < 0) ? 3f : -3f;
+                    playerStatus.TakeDamage(_damage, attackPosition: this.transform.position, knockbackVelocity: new Vector2(projectileIsFront, 2f));
                 }
             }
         }
