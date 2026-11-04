@@ -22328,8 +22328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamagePlatform
   _damageAmount: 1
-  _knockbackHorizontalSpeed: 5
-  _knockbackVerticalSpeed: 10
+  _effectCooldown: 1
 --- !u!1001 &14940068564448560
 PrefabInstance:
   m_ObjectHideFlags: 0
