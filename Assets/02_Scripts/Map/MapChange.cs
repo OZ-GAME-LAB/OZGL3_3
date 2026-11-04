@@ -95,8 +95,6 @@ public class MapChange : MonoBehaviour
     private async UniTaskVoid DoChangeMapAsync(
         Transform transformPlayer)
     {
-        bool isInputLocked = false;
-
         try
         {
             MapRoot mapRootCurrent =
@@ -121,6 +119,9 @@ public class MapChange : MonoBehaviour
                 return;
             }
 
+            Logger.Log("MapChange: OnBeforeMapChange 호출");
+            OnBeforeMapChange?.Invoke();
+
             UIManager.Instance.OpenFadeUI();
 
             await UniTask.Delay(
@@ -132,8 +133,6 @@ public class MapChange : MonoBehaviour
                 return;
             }
 
-            DoInvokeBeforeMapChange(ref isInputLocked);
-
             DoMovePlayer(transformPlayer);
 
             if (!mapRootCurrent.DoSwitchMap(mapRootDestination))
@@ -141,37 +140,16 @@ public class MapChange : MonoBehaviour
                 return;
             }
 
-            DoInvokeAfterMapChange(ref isInputLocked);
+            Logger.Log("MapChange: OnAfterMapChange 호출");
+            OnAfterMapChange?.Invoke();
 
             await UniTask.Delay(
                 TimeSpan.FromSeconds(Float_PortalCooldown));
         }
         finally
         {
-            DoInvokeAfterMapChange(ref isInputLocked);
             _isTransitioning = false;
         }
-    }
-
-    private void DoInvokeBeforeMapChange(ref bool isInputLocked)
-    {
-        isInputLocked = true;
-
-        Logger.Log("MapChange: OnBeforeMapChange 호출");
-        OnBeforeMapChange?.Invoke();
-    }
-
-    private void DoInvokeAfterMapChange(ref bool isInputLocked)
-    {
-        if (!isInputLocked)
-        {
-            return;
-        }
-
-        isInputLocked = false;
-
-        Logger.Log("MapChange: OnAfterMapChange 호출");
-        OnAfterMapChange?.Invoke();
     }
 
     private bool TryGetPlayerTransform(
