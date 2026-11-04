@@ -8316,7 +8316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 234466724387664523, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: Enum_PortalType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.x
