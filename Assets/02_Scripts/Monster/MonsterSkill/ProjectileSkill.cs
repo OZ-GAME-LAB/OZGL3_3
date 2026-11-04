@@ -30,7 +30,7 @@ public class ProjectileSkill : MonsterSkill
         }
         else
         {
-            proj.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
+            proj.GetComponent<Rigidbody2D>().linearVelocity = dir * 10f;
         }
     }
 }
