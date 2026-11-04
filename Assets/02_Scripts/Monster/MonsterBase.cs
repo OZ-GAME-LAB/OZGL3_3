@@ -19,6 +19,8 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] protected bool _isOnlyUseSkill = false;
     [SerializeField] protected bool _isAssassin = false;
 
+    [SerializeField] public MonsterType _monsterType;
+
     protected float _currentHp { get; private set; }
 
 
@@ -196,7 +198,7 @@ public class MonsterBase : MonoBehaviour
         {
             if (hitCollider.TryGetComponent<PlayerStatus>(out var playerStatus))
             {
-                playerStatus.TakeDamage(_attackDamage);
+                playerStatus.TakeDamage(_attackDamage, attackPosition: this.transform.position, knockbackVelocity: new Vector2(0, 0));
                 Logger.LogError("플레이어가 데미지를 입었습니다.");
             }
         }
