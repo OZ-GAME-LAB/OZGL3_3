@@ -7,7 +7,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     public float MoveInput { get; private set; }
     public bool RunInput { get; private set; }
-    public bool CrouchInput { get; private set; }
+    public bool CrouchQueued { get; private set; }
     public bool DashInput { get; private set; }
     public bool DashQueued { get; private set; }
     public bool AttackInput { get; private set; }
@@ -42,7 +42,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             MoveInput = 0f;
             RunInput = false;
-            CrouchInput = false;
+            CrouchQueued = false;
             AttackInput = false;
             BlockInput = false;
             DashInput = false;
@@ -122,7 +122,10 @@ public class PlayerInputHandler : MonoBehaviour
         UpInput = keyboard.upArrowKey.isPressed;
         DownInput = keyboard.downArrowKey.isPressed;
         JumpInput = keyboard.spaceKey.isPressed;
-        CrouchInput = DownInput;
+        if (keyboard.downArrowKey.wasPressedThisFrame)
+        {
+            CrouchQueued = true;
+        }
         AttackInput = keyboard.xKey.isPressed;
         BlockInput = keyboard.cKey.isPressed;
 
@@ -170,6 +173,13 @@ public class PlayerInputHandler : MonoBehaviour
         return wasPressed;
     }
 
+    public bool ConsumeCrouchInput()
+    {
+        bool wasPressed = CrouchQueued;
+        CrouchQueued = false;
+        return wasPressed;
+    }
+
     public bool ConsumeHealSkillInput()
     {
         bool wasPressed = HealSkillQueued;
@@ -193,7 +203,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         MoveInput = 0f;
         RunInput = false;
-        CrouchInput = false;
+        CrouchQueued = false;
         DashInput = false;
         DashQueued = false;
         AttackInput = false;

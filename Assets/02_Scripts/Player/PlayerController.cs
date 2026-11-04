@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStatus))]
 [RequireComponent(typeof(PlayerStatSet))]
 [RequireComponent(typeof(PlayerArtifactEquipment))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Core")]
@@ -23,7 +24,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Visual")]
     [SerializeField] private PlayerVisualOffset _visualOffset;
-    [SerializeField] private float _crouchVisualOffsetY = -0.37f;
+    [SerializeField, Min(0f)] private float _crouchCooldown = 2f;
+    [SerializeField] private float _crouchColliderOffsetY = -0.3f;
+    [SerializeField, Min(0.01f)] private float _crouchColliderHeight = 0.7f;
+    private CapsuleCollider2D _playerCollider;
+    private bool _isCrouchActionActive;
+    private float _crouchReadyTime;
 
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.2f;
@@ -90,6 +96,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        _playerCollider = GetComponent<CapsuleCollider2D>();
+
         if (_rigidbody2D_Player == null)
         {
             _rigidbody2D_Player = GetComponent<Rigidbody2D>();
@@ -226,14 +234,37 @@ public class PlayerController : MonoBehaviour
         CheckGrounded();
         TryEnterLadder();
 
-        _stateMachine.ChangeStateSign(GetNextState());
+        PlayerState currentState = _stateMachine.CurrentType;
+        PlayerState nextState = GetNextState();
+        if (currentState == PlayerState.Crouch &&
+            nextState != PlayerState.Crouch &&
+            _isCrouchActionActive)
+        {
+            _isCrouchActionActive = false;
+        }
+
+        _stateMachine.ChangeStateSign(nextState);
         _stateMachine.StateFixedUpdateSign();
+
+        if (_playerGuardedAttackSkill.IsSkillActive)
+        {
+            _rigidbody2D_Player.linearVelocity = new Vector2(
+                0f,
+                _rigidbody2D_Player.linearVelocity.y);
+        }
+
         UpdateAnimatorParameters();
     }
 
     public void AnimationHeal()
     {
         _playerHealSkill.AnimationEffect();
+    }
+
+    public void AnimationCrouchEnd()
+    {
+        _isCrouchActionActive = false;
+        _crouchReadyTime = Time.time + _crouchCooldown;
     }
 
     public void AnimationHealEnd()
@@ -313,7 +344,9 @@ public class PlayerController : MonoBehaviour
         _stateMachine.RegisterState(PlayerState.Idle, new IdleState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Walk, new WalkState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Run, new RunState(_playerContext));
-        _stateMachine.RegisterState(PlayerState.Crouch, new CrouchState(_playerContext, _crouchVisualOffsetY));
+        _stateMachine.RegisterState(
+            PlayerState.Crouch,
+            new CrouchState(_playerContext, _playerCollider, _crouchColliderOffsetY, _crouchColliderHeight));
         _stateMachine.RegisterState(PlayerState.Block, new BlockState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Jump, new JumpState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Fall, new FallState(_playerContext));
@@ -404,6 +437,8 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState GetNextState()
     {
+        bool crouchPressed = _playerInputHandler.ConsumeCrouchInput();
+
         if (_stateMachine.CurrentType == PlayerState.Hurt &&
             !_hurtState.IsFinished)
         {
@@ -453,18 +488,25 @@ public class PlayerController : MonoBehaviour
             return GetAirState();
         }
 
-        return GetGroundedState();
+        if (_isCrouchActionActive &&
+            _stateMachine.CurrentType == PlayerState.Crouch)
+        {
+            return PlayerState.Crouch;
+        }
+
+        return GetGroundedState(crouchPressed);
     }
 
-    private PlayerState GetGroundedState()
+    private PlayerState GetGroundedState(bool crouchPressed)
     {
         if (_playerInputHandler.BlockInput)
         {
             return PlayerState.Block;
         }
 
-        if (_playerInputHandler.CrouchInput)
+        if (crouchPressed && Time.time >= _crouchReadyTime)
         {
+            _isCrouchActionActive = true;
             return PlayerState.Crouch;
         }
 
