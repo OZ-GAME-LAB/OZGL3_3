@@ -8,7 +8,7 @@ public class MonsterSpawnManager : MonoBehaviour
 
     private int _objectInstanceKeyGenerator = 0;
 
-    private Dictionary<int, GameObject> _createdMonsterContainer = new Dictionary<int, GameObject>();
+    public Dictionary<int, GameObject> _createdMonsterContainer = new Dictionary<int, GameObject>();
 
 
     private void Awake()
@@ -79,5 +79,15 @@ public class MonsterSpawnManager : MonoBehaviour
 
         _createdMonsterContainer.Remove(instanceId);
         Destroy(gObj);
+    }
+
+    public void RequestDestroyAllEntityObject()
+    {
+        foreach(var gameObj in _createdMonsterContainer.Values)
+        {
+            Destroy(gameObj);
+        }
+        _createdMonsterContainer.Clear();
+        _objectInstanceKeyGenerator = 0;
     }
 }
