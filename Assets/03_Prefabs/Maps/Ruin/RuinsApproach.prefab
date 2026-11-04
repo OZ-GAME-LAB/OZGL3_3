@@ -10543,8 +10543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamagePlatform
   _damageAmount: 1
-  _knockbackHorizontalSpeed: 5
-  _knockbackVerticalSpeed: 10
+  _effectCooldown: 1
 --- !u!1 &8984614046644174356
 GameObject:
   m_ObjectHideFlags: 0
