@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask_Ground;
     [SerializeField] private LayerMask _layerMask_Ladder;
     private PlayerStateMachine _stateMachine;
-    private PlayerStateContext _context;
+    private PlayerStateContext _playerContext;
 
     [Header("Visual")]
     [SerializeField] private PlayerVisualOffset _visualOffset;
@@ -36,6 +36,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Min(0.01f)] private float _dashDuration = 0.12f;
     [SerializeField, Min(0.01f)] private float _dashCoolDuration = 4f;
 
+    [Header("Hurt")]
+    [SerializeField, Min(0f)] private float _hurtKnockbackX = 4f;
+    [SerializeField, Min(0f)] private float _hurtKnockbackY = 4f;
+    [SerializeField, Min(0.01f)] private float _hurtMaxDuration = 0.8f;
+    [SerializeField, Min(0.01f)] private float _hurtOverlayDuration = 0.4f;
+
     [Header("InputTime")]
     [SerializeField, Range(0f, 0.4f)] private float _comboInputStart = 0.2f;
     [SerializeField, Range(0.4f, 0.8f)] private float _comboInputEnd = 0.78f;
@@ -43,27 +49,34 @@ public class PlayerController : MonoBehaviour
     private float _runSpeed => PlayerStatSet.Instance.RunSpeed;
     private int _maxDashChance => PlayerStatSet.Instance.MaxDashChance;
 
-    public int CurrentDashCharges => _dashCharge != null ? _dashCharge.Current : 0;
+    public int CurrentDashCharges => _dashCharge != null ? _dashCharge.CurrentDashCharge : 0;
     public int MaxDashCharges => Mathf.Max(1, _maxDashChance);
 
     private bool _isSubscribedToPlayerStatus;
 
     private PlayerDashCharge _dashCharge;
     private DashState _dashState;
+    private HurtState _hurtState;
+    private int _hurtOverlayLayerIndex = -1;
+    private float _hurtOverlayEndTime;
+    private bool _isHurtOverlayActive;
 
     private bool _isDashing => _dashState != null && _dashState.IsDashing;
 
     private bool _isGrounded
     {
-        get => _context != null && _context.IsGrounded;
+        get => _playerContext != null && _playerContext.IsGrounded;
         set
         {
-            if (_context != null)
+            if (_playerContext != null)
             {
-                _context.IsGrounded = value;
+                _playerContext.IsGrounded = value;
             }
         }
     }
+
+    public bool IsDoubleJumpUnlocked =>
+        _playerContext != null && _playerContext.IsDoubleJumpUnlocked;
 
     private LadderState _ladderState;
     private PlayerAttackFlow _attackFlow;
@@ -108,6 +121,16 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        _hurtOverlayLayerIndex = _animator_Player.GetLayerIndex("Hurt Overlay");
+        if (_hurtOverlayLayerIndex < 0)
+        {
+            Logger.LogError("Animator에 Hurt Overlay 레이어가 없습니다.");
+        }
+        else
+        {
+            _animator_Player.SetLayerWeight(_hurtOverlayLayerIndex, 0f);
+        }
+
         _playerHealSkill = new PlayerHealSkill(
             GetComponent<PlayerStatus>(),
             _animator_Player);
@@ -142,10 +165,18 @@ public class PlayerController : MonoBehaviour
         TrySubscribeToPlayerStatus();
     }
 
-  private void Update()
+    private void Update()
     {
+        UpdateHurtOverlay();
+
         if (IsDiedState)
         {
+            return;
+        }
+
+        if (_stateMachine.CurrentType == PlayerState.Hurt)
+        {
+            _playerInputHandler.ClearInput();
             return;
         }
 
@@ -191,7 +222,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        _dashCharge.Tick();
+        _dashCharge.UpdateDashCharge();
         CheckGrounded();
         TryEnterLadder();
 
@@ -223,10 +254,12 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         _playerHealSkill?.Cancel();
+        StopHurtOverlay();
 
         if (_stateMachine != null &&
             (_stateMachine.CurrentType == PlayerState.Block ||
-             _stateMachine.CurrentType == PlayerState.Heal))
+             _stateMachine.CurrentType == PlayerState.Heal ||
+             _stateMachine.CurrentType == PlayerState.Hurt))
         {
             _stateMachine.ChangeStateSign(PlayerState.Idle);
         }
@@ -249,6 +282,7 @@ public class PlayerController : MonoBehaviour
         }
 
         PlayerStatus.Instance.OnDied += HandleDied;
+        PlayerStatus.Instance.OnDamaged += HandleDamaged;
         _isSubscribedToPlayerStatus = true;
 
         if (PlayerStatus.Instance.IsDead)
@@ -258,7 +292,7 @@ public class PlayerController : MonoBehaviour
     }
     private void InitializeStateMachine()
     {
-        _context = new PlayerStateContext(
+        _playerContext = new PlayerStateContext(
             _rigidbody2D_Player,
             _animator_Player,
             _spriteRenderer_Player,
@@ -267,28 +301,34 @@ public class PlayerController : MonoBehaviour
             );
 
         _dashCharge = new PlayerDashCharge(_dashCoolDuration);
-        _dashCharge.Changed += (current, max, wasUsed) =>
+        _dashCharge.DashChanceChanged += (current, max, wasUsed) =>
             OnDashChargesChanged?.Invoke(current, max, wasUsed);
 
-        _dashState = new DashState(_context, _dashCharge, _dashDistance, _dashDuration);
-        _ladderState = new LadderState(_context, _layerMask_Ladder, _ladderCoolDown);
+        _dashState = new DashState(_playerContext, _dashCharge, _dashDistance, _dashDuration);
+        _ladderState = new LadderState(_playerContext, _layerMask_Ladder, _ladderCoolDown);
         _attackFlow = new PlayerAttackFlow(
-            _context, _dashState, _ladderState, _comboInputStart, _comboInputEnd);
+            _playerContext, _dashState, _ladderState, _comboInputStart, _comboInputEnd);
 
         _stateMachine = new PlayerStateMachine();
-        _stateMachine.RegisterState(PlayerState.Idle, new IdleState(_context));
-        _stateMachine.RegisterState(PlayerState.Walk, new WalkState(_context));
-        _stateMachine.RegisterState(PlayerState.Run, new RunState(_context));
-        _stateMachine.RegisterState(PlayerState.Crouch, new CrouchState(_context, _crouchVisualOffsetY));
-        _stateMachine.RegisterState(PlayerState.Block, new BlockState(_context));
-        _stateMachine.RegisterState(PlayerState.Jump, new JumpState(_context));
-        _stateMachine.RegisterState(PlayerState.Fall, new FallState(_context));
+        _stateMachine.RegisterState(PlayerState.Idle, new IdleState(_playerContext));
+        _stateMachine.RegisterState(PlayerState.Walk, new WalkState(_playerContext));
+        _stateMachine.RegisterState(PlayerState.Run, new RunState(_playerContext));
+        _stateMachine.RegisterState(PlayerState.Crouch, new CrouchState(_playerContext, _crouchVisualOffsetY));
+        _stateMachine.RegisterState(PlayerState.Block, new BlockState(_playerContext));
+        _stateMachine.RegisterState(PlayerState.Jump, new JumpState(_playerContext));
+        _stateMachine.RegisterState(PlayerState.Fall, new FallState(_playerContext));
         _stateMachine.RegisterState(PlayerState.Dash, _dashState);
         _stateMachine.RegisterState(PlayerState.Ladder, _ladderState);
-        _stateMachine.RegisterState(PlayerState.ComboAttack, new ComboAttackState(_context));
-        _stateMachine.RegisterState(PlayerState.JumpAttack, new JumpAttackState(_context));
-        _stateMachine.RegisterState(PlayerState.Heal, new HealState(_context));
-        _stateMachine.RegisterState(PlayerState.Died, new DiedState(_context));
+        _stateMachine.RegisterState(PlayerState.ComboAttack, new ComboAttackState(_playerContext));
+        _stateMachine.RegisterState(PlayerState.JumpAttack, new JumpAttackState(_playerContext));
+        _stateMachine.RegisterState(PlayerState.Heal, new HealState(_playerContext));
+        _hurtState = new HurtState(
+            _playerContext,
+            _hurtKnockbackX,
+            _hurtKnockbackY,
+            _hurtMaxDuration);
+        _stateMachine.RegisterState(PlayerState.Hurt, _hurtState);
+        _stateMachine.RegisterState(PlayerState.Died, new DiedState(_playerContext));
 
         _stateMachine.ChangeStateSign(PlayerState.Idle);
     }
@@ -306,6 +346,7 @@ public class PlayerController : MonoBehaviour
         if (playerStatus != null)
         {
             playerStatus.OnDied -= HandleDied;
+            playerStatus.OnDamaged -= HandleDamaged;
         }
 
         _isSubscribedToPlayerStatus = false;
@@ -343,7 +384,7 @@ public class PlayerController : MonoBehaviour
 
         if (!wasGrounded && _isGrounded)
         {
-            _context.ResetAirActions();
+            _playerContext.ResetAirActions();
         }
     }
 
@@ -351,6 +392,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerHealSkill.IsSkillActive ||
             _isDashing ||
+            _stateMachine.CurrentType == PlayerState.Hurt ||
             _attackFlow.IsJumpAttack ||
             _attackFlow.IsComboAttack)
         {
@@ -362,6 +404,12 @@ public class PlayerController : MonoBehaviour
 
     private PlayerState GetNextState()
     {
+        if (_stateMachine.CurrentType == PlayerState.Hurt &&
+            !_hurtState.IsFinished)
+        {
+            return PlayerState.Hurt;
+        }
+
         if (_playerHealSkill.IsSkillActive)
         {
             return PlayerState.Heal;
@@ -394,7 +442,7 @@ public class PlayerController : MonoBehaviour
         {
             _playerInputHandler.ConsumeDashInput();
 
-            if (_dashCharge.HasCharge)
+            if (_dashCharge.HasDashCharge)
             {
                 return PlayerState.Dash;
             }
@@ -461,8 +509,95 @@ public class PlayerController : MonoBehaviour
 
         _attackFlow?.ResetFlags();
         _playerHealSkill?.Cancel();
+        StopHurtOverlay();
 
         _stateMachine.ChangeStateSign(PlayerState.Died);
+    }
+
+    private void HandleDamaged(
+        Vector2? damageSourcePosition,
+        Vector2? knockbackVelocity)
+    {
+        if (_stateMachine == null || IsDiedState)
+        {
+            return;
+        }
+
+        if (_isDashing || _playerGuardedAttackSkill.IsSkillActive)
+        {
+            return;
+        }
+
+        if (_playerHealSkill.IsSkillActive ||
+            _stateMachine.CurrentType == PlayerState.Heal)
+        {
+            PlayHurtOverlay();
+            return;
+        }
+
+        if (knockbackVelocity.HasValue)
+        {
+            _hurtState.SetKnockbackVelocity(knockbackVelocity.Value);
+        }
+        else
+        {
+            float knockbackDirection = -_playerContext.Facing;
+            if (damageSourcePosition.HasValue)
+            {
+                float sourceDeltaX =
+                    _rigidbody2D_Player.position.x - damageSourcePosition.Value.x;
+
+                if (!Mathf.Approximately(sourceDeltaX, 0f))
+                {
+                    knockbackDirection = Mathf.Sign(sourceDeltaX);
+                }
+            }
+
+            _hurtState.SetKnockbackDirection(knockbackDirection);
+        }
+
+        if (_stateMachine.CurrentType == PlayerState.Hurt)
+        {
+            _hurtState.ApplyKnockback();
+            return;
+        }
+
+        _attackFlow.ResetFlags();
+        _animator_Player.ResetTrigger("ComboAttack");
+        _animator_Player.ResetTrigger("JumpAttack");
+        _stateMachine.ChangeStateSign(PlayerState.Hurt);
+    }
+
+    private void PlayHurtOverlay()
+    {
+        if (_hurtOverlayLayerIndex < 0)
+        {
+            return;
+        }
+
+        _isHurtOverlayActive = true;
+        _hurtOverlayEndTime =
+            Time.time + _hurtOverlayDuration;
+        _animator_Player.SetLayerWeight(_hurtOverlayLayerIndex, 1f);
+        _animator_Player.Play("PlayerAnim_HurtOverlay", _hurtOverlayLayerIndex, 0f);
+    }
+
+    private void UpdateHurtOverlay()
+    {
+        if (_isHurtOverlayActive &&
+            Time.time >= _hurtOverlayEndTime)
+        {
+            StopHurtOverlay();
+        }
+    }
+
+    private void StopHurtOverlay()
+    {
+        _isHurtOverlayActive = false;
+        if (_hurtOverlayLayerIndex >= 0 && _animator_Player != null)
+        {
+            _animator_Player.SetLayerWeight(_hurtOverlayLayerIndex, 0f);
+        }
     }
 
     private static bool IsGroundedSkillState(PlayerState state)
@@ -471,6 +606,17 @@ public class PlayerController : MonoBehaviour
                state == PlayerState.Walk ||
                state == PlayerState.Run ||
                state == PlayerState.Crouch;
+    }
+
+    public void SetDoubleJumpUnlocked(bool unlocked)
+    {
+        if (_playerContext == null)
+        {
+            Logger.LogError("PlayerStateContext가 null입니다.");
+            return;
+        }
+
+        _playerContext.IsDoubleJumpUnlocked = unlocked;
     }
 
     private void UpdateAnimatorParameters()
@@ -487,7 +633,7 @@ public class PlayerController : MonoBehaviour
             0.08f,
             Time.fixedDeltaTime);
 
-        _animator_Player.SetBool("IsGrounded", _context.IsGrounded);
+        _animator_Player.SetBool("IsGrounded", _playerContext.IsGrounded);
         _animator_Player.SetBool("IsCrouching", isCrouching);
         _animator_Player.SetBool("IsLadder", _ladderState.IsClimbing);
         _animator_Player.SetFloat("LadderDirection", _ladderState.Direction);

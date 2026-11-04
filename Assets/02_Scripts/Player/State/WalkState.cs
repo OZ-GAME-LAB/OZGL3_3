@@ -1,9 +1,9 @@
 ﻿public class WalkState : GroundMoveState
 {
-    public WalkState(PlayerStateContext ctx) : base(ctx) { }
+    public WalkState(PlayerStateContext playerContext) : base(playerContext) { }
 
     protected override float GetTargetSpeed()
     {
-        return Ctx.Input.MoveInput * PlayerStatSet.Instance.WalkSpeed;
+        return PlayerContext.Input.MoveInput * PlayerStatSet.Instance.WalkSpeed;
     }
 }

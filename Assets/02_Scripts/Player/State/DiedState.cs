@@ -1,13 +1,13 @@
 ﻿public class DiedState : PlayerStateBase
 {
-    public DiedState(PlayerStateContext ctx) : base(ctx) { }
+    public DiedState(PlayerStateContext playerContext) : base(playerContext) { }
 
     public override void StateEnter()
     {
-        Ctx.Input.ClearInput();
-        Ctx.Rigidbody.linearVelocity = UnityEngine.Vector2.zero;
-        Ctx.Animator.SetBool("ComboAttackSign", false);
-        Ctx.Animator.ResetTrigger("JumpAttack");
-        Ctx.Animator.SetBool("IsDead", true);
+        PlayerContext.Input.ClearInput();
+        PlayerContext.Rigidbody.linearVelocity = UnityEngine.Vector2.zero;
+        PlayerContext.Animator.SetBool("ComboAttackSign", false);
+        PlayerContext.Animator.ResetTrigger("JumpAttack");
+        PlayerContext.Animator.SetBool("IsDead", true);
     }
 }
