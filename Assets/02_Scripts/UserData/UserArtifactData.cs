@@ -14,11 +14,18 @@ public class UserArtifactData : IUserData
     [SerializeField] private List<string> _equippedArtifactIds = new();
     [SerializeField] private bool _isOverloadUnlocked;
 
-    private readonly string _path;
+    private string _path;
+
+    public event Action OnSaved;
 
     public UserArtifactData(string saveDirectory)
     {
-        _path = Path.Combine(saveDirectory, "ArtifactData.json");
+        SetSaveDirectory(saveDirectory);
+    }
+
+    public void SetSaveDirectory(string saveDirectory)
+    {
+        _path = saveDirectory == null ? null : Path.Combine(saveDirectory, "ArtifactData.json");
     }
 
     public void SetDefaultData()
@@ -50,10 +57,16 @@ public class UserArtifactData : IUserData
 
     public bool SaveData()
     {
+        if (_path == null)
+        {
+            return false;
+        }
+
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(_path)));
             File.WriteAllText(_path, JsonUtility.ToJson(this, true));
+            OnSaved?.Invoke();
             return true;
         }
         catch (Exception exception)
