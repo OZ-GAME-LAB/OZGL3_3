@@ -8,6 +8,7 @@ public class PauseUI : UIBase
 
     private void OnEnable()
     {
+        GameManager.UserData.EndPlaySession();
         Time.timeScale = 0f;
 
         Button_ReStart.BindOnClickButtonEvent(OnClickReStart);
@@ -18,6 +19,10 @@ public class PauseUI : UIBase
     private void OnDisable()
     {
         Time.timeScale = 1f;
+        if (!UIManager.Instance.IsOpenUI(UIType.GameStartUI))
+        {
+            GameManager.UserData.BeginPlaySession();
+        }
 
         Button_ReStart.UnBindAllOnClickButtonEvent();
         Button_Setting.UnBindAllOnClickButtonEvent();
@@ -36,7 +41,14 @@ public class PauseUI : UIBase
 
     private void OnClickQuit()
     {
-        UIManager.Instance.ClosePauseUI();
+        if (GameManager.UserData.CurrentSlot >= 0 && !GameManager.UserData.SaveAllUserData())
+        {
+            SimplePopup popup = UIManager.Instance.OpenPopupUI(UIType.SimplePopupUI) as SimplePopup;
+            popup?.Init("저장하지 못했습니다. 다시 시도해 주세요.");
+            return;
+        }
+
         UIManager.Instance.OpenGameStartUI();
+        UIManager.Instance.ClosePauseUI();
     }
 }
