@@ -8,6 +8,7 @@ public class GameStartUI : UIBase
 
     private void OnEnable()
     {
+        GameManager.UserData.EndPlaySession();
         Button_Start.BindOnClickButtonEvent(OnClickStart);
         Button_Setting.BindOnClickButtonEvent(OnClickSetting);
         Button_Exit.BindOnClickButtonEvent(OnClickExit);

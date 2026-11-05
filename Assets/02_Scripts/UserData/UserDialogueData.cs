@@ -16,11 +16,18 @@ public class UserDialogueData : IUserData
     [SerializeField] private List<string> _events = new();
     [SerializeField] private List<string> _completedDialogueGroupIds = new();
 
-    private readonly string _path;
+    private string _path;
+
+    public event Action OnSaved;
 
     public UserDialogueData(string saveDirectory)
     {
-        _path = Path.Combine(saveDirectory, "DialogueData.json");
+        SetSaveDirectory(saveDirectory);
+    }
+
+    public void SetSaveDirectory(string saveDirectory)
+    {
+        _path = saveDirectory == null ? null : Path.Combine(saveDirectory, "DialogueData.json");
     }
 
     public void SetDefaultData()
@@ -77,10 +84,16 @@ public class UserDialogueData : IUserData
 
     public bool SaveData()
     {
+        if (_path == null)
+        {
+            return false;
+        }
+
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(_path)));
             File.WriteAllText(_path, JsonUtility.ToJson(this, true));
+            OnSaved?.Invoke();
             return true;
         }
         catch (Exception exception)

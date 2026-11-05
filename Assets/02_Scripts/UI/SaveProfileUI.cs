@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SaveProfileUI : UIBase
 {
-    private const int _slotCount = 3;   // TODO: UserDataManager.SlotCount가 생기면 교체
-
     [SerializeField] private SaveSlot _slotPrefab;     // Project 창의 SaveSlot 프리팹
     [SerializeField] private Transform _slotRoot;      // SaveSlotRoot
-    [SerializeField] private UIButton Button_Close;
+    [FormerlySerializedAs("Button_Close")]
+    [SerializeField] private UIButton _closeButton;
 
     private readonly List<SaveSlot> _slots = new();
     private int _pendingDeleteSlot;
 
     private void OnEnable()
     {
-        Button_Close.BindOnClickButtonEvent(OnClickClose);
+        _closeButton.BindOnClickButtonEvent(OnClickClose);
         CreateSlots();
         Refresh();
     }
 
     private void OnDisable()
     {
-        Button_Close.UnBindAllOnClickButtonEvent();
+        _closeButton.UnBindAllOnClickButtonEvent();
     }
 
     // 처음 한 번만 만든다. UI는 파괴되지 않고 껐다 켜지므로 이후에는 재사용한다.
@@ -39,7 +39,7 @@ public class SaveProfileUI : UIBase
             return;
         }
 
-        for (int i = 0; i < _slotCount; i++)
+        for (int i = 0; i < UserDataManager.SlotCount; i++)
         {
             SaveSlot slot = Instantiate(_slotPrefab, _slotRoot, false);
             slot.name = $"SaveSlot_{i}";
@@ -61,50 +61,29 @@ public class SaveProfileUI : UIBase
 
     private SaveSlotInfo GetSlotInfo(int slot)
     {
-        DateTime? time = GameManager.UserData.GetSaveTime(slot);
+        UserSlotMetaData.Slot meta = GameManager.UserData.GetSlotMeta(slot);
+        if (meta == null)
+        {
+            return new SaveSlotInfo { Currency = "-", PlayTime = "-", CreatedAt = "읽기 실패" };
+        }
 
-        // TODO(강혜창): GetSlotSummary(slot)가 생기면 Stage/Currency를 실제 값으로 교체
-        //               Stage = GetStageName(summary.StoryStage), Currency = summary.Currency.ToString("N0")
+        TimeSpan playTime = TimeSpan.FromSeconds(meta.PlayTimeSeconds);
         return new SaveSlotInfo
         {
-            Stage = "-",
-            Currency = "-",
-            SavedTime = time.HasValue ? time.Value.ToString("yyyy-MM-dd HH:mm") : "-"
-        };
-    }
-
-    // StoryStage 값 → 표시 이름 (실제 표기는 기획과 확인, 데이터화는 나중에)
-    private static string GetStageName(int storyStage)
-    {
-        return storyStage switch
-        {
-            0 => "프롤로그",
-            1 => "챕터 1: 메마른 숲",
-            2 => "챕터 2: 오래된 유적",
-            3 => "플레이 구간 완료",
-            _ => "-"
+            Currency = meta.Currency.ToString("N0"),
+            PlayTime = $"{(long)playTime.TotalHours:D2}:{playTime.Minutes:D2}:{playTime.Seconds:D2}",
+            CreatedAt = meta.CreatedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")
         };
     }
 
     private void OnClickSlotStart(int slot)
     {
         UserDataManager userData = GameManager.UserData;
-        bool hasSave = userData.HasSave(slot);
-
-        userData.SelectSlot(slot);
-
-        if (hasSave == true)
+        bool success = userData.HasSave(slot) ? userData.SelectSlot(slot) : userData.CreateSlot(slot);
+        if (!success)
         {
-            if (userData.LoadAllUserData() == false)
-            {
-                // TODO(강혜창): 불러오기 실패 알림(SimplePopup)
-                return;
-            }
-        }
-        else
-        {
-            userData.SetAllDefaultUserData();
-            userData.SaveAllUserData();
+            ShowError("슬롯을 불러오거나 생성하지 못했습니다.");
+            return;
         }
 
         StartGame();
@@ -120,12 +99,17 @@ public class SaveProfileUI : UIBase
 
     private void DeleteSelectedSlot()
     {
-        GameManager.UserData.DeleteSlot(_pendingDeleteSlot);
+        if (!GameManager.UserData.DeleteSlot(_pendingDeleteSlot))
+        {
+            ShowError("슬롯을 삭제하지 못했습니다.");
+        }
+
         Refresh();
     }
 
     private void StartGame()
     {
+        GameManager.UserData.BeginPlaySession();
         UIManager.Instance.CloseSaveSlotUI();
         UIManager.Instance.CloseGameStartUI();
         UIManager.Instance.OpenMainHUD();
@@ -136,5 +120,11 @@ public class SaveProfileUI : UIBase
     private void OnClickClose()
     {
         UIManager.Instance.CloseSaveSlotUI();
+    }
+
+    private void ShowError(string message)
+    {
+        SimplePopup popup = UIManager.Instance.OpenPopupUI(UIType.SimplePopupUI) as SimplePopup;
+        popup?.Init(message);
     }
 }

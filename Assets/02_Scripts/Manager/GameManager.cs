@@ -17,6 +17,7 @@ public class GameManager : SingletonBehaviour<GameManager>
     private UserDataManager _userDataManager = new();
     private NpcManager _npcManager;
     private NpcController _npcController;
+    private bool _resumePlaySession;
 
     #endregion
 
@@ -30,13 +31,39 @@ public class GameManager : SingletonBehaviour<GameManager>
 
         _dataTable.LoadAllData();
         _userDataManager.Init();
-        _userDataManager.LoadAllUserData();
         _npcManager = new NpcManager(_dataTable, _userDataManager);
         _npcController = gameObject.AddComponent<NpcController>();
         _npcController.Init(_npcManager);
         _soundManager.Init(gameObject);
 
         _soundManager.PlayBGM(Const.Audio.TITLE);
+    }
+
+    private void OnApplicationPause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            _resumePlaySession = _userDataManager.IsPlaySessionActive;
+            _userDataManager.EndPlaySession();
+            if (_userDataManager.CurrentSlot >= 0)
+            {
+                _userDataManager.SaveAllUserData();
+            }
+        }
+        else if (_resumePlaySession)
+        {
+            _userDataManager.BeginPlaySession();
+            _resumePlaySession = false;
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        _userDataManager.EndPlaySession();
+        if (_userDataManager.CurrentSlot >= 0)
+        {
+            _userDataManager.SaveAllUserData();
+        }
     }
 
     private void OnDestroy()
