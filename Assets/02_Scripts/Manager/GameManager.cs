@@ -35,6 +35,8 @@ public class GameManager : SingletonBehaviour<GameManager>
         _npcController = gameObject.AddComponent<NpcController>();
         _npcController.Init(_npcManager);
         _soundManager.Init(gameObject);
+
+        _soundManager.PlayBGM(Const.Audio.TITLE);
     }
 
     private void OnDestroy()
