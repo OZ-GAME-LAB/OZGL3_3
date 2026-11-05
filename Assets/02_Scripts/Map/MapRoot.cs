@@ -18,11 +18,15 @@ public class MapRoot : MonoBehaviour
             return true;
         }
 
+        // 몬스터 스폰
+        MonsterSpawnManager.Instance.RequestDestroyAllEntityObject();
+
         // 목적지 맵 활성화
         MapRoot_Destination.gameObject.SetActive(true);
 
         // 현재 맵 비활성화
         gameObject.SetActive(false);
+
 
         return true;
     }

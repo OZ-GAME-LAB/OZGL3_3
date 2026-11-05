@@ -1,20 +1,29 @@
-﻿using System;
+﻿
+using System;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
 [RequireComponent(typeof(Collider2D))]
 public class MapChange : MonoBehaviour
 {
-    private const string STRING_PLAYER_TAG = "Player";
+    private const string PLAYER_TAG = "Player";
 
     private static bool _isTransitioning;
+
+    public event Action OnBeforeMapChange;
+    public event Action OnAfterMapChange;
+
+    [Header("Portal Settings")]
+    [SerializeField] private MapPortalType Enum_PortalType = MapPortalType.Contact;
 
     [Header("Destination")]
     [SerializeField] private Transform Transform_DestinationPoint;
 
     [Header("Fade Settings")]
     [SerializeField, Min(0f)] private float Float_FadeDuration = 0.5f;
-    [SerializeField, Min(0f)] private float Float_TransitionCooldown = 0.5f;
+    [SerializeField, Min(0f)] private float Float_PortalCooldown = 0.5f;
+
+    private Transform _transformPlayer;
 
     private void Awake()
     {
@@ -28,84 +37,114 @@ public class MapChange : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D Collider2D_Other)
+    private void OnTriggerEnter2D(Collider2D collider2DOther)
     {
-        if (_isTransitioning)
-        {
-            return;
-        }
-
         if (!TryGetPlayerTransform(
-                Collider2D_Other,
-                out Transform Transform_Player))
+                collider2DOther,
+                out Transform transformPlayer))
         {
             return;
         }
 
-        if (Transform_DestinationPoint == null)
+        _transformPlayer = transformPlayer;
+
+        if (Enum_PortalType == MapPortalType.Contact)
+        {
+            DoStartMapChange(transformPlayer);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider2DOther)
+    {
+        if (!TryGetPlayerTransform(
+                collider2DOther,
+                out Transform transformPlayer))
+        {
+            return;
+        }
+
+        if (_transformPlayer == transformPlayer)
+        {
+            _transformPlayer = null;
+        }
+    }
+
+    public void DoInteractMapChange()
+    {
+        if (Enum_PortalType != MapPortalType.Interaction ||
+            _transformPlayer == null)
+        {
+            return;
+        }
+
+        DoStartMapChange(_transformPlayer);
+    }
+
+    private void DoStartMapChange(Transform transformPlayer)
+    {
+        if (_isTransitioning ||
+            Transform_DestinationPoint == null)
         {
             return;
         }
 
         _isTransitioning = true;
-        DoChangeMapAsync(Transform_Player).Forget();
+        DoChangeMapAsync(transformPlayer).Forget();
     }
 
     private async UniTaskVoid DoChangeMapAsync(
-        Transform Transform_Player)
+        Transform transformPlayer)
     {
         try
         {
-            // 현재 맵과 목적지 맵 검색
-            MapRoot MapRoot_Current =
+            MapRoot mapRootCurrent =
                 GetComponentInParent<MapRoot>(true);
 
-            MapRoot MapRoot_Destination =
+            MapRoot mapRootDestination =
                 Transform_DestinationPoint
                     .GetComponentInParent<MapRoot>(true);
 
-            if (MapRoot_Current == null ||
-                MapRoot_Destination == null)
+            if (mapRootCurrent == null ||
+                mapRootDestination == null)
             {
                 Logger.LogWarning(
-                    "MapChange: 현재 맵 또는 목적지 맵의 MapRoot를 찾을 수 없습니다.");
-
+                    "MapChange: MapRoot를 찾을 수 없습니다.");
                 return;
             }
 
-            // 페이드 UI 실행
             if (UIManager.Instance == null)
             {
                 Logger.LogWarning(
                     "MapChange: UIManager를 찾을 수 없습니다.");
-
                 return;
             }
 
+            Logger.Log("MapChange: OnBeforeMapChange 호출");
+            OnBeforeMapChange?.Invoke();
+
             UIManager.Instance.OpenFadeUI();
 
-            // 페이드 애니메이션 시간만큼 대기
             await UniTask.Delay(
                 TimeSpan.FromSeconds(Float_FadeDuration));
 
-            if (Transform_Player == null ||
+            if (transformPlayer == null ||
                 Transform_DestinationPoint == null)
             {
                 return;
             }
 
-            // 목적지 위치로 플레이어 이동
-            DoMovePlayer(Transform_Player);
+            DoMovePlayer(transformPlayer);
 
-            // MapRoot에 맵 전환 요청
-            if (!MapRoot_Current.DoSwitchMap(MapRoot_Destination))
+            if (!mapRootCurrent.DoSwitchMap(mapRootDestination))
             {
                 return;
             }
 
-            // 연속 맵 전환 방지
+            Logger.Log("MapChange: OnAfterMapChange 호출");
+            OnAfterMapChange?.Invoke();
+
             await UniTask.Delay(
-                TimeSpan.FromSeconds(Float_TransitionCooldown));
+                TimeSpan.FromSeconds(Float_PortalCooldown));
         }
         finally
         {
@@ -114,50 +153,49 @@ public class MapChange : MonoBehaviour
     }
 
     private bool TryGetPlayerTransform(
-        Collider2D Collider2D_Other,
-        out Transform Transform_Player)
+        Collider2D collider2DOther,
+        out Transform transformPlayer)
     {
-        Transform_Player = null;
+        transformPlayer = null;
 
-        if (Collider2D_Other == null)
+        if (collider2DOther == null)
         {
             return false;
         }
 
-        Rigidbody2D Rigidbody2D_Other =
-            Collider2D_Other.attachedRigidbody;
+        Rigidbody2D rigidbody2DOther =
+            collider2DOther.attachedRigidbody;
 
-        Transform Transform_PlayerRoot =
-            Rigidbody2D_Other != null
-                ? Rigidbody2D_Other.transform
-                : Collider2D_Other.transform;
+        Transform transformPlayerRoot =
+            rigidbody2DOther != null
+                ? rigidbody2DOther.transform
+                : collider2DOther.transform;
 
-        if (!Collider2D_Other.CompareTag(STRING_PLAYER_TAG) &&
-            !Transform_PlayerRoot.CompareTag(STRING_PLAYER_TAG))
+        if (!collider2DOther.CompareTag(PLAYER_TAG) &&
+            !transformPlayerRoot.CompareTag(PLAYER_TAG))
         {
             return false;
         }
 
-        Transform_Player = Transform_PlayerRoot;
-
+        transformPlayer = transformPlayerRoot;
         return true;
     }
 
-    private void DoMovePlayer(Transform Transform_Player)
+    private void DoMovePlayer(Transform transformPlayer)
     {
-        Rigidbody2D Rigidbody2D_Player =
-            Transform_Player.GetComponent<Rigidbody2D>();
+        Rigidbody2D rigidbody2DPlayer =
+            transformPlayer.GetComponent<Rigidbody2D>();
 
-        if (Rigidbody2D_Player != null)
+        if (rigidbody2DPlayer != null)
         {
-            Rigidbody2D_Player.position =
+            rigidbody2DPlayer.position =
                 Transform_DestinationPoint.position;
 
-            Rigidbody2D_Player.linearVelocity = Vector2.zero;
+            rigidbody2DPlayer.linearVelocity = Vector2.zero;
         }
         else
         {
-            Transform_Player.position =
+            transformPlayer.position =
                 Transform_DestinationPoint.position;
         }
     }

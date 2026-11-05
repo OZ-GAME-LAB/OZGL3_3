@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -28,11 +29,11 @@ public class StealthSkill : MonoBehaviour
     }
 
     public void OnEnterStealthSkillAnimation()
-    {//[TODO] 바로 스킬 사용하지 못하도록 수정
+    {
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 0f);
 
         _monsterBase._isAttackUseable = false;
-        _monsterBase._isHit = true;
+        _monsterBase._isUsingStealthSkill = true;
 
         StartCoroutine(CoStealthAttack());
     }
@@ -43,10 +44,52 @@ public class StealthSkill : MonoBehaviour
         yield return new WaitForSeconds(randomAttackTime);
         if (_monsterBase._playerTransform != null)
         {
-            transform.position = _monsterBase._playerTransform.position;
+            Vector3 targetPosition = _monsterBase._playerTransform.position;
+
+            LayerMask groundLayer = LayerMask.GetMask("Ground");
+
+            RaycastHit2D hit = Physics2D.Raycast(targetPosition, Vector2.down, 10f, groundLayer);
+
+            if (hit.collider != null)
+            {
+                targetPosition = hit.point;
+            }
+            else
+            {
+                Vector3 safePosition = FindNearestGroundedPosition(targetPosition, groundLayer);
+                if (safePosition != Vector3.zero)
+                {
+                    targetPosition = safePosition;
+                }
+                else
+                {
+                    targetPosition = transform.position;
+                }
+            }
+
+            transform.position = targetPosition;
         }
 
         ExitStealth();
+    }
+
+    private Vector3 FindNearestGroundedPosition(Vector3 centerPos, LayerMask groundLayer)
+    {
+        float[] testOffsets = { -2f, 2f, -4f, 4f };
+
+        foreach (float offset in testOffsets)
+        {
+            Vector3 checkPos = centerPos + new Vector3(offset, 2f, 0f);
+            RaycastHit2D hit = Physics2D.Raycast(checkPos, Vector2.down, 10f, groundLayer);
+
+            if (hit.collider != null)
+            {
+                Vector3 targetTransform = hit.point + new Vector2(0, 1);
+                return targetTransform;
+            }
+        }
+
+        return Vector3.zero;
     }
 
     private void ExitStealth()
@@ -54,6 +97,6 @@ public class StealthSkill : MonoBehaviour
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1f);
         AnimController_NormalMonster.ChangeState(MonsterState.Skill_2);
         _monsterBase._isAttackUseable = true;
-        _monsterBase._isHit = false;
+        _monsterBase._isUsingStealthSkill = false;
     }
 }

@@ -13,5 +13,6 @@
     JumpAttack,
     GuardedAttack,
     Heal,
+    Hurt,
     Died
 }

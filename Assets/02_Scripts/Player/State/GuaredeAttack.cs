@@ -2,7 +2,7 @@
 
 public class GuaredeAttack : PlayerStateBase
 {
-    public GuaredeAttack(PlayerStateContext ctx) : base(ctx)
+    public GuaredeAttack(PlayerStateContext playerContext) : base(playerContext)
     {
     }
 

@@ -9,6 +9,7 @@ public class PlayerCombatHandler : MonoBehaviour
     [SerializeField] private Vector2 _rangeSize = new Vector2(1.2f, 0.9f);
 
     private Rigidbody2D _rigidbody2D_Player;
+    private PlayerStatus _status_Player;
 
     private readonly List<Collider2D> _overlapColliders = new List<Collider2D>();
     private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
@@ -26,6 +27,11 @@ public class PlayerCombatHandler : MonoBehaviour
         if (_spriteRenderer_Player == null)
         {
             _spriteRenderer_Player = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        if (_status_Player == null)
+        {
+            _status_Player = GetComponentInChildren<PlayerStatus>();
         }
     }
 
@@ -82,7 +88,7 @@ public class PlayerCombatHandler : MonoBehaviour
 
         foreach (Collider2D targetCollider in _targetsInRange)
         {
-            NormalMonster monster = targetCollider.GetComponentInParent<NormalMonster>();
+            NormalMonster monster = targetCollider.GetComponent<NormalMonster>();
             if (monster == null || !_damagedMonsters.Add(monster))
             {
                 continue;
@@ -97,6 +103,7 @@ public class PlayerCombatHandler : MonoBehaviour
     public void AnimationAttackHit()
     {
         ApplyAttackDamage(_attackDamage);
+        _status_Player.AddSkillGauge(5);
     }
 
     private bool HasTargetTagInParents(Transform targetTransform)
