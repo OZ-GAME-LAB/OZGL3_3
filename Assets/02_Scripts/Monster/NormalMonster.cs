@@ -17,6 +17,8 @@ public class NormalMonster : MonsterBase
     [Header("Anim Settings")]
     [SerializeField] private MonsterAnimatorController AnimController_NormalMonster;
 
+    private float _flipCooldown = 0.5f;
+    private float _flipCooldownTimer = 0f;
     private bool _isGrounded = false;
     private bool _isBlocked = false;
     private bool _isGroundAhead = false;
@@ -42,6 +44,11 @@ public class NormalMonster : MonsterBase
     {
         if (_isDead) return;
         base.Update();
+
+        if (_flipCooldownTimer > 0f)
+        {
+            _flipCooldownTimer -= Time.deltaTime;
+        }
 
         if (_isUsingSkill)
         {
@@ -159,6 +166,9 @@ public class NormalMonster : MonsterBase
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+
+        float pushbackAmount = 1.2f;
+        transform.position += new Vector3(_isMovingRight ? pushbackAmount : -pushbackAmount, 0f, 0f);
     }
 
     private void TraceAndAttack()
@@ -283,7 +293,10 @@ public class NormalMonster : MonsterBase
         if (_playerTransform == null)
         {
             Logger.LogError("[NormalMonster] PlayerTransform이 Null 입니다.");
+            return;
         }
+
+        if (_flipCooldownTimer > 0f) return;
 
         float directionX = _playerTransform.position.x - transform.position.x;
 
@@ -295,6 +308,8 @@ public class NormalMonster : MonsterBase
         {
             _isMovingRight = isShouldMoveRight;
             Flip();
+
+            _flipCooldownTimer = _flipCooldown;
         }
     }
 
