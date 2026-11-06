@@ -28,11 +28,18 @@ public class UserInventoryData : IUserData
     public int Currency { get => _currency; set => _currency = value; }
     public IReadOnlyList<Item> Items => _items;
 
-    private readonly string _path;
+    private string _path;
+
+    public event Action OnSaved;
 
     public UserInventoryData(string saveDirectory)
     {
-        _path = Path.Combine(saveDirectory, "InventoryData.json");
+        SetSaveDirectory(saveDirectory);
+    }
+
+    public void SetSaveDirectory(string saveDirectory)
+    {
+        _path = saveDirectory == null ? null : Path.Combine(saveDirectory, "InventoryData.json");
     }
 
     public void SetDefaultData()
@@ -90,10 +97,16 @@ public class UserInventoryData : IUserData
 
     public bool SaveData()
     {
+        if (_path == null)
+        {
+            return false;
+        }
+
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(_path)));
             File.WriteAllText(_path, JsonUtility.ToJson(this, true));
+            OnSaved?.Invoke();
             return true;
         }
         catch (Exception exception)
