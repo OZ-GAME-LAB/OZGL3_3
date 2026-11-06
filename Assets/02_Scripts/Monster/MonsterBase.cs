@@ -42,7 +42,8 @@ public class MonsterBase : MonoBehaviour
     public bool _isAttackUseable = false;
     public bool _isSkillUseable = false;
     protected bool _isUsingSkill = false;
-    
+    protected bool _isTransformed = false;
+
 
     public event Action<float, float> OnHpChanged;
 
@@ -173,6 +174,8 @@ public class MonsterBase : MonoBehaviour
         }
 
         _monsterAnimController.ChangeState(MonsterState.Dead);
+        _monsterAnimController.SetTransformState(false);
+        _isTransformed = false;
         //Logger.LogError($"몬스터{this.name}가 죽었습니다.");
     }
 

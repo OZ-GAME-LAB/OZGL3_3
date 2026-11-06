@@ -16,6 +16,7 @@ public class NormalMonster : MonsterBase
 
     [Header("Anim Settings")]
     [SerializeField] private MonsterAnimatorController AnimController_NormalMonster;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private float _flipCooldown = 0.5f;
     private float _flipCooldownTimer = 0f;
@@ -26,6 +27,7 @@ public class NormalMonster : MonsterBase
     private float _checkInterval = 0.1f;
     private bool _isSpawned = false;
     private int _pendingSkillIndex = -1;
+    
 
     protected override void Awake()
     {
@@ -33,6 +35,7 @@ public class NormalMonster : MonsterBase
         _isSpawned = true;
         AnimController_NormalMonster.ChangeState(MonsterState.Spawn);
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -44,6 +47,11 @@ public class NormalMonster : MonsterBase
     {
         if (_isDead) return;
         base.Update();
+
+        if (AnimController_NormalMonster._isIdle == true || AnimController_NormalMonster._isWalk == true)
+        {
+            _spriteRenderer.transform.position = this.transform.position + new Vector3(2, 0, 0);    //[TODO] 변신몬스터 수정하기 (변신을 스킬로 두거나 해야할듯)
+        }
 
         if (_flipCooldownTimer > 0f)
         {
@@ -74,6 +82,14 @@ public class NormalMonster : MonsterBase
 
         if (_isAggro)
         {
+            if (_monsterType == MonsterType.Transform_Ground)
+            {
+                if (!_isTransformed)
+                {
+                    AnimController_NormalMonster.SetTransformState(true);
+                    _isTransformed = true;
+                }
+            }
             TraceAndAttack();
         }
         else
@@ -300,7 +316,7 @@ public class NormalMonster : MonsterBase
 
         float directionX = _playerTransform.position.x - transform.position.x;
 
-        if (Mathf.Abs(directionX) < 0.2) return;
+        if (Mathf.Abs(directionX) < 0.5) return;
 
         bool isShouldMoveRight = directionX > 0f;
 
