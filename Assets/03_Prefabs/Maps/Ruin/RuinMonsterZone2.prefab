@@ -13341,6 +13341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6779034821402065235}
   - component: {fileID: 8985821283358763001}
+  - component: {fileID: 3281955886996489368}
   m_Layer: 0
   m_Name: CameraBounds
   m_TagString: Untagged
@@ -13409,6 +13410,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 100.31897, y: 17.440834}
   m_EdgeRadius: 0
+--- !u!114 &3281955886996489368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932854841423499996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbb30f4d034c224eb7f2fc261b5ea1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaZone
+  _zoneId: 
+  _regionId: Area_RuinCorridor
+  _isShowOnce: 1
 --- !u!1 &4990243217771229956
 GameObject:
   m_ObjectHideFlags: 0

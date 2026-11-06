@@ -6184,6 +6184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8563304067948137247}
   - component: {fileID: 2423623977885285365}
+  - component: {fileID: 6780456160946040086}
   m_Layer: 0
   m_Name: CameraBounds
   m_TagString: Untagged
@@ -6252,6 +6253,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 39.528076, y: 18.29255}
   m_EdgeRadius: 0
+--- !u!114 &6780456160946040086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393164744153938840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbb30f4d034c224eb7f2fc261b5ea1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaZone
+  _zoneId: 
+  _regionId: Area_AstraForestPier
+  _isShowOnce: 1
 --- !u!1 &6575410843456891950
 GameObject:
   m_ObjectHideFlags: 0
