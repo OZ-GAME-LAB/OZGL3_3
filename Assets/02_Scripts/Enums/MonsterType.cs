@@ -7,5 +7,6 @@ public enum MonsterType
     Flying,
     Boss,
     FlyingCreature,
-    GroundCreature
+    GroundCreature,
+    Transform_Ground
 }
