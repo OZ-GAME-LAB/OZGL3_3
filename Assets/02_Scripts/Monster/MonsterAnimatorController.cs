@@ -7,6 +7,13 @@ public class MonsterAnimatorController : MonoBehaviour
     private bool _isAnimationPlaying { get; set; } = false;
 
     private MonsterState _currentAnimState;
+    public bool _isIdle = false;
+    public bool _isWalk = false;
+
+    public void SetTransformState(bool isTransformed)
+    {
+        Animator_Monster.SetBool("isTransformed", isTransformed);
+    }
     
     public void ChangeState(MonsterState newState)
     {
@@ -28,6 +35,7 @@ public class MonsterAnimatorController : MonoBehaviour
         {
             if (param.name == parameterName) return true;
         }
+        _isIdle = false;
         return false;
     }
 
@@ -44,6 +52,7 @@ public class MonsterAnimatorController : MonoBehaviour
         switch (state)
         {
             case MonsterState.Idle:
+                _isIdle = true;
                 break;
             case MonsterState.Attack_1:
                 SafeSetBool("isAttack_1", true);
@@ -70,6 +79,7 @@ public class MonsterAnimatorController : MonoBehaviour
                 SafeSetBool("isHit", true);
                 break;
             case MonsterState.Forward:
+                _isWalk = true;
                 SafeSetBool("isMoved", true);
                 break;
             case MonsterState.Dead:
@@ -80,6 +90,8 @@ public class MonsterAnimatorController : MonoBehaviour
                 break;
         }
         _isAnimationPlaying = false;
+        _isIdle = false;
+        _isWalk = false;
     }
 
     private void ResetAllAnimParameters()
@@ -95,5 +107,6 @@ public class MonsterAnimatorController : MonoBehaviour
         SafeSetBool("isMoved", false);
         SafeSetBool("isDead", false);
         SafeSetBool("isFalling", false);
+        _isWalk = false;
     }
 }
