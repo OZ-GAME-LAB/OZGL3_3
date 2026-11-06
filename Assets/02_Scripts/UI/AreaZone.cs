@@ -7,8 +7,16 @@ public class AreaZone : MonoBehaviour
     [SerializeField] private string _regionId;    // 큰 구간 ID, AreaTextTable의 Id (예: Area_AstraForest)
     [SerializeField] private bool _isShowOnce = true;
 
+    private Collider2D _colliderBounds;
+
     public string ZoneId => _zoneId;
     public string RegionId => _regionId;
+    public Collider2D ColliderBounds { get { return _colliderBounds; } }
+
+    private void Awake()
+    {
+        _colliderBounds = GetComponent<Collider2D>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
