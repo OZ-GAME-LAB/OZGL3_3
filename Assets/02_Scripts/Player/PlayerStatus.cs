@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStatus : SingletonBehaviour<PlayerStatus>
@@ -18,6 +19,8 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
     private float _blockDamageReduction = 1f;
     private SpriteRenderer _spriteRenderer_Player;
     private PlayerStatSet _playerStatSet;
+    private readonly Dictionary<string, float> _skillGaugeCostDecrease =
+        new Dictionary<string, float>();
 
     public event Action<int, int> OnHealthChanged;
     public event Action<int, int> OnSkillGaugeChanged;
@@ -181,13 +184,51 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
             return false;
         }
 
-        if (CurrentSkillGauge < amount)
+        float totalReduction = 0f;
+        foreach (float reduction in _skillGaugeCostDecrease.Values)
+        {
+            totalReduction += reduction;
+        }
+
+        totalReduction = Mathf.Clamp01(totalReduction);
+        int adjustedAmount = Mathf.CeilToInt(amount * (1f - totalReduction));
+
+        if (CurrentSkillGauge < adjustedAmount)
         {
             return false;
         }
 
-        SetSkillGauge(CurrentSkillGauge - amount);
+        SetSkillGauge(CurrentSkillGauge - adjustedAmount);
         return true;
+    }
+
+    public void SetSkillGaugeCostDecrease(string artifactId, float DecreasePercent)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
+        {
+            Logger.LogError("스킬 게이지 비용 감소의 artifactId가 비어 있습니다.");
+            return;
+        }
+
+        if (DecreasePercent <= 0f)
+        {
+            _skillGaugeCostDecrease.Remove(artifactId);
+            return;
+        }
+
+        _skillGaugeCostDecrease[artifactId] =
+            Mathf.Clamp(DecreasePercent, 0f, 1f);
+    }
+
+    public void RemoveSkillGaugeCostReduction(string artifactId)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
+        {
+            Logger.LogError("스킬 게이지 비용 감소의 artifactId가 비어 있습니다.");
+            return;
+        }
+
+        _skillGaugeCostDecrease.Remove(artifactId);
     }
 
     public void AddSkillGauge(int amount)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,6 +15,7 @@ public class PlayerController : SingletonBehaviour<PlayerController>
     [SerializeField] private Rigidbody2D _rigidbody2D_Player;
     [SerializeField] private PlayerInputHandler _playerInputHandler;
     [SerializeField] private PlayerCombatHandler _playerCombatHandler;
+    private PlayerStatus _playerStatus;
     [SerializeField] private Animator _animator_Player;
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
     [SerializeField] private Transform _transform_GroundCheck;
@@ -69,8 +70,8 @@ public class PlayerController : SingletonBehaviour<PlayerController>
     private PlayerAttackFlow _attackFlow;
     private PlayerHealSkill _playerHealSkill;
     private PlayerGuaredeAttackSkill _playerGuardedAttackSkill;
+    private float _dashCooldownDecrease;
 
-    private bool _isSubscribedToPlayerStatus;
     private bool _isCrouchActionActive;
     private bool _isHurtOverlayActive;
 
@@ -101,10 +102,24 @@ public class PlayerController : SingletonBehaviour<PlayerController>
     public event Action<int, int, bool> OnDashChargesChanged;
     public event Action<string, float> OnSkillCooldownStarted;
     public event Action<string> OnSkillCooldownEnded;
+    public event Action OnCrouchStarted;
+
+    public void SetDashCooldownDecrease(float decreasePercent)
+    {
+        _dashCooldownDecrease = Mathf.Max(0f, decreasePercent);
+        UpdateDashArtifactModifiers();
+    }
+
+    public void RemoveDashCooldownDecrease()
+    {
+        _dashCooldownDecrease = 0f;
+        UpdateDashArtifactModifiers();
+    }
 
     private void Awake()
     {
         _playerCollider = GetComponent<CapsuleCollider2D>();
+        _playerStatus = GetComponent<PlayerStatus>();
 
         if (_rigidbody2D_Player == null)
         {
@@ -171,14 +186,19 @@ public class PlayerController : SingletonBehaviour<PlayerController>
 
     private void OnEnable()
     {
-        //TODO(이주헌): 시점정리 전 임시
-        TrySubscribeToPlayerStatus();
-    }
+        if (_playerStatus == null)
+        {
+            Logger.LogError("PlayerController: PlayerStatus를 찾을 수 없습니다.");
+            return;
+        }
 
-    private void Start()
-    {
-        //TODO(이주헌): 시점정리 전 임시
-        TrySubscribeToPlayerStatus();
+        _playerStatus.OnDied += HandleDied;
+        _playerStatus.OnDamaged += HandleDamaged;
+
+        if (_playerStatus.IsDead)
+        {
+            HandleDied();
+        }
     }
 
     private void Update()
@@ -257,6 +277,12 @@ public class PlayerController : SingletonBehaviour<PlayerController>
 
         PlayerState currentState = _stateMachine.CurrentType;
         PlayerState nextState = GetNextState();
+        if (currentState != PlayerState.Crouch &&
+            nextState == PlayerState.Crouch)
+        {
+            OnCrouchStarted?.Invoke();
+        }
+
         if (currentState == PlayerState.Crouch &&
             nextState != PlayerState.Crouch &&
             _isCrouchActionActive)
@@ -375,30 +401,10 @@ public class PlayerController : SingletonBehaviour<PlayerController>
             _stateMachine.ChangeStateSign(PlayerState.Idle);
         }
 
-        //TODO(이주헌): 시점정리 전 임시
-        UnsubscribeFromPlayerStatus();
-    }
-    //TODO(이주헌): 시점정리 전 임시
-    private void TrySubscribeToPlayerStatus()
-    {
-        if (_isSubscribedToPlayerStatus)
+        if (_playerStatus != null)
         {
-            return;
-        }
-
-        if (PlayerStatus.Instance == null)
-        {
-            Logger.LogWarning("PlayerStatus 인스턴스가 아직 준비되지 않았습니다.");
-            return;
-        }
-
-        PlayerStatus.Instance.OnDied += HandleDied;
-        PlayerStatus.Instance.OnDamaged += HandleDamaged;
-        _isSubscribedToPlayerStatus = true;
-
-        if (PlayerStatus.Instance.IsDead)
-        {
-            HandleDied();
+            _playerStatus.OnDied -= HandleDied;
+            _playerStatus.OnDamaged -= HandleDamaged;
         }
     }
     private void InitializeStateMachine()
@@ -416,6 +422,7 @@ public class PlayerController : SingletonBehaviour<PlayerController>
             OnDashChargesChanged?.Invoke(current, max, wasUsed);
 
         _dashState = new DashState(_playerContext, _dashCharge, _dashDistance, _dashDuration);
+        UpdateDashArtifactModifiers();
         _ladderState = new LadderState(_playerContext, _layerMask_Ladder, _ladderCoolDown);
         _attackFlow = new PlayerAttackFlow(
             _playerContext, _dashState, _ladderState, _comboInputStart, _comboInputEnd);
@@ -446,23 +453,13 @@ public class PlayerController : SingletonBehaviour<PlayerController>
         _stateMachine.ChangeStateSign(PlayerState.Idle);
     }
 
-    //TODO(이주헌): 시점정리 전 임시
-    private void UnsubscribeFromPlayerStatus()
+    private void UpdateDashArtifactModifiers()
     {
-        if (!_isSubscribedToPlayerStatus)
+        if (_dashCharge != null)
         {
-            return;
+            _dashCharge.SetCoolDuration(
+                _dashCoolDuration * (1f - Mathf.Clamp01(_dashCooldownDecrease)));
         }
-
-        PlayerStatus playerStatus = PlayerStatus.Instance;
-
-        if (playerStatus != null)
-        {
-            playerStatus.OnDied -= HandleDied;
-            playerStatus.OnDamaged -= HandleDamaged;
-        }
-
-        _isSubscribedToPlayerStatus = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

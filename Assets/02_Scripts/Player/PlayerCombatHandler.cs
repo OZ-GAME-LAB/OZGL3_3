@@ -10,11 +10,12 @@ public class PlayerCombatHandler : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D_Player;
     private PlayerStatus _status_Player;
+    private readonly Dictionary<string, int> _attackSkillGaugeGainBonuses =
+        new Dictionary<string, int>();
 
     private readonly List<Collider2D> _overlapColliders = new List<Collider2D>();
     private readonly List<Collider2D> _targetsInRange = new List<Collider2D>();
     private readonly HashSet<NormalMonster> _damagedMonsters = new HashSet<NormalMonster>();
-
     private int _attackDamage => PlayerStatSet.Instance.AttackDamage;
 
     private void Awake()
@@ -103,7 +104,42 @@ public class PlayerCombatHandler : MonoBehaviour
     public void AnimationAttackHit()
     {
         ApplyAttackDamage(_attackDamage);
-        _status_Player.AddSkillGauge(5);
+        int bonus = 0;
+        foreach (int value in _attackSkillGaugeGainBonuses.Values)
+        {
+            bonus += value;
+        }
+
+        _status_Player.AddSkillGauge(Mathf.Max(1, 5 + bonus));
+    }
+
+    public void SetAttackSkillGaugeGainBonus(string artifactId, int bonus)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
+        {
+            Logger.LogError("공격 시 게이지 증가 보너스의 artifactId가 비어 있습니다.");
+            return;
+        }
+
+        if (bonus == 0)
+        {
+            _attackSkillGaugeGainBonuses.Remove(artifactId);
+        }
+        else
+        {
+            _attackSkillGaugeGainBonuses[artifactId] = bonus;
+        }
+    }
+
+    public void RemoveAttackSkillGaugeGainBonus(string artifactId)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
+        {
+            Logger.LogError("공격 시 게이지 증가 보너스의 artifactId가 비어 있습니다.");
+            return;
+        }
+
+        _attackSkillGaugeGainBonuses.Remove(artifactId);
     }
 
     private bool HasTargetTagInParents(Transform targetTransform)
