@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,31 +9,30 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStatSet))]
 [RequireComponent(typeof(PlayerArtifactEquipment))]
 [RequireComponent(typeof(CapsuleCollider2D))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : SingletonBehaviour<PlayerController>
 {
     [Header("Core")]
     [SerializeField] private Rigidbody2D _rigidbody2D_Player;
     [SerializeField] private PlayerInputHandler _playerInputHandler;
     [SerializeField] private PlayerCombatHandler _playerCombatHandler;
+    private PlayerStatus _playerStatus;
     [SerializeField] private Animator _animator_Player;
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
     [SerializeField] private Transform _transform_GroundCheck;
     [SerializeField] private LayerMask _layerMask_Ground;
     [SerializeField] private LayerMask _layerMask_Ladder;
-    private PlayerStateMachine _stateMachine;
-    private PlayerStateContext _playerContext;
+    [SerializeField] private PlayerStateMachine _stateMachine;
+    [SerializeField] private PlayerStateContext _playerContext;
+    [SerializeField] private CapsuleCollider2D _playerCollider;
+
 
     [Header("Visual")]
     [SerializeField] private PlayerVisualOffset _visualOffset;
     [SerializeField, Min(0f)] private float _crouchCooldown = 2f;
     [SerializeField] private float _crouchColliderOffsetY = -0.3f;
     [SerializeField, Min(0.01f)] private float _crouchColliderHeight = 0.7f;
-    private CapsuleCollider2D _playerCollider;
-    private bool _isCrouchActionActive;
-    private float _crouchReadyTime;
 
-    private float _healSkillCooldownEndTime;
-    private float _guardedAttackSkillCooldownEndTime;
+
 
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.2f;
@@ -64,17 +63,26 @@ public class PlayerController : MonoBehaviour
     public float HealSkillCooldownRemaining => Mathf.Max(0f, _healSkillCooldownEndTime - Time.time);
     public float GuardedAttackSkillCooldownRemaining => Mathf.Max(0f, _guardedAttackSkillCooldownEndTime - Time.time);
 
-    private bool _isSubscribedToPlayerStatus;
-
     private PlayerDashCharge _dashCharge;
     private DashState _dashState;
     private HurtState _hurtState;
-    private int _hurtOverlayLayerIndex = -1;
-    private float _hurtOverlayEndTime;
+    private LadderState _ladderState;
+    private PlayerAttackFlow _attackFlow;
+    private PlayerHealSkill _playerHealSkill;
+    private PlayerGuaredeAttackSkill _playerGuardedAttackSkill;
+    private float _dashCooldownDecrease;
+
+    private bool _isCrouchActionActive;
     private bool _isHurtOverlayActive;
 
-    private bool _isDashing => _dashState != null && _dashState.IsDashing;
+    private float _crouchReadyTime;
+    private float _healSkillCooldownEndTime;
+    private float _guardedAttackSkillCooldownEndTime;
+    private float _hurtOverlayEndTime;
 
+    private int _hurtOverlayLayerIndex = -1;
+    
+    private bool _isDashing => _dashState != null && _dashState.IsDashing;
     private bool _isGrounded
     {
         get => _playerContext != null && _playerContext.IsGrounded;
@@ -86,25 +94,32 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     public bool IsDoubleJumpUnlocked =>
         _playerContext != null && _playerContext.IsDoubleJumpUnlocked;
-
-    private LadderState _ladderState;
-    private PlayerAttackFlow _attackFlow;
-    private PlayerHealSkill _playerHealSkill;
-    private PlayerGuaredeAttackSkill _playerGuardedAttackSkill;
-
     private bool _isLadder => _ladderState != null && _ladderState.IsClimbing;
     private bool IsDiedState => _stateMachine.CurrentType == PlayerState.Died;
 
     public event Action<int, int, bool> OnDashChargesChanged;
     public event Action<string, float> OnSkillCooldownStarted;
     public event Action<string> OnSkillCooldownEnded;
+    public event Action OnCrouchStarted;
+
+    public void SetDashCooldownDecrease(float decreasePercent)
+    {
+        _dashCooldownDecrease = Mathf.Max(0f, decreasePercent);
+        UpdateDashArtifactModifiers();
+    }
+
+    public void RemoveDashCooldownDecrease()
+    {
+        _dashCooldownDecrease = 0f;
+        UpdateDashArtifactModifiers();
+    }
 
     private void Awake()
     {
         _playerCollider = GetComponent<CapsuleCollider2D>();
+        _playerStatus = GetComponent<PlayerStatus>();
 
         if (_rigidbody2D_Player == null)
         {
@@ -171,14 +186,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        //TODO(이주헌): 시점정리 전 임시
-        TrySubscribeToPlayerStatus();
-    }
+        if (_playerStatus == null)
+        {
+            Logger.LogError("PlayerController: PlayerStatus를 찾을 수 없습니다.");
+            return;
+        }
 
-    private void Start()
-    {
-        //TODO(이주헌): 시점정리 전 임시
-        TrySubscribeToPlayerStatus();
+        _playerStatus.OnDied += HandleDied;
+        _playerStatus.OnDamaged += HandleDamaged;
+
+        if (_playerStatus.IsDead)
+        {
+            HandleDied();
+        }
     }
 
     private void Update()
@@ -257,6 +277,12 @@ public class PlayerController : MonoBehaviour
 
         PlayerState currentState = _stateMachine.CurrentType;
         PlayerState nextState = GetNextState();
+        if (currentState != PlayerState.Crouch &&
+            nextState == PlayerState.Crouch)
+        {
+            OnCrouchStarted?.Invoke();
+        }
+
         if (currentState == PlayerState.Crouch &&
             nextState != PlayerState.Crouch &&
             _isCrouchActionActive)
@@ -375,30 +401,10 @@ public class PlayerController : MonoBehaviour
             _stateMachine.ChangeStateSign(PlayerState.Idle);
         }
 
-        //TODO(이주헌): 시점정리 전 임시
-        UnsubscribeFromPlayerStatus();
-    }
-    //TODO(이주헌): 시점정리 전 임시
-    private void TrySubscribeToPlayerStatus()
-    {
-        if (_isSubscribedToPlayerStatus)
+        if (_playerStatus != null)
         {
-            return;
-        }
-
-        if (PlayerStatus.Instance == null)
-        {
-            Logger.LogWarning("PlayerStatus 인스턴스가 아직 준비되지 않았습니다.");
-            return;
-        }
-
-        PlayerStatus.Instance.OnDied += HandleDied;
-        PlayerStatus.Instance.OnDamaged += HandleDamaged;
-        _isSubscribedToPlayerStatus = true;
-
-        if (PlayerStatus.Instance.IsDead)
-        {
-            HandleDied();
+            _playerStatus.OnDied -= HandleDied;
+            _playerStatus.OnDamaged -= HandleDamaged;
         }
     }
     private void InitializeStateMachine()
@@ -416,6 +422,7 @@ public class PlayerController : MonoBehaviour
             OnDashChargesChanged?.Invoke(current, max, wasUsed);
 
         _dashState = new DashState(_playerContext, _dashCharge, _dashDistance, _dashDuration);
+        UpdateDashArtifactModifiers();
         _ladderState = new LadderState(_playerContext, _layerMask_Ladder, _ladderCoolDown);
         _attackFlow = new PlayerAttackFlow(
             _playerContext, _dashState, _ladderState, _comboInputStart, _comboInputEnd);
@@ -446,23 +453,13 @@ public class PlayerController : MonoBehaviour
         _stateMachine.ChangeStateSign(PlayerState.Idle);
     }
 
-    //TODO(이주헌): 시점정리 전 임시
-    private void UnsubscribeFromPlayerStatus()
+    private void UpdateDashArtifactModifiers()
     {
-        if (!_isSubscribedToPlayerStatus)
+        if (_dashCharge != null)
         {
-            return;
+            _dashCharge.SetCoolDuration(
+                _dashCoolDuration * (1f - Mathf.Clamp01(_dashCooldownDecrease)));
         }
-
-        PlayerStatus playerStatus = PlayerStatus.Instance;
-
-        if (playerStatus != null)
-        {
-            playerStatus.OnDied -= HandleDied;
-            playerStatus.OnDamaged -= HandleDamaged;
-        }
-
-        _isSubscribedToPlayerStatus = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,10 @@ public class PlayerStatSet : SingletonBehaviour<PlayerStatSet>
     [SerializeField, Min(1)] private int _baseMaxChaosGauge = 10;
 
     private Dictionary<PlayerStatType, PlayerStat> _stats;
+    private readonly Dictionary<string, int> _variableAttackDamageBonuses =
+        new Dictionary<string, int>();
+    private readonly Dictionary<string, Coroutine> _attackDamageBonusTimers =
+        new Dictionary<string, Coroutine>();
 
     public bool ChaosGaugeOver { get; private set; } = false;
 
@@ -27,7 +32,21 @@ public class PlayerStatSet : SingletonBehaviour<PlayerStatSet>
     public float LadderSpeed => GetFloat(PlayerStatType.LadderSpeed);
 
     public int MaxDashChance => GetInt(PlayerStatType.MaxDashChance);
-    public int AttackDamage => GetInt(PlayerStatType.AttackDamage);
+    public int AttackDamage
+    {
+        get
+        {
+            int variableBonus = 0;
+            foreach (int bonus in _variableAttackDamageBonuses.Values)
+            {
+                variableBonus += bonus;
+            }
+
+            return Mathf.Max(
+                1,
+                GetInt(PlayerStatType.AttackDamage) + variableBonus);
+        }
+    }
     public int MaxHealth => GetInt(PlayerStatType.MaxHealth);
     public int MaxSkillGauge => GetInt(PlayerStatType.MaxSkillGauge);
     public int MaxChaosGauge => GetInt(PlayerStatType.MaxChaosGauge);
@@ -65,8 +84,110 @@ public class PlayerStatSet : SingletonBehaviour<PlayerStatSet>
 
     public void ApplyArtifactBonus(PlayerStatType statType, float bonusValue)
     {
+        if (!Stats.ContainsKey(statType))
+        {
+            Logger.LogWarning($"ApplyArtifactBonus: 지원하지 않는 스탯입니다. ({statType})");
+            return;
+        }
+
         Stats[statType].AddBonus(bonusValue);
         OnStatsChanged?.Invoke();
+    }
+
+    public void SetVariableAttackDamageBonus(string artifactId, int bonus)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
+        {
+            Logger.LogError("임시 공격력 보너스의 artifactId가 비어 있습니다.");
+            return;
+        }
+
+        if (bonus == 0)
+        {
+            RemoveVariableAttackDamageBonus(artifactId);
+        }
+        else
+        {
+            SetVariableAttackDamageBonus(artifactId, bonus, float.PositiveInfinity);
+        }
+    }
+
+    public void SetVariableAttackDamageBonus(
+        string artifactId,
+        int bonus,
+        float durationSeconds)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
+        {
+            Logger.LogError("임시 공격력 보너스의 artifactId가 비어 있습니다.");
+            return;
+        }
+
+        if (bonus == 0)
+        {
+            RemoveVariableAttackDamageBonus(artifactId);
+            return;
+        }
+
+        if (durationSeconds <= 0f || float.IsNaN(durationSeconds))
+        {
+            Logger.LogError(
+                $"임시 공격력 보너스의 지속시간은 0보다 커야 합니다. ({durationSeconds})");
+            return;
+        }
+
+        StopAttackDamageBonusTimer(artifactId);
+        _variableAttackDamageBonuses[artifactId] = bonus;
+        OnStatsChanged?.Invoke();
+
+        if (!float.IsPositiveInfinity(durationSeconds))
+        {
+            _attackDamageBonusTimers[artifactId] =
+                StartCoroutine(RemoveVariableAttackDamageBonusAfter(
+                    artifactId,
+                    durationSeconds));
+        }
+    }
+
+    public void RemoveVariableAttackDamageBonus(string artifactId)
+    {
+        if (string.IsNullOrWhiteSpace(artifactId))
+        {
+            Logger.LogError("임시 공격력 보너스의 artifactId가 비어 있습니다.");
+            return;
+        }
+
+        StopAttackDamageBonusTimer(artifactId);
+        if (_variableAttackDamageBonuses.Remove(artifactId))
+        {
+            OnStatsChanged?.Invoke();
+        }
+    }
+
+    private IEnumerator RemoveVariableAttackDamageBonusAfter(
+        string artifactId,
+        float durationSeconds)
+    {
+        yield return new WaitForSeconds(durationSeconds);
+
+        _attackDamageBonusTimers.Remove(artifactId);
+        if (_variableAttackDamageBonuses.Remove(artifactId))
+        {
+            OnStatsChanged?.Invoke();
+        }
+    }
+
+    private void StopAttackDamageBonusTimer(string artifactId)
+    {
+        if (!_attackDamageBonusTimers.TryGetValue(
+                artifactId,
+                out Coroutine timer))
+        {
+            return;
+        }
+
+        StopCoroutine(timer);
+        _attackDamageBonusTimers.Remove(artifactId);
     }
 
     public void ApplyArtifactBonus(string artifactId, float bonusValue)
@@ -148,4 +269,5 @@ public class PlayerStatSet : SingletonBehaviour<PlayerStatSet>
             { PlayerStatType.MaxChaosGauge, new PlayerStat(StatMode.Flat, () => _baseMaxChaosGauge) },
         };
     }
+
 }
