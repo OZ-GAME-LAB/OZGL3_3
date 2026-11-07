@@ -34,6 +34,7 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
             return false;
         }
 
+        bool createdPlayer = false;
         if (_playerInstance == null)
         {
             Vector3 position = spawnPosition ?? DefaultSpawnPosition;
@@ -41,6 +42,7 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
                 _playerPrefab,
                 position,
                 Quaternion.identity);
+            createdPlayer = true;
         }
         else if (spawnPosition.HasValue)
         {
@@ -57,6 +59,35 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
             Destroy(_playerInstance);
             _playerInstance = null;
             return false;
+        }
+
+        if (createdPlayer)
+        {
+            if (GameManager.Instance == null || GameManager.UserData == null)
+            {
+                Logger.LogError(
+                    "PlayerSetting: UserDataManager가 준비되지 않았습니다.");
+                Destroy(_playerInstance);
+                _playerInstance = null;
+                _playerInputHandler = null;
+                return false;
+            }
+
+            PlayerArtifactEquipment artifactEquipment =
+                _playerInstance.GetComponent<PlayerArtifactEquipment>();
+            UserArtifactData artifactData =
+                GameManager.UserData.GetUserData<UserArtifactData>();
+
+            if (artifactEquipment == null ||
+                !artifactEquipment.LoadFromSave(artifactData))
+            {
+                Logger.LogError(
+                    "PlayerSetting: 저장된 아티팩트를 플레이어에 적용하지 못했습니다.");
+                Destroy(_playerInstance);
+                _playerInstance = null;
+                _playerInputHandler = null;
+                return false;
+            }
         }
 
         _playerInputHandler.ClearInput();
