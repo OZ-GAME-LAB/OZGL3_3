@@ -9,7 +9,6 @@ public class CameraFollowPlayer : MonoBehaviour
     private readonly List<Collider2D> _overlapResults =
         new List<Collider2D>(10);
 
-    private MapChange _mapChange;
     private Camera _camera;
     private ContactFilter2D _overlapFilter;
 
@@ -24,13 +23,13 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        _mapChange.OnAfterMapChange += RefreshBounds;
+        //MapChange.OnAfterMapChange += RefreshBounds;
         RefreshBounds();
     }
 
     private void OnDisable()
     {
-        _mapChange.OnAfterMapChange -= RefreshBounds;
+        //MapChange.OnAfterMapChange -= RefreshBounds;
     }
 
     private void RefreshBounds()

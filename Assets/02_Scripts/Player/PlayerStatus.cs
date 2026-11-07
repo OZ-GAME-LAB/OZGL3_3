@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 {
-    public int MaxHealth => PlayerStatSet.Instance.MaxHealth;
-    public int MaxSkillGauge => PlayerStatSet.Instance.MaxSkillGauge;
+    public int MaxHealth => _playerStatSet.MaxHealth;
+    public int MaxSkillGauge => _playerStatSet.MaxSkillGauge;
     
     public int CurrentHealth { get; private set; }
     public int CurrentSkillGauge { get; private set; }
@@ -17,6 +17,7 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 
     private float _blockDamageReduction = 1f;
     private SpriteRenderer _spriteRenderer_Player;
+    private PlayerStatSet _playerStatSet;
 
     public event Action<int, int> OnHealthChanged;
     public event Action<int, int> OnSkillGaugeChanged;
@@ -27,6 +28,15 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
     private void Awake()
     {
         Init();
+
+        _playerStatSet = GetComponent<PlayerStatSet>();
+        if (_playerStatSet == null)
+        {
+            Logger.LogError("PlayerStatus: 같은 Player 오브젝트에서 PlayerStatSet을 찾을 수 없습니다.");
+            enabled = false;
+            return;
+        }
+
         _spriteRenderer_Player = GetComponentInChildren<SpriteRenderer>();
         _lastMaxHealth = MaxHealth;
         _lastMaxSkillGauge = MaxSkillGauge;
@@ -35,12 +45,21 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 
     private void OnEnable()
     {
-        PlayerStatSet.Instance.OnStatsChanged += HandleStatsChanged;
+        if (_playerStatSet == null)
+        {
+            Logger.LogError("PlayerStatus: PlayerStatSet을 찾을 수 없어 스탯 변경 이벤트를 구독하지 못했습니다.");
+            return;
+        }
+
+        _playerStatSet.OnStatsChanged += HandleStatsChanged;
     }
 
     private void OnDisable()
     {
-        PlayerStatSet.Instance.OnStatsChanged -= HandleStatsChanged;
+        if (_playerStatSet != null)
+        {
+            _playerStatSet.OnStatsChanged -= HandleStatsChanged;
+        }
     }
 
     private void HandleStatsChanged()
@@ -141,7 +160,7 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
 
     public int GetChaosGaugeOverDamage(int damage)
     {
-        return PlayerStatSet.Instance.ChaosGaugeOver ? damage * 2 : damage;
+        return _playerStatSet.ChaosGaugeOver ? damage * 2 : damage;
     }
 
     public void Heal(int amount)

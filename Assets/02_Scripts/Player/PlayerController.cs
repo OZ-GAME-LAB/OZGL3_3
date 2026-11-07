@@ -9,7 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStatSet))]
 [RequireComponent(typeof(PlayerArtifactEquipment))]
 [RequireComponent(typeof(CapsuleCollider2D))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : SingletonBehaviour<PlayerController>
 {
     [Header("Core")]
     [SerializeField] private Rigidbody2D _rigidbody2D_Player;
@@ -20,20 +20,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _transform_GroundCheck;
     [SerializeField] private LayerMask _layerMask_Ground;
     [SerializeField] private LayerMask _layerMask_Ladder;
-    private PlayerStateMachine _stateMachine;
-    private PlayerStateContext _playerContext;
+    [SerializeField] private PlayerStateMachine _stateMachine;
+    [SerializeField] private PlayerStateContext _playerContext;
+    [SerializeField] private CapsuleCollider2D _playerCollider;
+
 
     [Header("Visual")]
     [SerializeField] private PlayerVisualOffset _visualOffset;
     [SerializeField, Min(0f)] private float _crouchCooldown = 2f;
     [SerializeField] private float _crouchColliderOffsetY = -0.3f;
     [SerializeField, Min(0.01f)] private float _crouchColliderHeight = 0.7f;
-    private CapsuleCollider2D _playerCollider;
-    private bool _isCrouchActionActive;
-    private float _crouchReadyTime;
 
-    private float _healSkillCooldownEndTime;
-    private float _guardedAttackSkillCooldownEndTime;
+
 
     [Header("Ground Check")]
     [SerializeField] private float _groundCheckRadius = 0.2f;
@@ -64,17 +62,26 @@ public class PlayerController : MonoBehaviour
     public float HealSkillCooldownRemaining => Mathf.Max(0f, _healSkillCooldownEndTime - Time.time);
     public float GuardedAttackSkillCooldownRemaining => Mathf.Max(0f, _guardedAttackSkillCooldownEndTime - Time.time);
 
-    private bool _isSubscribedToPlayerStatus;
-
     private PlayerDashCharge _dashCharge;
     private DashState _dashState;
     private HurtState _hurtState;
-    private int _hurtOverlayLayerIndex = -1;
-    private float _hurtOverlayEndTime;
+    private LadderState _ladderState;
+    private PlayerAttackFlow _attackFlow;
+    private PlayerHealSkill _playerHealSkill;
+    private PlayerGuaredeAttackSkill _playerGuardedAttackSkill;
+
+    private bool _isSubscribedToPlayerStatus;
+    private bool _isCrouchActionActive;
     private bool _isHurtOverlayActive;
 
-    private bool _isDashing => _dashState != null && _dashState.IsDashing;
+    private float _crouchReadyTime;
+    private float _healSkillCooldownEndTime;
+    private float _guardedAttackSkillCooldownEndTime;
+    private float _hurtOverlayEndTime;
 
+    private int _hurtOverlayLayerIndex = -1;
+    
+    private bool _isDashing => _dashState != null && _dashState.IsDashing;
     private bool _isGrounded
     {
         get => _playerContext != null && _playerContext.IsGrounded;
@@ -86,15 +93,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     public bool IsDoubleJumpUnlocked =>
         _playerContext != null && _playerContext.IsDoubleJumpUnlocked;
-
-    private LadderState _ladderState;
-    private PlayerAttackFlow _attackFlow;
-    private PlayerHealSkill _playerHealSkill;
-    private PlayerGuaredeAttackSkill _playerGuardedAttackSkill;
-
     private bool _isLadder => _ladderState != null && _ladderState.IsClimbing;
     private bool IsDiedState => _stateMachine.CurrentType == PlayerState.Died;
 
