@@ -158,8 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HeartPanel
   Transform_HeartRoot: {fileID: 3902350928387655809}
   _heartPrefab: {fileID: 3131605489174545770, guid: 0c15ca8c238aae04eaf5d192bf110108, type: 3}
-  _sprite_HeartFull: {fileID: 371010334, guid: 7de6c45aa0614e140b33179fb8d08b07, type: 3}
-  _sprite_HeartEmpty: {fileID: -1760414468111364790, guid: 0bdd0ba45c7b19b4691b029b44ca0058, type: 3}
+  _sprite_HeartFull: {fileID: 5839196747185405485, guid: a85c34b0d623dbf4aa44fd68019c3804, type: 3}
+  _sprite_HeartEmpty: {fileID: 7630354458230478893, guid: 7e40c831d51d9134fb0bf2380a460ccb, type: 3}
 --- !u!1 &4990088391619624745
 GameObject:
   m_ObjectHideFlags: 0
