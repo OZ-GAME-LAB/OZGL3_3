@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class SkillSlot : MonoBehaviour
 {
     [SerializeField] private Image Image_Icon;
     [SerializeField] private Image Image_Cooldown;   // 검정(Alpha ~150) / Filled / Radial 360 / Origin Top
+    [SerializeField] private TMP_Text Text_Key;      // 단축키 표시 글자 (SkillPanel에서 넣어준다)
     [SerializeField] private Color _readyColor = Color.white;
     [SerializeField] private Color _lackGaugeColor = new Color(0.4f, 0.4f, 0.4f, 1f);
 
@@ -19,6 +21,14 @@ public class SkillSlot : MonoBehaviour
     private int _needGauge;
     private float _duration;
     private bool _onCooldown;
+
+    public void SetKeyText(string key)
+    {
+        if (Text_Key != null)
+        {
+            Text_Key.text = key;
+        }
+    }
 
     public void SetIcon(Sprite icon)
     {
@@ -51,6 +61,7 @@ public class SkillSlot : MonoBehaviour
         _status.OnSkillGaugeChanged += HandleGaugeChanged;
 
         SetReady();
+        HandleGaugeChanged(_status.CurrentSkillGauge, _status.MaxSkillGauge);
     }
 
     public void Release()

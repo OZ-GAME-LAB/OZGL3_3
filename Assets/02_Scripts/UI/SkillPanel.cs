@@ -8,6 +8,8 @@ public class SkillPanel : MonoBehaviour
     [SerializeField] private Transform _slotRoot;
     [SerializeField] private Sprite _iconGuardedAttack;   // S
     [SerializeField] private Sprite _iconHeal;            // D
+    [SerializeField] private string _keyGuardedAttack = "Q";   // 슬롯 아래에 표시할 단축키 글자 (표시만 바뀐다)
+    [SerializeField] private string _keyHeal = "E";
 
     private readonly List<SkillSlot> _slots = new List<SkillSlot>();
     private Coroutine _waitRoutine;
@@ -27,8 +29,8 @@ public class SkillPanel : MonoBehaviour
     {
         if (_slots.Count == 0)
         {
-            CreateSlot(Const.GuardedAttackSkillId, _iconGuardedAttack);
-            CreateSlot(Const.HealSkillId, _iconHeal);
+            CreateSlot(Const.GuardedAttackSkillId, _iconGuardedAttack, _keyGuardedAttack);
+            CreateSlot(Const.HealSkillId, _iconHeal, _keyHeal);
         }
 
         foreach (SkillSlot slot in _slots)
@@ -65,11 +67,12 @@ public class SkillPanel : MonoBehaviour
         Init(player, PlayerStatus.Instance);
     }
 
-    private void CreateSlot(string skillId, Sprite icon)
+    private void CreateSlot(string skillId, Sprite icon, string key)
     {
         SkillSlot slot = Instantiate(_slotPrefab, _slotRoot);
         slot.name = $"SkillSlot_{skillId}";
         slot.SetIcon(icon);
+        slot.SetKeyText(key);
         slot.SetSkillId(skillId);
         _slots.Add(slot);
     }
