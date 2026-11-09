@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SaveSlotUI
   _slotPrefab: {fileID: 8376481659185674094, guid: 03818e824eff81b4882ab84efe7ec0c7, type: 3}
   _slotRoot: {fileID: 2336114778577435331}
-  Button_Close: {fileID: 6481749617023849799}
+  _closeButton: {fileID: 6481749617023849799}
 --- !u!1 &8542463626647897501
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +335,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8024527584139260582}
     m_Modifications:
+    - target: {fileID: 120616358770999636, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120616358770999636, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 120616358770999636, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 120616358770999636, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
     - target: {fileID: 1732955759051318483, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -424,9 +440,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 3781234122256323575, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781234122256323575, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781234122256323575, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781234122256323575, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 3781234122256323575, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9169694573008889558, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
       propertyPath: m_Name
       value: UIButton_Exit
