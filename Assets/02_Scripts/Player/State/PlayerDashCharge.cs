@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerDashCharge
 {
-    private readonly float _coolDuration;
+    private float _coolDuration;
 
     private bool _initialized;
     private float _rechargeTime;
@@ -18,6 +18,20 @@ public class PlayerDashCharge
     public PlayerDashCharge(float coolDuration)
     {
         _coolDuration = coolDuration;
+    }
+
+    public void SetCoolDuration(float coolDuration)
+    {
+        float nextCoolDuration = Mathf.Max(0.01f, coolDuration);
+        if (_rechargeTime > Time.time && _coolDuration > 0f)
+        {
+            float remainingRatio =
+                (_rechargeTime - Time.time) / _coolDuration;
+            _rechargeTime =
+                Time.time + remainingRatio * nextCoolDuration;
+        }
+
+        _coolDuration = nextCoolDuration;
     }
 
     public void ConsumeDashCharge()

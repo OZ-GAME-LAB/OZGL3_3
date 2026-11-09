@@ -110,11 +110,18 @@ public class SaveProfileUI : UIBase
     private void StartGame()
     {
         GameManager.UserData.BeginPlaySession();
+        PlayerSetting playerSetting = PlayerSetting.Instance;
+        if (playerSetting == null ||
+            !playerSetting.PreparePlayer() ||
+            !playerSetting.StartPreparedPlayer())
+        {
+            ShowError("플레이어를 준비하지 못했습니다.");
+            return;
+        }
         UIManager.Instance.CloseSaveSlotUI();
         UIManager.Instance.CloseGameStartUI();
         UIManager.Instance.OpenMainHUD();
 
-        // TODO(강혜창): 시작 직후 구간 로고(GameManager.Area.CurrentRegionId)는 플레이어 동적 생성 때 재검토
     }
 
     private void OnClickClose()
