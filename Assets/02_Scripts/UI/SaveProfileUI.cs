@@ -122,7 +122,6 @@ public class SaveProfileUI : UIBase
         UIManager.Instance.CloseGameStartUI();
         UIManager.Instance.OpenMainHUD();
 
-        // TODO(강혜창): 시작 직후 구간 로고(GameManager.Area.CurrentRegionId)는 플레이어 동적 생성 때 재검토
     }
 
     private void OnClickClose()
