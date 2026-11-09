@@ -110,6 +110,14 @@ public class SaveProfileUI : UIBase
     private void StartGame()
     {
         GameManager.UserData.BeginPlaySession();
+        PlayerSetting playerSetting = PlayerSetting.Instance;
+        if (playerSetting == null ||
+            !playerSetting.PreparePlayer() ||
+            !playerSetting.StartPreparedPlayer())
+        {
+            ShowError("플레이어를 준비하지 못했습니다.");
+            return;
+        }
         UIManager.Instance.CloseSaveSlotUI();
         UIManager.Instance.CloseGameStartUI();
         UIManager.Instance.OpenMainHUD();

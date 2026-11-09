@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -33,11 +33,6 @@ public class PlayerInputHandler : MonoBehaviour
     {
         Keyboard keyboard = Keyboard.current;
 
-        if (keyboard != null && keyboard.spaceKey.wasPressedThisFrame)
-        {
-            OnInteractionRequested?.Invoke(transform.position);
-        }
-
         if (keyboard == null || (GameManager.Instance != null && GameManager.Npc.BlocksGameplayInput))
         {
             MoveInput = 0f;
@@ -55,6 +50,11 @@ public class PlayerInputHandler : MonoBehaviour
             GuardedAttackSkillQueued = false;
             _attackSign = false;
             return;
+        }
+
+        if (keyboard.gKey.wasPressedThisFrame)
+        {
+            OnInteractionRequested?.Invoke(transform.position);
         }
 
         bool leftHeld = keyboard.leftArrowKey.isPressed;
