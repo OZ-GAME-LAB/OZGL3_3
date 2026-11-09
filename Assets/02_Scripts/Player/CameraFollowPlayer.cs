@@ -23,13 +23,35 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        //MapChange.OnAfterMapChange += RefreshBounds;
+        MapChange.OnAfterMapChange += RefreshBoundsAfterMapChange;
         RefreshBounds();
     }
 
     private void OnDisable()
     {
-        //MapChange.OnAfterMapChange -= RefreshBounds;
+        MapChange.OnAfterMapChange -= RefreshBoundsAfterMapChange;
+    }
+
+    private void RefreshBoundsAfterMapChange()
+    {
+        MapRoot mapRoot = FindAnyObjectByType<MapRoot>();
+        if (mapRoot == null)
+        {
+            Logger.LogError("CameraFollowPlayer: 활성화된 MapRoot를 찾을 수 없습니다.");
+            _cameraTargetBounds = null;
+            return;
+        }
+
+        AreaZone areaZone = mapRoot.GetComponentInChildren<AreaZone>();
+        if (areaZone == null || areaZone.ColliderBounds == null)
+        {
+            Logger.LogError(
+                $"CameraFollowPlayer: {mapRoot.name}에서 CameraBounds의 AreaZone Collider를 찾을 수 없습니다.");
+            _cameraTargetBounds = null;
+            return;
+        }
+
+        _cameraTargetBounds = areaZone.ColliderBounds;
     }
 
     private void RefreshBounds()
