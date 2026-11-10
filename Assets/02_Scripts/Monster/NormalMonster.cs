@@ -181,7 +181,7 @@ public class NormalMonster : MonsterBase
     }
 
     private void Flip()
-    {
+    {//[TODO] Creature인 경우 가까울 때는 빠르게 flip하지 않도록 수정
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;

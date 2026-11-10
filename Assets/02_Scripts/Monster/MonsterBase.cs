@@ -15,7 +15,7 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] private float _aggroRange = 7f;
     [SerializeField] private int _attackDamage = 1;
     [SerializeField] private int _attackPatternCount = 2;
-    [SerializeField] private Vector2 _attackBoxSize = new Vector2(1f, 0.5f);    //[TODO] 어택박스 사이즈, 오프셋 데이터드리븐으로 받아오기
+    [SerializeField] private Vector2 _attackBoxSize = new Vector2(1f, 0.5f);
     [SerializeField] private Vector2 _attackBoxOffset = new Vector2(1f, 0.5f);
     [SerializeField] private LayerMask _playerLayer;
     protected bool _isOnlyUseSkill = false;
@@ -40,7 +40,7 @@ public class MonsterBase : MonoBehaviour
     public bool _isHit = false;
     public bool _isUsingStealthSkill = false;
     private float _attackCooldownTimer = 0f;
-    [SerializeField] private float _attackCooldown = 2f; //[TODO] 데이터드리븐으로 받아오기
+    [SerializeField] private float _attackCooldown = 2f;
     public bool _isAttackUseable = false;
     public bool _isSkillUseable = false;
     protected bool _isUsingSkill = false;
