@@ -48,11 +48,6 @@ public class NormalMonster : MonsterBase
         if (_isDead) return;
         base.Update();
 
-        if (AnimController_NormalMonster._isIdle == true || AnimController_NormalMonster._isWalk == true)
-        {
-            _spriteRenderer.transform.position = this.transform.position + new Vector3(2, 0, 0);    //[TODO] 변신몬스터 수정하기 (변신을 스킬로 두거나 해야할듯)
-        }
-
         if (_flipCooldownTimer > 0f)
         {
             _flipCooldownTimer -= Time.deltaTime;
@@ -183,7 +178,7 @@ public class NormalMonster : MonsterBase
         scale.x *= -1;
         transform.localScale = scale;
 
-        float pushbackAmount = 1.2f;
+        float pushbackAmount = 0.5f;    //[TODO] pushbackAmount 데이터드리븐으로 받아오기
         transform.position += new Vector3(_isMovingRight ? pushbackAmount : -pushbackAmount, 0f, 0f);
     }
 
@@ -276,8 +271,6 @@ public class NormalMonster : MonsterBase
                 return;
             }
         }
-
-
 
         if (!_isGrounded || _isBlocked || !_isGroundAhead)
         {

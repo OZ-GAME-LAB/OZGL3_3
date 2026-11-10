@@ -38,7 +38,7 @@ public class MonsterBase : MonoBehaviour
     public bool _isHit = false;
     public bool _isUsingStealthSkill = false;
     private float _attackCooldownTimer = 0f;
-    private float _attackCooldown = 2f;
+    [SerializeField] private float _attackCooldown = 2f; //[TODO] 데이터드리븐으로 받아오기
     public bool _isAttackUseable = false;
     public bool _isSkillUseable = false;
     protected bool _isUsingSkill = false;
@@ -101,7 +101,7 @@ public class MonsterBase : MonoBehaviour
 
     protected void CheckAttackUseable()
     {
-        if (_attackCooldownTimer <= 0)
+         if (_attackCooldownTimer <= 0)
         {
             _isAttackUseable = true;
         }
