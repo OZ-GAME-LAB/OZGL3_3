@@ -27,6 +27,14 @@ public class SettingPopupUI : UIBase
     private readonly List<Vector2Int> _resolutions = new List<Vector2Int>();
     private SoundManager _soundManager;
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIManager.Instance.CloseSettingPopupUI();
+        }
+    }
+
     private void OnEnable()
     {
         DoInitSound();
