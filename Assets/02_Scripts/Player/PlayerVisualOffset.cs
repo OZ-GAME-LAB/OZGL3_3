@@ -24,6 +24,13 @@ public class PlayerVisualOffset : MonoBehaviour
         }
     }
 
+    public void ResetOffset()
+    {
+        _currentOffsetY = 0f;
+        _targetOffsetY = 0f;
+        Apply();
+    }
+
     private void LateUpdate()
     {
         if (_moveSpeed <= 0f || Mathf.Approximately(_currentOffsetY, _targetOffsetY))

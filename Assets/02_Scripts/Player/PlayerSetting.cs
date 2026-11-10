@@ -35,7 +35,6 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
             return false;
         }
 
-        bool createdPlayer = false;
         if (_playerInstance == null)
         {
             Vector3 position = spawnPosition ?? DefaultSpawnPosition;
@@ -43,7 +42,6 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
                 _playerPrefab,
                 position,
                 Quaternion.identity);
-            createdPlayer = true;
         }
         else if (spawnPosition.HasValue)
         {
@@ -62,33 +60,30 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
             return false;
         }
 
-        if (createdPlayer)
+        if (GameManager.Instance == null || GameManager.UserData == null)
         {
-            if (GameManager.Instance == null || GameManager.UserData == null)
-            {
-                Logger.LogError(
-                    "PlayerSetting: UserDataManager가 준비되지 않았습니다.");
-                Destroy(_playerInstance);
-                _playerInstance = null;
-                _playerInputHandler = null;
-                return false;
-            }
+            Logger.LogError(
+                "PlayerSetting: UserDataManager가 준비되지 않았습니다.");
+            Destroy(_playerInstance);
+            _playerInstance = null;
+            _playerInputHandler = null;
+            return false;
+        }
 
-            PlayerArtifactEquipment artifactEquipment =
-                _playerInstance.GetComponent<PlayerArtifactEquipment>();
-            UserArtifactData artifactData =
-                GameManager.UserData.GetUserData<UserArtifactData>();
+        PlayerArtifactEquipment artifactEquipment =
+            _playerInstance.GetComponent<PlayerArtifactEquipment>();
+        UserArtifactData artifactData =
+            GameManager.UserData.GetUserData<UserArtifactData>();
 
-            if (artifactEquipment == null ||
-                !artifactEquipment.LoadFromSave(artifactData))
-            {
-                Logger.LogError(
-                    "PlayerSetting: 저장된 아티팩트를 플레이어에 적용하지 못했습니다.");
-                Destroy(_playerInstance);
-                _playerInstance = null;
-                _playerInputHandler = null;
-                return false;
-            }
+        if (artifactEquipment == null ||
+            !artifactEquipment.LoadFromSave(artifactData))
+        {
+            Logger.LogError(
+                "PlayerSetting: 저장된 아티팩트를 플레이어에 적용하지 못했습니다.");
+            Destroy(_playerInstance);
+            _playerInstance = null;
+            _playerInputHandler = null;
+            return false;
         }
 
         _playerInputHandler.ClearInput();
@@ -134,6 +129,39 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
 
         _cameraFollowPlayer.SetTarget(_playerInstance.transform);
         return true;
+    }
+
+    public bool RevivePlayer(Vector3? destination = null)
+    {
+        if (_playerInstance == null)
+        {
+            Logger.LogError("PlayerSetting: 부활할 플레이어가 없습니다.");
+            return false;
+        }
+
+        PlayerController playerController =
+            _playerInstance.GetComponent<PlayerController>();
+        PlayerStatus playerStatus =
+            _playerInstance.GetComponent<PlayerStatus>();
+
+        if (playerController == null || playerStatus == null)
+        {
+            Logger.LogError("PlayerSetting: 부활에 필요한 플레이어 컴포넌트가 없습니다.");
+            return false;
+        }
+
+        if (!playerStatus.IsDead)
+        {
+            Logger.LogWarning("PlayerSetting: 플레이어가 사망 상태가 아니어서 부활하지 않았습니다.");
+            return false;
+        }
+
+        if (!MovePlayer(destination))
+        {
+            return false;
+        }
+
+        return playerController.Revive();
     }
 
     private bool TryGetCameraFollowPlayer()
