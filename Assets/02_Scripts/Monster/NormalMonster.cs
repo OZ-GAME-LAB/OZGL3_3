@@ -11,7 +11,7 @@ public class NormalMonster : MonsterBase
     [SerializeField] private float _checkGroundRadius = 0.2f;
     [SerializeField] private Transform _edgeCheck;
     [SerializeField] private LayerMask _groundLayer;
-    [SerializeField] private float _attackDistance = 3f;
+    [SerializeField] private float _attackDistance;
     [SerializeField] private CircleCollider2D _playerTransformCheckCollider;    //[TODO] 플레이어가 OnTriggerExit하고나서 시간이 지나면 Destroy하기
 
     [Header("Anim Settings")]
@@ -36,6 +36,14 @@ public class NormalMonster : MonsterBase
         AnimController_NormalMonster.ChangeState(MonsterState.Spawn);
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (GameManager.Instance == null || !GameManager.DataTable.TryGetMonster(_monsterId, out MonsterData data))
+        {
+            Logger.LogError($"[NormalMonster] 데이터 받아오기 실패{_monsterId}");
+            _attackDistance = 3f;
+            return;
+        }
+        _attackDistance = data.AttackDistance;
     }
 
     private void Start()
@@ -178,7 +186,16 @@ public class NormalMonster : MonsterBase
         scale.x *= -1;
         transform.localScale = scale;
 
-        float pushbackAmount = 0.5f;    //[TODO] pushbackAmount 데이터드리븐으로 받아오기
+        float pushbackAmount;
+
+        if (GameManager.Instance == null || !GameManager.DataTable.TryGetMonster(_monsterId, out MonsterData data))
+        {
+            Logger.LogError($"[NormalMonster] 데이터 받아오기 실패{_monsterId}");
+            pushbackAmount = 0.5f;
+            return;
+        }
+        pushbackAmount = data.PushbackAmount;
+
         transform.position += new Vector3(_isMovingRight ? pushbackAmount : -pushbackAmount, 0f, 0f);
     }
 

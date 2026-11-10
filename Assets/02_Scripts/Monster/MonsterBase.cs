@@ -6,18 +6,20 @@ public class MonsterBase : MonoBehaviour
 {
     private MonsterAnimatorController _monsterAnimController;
 
+    [Header("Data Settings")]
+    [SerializeField] protected string _monsterId;
+
     [Header("Stats")]
     [SerializeField] private float _maxHp = 5f;
     [SerializeField] public float _moveSpeed = 3f;
     [SerializeField] private float _aggroRange = 7f;
     [SerializeField] private int _attackDamage = 1;
-    [SerializeField] private float _attackRange = 2f;
     [SerializeField] private int _attackPatternCount = 2;
     [SerializeField] private Vector2 _attackBoxSize = new Vector2(1f, 0.5f);    //[TODO] 어택박스 사이즈, 오프셋 데이터드리븐으로 받아오기
     [SerializeField] private Vector2 _attackBoxOffset = new Vector2(1f, 0.5f);
     [SerializeField] private LayerMask _playerLayer;
-    [SerializeField] protected bool _isOnlyUseSkill = false;
-    [SerializeField] protected bool _isAssassin = false;
+    protected bool _isOnlyUseSkill = false;
+    protected bool _isAssassin = false;
 
     [SerializeField] public MonsterType _monsterType;
 
@@ -50,6 +52,7 @@ public class MonsterBase : MonoBehaviour
 
     protected virtual void Awake()
     {
+        GetMonsterData();
         _monsterAnimController = GetComponent<MonsterAnimatorController>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _currentHp = _maxHp;
@@ -221,5 +224,23 @@ public class MonsterBase : MonoBehaviour
         Vector2 boxCenter = (Vector2)transform.position + new Vector2(_attackBoxOffset.x * direction, _attackBoxOffset.y);
 
         Gizmos.DrawWireCube(boxCenter, _attackBoxSize);
+    }
+
+    private void GetMonsterData()
+    {
+        if (GameManager.Instance == null || !GameManager.DataTable.TryGetMonster(_monsterId, out MonsterData data))
+        {
+            Logger.LogError($"[MonsterBase]: 몬스터 데이터를 찾을 수 없습니다.{_monsterId}");
+            return;
+        }
+        _maxHp = data.MaxHp;
+        _moveSpeed = data.MoveSpeed;
+        _attackDamage = data.AttackDamage;
+        _attackCooldown = data.AttackCoolDown;
+        _attackBoxOffset = data.GetAttackBoxOffset();
+        _attackBoxSize = data.GetAttackBoxSize();
+        _attackPatternCount = data.AttackPatternCount;
+        _isOnlyUseSkill = data.GetIsOnlyUseSkill();
+        _isAssassin = data.GetIsAssassin();
     }
 }
