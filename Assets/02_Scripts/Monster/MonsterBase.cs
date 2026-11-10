@@ -45,6 +45,7 @@ public class MonsterBase : MonoBehaviour
     
 
     public event Action<float, float> OnHpChanged;
+    public event Action OnDied;
 
 
     protected virtual void Awake()
@@ -173,7 +174,7 @@ public class MonsterBase : MonoBehaviour
         }
 
         _monsterAnimController.ChangeState(MonsterState.Dead);
-        //Logger.LogError($"몬스터{this.name}가 죽었습니다.");
+        OnDied?.Invoke();
     }
 
     public void OnDieAnimationEnd()

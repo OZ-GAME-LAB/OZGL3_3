@@ -6,6 +6,7 @@ public class MonsterSpawnPoint : MonoBehaviour
     [Header("Spawn Settings")]
     [SerializeField] private GameObject Prefab_Monster;
     [SerializeField] private CircleCollider2D Collider_PlayerCheck;
+    [SerializeField] private string _defeatEventId;
 
     private bool _isSpawned = false;
 
@@ -28,9 +29,21 @@ public class MonsterSpawnPoint : MonoBehaviour
         _isSpawned = true;
         if (MonsterSpawnManager.Instance != null)
         {
-            MonsterSpawnManager.Instance.RequestSpawnEnemy(Prefab_Monster, this.transform.position, this.transform.rotation);
+            GameObject monsterObject = MonsterSpawnManager.Instance.RequestSpawnEnemy(
+                Prefab_Monster, transform.position, transform.rotation);
+            if (!string.IsNullOrEmpty(_defeatEventId) && monsterObject != null &&
+                monsterObject.TryGetComponent(out MonsterBase monster))
+            {
+                monster.OnDied += RecordDefeat;
+            }
         }
     }
 
-
+    private void RecordDefeat()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Npc.Dialogue.RecordEvent(_defeatEventId);
+        }
+    }
 }

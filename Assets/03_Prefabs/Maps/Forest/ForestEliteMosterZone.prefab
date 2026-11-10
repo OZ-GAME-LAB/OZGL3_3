@@ -15650,6 +15650,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2544047857196205884}
     m_Modifications:
+    - target: {fileID: 890309372017368183, guid: f6bd7b7d4f5c58449957aea063b01bfd, type: 3}
+      propertyPath: _defeatEventId
+      value: MS_CH1_ELITE_CLEARED
+      objectReference: {fileID: 0}
     - target: {fileID: 973072977785670069, guid: f6bd7b7d4f5c58449957aea063b01bfd, type: 3}
       propertyPath: m_Name
       value: ShoggothSpawnPoint
