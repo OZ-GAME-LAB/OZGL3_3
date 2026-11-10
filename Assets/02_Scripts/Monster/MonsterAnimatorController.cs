@@ -4,9 +4,12 @@ public class MonsterAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator Animator_Monster;
 
-    private bool _isAnimationPlaying { get; set; } = false;
-
     private MonsterState _currentAnimState;
+
+    public void SetTransformState(bool isTransformed)
+    {
+        Animator_Monster.SetBool("isTransformed", isTransformed);
+    }
     
     public void ChangeState(MonsterState newState)
     {
@@ -79,7 +82,6 @@ public class MonsterAnimatorController : MonoBehaviour
                 SafeSetBool("isFalling", true);
                 break;
         }
-        _isAnimationPlaying = false;
     }
 
     private void ResetAllAnimParameters()

@@ -12,5 +12,6 @@
     Forward,
     Hit,
     Spawn,
-    Fall
+    Fall,
+    Transform
 }
