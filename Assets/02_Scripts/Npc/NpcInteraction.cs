@@ -15,28 +15,18 @@ public class NpcInteraction : MonoBehaviour
 
     private void OnEnable()
     {
-        if (_playerInputHandler != null)
-        {
-            _playerInputHandler.OnInteractionRequested += HandleInteractionRequested;
-        }
+        PlayerInputHandler.OnActiveInputChanged += BindPlayerInput;
+        BindPlayerInput(PlayerInputHandler.ActiveInput);
     }
 
     private void OnDisable()
     {
-        if (_playerInputHandler != null)
-        {
-            _playerInputHandler.OnInteractionRequested -= HandleInteractionRequested;
-        }
+        PlayerInputHandler.OnActiveInputChanged -= BindPlayerInput;
+        BindPlayerInput(null);
     }
 
     private void Start()
     {
-        if (PlayerStatSet.Instance != null)
-        {
-            _playerInputHandler = PlayerStatSet.Instance.GetComponent<PlayerInputHandler>();
-            _playerInputHandler.OnInteractionRequested += HandleInteractionRequested;
-        }
-
         if (_npcType != NpcType.Artifact)
         {
             return;
@@ -51,6 +41,20 @@ public class NpcInteraction : MonoBehaviour
         if (_artifacts != null)
         {
             _artifacts.OnEquipRejected -= HandleEquipRejected;
+        }
+    }
+
+    private void BindPlayerInput(PlayerInputHandler playerInputHandler)
+    {
+        if (_playerInputHandler != null)
+        {
+            _playerInputHandler.OnInteractionRequested -= HandleInteractionRequested;
+        }
+
+        _playerInputHandler = playerInputHandler;
+        if (_playerInputHandler != null)
+        {
+            _playerInputHandler.OnInteractionRequested += HandleInteractionRequested;
         }
     }
 

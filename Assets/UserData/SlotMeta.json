@@ -3,7 +3,7 @@
         {
             "_index": 0,
             "_currency": 5000,
-            "_playTimeSeconds": 9.089130200000909,
+            "_playTimeSeconds": 9.089130200000908,
             "_createdAtUtc": "2026-11-05T02:41:25.2714993Z"
         },
         {
@@ -11,6 +11,12 @@
             "_currency": 15300,
             "_playTimeSeconds": 41.71992350000073,
             "_createdAtUtc": "2026-11-05T02:41:42.4179938Z"
+        },
+        {
+            "_index": 2,
+            "_currency": 0,
+            "_playTimeSeconds": 269.0887947000001,
+            "_createdAtUtc": "2026-11-10T01:18:07.4113042Z"
         }
     ]
 }

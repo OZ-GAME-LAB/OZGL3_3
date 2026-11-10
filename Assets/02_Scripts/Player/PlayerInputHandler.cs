@@ -19,6 +19,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool JumpInput { get; private set; }
     public bool JumpQueued { get; private set; }
 
+    public static PlayerInputHandler ActiveInput { get; private set; }
+    public static event Action<PlayerInputHandler> OnActiveInputChanged;
     public event Action<Vector2> OnInteractionRequested;
 
     private float _doubleTapLimitTime = 0.25f;
@@ -29,11 +31,38 @@ public class PlayerInputHandler : MonoBehaviour
     private bool _isRunning;
     private bool _attackSign;
 
+    private void OnEnable()
+    {
+        ActiveInput = this;
+        OnActiveInputChanged?.Invoke(this);
+    }
+
+    private void OnDisable()
+    {
+        if (ActiveInput != this)
+        {
+            return;
+        }
+
+        ActiveInput = null;
+        OnActiveInputChanged?.Invoke(null);
+    }
+
     public void ReadInput()
     {
         Keyboard keyboard = Keyboard.current;
+        NpcManager npc = GameManager.Instance != null ? GameManager.Npc : null;
+        bool spacePressed = keyboard != null && keyboard.spaceKey.wasPressedThisFrame;
+        bool blocksGameplayInput = npc?.BlocksGameplayInput == true;
 
-        if (keyboard == null || (GameManager.Instance != null && GameManager.Npc.BlocksGameplayInput))
+        if (keyboard != null && !blocksGameplayInput &&
+            (spacePressed || keyboard.gKey.wasPressedThisFrame))
+        {
+            OnInteractionRequested?.Invoke(transform.position);
+            blocksGameplayInput = npc?.IsOpen == true;
+        }
+
+        if (keyboard == null || blocksGameplayInput)
         {
             MoveInput = 0f;
             RunInput = false;
@@ -50,11 +79,6 @@ public class PlayerInputHandler : MonoBehaviour
             GuardedAttackSkillQueued = false;
             _attackSign = false;
             return;
-        }
-
-        if (keyboard.gKey.wasPressedThisFrame)
-        {
-            OnInteractionRequested?.Invoke(transform.position);
         }
 
         bool leftHeld = keyboard.leftArrowKey.isPressed;
@@ -129,8 +153,7 @@ public class PlayerInputHandler : MonoBehaviour
         AttackInput = keyboard.xKey.isPressed;
         BlockInput = keyboard.cKey.isPressed;
 
-        bool wasPressSpaceKey = keyboard.spaceKey.wasPressedThisFrame;
-        if (wasPressSpaceKey)
+        if (spacePressed)
         {
             JumpQueued = true;
         }

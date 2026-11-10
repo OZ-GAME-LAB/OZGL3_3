@@ -103,14 +103,19 @@ public class PlayerCombatHandler : MonoBehaviour
 
     public void AnimationAttackHit()
     {
-        ApplyAttackDamage(_attackDamage);
+        int hitCount = ApplyAttackDamage(_attackDamage);
+        if (hitCount == 0)
+        {
+            return;
+        }
+
         int bonus = 0;
         foreach (int value in _attackSkillGaugeGainBonuses.Values)
         {
             bonus += value;
         }
 
-        _status_Player.AddSkillGauge(Mathf.Max(1, 5 + bonus));
+        _status_Player.AddSkillGauge(Mathf.Max(1, 5 + bonus)* hitCount);
     }
 
     public void SetAttackSkillGaugeGainBonus(string artifactId, int bonus)

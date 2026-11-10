@@ -10,8 +10,8 @@ public class MapChange : MonoBehaviour
 
     private static bool _isTransitioning;
 
-    public event Action OnBeforeMapChange;
-    public event Action OnAfterMapChange;
+    public static event Action OnBeforeMapChange;
+    public static event Action OnAfterMapChange;
 
     [Header("Portal Settings")]
     [SerializeField] private MapPortalType Enum_PortalType = MapPortalType.Contact;

@@ -18,14 +18,15 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
         {
             return;
         }
+
+        _playerPrefab = Resources.Load<GameObject>("Player/Player");
     }
 
     public bool PreparePlayer(Vector3? spawnPosition = null)
     {
         if (_playerPrefab == null)
         {
-            Logger.LogError("PlayerSetting: Player 프리팹이 연결되지 않았습니다.");
-            return false;
+            _playerPrefab = Resources.Load<GameObject>("Player/Player");
         }
 
         if (!TryGetCameraFollowPlayer())
@@ -98,6 +99,11 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
 
     public bool MovePlayer(Vector3? destination = null)
     {
+        if (_playerPrefab == null)
+        {
+            _playerPrefab = Resources.Load<GameObject>("Player/Player");
+        }
+
         if (_playerInstance == null)
         {
             Logger.LogError("PlayerSetting: 이동할 플레이어가 없습니다.");
@@ -132,6 +138,11 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
 
     private bool TryGetCameraFollowPlayer()
     {
+        if (_playerPrefab == null)
+        {
+            _playerPrefab = Resources.Load<GameObject>("Player/Player");
+        }
+
         if (_cameraFollowPlayer != null)
         {
             return true;
@@ -151,6 +162,11 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
 
     public bool StartPreparedPlayer()
     {
+        if (_playerPrefab == null)
+        {
+            _playerPrefab = Resources.Load<GameObject>("Player/Player");
+        }
+
         if (_playerInstance == null || _playerInputHandler == null)
         {
             Logger.LogError("PlayerSetting: 시작 전에 플레이어를 준비해야 합니다.");

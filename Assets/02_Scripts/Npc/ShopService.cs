@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -102,6 +102,7 @@ public class ShopService
         }
 
         OnChanged?.Invoke();
+        GameManager.Sound.PlaySFX(Const.Audio.PURCHASE);
         return ShopPurchaseResult.Purchased;
     }
 }
