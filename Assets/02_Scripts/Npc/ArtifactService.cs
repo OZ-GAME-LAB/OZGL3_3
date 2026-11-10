@@ -132,6 +132,12 @@ public class ArtifactService
             }
         }
 
+        PlayerArtifactEquipment equipment = PlayerArtifactEquipment.Instance;
+        if (equipment == null || !equipment.EquipArtifact(artifactId, artifact.Value))
+        {
+            return;
+        }
+
         _userArtifactData.EquippedArtifactIds.Add(artifactId);
         if (isForced)
         {
@@ -146,11 +152,13 @@ public class ArtifactService
 
     public bool Unequip(string artifactId)
     {
-        if (!_userArtifactData.EquippedArtifactIds.Remove(artifactId))
+        if (!_userArtifactData.EquippedArtifactIds.Contains(artifactId) ||
+            !TryUnequipPlayerArtifact(artifactId))
         {
             return false;
         }
 
+        _userArtifactData.EquippedArtifactIds.Remove(artifactId);
         ResetAttempts();
         _userArtifactData.SaveData();
         OnChanged?.Invoke();
@@ -159,12 +167,19 @@ public class ArtifactService
 
     public bool RemoveArtifact(string artifactId)
     {
-        if (!_userArtifactData.OwnedArtifactIds.Remove(artifactId))
+        if (!_userArtifactData.OwnedArtifactIds.Contains(artifactId))
+        {
+            return false;
+        }
+
+        if (_userArtifactData.EquippedArtifactIds.Contains(artifactId) &&
+            !TryUnequipPlayerArtifact(artifactId))
         {
             return false;
         }
 
         _userArtifactData.EquippedArtifactIds.Remove(artifactId);
+        _userArtifactData.OwnedArtifactIds.Remove(artifactId);
 
         if (SelectedArtifact?.Id == artifactId)
         {
@@ -175,6 +190,13 @@ public class ArtifactService
         _userArtifactData.SaveData();
         OnChanged?.Invoke();
         return true;
+    }
+
+    private bool TryUnequipPlayerArtifact(string artifactId)
+    {
+        PlayerArtifactEquipment equipment = PlayerArtifactEquipment.Instance;
+        return equipment != null &&
+            equipment.UnequipArtifact(artifactId, _tables.Artifact[artifactId].Value);
     }
 
     public void ResetAttempts()
