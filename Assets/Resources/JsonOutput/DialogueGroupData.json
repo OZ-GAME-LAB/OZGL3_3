@@ -23,7 +23,7 @@
     "StartDialogueId": "MS_ORBEN_CLUE_001",
     "ConditionId": "MS_COND_0004",
     "IsRepeatable": false,
-    "Notes": "치료 단서의 출처와 숲→유적 경로 확인",
+    "Notes": "치료 기록의 출처와 폐허로 가는 길 안내",
     "Priority": 100
   },
   {
@@ -41,7 +41,7 @@
     "StartDialogueId": "MS_RIA_FAREWELL_001",
     "ConditionId": "MS_COND_0008",
     "IsRepeatable": false,
-    "Notes": "출발 인사 후 챕터 1 진입 허용",
+    "Notes": "숲 안쪽으로 나가기 전 마을에서 인사",
     "Priority": 100
   },
   {
@@ -77,7 +77,7 @@
     "StartDialogueId": "CH1_ENTRY_001",
     "ConditionId": "MS_COND_0016",
     "IsRepeatable": false,
-    "Notes": "챕터 1: 메마른 숲 진입",
+    "Notes": "마을에서 숲 안쪽으로 출발",
     "Priority": 100
   },
   {
@@ -86,7 +86,7 @@
     "StartDialogueId": "CH1_KYLE_GUIDE_001",
     "ConditionId": "MS_COND_0018",
     "IsRepeatable": false,
-    "Notes": "숲의 몬스터 3종과 전투 구역 안내",
+    "Notes": "숲의 전투 구역과 유물 및 스킬 구역 안내",
     "Priority": 100
   },
   {
@@ -104,16 +104,7 @@
     "StartDialogueId": "CH1_COMBAT_INTRO_001",
     "ConditionId": "MS_COND_0022",
     "IsRepeatable": false,
-    "Notes": "챕터 1 전투 시작 전 안내; 완료 트리거를 전투 시스템에 전달",
-    "Priority": 100
-  },
-  {
-    "Id": "CH1_CLEAR",
-    "NpcId": "PLAYER",
-    "StartDialogueId": "CH1_CLEAR_001",
-    "ConditionId": "MS_COND_0024",
-    "IsRepeatable": false,
-    "Notes": "전투 완료를 외부에서 보고받은 뒤에만 재생",
+    "Notes": "숲의 일반 몬스터 구역 진입",
     "Priority": 100
   },
   {
@@ -122,7 +113,7 @@
     "StartDialogueId": "CH1_RELIC_001",
     "ConditionId": "MS_COND_0027",
     "IsRepeatable": false,
-    "Notes": "챕터 1 완료: 유적으로 이어지는 첫 단서 확보",
+    "Notes": "유물의 방에서 기록실 단서 조사",
     "Priority": 100
   },
   {
@@ -131,7 +122,7 @@
     "StartDialogueId": "CH1_KYLE_AFTER_001",
     "ConditionId": "MS_COND_0029",
     "IsRepeatable": false,
-    "Notes": "선택 대화: 전투 후 기록과 엘린 안내",
+    "Notes": "유물의 방을 조사한 뒤 엘린 소개",
     "Priority": 150
   },
   {
@@ -140,7 +131,7 @@
     "StartDialogueId": "MS_RIA_CH1_REPORT_001",
     "ConditionId": "MS_COND_0031",
     "IsRepeatable": false,
-    "Notes": "선택 대화: 첫 단서 획득 후 리아에게 보고",
+    "Notes": "숲 엘리트 전투 뒤 마을 귀환 대화",
     "Priority": 150
   },
   {
@@ -149,7 +140,7 @@
     "StartDialogueId": "CH2_ENTRY_001",
     "ConditionId": "MS_COND_0034",
     "IsRepeatable": false,
-    "Notes": "챕터 2: 오래된 유적 진입",
+    "Notes": "숲 엘리트 전투 뒤 버려진 폐허 진입",
     "Priority": 100
   },
   {
@@ -158,7 +149,7 @@
     "StartDialogueId": "CH2_ELIN_GUIDE_001",
     "ConditionId": "MS_COND_0036",
     "IsRepeatable": false,
-    "Notes": "유적의 몬스터 3종과 기록실 조사 안내",
+    "Notes": "폐허의 마법의 전당과 수호자 안내",
     "Priority": 100
   },
   {
@@ -176,16 +167,7 @@
     "StartDialogueId": "CH2_COMBAT_INTRO_001",
     "ConditionId": "MS_COND_0040",
     "IsRepeatable": false,
-    "Notes": "챕터 2 전투 시작 전 안내; 전투 중 대사 없음",
-    "Priority": 100
-  },
-  {
-    "Id": "CH2_CLEAR",
-    "NpcId": "PLAYER",
-    "StartDialogueId": "CH2_CLEAR_001",
-    "ConditionId": "MS_COND_0042",
-    "IsRepeatable": false,
-    "Notes": "챕터 2 전투 완료 후 조사 목표 안내",
+    "Notes": "폐허의 일반 몬스터 구역 진입",
     "Priority": 100
   },
   {
@@ -194,7 +176,7 @@
     "StartDialogueId": "CH2_RECORD_001",
     "ConditionId": "MS_COND_0045",
     "IsRepeatable": false,
-    "Notes": "치료제의 실재를 뒷받침하는 단서; 꽃 획득이나 정체 공개 없음",
+    "Notes": "수호자 처치 후 기록실 석판 조사",
     "Priority": 100
   },
   {
@@ -241,5 +223,86 @@
     "IsRepeatable": false,
     "Notes": "선택 대화: 치료 진행 중이라는 사실 유지",
     "Priority": 150
+  },
+  {
+    "Id": "CH1_START",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH1_START_001",
+    "ConditionId": null,
+    "IsRepeatable": false,
+    "Notes": "숲 시작 지점에서 마을 발견",
+    "Priority": 100
+  },
+  {
+    "Id": "CH1_ARCANE_HALL",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH1_ARCANE_HALL_001",
+    "ConditionId": "MS_COND_0060",
+    "IsRepeatable": false,
+    "Notes": "숲의 마법의 전당에서 스킬을 익히기 전",
+    "Priority": 100
+  },
+  {
+    "Id": "CH1_ELITE_INTRO",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH1_ELITE_INTRO_001",
+    "ConditionId": "MS_COND_0061",
+    "IsRepeatable": false,
+    "Notes": "숲의 엘리트 구역 진입",
+    "Priority": 100
+  },
+  {
+    "Id": "CH1_ELITE_CLEAR",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH1_ELITE_CLEAR_001",
+    "ConditionId": "MS_COND_0063",
+    "IsRepeatable": false,
+    "Notes": "숲 엘리트 처치와 공격 스킬 지급 완료 뒤",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_ARCANE_HALL",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH2_ARCANE_HALL_001",
+    "ConditionId": "MS_COND_0064",
+    "IsRepeatable": false,
+    "Notes": "폐허 초입의 마법의 전당에서 스킬을 익히기 전",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_RELIC",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH2_RELIC_001",
+    "ConditionId": "MS_COND_0064",
+    "IsRepeatable": false,
+    "Notes": "폐허 유물의 방에서 유물을 발견",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_ELITE_INTRO",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH2_ELITE_INTRO_001",
+    "ConditionId": "MS_COND_0064",
+    "IsRepeatable": false,
+    "Notes": "폐허의 엘리트 구역 진입",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_GUARDIAN_INTRO",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH2_GUARDIAN_INTRO_001",
+    "ConditionId": "MS_COND_0065",
+    "IsRepeatable": false,
+    "Notes": "수호자 전투 직전",
+    "Priority": 100
+  },
+  {
+    "Id": "CH2_GUARDIAN_CLEAR",
+    "NpcId": "PLAYER",
+    "StartDialogueId": "CH2_GUARDIAN_CLEAR_001",
+    "ConditionId": "MS_COND_0067",
+    "IsRepeatable": false,
+    "Notes": "수호자 처치 뒤",
+    "Priority": 100
   }
 ]

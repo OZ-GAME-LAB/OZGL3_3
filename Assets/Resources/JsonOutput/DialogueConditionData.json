@@ -99,9 +99,9 @@
   },
   {
     "Id": "MS_COND_0015",
-    "ConditionType": "CompletedDialogueGroup",
+    "ConditionType": "Event",
     "Operator": "Equal",
-    "Value": "CH1_RELIC:false",
+    "Value": "MS_CH1_ELITE_CLEARED:false",
     "NextConditionId": null
   },
   {
@@ -141,9 +141,9 @@
   },
   {
     "Id": "MS_COND_0021",
-    "ConditionType": "CompletedDialogueGroup",
+    "ConditionType": "Event",
     "Operator": "Equal",
-    "Value": "CH1_CLEAR:false",
+    "Value": "MS_CH1_ELITE_CLEARED:false",
     "NextConditionId": null
   },
   {
@@ -161,31 +161,10 @@
     "NextConditionId": null
   },
   {
-    "Id": "MS_COND_0024",
-    "ConditionType": "CompletedDialogueGroup",
-    "Operator": "Equal",
-    "Value": "CH1_COMBAT_INTRO:true",
-    "NextConditionId": "MS_COND_0025"
-  },
-  {
-    "Id": "MS_COND_0025",
-    "ConditionType": "Event",
-    "Operator": "Equal",
-    "Value": "MS_CH1_COMBAT_CLEARED:true",
-    "NextConditionId": "MS_COND_0026"
-  },
-  {
-    "Id": "MS_COND_0026",
-    "ConditionType": "CompletedDialogueGroup",
-    "Operator": "Equal",
-    "Value": "CH1_CLEAR:false",
-    "NextConditionId": null
-  },
-  {
     "Id": "MS_COND_0027",
     "ConditionType": "CompletedDialogueGroup",
     "Operator": "Equal",
-    "Value": "CH1_CLEAR:true",
+    "Value": "CH1_KYLE_GUIDE:true",
     "NextConditionId": "MS_COND_0028"
   },
   {
@@ -199,7 +178,7 @@
     "Id": "MS_COND_0029",
     "ConditionType": "CompletedDialogueGroup",
     "Operator": "Equal",
-    "Value": "CH1_CLEAR:true",
+    "Value": "CH1_RELIC:true",
     "NextConditionId": "MS_COND_0030"
   },
   {
@@ -211,9 +190,9 @@
   },
   {
     "Id": "MS_COND_0031",
-    "ConditionType": "CompletedDialogueGroup",
+    "ConditionType": "Event",
     "Operator": "Equal",
-    "Value": "CH1_RELIC:true",
+    "Value": "MS_CH1_ELITE_CLEARED:true",
     "NextConditionId": "MS_COND_0032"
   },
   {
@@ -232,9 +211,9 @@
   },
   {
     "Id": "MS_COND_0034",
-    "ConditionType": "CompletedDialogueGroup",
+    "ConditionType": "Event",
     "Operator": "Equal",
-    "Value": "CH1_RELIC:true",
+    "Value": "MS_CH1_ELITE_CLEARED:true",
     "NextConditionId": "MS_COND_0035"
   },
   {
@@ -287,31 +266,10 @@
     "NextConditionId": null
   },
   {
-    "Id": "MS_COND_0042",
-    "ConditionType": "CompletedDialogueGroup",
-    "Operator": "Equal",
-    "Value": "CH2_COMBAT_INTRO:true",
-    "NextConditionId": "MS_COND_0043"
-  },
-  {
-    "Id": "MS_COND_0043",
+    "Id": "MS_COND_0045",
     "ConditionType": "Event",
     "Operator": "Equal",
-    "Value": "MS_CH2_COMBAT_CLEARED:true",
-    "NextConditionId": "MS_COND_0044"
-  },
-  {
-    "Id": "MS_COND_0044",
-    "ConditionType": "CompletedDialogueGroup",
-    "Operator": "Equal",
-    "Value": "CH2_CLEAR:false",
-    "NextConditionId": null
-  },
-  {
-    "Id": "MS_COND_0045",
-    "ConditionType": "CompletedDialogueGroup",
-    "Operator": "Equal",
-    "Value": "CH2_CLEAR:true",
+    "Value": "MS_CH2_GUARDIAN_DEFEATED:true",
     "NextConditionId": "MS_COND_0046"
   },
   {
@@ -385,31 +343,73 @@
     "NextConditionId": null
   },
   {
-    "Id": "MS_COND_0056",
+    "Id": "MS_COND_0060",
     "ConditionType": "CompletedDialogueGroup",
     "Operator": "Equal",
-    "Value": "CH1_COMBAT_INTRO:true",
-    "NextConditionId": "MS_COND_0057"
-  },
-  {
-    "Id": "MS_COND_0057",
-    "ConditionType": "CompletedDialogueGroup",
-    "Operator": "Equal",
-    "Value": "CH1_CLEAR:false",
+    "Value": "CH1_ENTRY:true",
     "NextConditionId": null
   },
   {
-    "Id": "MS_COND_0058",
+    "Id": "MS_COND_0061",
     "ConditionType": "CompletedDialogueGroup",
     "Operator": "Equal",
-    "Value": "CH2_COMBAT_INTRO:true",
-    "NextConditionId": "MS_COND_0059"
+    "Value": "CH1_ENTRY:true",
+    "NextConditionId": "MS_COND_0062"
   },
   {
-    "Id": "MS_COND_0059",
+    "Id": "MS_COND_0062",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "MS_CH1_ELITE_CLEARED:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0063",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "MS_CH1_ELITE_CLEARED:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0064",
     "ConditionType": "CompletedDialogueGroup",
     "Operator": "Equal",
-    "Value": "CH2_CLEAR:false",
+    "Value": "CH2_ENTRY:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0065",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_ENTRY:true",
+    "NextConditionId": "MS_COND_0066"
+  },
+  {
+    "Id": "MS_COND_0066",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "MS_CH2_GUARDIAN_DEFEATED:false",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0067",
+    "ConditionType": "Event",
+    "Operator": "Equal",
+    "Value": "MS_CH2_GUARDIAN_DEFEATED:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0068",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH1_ELITE_INTRO:true",
+    "NextConditionId": null
+  },
+  {
+    "Id": "MS_COND_0069",
+    "ConditionType": "CompletedDialogueGroup",
+    "Operator": "Equal",
+    "Value": "CH2_GUARDIAN_INTRO:true",
     "NextConditionId": null
   }
 ]
