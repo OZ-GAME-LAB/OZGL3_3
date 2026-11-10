@@ -23,11 +23,28 @@ public static class Const
     public static class Audio
     {
         public const string TITLE = "BGM/title";
+        public const string CHAP1 = "BGM/chap1";
+        public const string CHAP2 = "BGM/chap2";
 
 
-        public const string BUTTON1 = "button1";
-        public const string BUTTON2 = "button2";
-        public const string BUTTON3 = "button3";
-        public const string PURCHASE = "purchase";
+        public const string BUTTON1 = "UI/button1";
+        public const string BUTTON2 = "UI/button2";
+        public const string BUTTON3 = "UI/button3";
+        public const string PURCHASE = "UI/purchase";
+
+        public const string SWORD1_1 = "Sword/Sword1_1";
+        public const string SWORD1_2 = "Sword/Sword1_2";
+        public const string SWORD1_3 = "Sword/Sword1_3";
+        public const string SWORD2_1 = "Sword/Sword2_1";
+        public const string SWORD2_2 = "Sword/Sword2_2";
+        public const string SWORD2_3 = "Sword/Sword2_3";
+
+        public const string ACQUIRED = "Acquired";
+        public const string UNLOCK = "Unlock";
+
+        public const string WEAPON_UPGRAD1 = "WeaponUpgrade/Weapon_Upgrading1";
+        public const string WEAPON_UPGRAD2 = "WeaponUpgrade/Weapon_Upgrading2";
+        public const string WEAPON_UPGRAD3 = "WeaponUpgrade/Weapon_Upgrading3";
+        public const string WEAPON_UPGRAD_END = "WeaponUpgrade/Weapon_Upgrad_End";
     }
 }
