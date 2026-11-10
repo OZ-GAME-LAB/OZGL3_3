@@ -52,11 +52,9 @@ public class PlayerInputHandler : MonoBehaviour
     {
         Keyboard keyboard = Keyboard.current;
         NpcManager npc = GameManager.Instance != null ? GameManager.Npc : null;
-        bool spacePressed = keyboard != null && keyboard.spaceKey.wasPressedThisFrame;
         bool blocksGameplayInput = npc?.BlocksGameplayInput == true;
 
-        if (keyboard != null && !blocksGameplayInput &&
-            (spacePressed || keyboard.gKey.wasPressedThisFrame))
+        if (keyboard != null && !blocksGameplayInput && keyboard.gKey.wasPressedThisFrame)
         {
             OnInteractionRequested?.Invoke(transform.position);
             blocksGameplayInput = npc?.IsOpen == true;
@@ -153,7 +151,7 @@ public class PlayerInputHandler : MonoBehaviour
         AttackInput = keyboard.xKey.isPressed;
         BlockInput = keyboard.cKey.isPressed;
 
-        if (spacePressed)
+        if (keyboard.spaceKey.wasPressedThisFrame)
         {
             JumpQueued = true;
         }

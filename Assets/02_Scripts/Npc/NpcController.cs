@@ -78,7 +78,7 @@ public class NpcController : MonoBehaviour
             }
             return;
         }
-        if (_npcManager.CurrentType == NpcType.Story && keyboard.anyKey.wasPressedThisFrame)
+        if (_npcManager.CurrentType == NpcType.Story && keyboard.gKey.wasPressedThisFrame)
         {
             _npcManager.Dialogue.Advance();
         }
