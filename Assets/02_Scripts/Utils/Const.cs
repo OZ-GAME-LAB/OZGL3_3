@@ -22,7 +22,7 @@ public static class Const
 
     public static class Audio
     {
-        public const string TITLE = "title";
+        public const string TITLE = "BGM/title";
 
 
         public const string BUTTON1 = "button1";

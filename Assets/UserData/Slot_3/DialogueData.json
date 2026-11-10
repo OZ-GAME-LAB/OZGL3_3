@@ -1,0 +1,14 @@
+{
+    "_storyStage": 0,
+    "_flags": [
+        "MS_RIA_INTRO",
+        "MS_EDAN_INTRO",
+        "MS_ORBEN_CLUE"
+    ],
+    "_events": [],
+    "_completedDialogueGroupIds": [
+        "MS_RIA_INTRO",
+        "MS_EDAN_INTRO",
+        "MS_ORBEN_CLUE"
+    ]
+}
