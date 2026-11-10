@@ -73,8 +73,8 @@ public class PlayerArtifactEquipment : SingletonBehaviour<PlayerArtifactEquipmen
             return false;
         }
 
-        _ownedArtifacts.Clear();
-        _ownedArtifacts.AddRange(userArtifactData.OwnedArtifactIds);
+        // 상점 구매와 대화 보상도 이 보유 목록을 갱신한다.
+        _ownedArtifacts = userArtifactData.OwnedArtifactIds;
 
         bool success = true;
         HashSet<string> savedEquippedArtifacts =
