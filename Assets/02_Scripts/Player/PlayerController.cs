@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class PlayerController : SingletonBehaviour<PlayerController>
     [SerializeField] private Rigidbody2D _rigidbody2D_Player;
     [SerializeField] private PlayerInputHandler _playerInputHandler;
     [SerializeField] private PlayerCombatHandler _playerCombatHandler;
-    private PlayerStatus _playerStatus;
+    [SerializeField] private PlayerStatus _playerStatus;
     [SerializeField] private Animator _animator_Player;
     [SerializeField] private SpriteRenderer _spriteRenderer_Player;
     [SerializeField] private Transform _transform_GroundCheck;
@@ -631,6 +631,37 @@ public class PlayerController : SingletonBehaviour<PlayerController>
         StopHurtOverlay();
 
         _stateMachine.ChangeStateSign(PlayerState.Died);
+    }
+
+    public bool Revive()
+    {
+        if (_playerStatus == null || _stateMachine == null)
+        {
+            Logger.LogError("PlayerController: 부활에 필요한 플레이어 상태가 준비되지 않았습니다.");
+            return false;
+        }
+
+        if (!_playerStatus.IsDead || !IsDiedState)
+        {
+            Logger.LogWarning("PlayerController: 사망 상태가 아니어서 부활할 수 없습니다.");
+            return false;
+        }
+
+        _playerStatus.RestoreForRevive();
+        _playerInputHandler.ClearInput();
+        _attackFlow?.ResetFlags();
+        _playerHealSkill?.Cancel();
+        StopHurtOverlay();
+
+        _playerContext.ResetAirActions();
+        _visualOffset?.ResetOffset();
+        _isGrounded = false;
+        _isCrouchActionActive = false;
+        _animator_Player.ResetTrigger("ComboAttack");
+        _animator_Player.ResetTrigger("JumpAttack");
+        _animator_Player.SetBool("IsDead", false);
+        _stateMachine.ChangeStateSign(PlayerState.Idle);
+        return true;
     }
 
     private void HandleDamaged(

@@ -131,6 +131,39 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
         return true;
     }
 
+    public bool RevivePlayer(Vector3? destination = null)
+    {
+        if (_playerInstance == null)
+        {
+            Logger.LogError("PlayerSetting: 부활할 플레이어가 없습니다.");
+            return false;
+        }
+
+        PlayerController playerController =
+            _playerInstance.GetComponent<PlayerController>();
+        PlayerStatus playerStatus =
+            _playerInstance.GetComponent<PlayerStatus>();
+
+        if (playerController == null || playerStatus == null)
+        {
+            Logger.LogError("PlayerSetting: 부활에 필요한 플레이어 컴포넌트가 없습니다.");
+            return false;
+        }
+
+        if (!playerStatus.IsDead)
+        {
+            Logger.LogWarning("PlayerSetting: 플레이어가 사망 상태가 아니어서 부활하지 않았습니다.");
+            return false;
+        }
+
+        if (!MovePlayer(destination))
+        {
+            return false;
+        }
+
+        return playerController.Revive();
+    }
+
     private bool TryGetCameraFollowPlayer()
     {
         if (_playerPrefab == null)
