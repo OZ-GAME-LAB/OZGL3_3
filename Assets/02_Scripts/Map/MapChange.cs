@@ -4,7 +4,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 
 [RequireComponent(typeof(Collider2D))]
-public class MapChange : MonoBehaviour
+public class MapChange : MonoBehaviour, IInteractable
 {
     private const string PLAYER_TAG = "Player";
 
@@ -67,17 +67,6 @@ public class MapChange : MonoBehaviour
         {
             _transformPlayer = null;
         }
-    }
-
-    public void DoInteractMapChange()
-    {
-        if (Enum_PortalType != MapPortalType.Interaction ||
-            _transformPlayer == null)
-        {
-            return;
-        }
-
-        DoStartMapChange(_transformPlayer);
     }
 
     private void DoStartMapChange(Transform transformPlayer)
@@ -198,5 +187,18 @@ public class MapChange : MonoBehaviour
             transformPlayer.position =
                 Transform_DestinationPoint.position;
         }
+    }
+
+    public void Interact()
+    {
+        if (Enum_PortalType != MapPortalType.Interaction ||
+            _transformPlayer == null)
+        {
+            return;
+        }
+
+        Logger.Log("MapChange: Interact 호출");
+
+        DoStartMapChange(_transformPlayer);
     }
 }
