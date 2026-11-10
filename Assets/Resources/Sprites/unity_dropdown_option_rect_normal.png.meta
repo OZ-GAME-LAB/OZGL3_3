@@ -1,0 +1,240 @@
+fileFormatVersion: 2
+guid: 7725af8132b850d4394df129cbcaf65a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8549429779532704575
+    second: unity_dropdown_option_rect_normal_0
+  - first:
+      213: 2949703728245429339
+    second: unity_dropdown_option_rect_normal_1
+  - first:
+      213: 2959313491116716053
+    second: unity_dropdown_option_rect_normal_2
+  - first:
+      213: -9099309707044440349
+    second: unity_dropdown_option_rect_normal_3
+  - first:
+      213: 2911757896174285003
+    second: unity_dropdown_option_rect_normal_4
+  - first:
+      213: 3023982027274977117
+    second: unity_dropdown_option_rect_normal_5
+  - first:
+      213: 389197486018608428
+    second: unity_dropdown_option_rect_normal_6
+  - first:
+      213: 7897070525761278954
+    second: unity_dropdown_option_rect_normal_7
+  - first:
+      213: 7786068349094210126
+    second: unity_dropdown_option_rect_normal_8
+  - first:
+      213: 3019599683236483470
+    second: unity_dropdown_option_rect_normal_9
+  - first:
+      213: 2262376155317332965
+    second: unity_dropdown_option_rect_normal_10
+  - first:
+      213: 825441764330476848
+    second: unity_dropdown_option_rect_normal_11
+  - first:
+      213: 2163860130595423508
+    second: unity_dropdown_option_rect_normal_12
+  - first:
+      213: -391596739641649690
+    second: unity_dropdown_option_rect_normal_13
+  - first:
+      213: -455960683934619385
+    second: unity_dropdown_option_rect_normal_14
+  - first:
+      213: 7621992551458310408
+    second: unity_dropdown_option_rect_normal_15
+  - first:
+      213: 3316405768024555335
+    second: unity_dropdown_option_rect_normal_16
+  - first:
+      213: -3414369451313283907
+    second: unity_dropdown_option_rect_normal_17
+  - first:
+      213: -5482441862984034922
+    second: unity_dropdown_option_rect_normal_18
+  - first:
+      213: -8946502465198327908
+    second: unity_dropdown_option_rect_normal_19
+  - first:
+      213: 4889508150740889608
+    second: unity_dropdown_option_rect_normal_20
+  - first:
+      213: -8493861062121642969
+    second: unity_dropdown_option_rect_normal_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: unity_dropdown_option_rect_normal_21
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 493
+        width: 2495
+        height: 456
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 724a7bccd5ebf1a80800000000000000
+      internalID: -8493861062121642969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 685f4ada1d5d4e740888538e360251da
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      unity_dropdown_option_rect_normal_0: 8549429779532704575
+      unity_dropdown_option_rect_normal_1: 2949703728245429339
+      unity_dropdown_option_rect_normal_10: 2262376155317332965
+      unity_dropdown_option_rect_normal_11: 825441764330476848
+      unity_dropdown_option_rect_normal_12: 2163860130595423508
+      unity_dropdown_option_rect_normal_13: -391596739641649690
+      unity_dropdown_option_rect_normal_14: -455960683934619385
+      unity_dropdown_option_rect_normal_15: 7621992551458310408
+      unity_dropdown_option_rect_normal_16: 3316405768024555335
+      unity_dropdown_option_rect_normal_17: -3414369451313283907
+      unity_dropdown_option_rect_normal_18: -5482441862984034922
+      unity_dropdown_option_rect_normal_19: -8946502465198327908
+      unity_dropdown_option_rect_normal_2: 2959313491116716053
+      unity_dropdown_option_rect_normal_20: 4889508150740889608
+      unity_dropdown_option_rect_normal_21: -8493861062121642969
+      unity_dropdown_option_rect_normal_3: -9099309707044440349
+      unity_dropdown_option_rect_normal_4: 2911757896174285003
+      unity_dropdown_option_rect_normal_5: 3023982027274977117
+      unity_dropdown_option_rect_normal_6: 389197486018608428
+      unity_dropdown_option_rect_normal_7: 7897070525761278954
+      unity_dropdown_option_rect_normal_8: 7786068349094210126
+      unity_dropdown_option_rect_normal_9: 3019599683236483470
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
