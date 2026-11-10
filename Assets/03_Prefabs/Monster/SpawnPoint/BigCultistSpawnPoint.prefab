@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91490759cd2d6d34192fe44e305c3af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterSpawnPoint
-  Prefab_Monster: {fileID: 1917031126864712579, guid: ac677f07a1285be40b3195c19a909bae, type: 3}
+  Prefab_Monster: {fileID: 1227404574783131776, guid: ac677f07a1285be40b3195c19a909bae, type: 3}
   Collider_PlayerCheck: {fileID: 6604607625401028735}
 --- !u!58 &6604607625401028735
 CircleCollider2D:
