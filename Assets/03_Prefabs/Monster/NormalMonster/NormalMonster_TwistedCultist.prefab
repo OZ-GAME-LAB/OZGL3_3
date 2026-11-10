@@ -318,9 +318,8 @@ MonoBehaviour:
     m_Bits: 8
   _isOnlyUseSkill: 0
   _isAssassin: 0
-  _monsterType: 1
-  Skills:
-  - {fileID: 11400000, guid: cfcc896dfcdc1c943b971cca3798e16c, type: 2}
+  _monsterType: 6
+  Skills: []
   _playerTransform: {fileID: 0}
   _rigidbody2D: {fileID: 139485073934548832}
   _isHit: 0
@@ -336,6 +335,7 @@ MonoBehaviour:
   _attackDistance: 1
   _playerTransformCheckCollider: {fileID: 4450993553546034223}
   AnimController_NormalMonster: {fileID: 1758006499089067376}
+  _spriteRenderer: {fileID: 0}
 --- !u!114 &1758006499089067376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterAnimatorController
   Animator_Monster: {fileID: 4470657038234632191}
+  _isIdle: 0
+  _isWalk: 0
 --- !u!50 &139485073934548832
 Rigidbody2D:
   serializedVersion: 5

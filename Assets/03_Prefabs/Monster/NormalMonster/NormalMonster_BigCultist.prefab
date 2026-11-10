@@ -132,6 +132,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 7204746060465306123}
   _isHit: 0
   _isUsingStealthSkill: 0
+  _attackCooldown: 3
   _isAttackUseable: 0
   _isSkillUseable: 0
   _groundCheck: {fileID: 733994047296250223}
@@ -143,6 +144,7 @@ MonoBehaviour:
   _attackDistance: 1
   _playerTransformCheckCollider: {fileID: 6176704655035423769}
   AnimController_NormalMonster: {fileID: 8211066119383816518}
+  _spriteRenderer: {fileID: 0}
 --- !u!114 &8211066119383816518
 MonoBehaviour:
   m_ObjectHideFlags: 0
