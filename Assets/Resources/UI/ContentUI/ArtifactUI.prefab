@@ -3337,7 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1168490da93ce4dbafd8d6d4b8911f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactUI
-  _closeButton: {fileID: 0}
+  _closeButton: {fileID: 11581211598911232}
   _portrait: {fileID: 1382928105834613965}
   _slotButtons:
   - {fileID: 3891119278390686194}
@@ -7079,6 +7079,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+--- !u!114 &11581211598911232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7784125194642695698, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}
+  m_PrefabInstance: {fileID: 7795697504341938450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4287dad5c5cfca24c89bb9c28d17be1b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
 --- !u!224 &8368624373599040961 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1732955759051318483, guid: 31eae666453ae2d41936c1a329d28b9b, type: 3}

@@ -1,4 +1,9 @@
 {
-    "_currency": 5000,
-    "_items": []
+    "_currency": 1100,
+    "_items": [
+        {
+            "_id": "ITEM_001",
+            "_count": 1
+        }
+    ]
 }

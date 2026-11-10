@@ -17,11 +17,28 @@ public class PlayerDebugTester : MonoBehaviour
             return;
         }
 
-        // K: 자살치트키, J: 자해치트키, H: 자힐치트키 , L: 게이지회복치트키, O: 더블점프 잠금해제
+        // K: 자살치트키, J: 자해치트키, H: 자힐치트키, L: 게이지회복치트키, R: 부활, O: 더블점프 잠금해제
         if (keyboard.kKey.wasPressedThisFrame)
         {
             status.TakeDamage(status.MaxHealth * 2);
             Logger.Log($"[Debug] 플레이어사망 치트키 (HP: {status.CurrentHealth}/{status.MaxHealth})");
+        }
+
+        if (keyboard.rKey.wasPressedThisFrame)
+        {
+            PlayerSetting playerSetting = PlayerSetting.Instance;
+            if (playerSetting == null)
+            {
+                Logger.LogError("[Debug] PlayerSetting을 찾을 수 없어 부활하지 못했습니다.");
+                return;
+            }
+
+            if (playerSetting.RevivePlayer())
+            {
+                Logger.Log(
+                    $"[Debug] 플레이어 부활 (HP: {status.CurrentHealth}/{status.MaxHealth}, " +
+                    $"스킬 게이지: {status.CurrentSkillGauge}/{status.MaxSkillGauge})");
+            }
         }
 
         if (keyboard.jKey.wasPressedThisFrame)
