@@ -46,5 +46,13 @@ public static class Const
         public const string WEAPON_UPGRAD2 = "WeaponUpgrade/Weapon_Upgrading2";
         public const string WEAPON_UPGRAD3 = "WeaponUpgrade/Weapon_Upgrading3";
         public const string WEAPON_UPGRAD_END = "WeaponUpgrade/Weapon_Upgrad_End";
+
+        public const string GRASS_WALK = "Player/Grass_Walk";
+        public const string GRASS_RUN = "Player/Grass_Run";
+        public const string GRASS_Rand = "Player/Grass_Rand";
+
+            public const string EARTHGROUND_WALK = "Player/EarthGround_Walk";
+        public const string EARTHGROUND_RUN = "Player/EarthGround_Run";
+        public const string EARTHGROUND_Rand = "Player/EarthGround_Rand";
     }
 }
