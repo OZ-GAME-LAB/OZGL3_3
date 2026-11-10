@@ -16,19 +16,19 @@ public class MonsterSpawnManager : MonoBehaviour
         Instance = this;
     }
 
-    public void RequestSpawnEnemy(GameObject prefab_Monster, Vector3 position_Monster, Quaternion rotation_Monster)
+    public GameObject RequestSpawnEnemy(GameObject prefab_Monster, Vector3 position_Monster, Quaternion rotation_Monster)
     {
         if (prefab_Monster == null)
         {
             Logger.LogWarning("프리팹이 등록되지 않은 몬스터 입니다.");
-            return;
+            return null;
         }
 
         var gObj = Instantiate(prefab_Monster, position_Monster, rotation_Monster);
         if (gObj == null)
         {
             Logger.LogWarning("생성에 실패한 게임 오브젝트 입니다.");
-            return;
+            return null;
         }
 
         _objectInstanceKeyGenerator++;
@@ -36,13 +36,14 @@ public class MonsterSpawnManager : MonoBehaviour
         if (_createdMonsterContainer.ContainsKey(_objectInstanceKeyGenerator) == true)
         {
             Logger.LogWarning("이미 동일한 키가 발급된 게임 오브젝트가 존재합니다");
-            return;
+            return null;
         }
 
         _createdMonsterContainer.Add(_objectInstanceKeyGenerator, gObj);
         InitGeneratedEntityObject(_objectInstanceKeyGenerator, gObj);
 
         Logger.Log($"키: {_objectInstanceKeyGenerator}의 객체 {gObj.name}이 호출되었습니다.");
+        return gObj;
     }
 
     private void InitGeneratedEntityObject(int generatedId, GameObject gObj)
