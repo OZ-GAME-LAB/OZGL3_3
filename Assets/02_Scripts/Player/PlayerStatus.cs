@@ -176,6 +176,13 @@ public class PlayerStatus : SingletonBehaviour<PlayerStatus>
         SetHealth(CurrentHealth + amount);
     }
 
+    internal void RestoreForRevive()
+    {
+        IsBlocking = false;
+        SetHealth(MaxHealth);
+        SetSkillGauge(0);
+    }
+
     public bool TryUseSkillGauge(int amount)
     {
         if (amount < 0)
