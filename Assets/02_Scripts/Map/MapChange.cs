@@ -25,6 +25,8 @@ public class MapChange : MonoBehaviour, IInteractable
 
     private Transform _transformPlayer;
 
+    public MapPortalType CurrentPortalType => Enum_PortalType;
+
     private void Awake()
     {
         Collider2D Collider2D_MapChange = GetComponent<Collider2D>();
@@ -48,7 +50,7 @@ public class MapChange : MonoBehaviour, IInteractable
 
         _transformPlayer = transformPlayer;
 
-        if (Enum_PortalType == MapPortalType.Contact)
+        if (CurrentPortalType == MapPortalType.Contact)
         {
             DoStartMapChange(transformPlayer);
         }
@@ -122,7 +124,14 @@ public class MapChange : MonoBehaviour, IInteractable
                 return;
             }
 
-            DoMovePlayer(transformPlayer);
+            if (PlayerSetting.Instance == null ||
+                !PlayerSetting.Instance.MovePlayer(
+                    Transform_DestinationPoint.position))
+            {
+                Logger.LogError(
+                    "MapChange: 플레이어 이동 실패");
+                return;
+            }
 
             if (!mapRootCurrent.DoSwitchMap(mapRootDestination))
             {
@@ -170,30 +179,17 @@ public class MapChange : MonoBehaviour, IInteractable
         return true;
     }
 
-    private void DoMovePlayer(Transform transformPlayer)
-    {
-        Rigidbody2D rigidbody2DPlayer =
-            transformPlayer.GetComponent<Rigidbody2D>();
-
-        if (rigidbody2DPlayer != null)
-        {
-            rigidbody2DPlayer.position =
-                Transform_DestinationPoint.position;
-
-            rigidbody2DPlayer.linearVelocity = Vector2.zero;
-        }
-        else
-        {
-            transformPlayer.position =
-                Transform_DestinationPoint.position;
-        }
-    }
-
     public void Interact()
     {
-        if (Enum_PortalType != MapPortalType.Interaction ||
-            _transformPlayer == null)
+        if (CurrentPortalType != MapPortalType.Interaction)
         {
+            return;
+        }
+
+        if (_transformPlayer == null)
+        {
+            Logger.LogWarning(
+                "MapChange: 상호작용 가능한 플레이어가 없습니다.");
             return;
         }
 
