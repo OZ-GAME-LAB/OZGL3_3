@@ -5,7 +5,6 @@ public class AreaZone : MonoBehaviour
 {
     [SerializeField] private string _zoneId;      // 이 맵의 ID (예: Zone_ForestVillage). 지금은 비워 둬도 됨
     [SerializeField] private string _regionId;    // 큰 구간 ID, AreaTextTable의 Id (예: Area_AstraForest)
-    [SerializeField] private bool _isShowOnce = true;
 
     private Collider2D _colliderBounds;
 
@@ -31,13 +30,8 @@ public class AreaZone : MonoBehaviour
             return;
         }
 
-        // 큰 구간이 바뀐 경우에만 이미지를 보여 준다.
-        if (GameManager.Area.EnterZone(_zoneId, _regionId, out bool isFirstVisit) == false)
-        {
-            return;
-        }
-
-        if (_isShowOnce == true && isFirstVisit == false)
+        // 큰 구간이 바뀔 때마다 이미지를 보여 준다. (처음 가는 곳이 아니어도 보여 준다)
+        if (GameManager.Area.EnterZone(_zoneId, _regionId, out _) == false)
         {
             return;
         }
