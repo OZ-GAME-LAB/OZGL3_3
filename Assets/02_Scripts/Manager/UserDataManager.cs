@@ -33,6 +33,7 @@ public class UserDataManager
         UserDataList.Add(new UserShopData(null));
         UserDataList.Add(new UserDialogueData(null));
         UserDataList.Add(new UserInventoryData(null));
+        UserDataList.Add(new UserMapData(null));
 
         foreach (IUserData userData in UserDataList)
         {
