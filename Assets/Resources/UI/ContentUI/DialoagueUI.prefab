@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uBB34 \uD0A4: \uB2E4\uC74C \uB300\uC0AC  /  ESC: \uC2A4\uD0B5"
+  m_text: "G \uD0A4: \uB2E4\uC74C \uB300\uC0AC  /  ESC: \uC2A4\uD0B5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfea5aa46a4209040bf8c2abc7319843, type: 2}
   m_sharedMaterial: {fileID: -4170899548644945340, guid: dfea5aa46a4209040bf8c2abc7319843, type: 2}
