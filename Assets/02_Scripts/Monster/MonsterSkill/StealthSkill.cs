@@ -93,7 +93,7 @@ public class StealthSkill : MonoBehaviour
     }
 
     private void ExitStealth()
-    {//[TODO] 나타나는 위치가 땅바닥이 없는 경우 떨어져서 죽는다
+    {
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1f);
         AnimController_NormalMonster.ChangeState(MonsterState.Skill_2);
         _monsterBase._isAttackUseable = true;

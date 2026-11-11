@@ -7,6 +7,7 @@ public class DataTableManager
 {
     private Dictionary<string, PlayerSkillData> _playerSkillTable = new();
     private Dictionary<string, AreaTextData> _areaTextTable = new();
+    private Dictionary<string, MonsterData> _monsterData = new();
 
 
     public IReadOnlyDictionary<string, ShopData> Shop { get; private set; }
@@ -29,6 +30,7 @@ public class DataTableManager
 
         _playerSkillTable = LoadData<PlayerSkillData>("PlayerSkillData");
         _areaTextTable = LoadData<AreaTextData>("AreaText");
+        _monsterData = LoadData<MonsterData>("MonsterData");
     }
     #region Getters
 
@@ -40,6 +42,11 @@ public class DataTableManager
     public bool TryGetAreaSprite(string id, out AreaTextData data)
     {
         return _areaTextTable.TryGetValue(id, out data);
+    }
+
+    public bool TryGetMonster(string id, out MonsterData data)
+    {
+        return _monsterData.TryGetValue(id, out data);
     }
 
 

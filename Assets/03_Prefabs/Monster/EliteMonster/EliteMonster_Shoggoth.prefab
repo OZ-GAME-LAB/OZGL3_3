@@ -173,19 +173,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e46c5b7b3a70d4c8fd44629b446abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalMonster
+  _monsterId: Monster_Elite_001
   _maxHp: 5
   _moveSpeed: 3
   _aggroRange: 7
   _attackDamage: 1
-  _attackRange: 2
   _attackPatternCount: 2
   _attackBoxSize: {x: 2, y: 1.5}
   _attackBoxOffset: {x: 1, y: 0}
   _playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  _isOnlyUseSkill: 0
-  _isAssassin: 0
   _monsterType: 2
   Skills:
   - {fileID: 11400000, guid: 5ec2ddf696ddb8f4fb1b83d14eee4fb9, type: 2}
@@ -194,6 +192,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 5602583284590123232}
   _isHit: 0
   _isUsingStealthSkill: 0
+  _attackCooldown: 2
   _isAttackUseable: 0
   _isSkillUseable: 0
   _groundCheck: {fileID: 0}
@@ -205,6 +204,7 @@ MonoBehaviour:
   _attackDistance: 2
   _playerTransformCheckCollider: {fileID: 7281743496177089556}
   AnimController_NormalMonster: {fileID: 6931036689774495730}
+  _spriteRenderer: {fileID: 0}
 --- !u!61 &8683366866423821959
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -11,12 +11,15 @@ public class NormalMonster : MonsterBase
     [SerializeField] private float _checkGroundRadius = 0.2f;
     [SerializeField] private Transform _edgeCheck;
     [SerializeField] private LayerMask _groundLayer;
-    [SerializeField] private float _attackDistance = 3f;
+    [SerializeField] private float _attackDistance;
     [SerializeField] private CircleCollider2D _playerTransformCheckCollider;    //[TODO] 플레이어가 OnTriggerExit하고나서 시간이 지나면 Destroy하기
 
     [Header("Anim Settings")]
     [SerializeField] private MonsterAnimatorController AnimController_NormalMonster;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
+    private float _flipCooldown = 0.5f;
+    private float _flipCooldownTimer = 0f;
     private bool _isGrounded = false;
     private bool _isBlocked = false;
     private bool _isGroundAhead = false;
@@ -24,6 +27,7 @@ public class NormalMonster : MonsterBase
     private float _checkInterval = 0.1f;
     private bool _isSpawned = false;
     private int _pendingSkillIndex = -1;
+    
 
     protected override void Awake()
     {
@@ -31,6 +35,15 @@ public class NormalMonster : MonsterBase
         _isSpawned = true;
         AnimController_NormalMonster.ChangeState(MonsterState.Spawn);
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (GameManager.Instance == null || !GameManager.DataTable.TryGetMonster(_monsterId, out MonsterData data))
+        {
+            Logger.LogError($"[NormalMonster] 데이터 받아오기 실패{_monsterId}");
+            _attackDistance = 3f;
+            return;
+        }
+        _attackDistance = data.AttackDistance;
     }
 
     private void Start()
@@ -42,6 +55,11 @@ public class NormalMonster : MonsterBase
     {
         if (_isDead) return;
         base.Update();
+
+        if (_flipCooldownTimer > 0f)
+        {
+            _flipCooldownTimer -= Time.deltaTime;
+        }
 
         if (_isUsingSkill)
         {
@@ -67,6 +85,14 @@ public class NormalMonster : MonsterBase
 
         if (_isAggro)
         {
+            if (_monsterType == MonsterType.Transform_Ground)
+            {
+                if (!_isTransformed)
+                {
+                    AnimController_NormalMonster.SetTransformState(true);
+                    _isTransformed = true;
+                }
+            }
             TraceAndAttack();
         }
         else
@@ -155,10 +181,22 @@ public class NormalMonster : MonsterBase
     }
 
     private void Flip()
-    {
+    {//[TODO] Creature인 경우 가까울 때는 빠르게 flip하지 않도록 수정
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+
+        float pushbackAmount;
+
+        if (GameManager.Instance == null || !GameManager.DataTable.TryGetMonster(_monsterId, out MonsterData data))
+        {
+            Logger.LogError($"[NormalMonster] 데이터 받아오기 실패{_monsterId}");
+            pushbackAmount = 0.5f;
+            return;
+        }
+        pushbackAmount = data.PushbackAmount;
+
+        transform.position += new Vector3(_isMovingRight ? pushbackAmount : -pushbackAmount, 0f, 0f);
     }
 
     private void TraceAndAttack()
@@ -251,8 +289,6 @@ public class NormalMonster : MonsterBase
             }
         }
 
-
-
         if (!_isGrounded || _isBlocked || !_isGroundAhead)
         {
             UpdateFacingDirection();
@@ -283,11 +319,14 @@ public class NormalMonster : MonsterBase
         if (_playerTransform == null)
         {
             Logger.LogError("[NormalMonster] PlayerTransform이 Null 입니다.");
+            return;
         }
+
+        if (_flipCooldownTimer > 0f) return;
 
         float directionX = _playerTransform.position.x - transform.position.x;
 
-        if (Mathf.Abs(directionX) < 0.2) return;
+        if (Mathf.Abs(directionX) < 0.5) return;
 
         bool isShouldMoveRight = directionX > 0f;
 
@@ -295,6 +334,8 @@ public class NormalMonster : MonsterBase
         {
             _isMovingRight = isShouldMoveRight;
             Flip();
+
+            _flipCooldownTimer = _flipCooldown;
         }
     }
 
