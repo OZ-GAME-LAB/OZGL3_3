@@ -27,7 +27,8 @@ public enum UIType
     DialoaguetUI,
     DialoagueUI,
     SaveProfileUI,
-    ConfirmPopupUI
+    ConfirmPopupUI,
+    InteractionPopupUI
 }
 
 public static class UIManagerExtension
@@ -322,5 +323,24 @@ public static class UIManagerExtension
     public static void CloseConfirmPopupUI(this UIManager uiManager)
     {
         uiManager.CloseUI(UIRootType.PopupUI, UIType.ConfirmPopupUI);
+    }
+
+    public static void OpenInteractionPopupUI(this UIManager uiManager, string message, Action onConfirm, Action onCancel = null)
+    {
+        var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.InteractionPopupUI);
+        ConfirmPopupUI popup = uiBase as ConfirmPopupUI;
+
+        if (popup == null)
+        {
+            Logger.LogError("ConfirmPopupUI가 생성되지 않았습니다.");
+            return;
+        }
+
+        popup.Init(message, onConfirm, onCancel);
+    }
+
+    public static void CloseInteractionPopupUI(this UIManager uiManager)
+    {
+        uiManager.CloseUI(UIRootType.PopupUI, UIType.InteractionPopupUI);
     }
 }
