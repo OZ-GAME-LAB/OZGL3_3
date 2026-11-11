@@ -4,7 +4,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 
 [RequireComponent(typeof(Collider2D))]
-public class MapChange : MonoBehaviour
+public class MapChange : MonoBehaviour, IInteractable
 {
     private const string PLAYER_TAG = "Player";
 
@@ -24,6 +24,8 @@ public class MapChange : MonoBehaviour
     [SerializeField, Min(0f)] private float Float_PortalCooldown = 0.5f;
 
     private Transform _transformPlayer;
+
+    public MapPortalType CurrentPortalType => Enum_PortalType;
 
     private void Awake()
     {
@@ -48,7 +50,7 @@ public class MapChange : MonoBehaviour
 
         _transformPlayer = transformPlayer;
 
-        if (Enum_PortalType == MapPortalType.Contact)
+        if (CurrentPortalType == MapPortalType.Contact)
         {
             DoStartMapChange(transformPlayer);
         }
@@ -67,17 +69,6 @@ public class MapChange : MonoBehaviour
         {
             _transformPlayer = null;
         }
-    }
-
-    public void DoInteractMapChange()
-    {
-        if (Enum_PortalType != MapPortalType.Interaction ||
-            _transformPlayer == null)
-        {
-            return;
-        }
-
-        DoStartMapChange(_transformPlayer);
     }
 
     private void DoStartMapChange(Transform transformPlayer)
@@ -133,7 +124,14 @@ public class MapChange : MonoBehaviour
                 return;
             }
 
-            DoMovePlayer(transformPlayer);
+            if (PlayerSetting.Instance == null ||
+                !PlayerSetting.Instance.MovePlayer(
+                    Transform_DestinationPoint.position))
+            {
+                Logger.LogError(
+                    "MapChange: 플레이어 이동 실패");
+                return;
+            }
 
             if (!mapRootCurrent.DoSwitchMap(mapRootDestination))
             {
@@ -181,22 +179,22 @@ public class MapChange : MonoBehaviour
         return true;
     }
 
-    private void DoMovePlayer(Transform transformPlayer)
+    public void Interact()
     {
-        Rigidbody2D rigidbody2DPlayer =
-            transformPlayer.GetComponent<Rigidbody2D>();
-
-        if (rigidbody2DPlayer != null)
+        if (CurrentPortalType != MapPortalType.Interaction)
         {
-            rigidbody2DPlayer.position =
-                Transform_DestinationPoint.position;
+            return;
+        }
 
-            rigidbody2DPlayer.linearVelocity = Vector2.zero;
-        }
-        else
+        if (_transformPlayer == null)
         {
-            transformPlayer.position =
-                Transform_DestinationPoint.position;
+            Logger.LogWarning(
+                "MapChange: 상호작용 가능한 플레이어가 없습니다.");
+            return;
         }
+
+        Logger.Log("MapChange: Interact 호출");
+
+        DoStartMapChange(_transformPlayer);
     }
 }
