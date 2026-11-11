@@ -24,6 +24,7 @@ public class MapChange : MonoBehaviour, IInteractable
     [SerializeField, Min(0f)] private float Float_PortalCooldown = 0.5f;
 
     private Transform _transformPlayer;
+    private PlayerInputHandler _playerInputHandler;
 
     public MapPortalType CurrentPortalType => Enum_PortalType;
 
@@ -37,6 +38,55 @@ public class MapChange : MonoBehaviour, IInteractable
             Logger.LogWarning(
                 "MapChange: 목적지 위치 오브젝트를 Inspector에 연결하세요.");
         }
+    }
+
+    private void OnEnable()
+    {
+        PlayerInputHandler.OnActiveInputChanged += BindPlayerInput;
+        BindPlayerInput(PlayerInputHandler.ActiveInput);
+    }
+
+    private void OnDisable()
+    {
+        PlayerInputHandler.OnActiveInputChanged -= BindPlayerInput;
+        BindPlayerInput(null);
+        _transformPlayer = null;
+    }
+
+    private void BindPlayerInput(PlayerInputHandler playerInputHandler)
+    {
+        if (_playerInputHandler != null)
+        {
+            _playerInputHandler.OnInteractionRequested -= HandleInteractionRequested;
+        }
+
+        _playerInputHandler = playerInputHandler;
+
+        if (_playerInputHandler != null)
+        {
+            _playerInputHandler.OnInteractionRequested += HandleInteractionRequested;
+        }
+    }
+
+     private void HandleInteractionRequested(Vector2 playerPosition)
+    {
+        if (CurrentPortalType != MapPortalType.Interaction)
+        {
+            return;
+        }
+
+        if (_transformPlayer == null)
+        {
+            return;
+        }
+
+        if (GameManager.Instance == null ||
+            GameManager.Npc.BlocksGameplayInput)
+        {
+            return;
+        }
+
+        Interact();
     }
 
     private void OnTriggerEnter2D(Collider2D collider2DOther)
@@ -54,6 +104,11 @@ public class MapChange : MonoBehaviour, IInteractable
         {
             DoStartMapChange(transformPlayer);
         }
+        else 
+        {
+            //UIManager.Instance?.OpenInteractionPopupUI(
+            //    "상호작용 키를 눌러 이동", () => Interact(), null);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collider2DOther)
@@ -65,10 +120,13 @@ public class MapChange : MonoBehaviour, IInteractable
             return;
         }
 
+        //UIManager.Instance?.CloseInteractionPopupUI();
+
         if (_transformPlayer == transformPlayer)
         {
             _transformPlayer = null;
         }
+
     }
 
     private void DoStartMapChange(Transform transformPlayer)
