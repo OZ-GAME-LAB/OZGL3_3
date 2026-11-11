@@ -204,5 +204,6 @@ public class PlayerSetting : SingletonBehaviour<PlayerSetting>
         _playerInputHandler.ClearInput();
         _playerInputHandler.enabled = true;
         return true;
+
     }
 }
