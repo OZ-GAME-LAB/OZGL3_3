@@ -19,6 +19,9 @@ public class WorldMapTracker : MonoBehaviour
     // 가장 최근에 들어간 방의 키
     public static string CurrentRoomKey { get; private set; }
 
+    // 가장 최근에 들어간 방(AreaZone)
+    public static AreaZone CurrentZone { get; private set; }
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Bootstrap()
     {
@@ -111,6 +114,7 @@ public class WorldMapTracker : MonoBehaviour
             return;
         }
 
+        CurrentZone = bestZone;
         CurrentRoomKey = GetRoomKey(bestZone);
         WorldMapData.MarkVisited(CurrentRoomKey);
     }
