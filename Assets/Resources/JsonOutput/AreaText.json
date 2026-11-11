@@ -1,70 +1,236 @@
 [
   {
     "Id": "Area_AstraForestVillage",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_AstraForestVillage",
+    "x": 0,
+    "y": "-23f",
+    "z": "0f",
+    "MapName": "아스트라 마을"
   },
   {
     "Id": "Area_Andigma",
-    "SpritePath": "Sprites/Area/Andigma"
+    "SpritePath": "Sprites/Area/Andigma",
+    "RespawnMap": "Area_AstraForestVillage",
+    "x": 0,
+    "y": "-23f",
+    "z": "0f",
+    "MapName": "앙디그마 마을"
   },
   {
     "Id": "Area_AstraForest",
-    "SpritePath": "Sprites/Area/AstraForest"
+    "SpritePath": "Sprites/Area/AstraForest",
+    "RespawnMap": "Area_AstraForestVillage",
+    "x": 0,
+    "y": "-23f",
+    "z": "0f",
+    "MapName": "아스트라 숲"
   },
   {
     "Id": "Area_AstraForestMountain ",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_AstraForestVillage",
+    "x": 0,
+    "y": "-23f",
+    "z": "0f",
+    "MapName": "숲의 산"
   },
   {
     "Id": "Area_AstraArtifactChamber",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_AstraForestVillage",
+    "x": 0,
+    "y": "-23f",
+    "z": "0f",
+    "MapName": "숲의 유물실"
   },
   {
     "Id": "Area_AstraArcaneHall",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_AstraForestVillage",
+    "x": 0,
+    "y": "-23f",
+    "z": "0f",
+    "MapName": "마법을 잃어버린 곳"
   },
   {
     "Id": "Area_AstraForgottenBorder",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_AstraForestMountain ",
+    "x": 0,
+    "y": "4f",
+    "z": "0f",
+    "MapName": "잊힌 경계"
   },
   {
     "Id": "Area_AstraForestPier",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_AstraForestVillage",
+    "x": 0,
+    "y": "-23f",
+    "z": "0f",
+    "MapName": "숲 나루터"
   },
   {
     "Id": "Area_RuinEntrance",
-    "SpritePath": "Sprites/Area/RuinEntrance"
+    "SpritePath": "Sprites/Area/RuinEntrance",
+    "RespawnMap": "Area_RuinEntrance",
+    "x": 0,
+    "y": "1f",
+    "z": "0f",
+    "MapName": "폐허 입구"
   },
   {
     "Id": "Area_RuinAbandoned",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_RuinEntrance",
+    "x": 0,
+    "y": "1f",
+    "z": "0f",
+    "MapName": "버려진 구역"
   },
   {
     "Id": "Area_RuinArtifactChamber",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_RuinEntrance",
+    "x": 0,
+    "y": "1f",
+    "z": "0f",
+    "MapName": "폐허의 유물실"
   },
   {
     "Id": "Area_RuinAncientChamber",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_RuinEntrance",
+    "x": 0,
+    "y": "1f",
+    "z": "0f",
+    "MapName": "고대의 방"
   },
   {
     "Id": "Area_RuinCorridor",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_RuinEntrance",
+    "x": 0,
+    "y": "1f",
+    "z": "0f",
+    "MapName": "폐허 복도"
   },
   {
     "Id": "Area_RuinArcaneHall",
-    "SpritePath": null
+    "SpritePath": null,
+    "RespawnMap": "Area_RuinEntrance",
+    "x": 0,
+    "y": "1f",
+    "z": "0f",
+    "MapName": "마법의 전당"
   },
   {
     "Id": "Area_GuardianHall",
-    "SpritePath": "Sprites/Area/GuardianHall"
+    "SpritePath": "Sprites/Area/GuardianHall",
+    "RespawnMap": "Area_RuinArcaneHall",
+    "x": 0,
+    "y": "47f",
+    "z": "0f",
+    "MapName": "수호자의 전당"
   },
   {
-    "Id": null,
-    "SpritePath": null
+    "Id": "Area_SwampPier",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "늪 나루터"
+  },
+  {
+    "Id": "Area_SwampTidalRuins",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "조수 유적"
+  },
+  {
+    "Id": "Area_SwampFloodedDock",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "침수 부두"
+  },
+  {
+    "Id": "Area_SwampAbandonedCave",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "버려진 동굴"
+  },
+  {
+    "Id": "Area_SwampWaterway",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "늪 수로"
+  },
+  {
+    "Id": "Area_SwampWaterwayExit",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "수로 출구"
+  },
+  {
+    "Id": "Area_SwampArtifactChamber",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "늪의 유물실"
+  },
+  {
+    "Id": "Area_SwampWesternCliff",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "서쪽 절벽"
+  },
+  {
+    "Id": "Area_SwampDrownedCatacombs",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampPier",
+    "x": 0,
+    "y": "-53f",
+    "z": "0f",
+    "MapName": "익사자의 지하묘지"
+  },
+  {
+    "Id": "Area_SwampCatacombDepths",
+    "SpritePath": null,
+    "RespawnMap": "Area_SwampDrownedCatacombs",
+    "x": 0,
+    "y": "-96f",
+    "z": "0f",
+    "MapName": "지하묘지 깊은 곳"
   },
   {
     "Id": "Area_SealedSnowMountain",
-    "SpritePath": "Sprites/Area/SealedSnowMountain"
+    "SpritePath": "Sprites/Area/SealedSnowMountain",
+    "RespawnMap": null,
+    "x": null,
+    "y": null,
+    "z": null,
+    "MapName": "봉인된 설산"
   }
 ]
