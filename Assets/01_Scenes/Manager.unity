@@ -186,7 +186,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2794697175111523312, guid: e73cc7f103a88b042afd9b7d2af0fa11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c51cbccd2ee98d4182379c6fe356925, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcInteraction
   _npcType: 1
   _npcId: NPC_SHOP
-  _portrait: {fileID: 2794697175111523312, guid: e73cc7f103a88b042afd9b7d2af0fa11, type: 3}
+  _portrait: {fileID: 21300000, guid: 48b833d4882230e49961a48959376049, type: 3}
   _feedbackSource: {fileID: 0}
   _equipRejectedClip: {fileID: 0}
 --- !u!1 &519420028
@@ -507,7 +507,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1242386344258653455, guid: a7d9a06cdcdf53043be644394f5506e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08dceddd2502b804087875c5ebcde5b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcInteraction
   _npcType: 2
   _npcId: NPC_ARTIFACT
-  _portrait: {fileID: 1242386344258653455, guid: a7d9a06cdcdf53043be644394f5506e7, type: 3}
+  _portrait: {fileID: 21300000, guid: 106090bbe7c4b5044b16dfee90cb7e17, type: 3}
   _feedbackSource: {fileID: 0}
   _equipRejectedClip: {fileID: 0}
 --- !u!1 &1049230954
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcInteraction
   _npcType: 3
   _npcId: NPC_EDAN
-  _portrait: {fileID: 3009628297556858540, guid: a0e30a6da614ce14cb2377ab3c8308db, type: 3}
+  _portrait: {fileID: 21300000, guid: dee190459d18f5f4c9a433bfaae47a4f, type: 3}
   _feedbackSource: {fileID: 0}
   _equipRejectedClip: {fileID: 0}
 --- !u!212 &1049230956
@@ -633,7 +633,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3009628297556858540, guid: a0e30a6da614ce14cb2377ab3c8308db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec80c405627f216429c90e2b9c4909b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcInteraction
   _npcType: 3
   _npcId: NPC_ORBEN
-  _portrait: {fileID: 6312351677789724570, guid: a99dc10cbef8cf94ca98359584a8e85d, type: 3}
+  _portrait: {fileID: 21300000, guid: 228e9d0d12a05d945bd4946ad5769440, type: 3}
   _feedbackSource: {fileID: 0}
   _equipRejectedClip: {fileID: 0}
 --- !u!212 &1222306603
@@ -821,7 +821,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6312351677789724570, guid: a99dc10cbef8cf94ca98359584a8e85d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5464eeec737f22d47b2df5b455312b12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -913,7 +913,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2851537459088823843, guid: 4d21e518aacec6b41a3670b93f0d50f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34b175f47b5a98e4eadb7b4a0cf15435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcInteraction
   _npcType: 3
   _npcId: NPC_RIA
-  _portrait: {fileID: -2851537459088823843, guid: 4d21e518aacec6b41a3670b93f0d50f6, type: 3}
+  _portrait: {fileID: 21300000, guid: 0f84d105a08cff048a8c75bd633d300d, type: 3}
   _feedbackSource: {fileID: 0}
   _equipRejectedClip: {fileID: 0}
 --- !u!1 &1774017372

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 // 월드맵에서 가 본 방을 기억한다.
-// 세이브 연동 전까지는 게임을 켜 둔 동안만 유지된다. (저장하려면 GetVisitedKeys / SetVisitedKeys를 세이브 데이터에 연결)
 public static class WorldMapData
 {
     private static readonly HashSet<string> _visitedRoomKeys = new HashSet<string>();
@@ -30,6 +29,7 @@ public static class WorldMapData
             return false;
         }
 
+        GameManager.UserData.GetUserData<UserMapData>().SaveData();
         OnChanged?.Invoke();
         return true;
     }

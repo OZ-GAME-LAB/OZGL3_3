@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.12156863}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289623650265e5641b674425f744733c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapChange
+  Enum_PortalType: 0
   Transform_DestinationPoint: {fileID: 0}
   Float_FadeDuration: 0.5
-  Float_TransitionCooldown: 0.5
+  Float_PortalCooldown: 0.5

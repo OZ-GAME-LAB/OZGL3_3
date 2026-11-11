@@ -262,8 +262,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 59c3389f722018d499e1f848498b124a, type: 3}
-  m_Color: {r: 0.53, g: 0.76, b: 0.55, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2866ebe1c9e79af4ea6689e08220c393, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -352,6 +352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcInteraction
   _npcType: 3
   _npcId: NPC_KYLE
-  _portrait: {fileID: 21300000, guid: 59c3389f722018d499e1f848498b124a, type: 3}
+  _portrait: {fileID: 21300000, guid: d8ac84c56f855cc42956ba3b9115c523, type: 3}
   _feedbackSource: {fileID: 0}
   _equipRejectedClip: {fileID: 0}
