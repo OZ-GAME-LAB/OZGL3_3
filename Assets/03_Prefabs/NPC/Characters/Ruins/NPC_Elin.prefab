@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcInteraction
   _npcType: 3
   _npcId: NPC_ELIN
-  _portrait: {fileID: 21300000, guid: 59c3389f722018d499e1f848498b124a, type: 3}
+  _portrait: {fileID: 21300000, guid: f54428e4ffa890f459d9d83f0552bb40, type: 3}
   _feedbackSource: {fileID: 0}
   _equipRejectedClip: {fileID: 0}
 --- !u!1 &2371544623019497835
@@ -164,8 +164,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 59c3389f722018d499e1f848498b124a, type: 3}
-  m_Color: {r: 0.64, g: 0.82, b: 0.9, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bc4ffcfb779cf5b4fa62a24b3cb7f013, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
