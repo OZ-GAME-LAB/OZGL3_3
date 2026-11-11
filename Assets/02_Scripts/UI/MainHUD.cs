@@ -61,7 +61,11 @@ public class MainHUD : UIBase
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (UIManager.Instance.IsOpenUI(UIType.PauseUI))
+            if (WorldMapUI.IsOpen == true)
+            {
+                WorldMapUI.Close();
+            }
+            else if (UIManager.Instance.IsOpenUI(UIType.PauseUI))
             {
                 UIManager.Instance.ClosePauseUI();
             }
@@ -80,6 +84,12 @@ public class MainHUD : UIBase
         // 일시정지 중에는 다른 창을 열지 않는다.
         if (UIManager.Instance.IsOpenUI(UIType.PauseUI))
         {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            WorldMapUI.Toggle();
             return;
         }
 
