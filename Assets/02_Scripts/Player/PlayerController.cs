@@ -465,11 +465,13 @@ public class PlayerController : SingletonBehaviour<PlayerController>
     private void OnTriggerEnter2D(Collider2D other)
     {
         _ladderState?.OnTriggerEnter(other);
+        _playerInputHandler?.HandlePlayerTriggerEnter(other);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         _ladderState?.OnTriggerExit(other);
+        _playerInputHandler?.HandlePlayerTriggerExit(other);
     }
 
     private void UpdateFacingDirection()
