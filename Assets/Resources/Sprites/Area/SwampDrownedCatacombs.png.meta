@@ -1,0 +1,962 @@
+fileFormatVersion: 2
+guid: 80bec0aa89820174ba2980a671cf3cbf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -54304563999115043
+    second: region_phrase_drowned_catacombs_unique_0
+  - first:
+      213: 4828977069966563630
+    second: region_phrase_drowned_catacombs_unique_1
+  - first:
+      213: -5885813223855844161
+    second: region_phrase_drowned_catacombs_unique_2
+  - first:
+      213: -7107610896715227026
+    second: region_phrase_drowned_catacombs_unique_3
+  - first:
+      213: 3449564258243338791
+    second: region_phrase_drowned_catacombs_unique_4
+  - first:
+      213: -7431894006340489882
+    second: region_phrase_drowned_catacombs_unique_5
+  - first:
+      213: -6558419911235876875
+    second: region_phrase_drowned_catacombs_unique_6
+  - first:
+      213: -5965333392543034175
+    second: region_phrase_drowned_catacombs_unique_7
+  - first:
+      213: -1974007503193587792
+    second: region_phrase_drowned_catacombs_unique_8
+  - first:
+      213: -2814170518664744393
+    second: region_phrase_drowned_catacombs_unique_9
+  - first:
+      213: 5589769853613703304
+    second: region_phrase_drowned_catacombs_unique_10
+  - first:
+      213: 2417308846718681628
+    second: region_phrase_drowned_catacombs_unique_11
+  - first:
+      213: -1771292251753273269
+    second: region_phrase_drowned_catacombs_unique_12
+  - first:
+      213: -511602288100680531
+    second: region_phrase_drowned_catacombs_unique_13
+  - first:
+      213: -1724149390870979121
+    second: region_phrase_drowned_catacombs_unique_14
+  - first:
+      213: 9014626025415629646
+    second: region_phrase_drowned_catacombs_unique_15
+  - first:
+      213: -729412289975134504
+    second: region_phrase_drowned_catacombs_unique_16
+  - first:
+      213: 6361979582328093396
+    second: region_phrase_drowned_catacombs_unique_17
+  - first:
+      213: -3570368002042547279
+    second: region_phrase_drowned_catacombs_unique_18
+  - first:
+      213: 4020017899813505758
+    second: region_phrase_drowned_catacombs_unique_19
+  - first:
+      213: -4088956174997484566
+    second: region_phrase_drowned_catacombs_unique_20
+  - first:
+      213: 429244576648685766
+    second: region_phrase_drowned_catacombs_unique_21
+  - first:
+      213: 993568079908697495
+    second: region_phrase_drowned_catacombs_unique_22
+  - first:
+      213: -7649281513738800577
+    second: region_phrase_drowned_catacombs_unique_23
+  - first:
+      213: 8526915441555620754
+    second: region_phrase_drowned_catacombs_unique_24
+  - first:
+      213: -9092151905882171078
+    second: region_phrase_drowned_catacombs_unique_25
+  - first:
+      213: 4231141958271396504
+    second: region_phrase_drowned_catacombs_unique_26
+  - first:
+      213: 7169459498111074110
+    second: region_phrase_drowned_catacombs_unique_27
+  - first:
+      213: -1620654913844123707
+    second: region_phrase_drowned_catacombs_unique_28
+  - first:
+      213: 3764080460022530497
+    second: region_phrase_drowned_catacombs_unique_29
+  - first:
+      213: -8069171419562793175
+    second: region_phrase_drowned_catacombs_unique_30
+  - first:
+      213: -7057591024859067906
+    second: region_phrase_drowned_catacombs_unique_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_0
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 1523
+        width: 49
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8762969421f3ff0800000000000000
+      internalID: -54304563999115043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2304
+        height: 1520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e291dd36f09f30340800000000000000
+      internalID: 4828977069966563630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_2
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 1463
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb496c9ae04615ea0800000000000000
+      internalID: -5885813223855844161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_3
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 1432
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60e7931c81bc5d90800000000000000
+      internalID: -7107610896715227026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_4
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 1430
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7226a729a605fdf20800000000000000
+      internalID: 3449564258243338791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_5
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1435
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d68bfe6cb9cd890800000000000000
+      internalID: -7431894006340489882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_6
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 1437
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f7cfe6b6dfcbf4a0800000000000000
+      internalID: -6558419911235876875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_7
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 1343
+        width: 46
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c452ba92e0e63da0800000000000000
+      internalID: -5965333392543034175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_8
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 1431
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bfb03472aaea94e0800000000000000
+      internalID: -1974007503193587792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_9
+      rect:
+        serializedVersion: 2
+        x: 2238
+        y: 447
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7327c99c2de02f8d0800000000000000
+      internalID: -2814170518664744393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_10
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 173
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88005d4e01ad29d40800000000000000
+      internalID: 5589769853613703304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_11
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 161
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c128311b6910c8120800000000000000
+      internalID: 2417308846718681628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_12
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 167
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4828dce41b1b67e0800000000000000
+      internalID: -1771292251753273269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_13
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 157
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac5b77fd6c66e8f0800000000000000
+      internalID: -511602288100680531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_14
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 189
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcddd6193479218e0800000000000000
+      internalID: -1724149390870979121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_15
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 187
+        width: 59
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4bd3ebcb926a1d70800000000000000
+      internalID: 9014626025415629646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_16
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 170
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d65a39036b90e5f0800000000000000
+      internalID: -729412289975134504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_17
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 143
+        width: 13
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da34f019ba4a4850800000000000000
+      internalID: 6361979582328093396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_18
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 165
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b335d00831837ec0800000000000000
+      internalID: -3570368002042547279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_19
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 145
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda881d1bf8f9c730800000000000000
+      internalID: 4020017899813505758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_20
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 151
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeb8227e50c1147c0800000000000000
+      internalID: -4088956174997484566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_21
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 143
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c868e01babf4f500800000000000000
+      internalID: 429244576648685766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_22
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 141
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795ff1f87ecd9cd00800000000000000
+      internalID: 993568079908697495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_23
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 126
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f32f2aaadfa48d590800000000000000
+      internalID: -7649281513738800577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_24
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 114
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29347b3aa60b55670800000000000000
+      internalID: 8526915441555620754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_25
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 128
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a39900e830032d180800000000000000
+      internalID: -9092151905882171078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_26
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 121
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a6409813908ba30800000000000000
+      internalID: 4231141958271396504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_27
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 129
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ff5789d690f7360800000000000000
+      internalID: 7169459498111074110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_28
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 97
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c764d441f64289e0800000000000000
+      internalID: -1620654913844123707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_29
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c1c1a54c33bc3430800000000000000
+      internalID: 3764080460022530497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_30
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 87
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 927a931a85b840090800000000000000
+      internalID: -8069171419562793175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_drowned_catacombs_unique_31
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 39
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef94a490b566e0e90800000000000000
+      internalID: -7057591024859067906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      region_phrase_drowned_catacombs_unique_0: -54304563999115043
+      region_phrase_drowned_catacombs_unique_1: 4828977069966563630
+      region_phrase_drowned_catacombs_unique_10: 5589769853613703304
+      region_phrase_drowned_catacombs_unique_11: 2417308846718681628
+      region_phrase_drowned_catacombs_unique_12: -1771292251753273269
+      region_phrase_drowned_catacombs_unique_13: -511602288100680531
+      region_phrase_drowned_catacombs_unique_14: -1724149390870979121
+      region_phrase_drowned_catacombs_unique_15: 9014626025415629646
+      region_phrase_drowned_catacombs_unique_16: -729412289975134504
+      region_phrase_drowned_catacombs_unique_17: 6361979582328093396
+      region_phrase_drowned_catacombs_unique_18: -3570368002042547279
+      region_phrase_drowned_catacombs_unique_19: 4020017899813505758
+      region_phrase_drowned_catacombs_unique_2: -5885813223855844161
+      region_phrase_drowned_catacombs_unique_20: -4088956174997484566
+      region_phrase_drowned_catacombs_unique_21: 429244576648685766
+      region_phrase_drowned_catacombs_unique_22: 993568079908697495
+      region_phrase_drowned_catacombs_unique_23: -7649281513738800577
+      region_phrase_drowned_catacombs_unique_24: 8526915441555620754
+      region_phrase_drowned_catacombs_unique_25: -9092151905882171078
+      region_phrase_drowned_catacombs_unique_26: 4231141958271396504
+      region_phrase_drowned_catacombs_unique_27: 7169459498111074110
+      region_phrase_drowned_catacombs_unique_28: -1620654913844123707
+      region_phrase_drowned_catacombs_unique_29: 3764080460022530497
+      region_phrase_drowned_catacombs_unique_3: -7107610896715227026
+      region_phrase_drowned_catacombs_unique_30: -8069171419562793175
+      region_phrase_drowned_catacombs_unique_31: -7057591024859067906
+      region_phrase_drowned_catacombs_unique_4: 3449564258243338791
+      region_phrase_drowned_catacombs_unique_5: -7431894006340489882
+      region_phrase_drowned_catacombs_unique_6: -6558419911235876875
+      region_phrase_drowned_catacombs_unique_7: -5965333392543034175
+      region_phrase_drowned_catacombs_unique_8: -1974007503193587792
+      region_phrase_drowned_catacombs_unique_9: -2814170518664744393
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
