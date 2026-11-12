@@ -7383,7 +7383,25 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 7146617369250951123}
+    m_ColliderPaths:
+    - - X: -220000000
+        Y: 60000000
+      - X: 750000000
+        Y: 60000000
+      - X: 750000000
+        Y: -10000000
+      - X: 770000000
+        Y: -10000000
+      - X: 770000000
+        Y: 80000000
+      - X: -240000000
+        Y: 80000000
+      - X: -240000000
+        Y: -50000000
+      - X: -220000000
+        Y: -50000000
   m_CompositePaths:
     m_Paths:
     - - {x: -22.000029, y: -5}
@@ -7414,7 +7432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7364254029430070462
 Transform:
   m_ObjectHideFlags: 0
@@ -13247,7 +13265,17 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1810697730976780243}
+    m_ColliderPaths:
+    - - X: 770000000
+        Y: -50000000
+      - X: -240000000
+        Y: -50000000
+      - X: -240000000
+        Y: -100000000
+      - X: 770000000
+        Y: -100000000
   m_CompositePaths:
     m_Paths:
     - - {x: 76.99997, y: -10}
@@ -13621,7 +13649,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AreaZone
   _zoneId: 
   _regionId: Area_RuinCorridor
-  _isShowOnce: 1
 --- !u!1 &4990243217771229956
 GameObject:
   m_ObjectHideFlags: 0
@@ -35010,7 +35037,9 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 5075645684910440528}
+    m_ColliderPaths: []
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
@@ -36404,7 +36433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.27
+      value: -0.089
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name
@@ -37282,11 +37311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.37
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name

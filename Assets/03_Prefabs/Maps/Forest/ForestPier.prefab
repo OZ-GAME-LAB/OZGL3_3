@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3719689381546942553
 Transform:
   m_ObjectHideFlags: 0
@@ -1162,7 +1162,99 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 651550032303793710}
+    m_ColliderPaths:
+    - - X: 133750000
+        Y: -20000000
+      - X: 136562496
+        Y: -20000000
+      - X: 136562496
+        Y: -60000000
+      - X: 140000000
+        Y: -60000000
+      - X: 140000000
+        Y: -14062500
+      - X: 140312496
+        Y: -14375000
+      - X: 147500000
+        Y: -20000000
+      - X: 150000000
+        Y: -20000000
+      - X: 150000000
+        Y: -57500000
+      - X: 151562496
+        Y: -60000000
+      - X: 190000000
+        Y: -60000000
+      - X: 190000000
+        Y: -20000000
+      - X: 180000000
+        Y: -20000000
+      - X: 180000000
+        Y: -10000000
+      - X: 130000000
+        Y: -10000000
+      - X: 130000000
+        Y: -60000000
+      - X: 133750000
+        Y: -60000000
+    - - X: 13750000
+        Y: -50000000
+      - X: 16562500
+        Y: -50000000
+      - X: 16562500
+        Y: -60000000
+      - X: 20000000
+        Y: -60000000
+      - X: 20000000
+        Y: -44062500
+      - X: 90000000
+        Y: -44062500
+      - X: 90000000
+        Y: -60000000
+      - X: 93750000
+        Y: -60000000
+      - X: 93750000
+        Y: -50000000
+      - X: 96562496
+        Y: -50000000
+      - X: 96562496
+        Y: -60000000
+      - X: 103750000
+        Y: -60000000
+      - X: 103750000
+        Y: -40000000
+      - X: 106562496
+        Y: -40000000
+      - X: 106562496
+        Y: -60000000
+      - X: 113750000
+        Y: -60000000
+      - X: 113750000
+        Y: -40000000
+      - X: 116562496
+        Y: -40000000
+      - X: 116562496
+        Y: -60000000
+      - X: 120000000
+        Y: -60000000
+      - X: 120000000
+        Y: -30000000
+      - X: 100000000
+        Y: -30000000
+      - X: 100000000
+        Y: -40000000
+      - X: 0
+        Y: -40000000
+      - X: 0
+        Y: -44062500
+      - X: 10000000
+        Y: -44062500
+      - X: 10000000
+        Y: -60000000
+      - X: 13750000
+        Y: -60000000
   m_CompositePaths:
     m_Paths:
     - - {x: 13.37497, y: -6}
@@ -2565,7 +2657,9 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1610669718995735490}
+    m_ColliderPaths: []
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
@@ -6123,7 +6217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AreaZone
   _zoneId: 
   _regionId: Area_AstraForestPier
-  _isShowOnce: 1
 --- !u!1 &6575410843456891950
 GameObject:
   m_ObjectHideFlags: 0
@@ -8556,11 +8649,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.22
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.16
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name
@@ -8708,7 +8801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.392
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name

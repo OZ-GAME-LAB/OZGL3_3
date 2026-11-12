@@ -1846,7 +1846,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AreaZone
   _zoneId: 
   _regionId: Area_Andigma
-  _isShowOnce: 1
 --- !u!1 &3278661101975340171
 GameObject:
   m_ObjectHideFlags: 0
@@ -11048,7 +11047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.354
+      value: -0.087
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name
@@ -11320,7 +11319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.374
+      value: -0.264
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name
