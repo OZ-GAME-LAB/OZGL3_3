@@ -113,6 +113,10 @@ public class MainHUD : UIBase
             {
                 WorldMapUI.Close();
             }
+            else if (GuideUI.IsOpen == true)
+            {
+                // 조작 방법 화면은 GuideUI 가 직접 닫는다. (이 프레임에는 일시정지창을 닫지 않는다)
+            }
             else if (UIManager.Instance.IsOpenUI(UIType.PauseUI))
             {
                 UIManager.Instance.ClosePauseUI();
