@@ -627,7 +627,33 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 3542687153814278554}
+    m_ColliderPaths:
+    - - X: -170000000
+        Y: 60000000
+      - X: -180000000
+        Y: 60000000
+      - X: -180000000
+        Y: 40000000
+      - X: -170000000
+        Y: 40000000
+    - - X: 180000000
+        Y: 40000000
+      - X: 170000000
+        Y: 40000000
+      - X: 170000000
+        Y: -50000000
+      - X: 180000000
+        Y: -50000000
+    - - X: -170000000
+        Y: -30000000
+      - X: -180000000
+        Y: -30000000
+      - X: -180000000
+        Y: -100000000
+      - X: -170000000
+        Y: -100000000
   m_CompositePaths:
     m_Paths:
     - - {x: -17.000029, y: 4}
@@ -8185,7 +8211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3719120545901429710
 Transform:
   m_ObjectHideFlags: 0
@@ -10453,7 +10479,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AreaZone
   _zoneId: 
   _regionId: Area_AstraForgottenBorder
-  _isShowOnce: 1
 --- !u!1 &4866759446987568516
 GameObject:
   m_ObjectHideFlags: 0
@@ -12349,7 +12374,53 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 872205541022142021}
+    m_ColliderPaths:
+    - - X: 180000000
+        Y: 60000000
+      - X: -170000000
+        Y: 60000000
+      - X: -170000000
+        Y: 45312500
+      - X: 170000000
+        Y: 45312500
+      - X: 170000000
+        Y: 40000000
+      - X: 180000000
+        Y: 40000000
+    - - X: -150000000
+        Y: -20000000
+      - X: -180000000
+        Y: -20000000
+      - X: -180000000
+        Y: -30000000
+      - X: -150000000
+        Y: -30000000
+    - - X: -130000000
+        Y: -27187500
+      - X: -127500000
+        Y: -27187500
+      - X: -125312496
+        Y: -26875000
+      - X: -125000000
+        Y: -22500000
+      - X: -125000000
+        Y: -20000000
+      - X: -140000000
+        Y: -20000000
+      - X: -140000000
+        Y: -30000000
+      - X: -130000000
+        Y: -30000000
+    - - X: 180000000
+        Y: -100000000
+      - X: -180000000
+        Y: -100000000
+      - X: -180000000
+        Y: -110000000
+      - X: 180000000
+        Y: -110000000
   m_CompositePaths:
     m_Paths:
     - - {x: 17.999971, y: 4}
@@ -15166,7 +15237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.296
+      value: -0.121
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name
@@ -15368,7 +15439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.406
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name

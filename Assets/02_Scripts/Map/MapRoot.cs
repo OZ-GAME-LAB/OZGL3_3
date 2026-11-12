@@ -2,13 +2,13 @@
 
 public class MapRoot : MonoBehaviour
 {
-    //private void Start()
-    //{
-    //    if (gameObject.name != "StartZone")
-    //    {
-    //        gameObject.SetActive(false);
-    //    }
-    //}
+    private void Start()
+    {
+        if (gameObject.name != "StartZone")
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     public bool DoSwitchMap(MapRoot MapRoot_Destination)
     {

@@ -2626,7 +2626,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AreaZone
   _zoneId: 
   _regionId: Area_AstraForestVillage
-  _isShowOnce: 1
 --- !u!1 &3854562699724821306
 GameObject:
   m_ObjectHideFlags: 0
@@ -13611,7 +13610,93 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 7314564802273576822}
+    m_ColliderPaths:
+    - - X: 580000000
+        Y: 120000000
+      - X: 550000000
+        Y: 120000000
+      - X: 550000000
+        Y: 20000000
+      - X: 310000000
+        Y: 20000000
+      - X: 310000000
+        Y: 10000000
+      - X: 300000000
+        Y: 10000000
+      - X: 300000000
+        Y: 0
+      - X: -160000000
+        Y: 0
+      - X: -160000000
+        Y: -130000000
+      - X: 580000000
+        Y: -130000000
+    - - X: -100000000
+        Y: -30000000
+      - X: -100000000
+        Y: -10000000
+      - X: -98125000
+        Y: -10000000
+      - X: -96875000
+        Y: -9375000
+      - X: -95625000
+        Y: -7812500
+      - X: -90000000
+        Y: -4062500
+      - X: -70000000
+        Y: -4062500
+      - X: -70000000
+        Y: -9062500
+      - X: -67812496
+        Y: -10000000
+      - X: -66875000
+        Y: -10000000
+      - X: -66875000
+        Y: -30000000
+    - - X: 30000000
+        Y: -30000000
+      - X: 30000000
+        Y: -4062500
+      - X: 60000000
+        Y: -4062500
+      - X: 60000000
+        Y: -30000000
+    - - X: -53437500
+        Y: -30000000
+      - X: -53437500
+        Y: -10000000
+      - X: -50000000
+        Y: -10000000
+      - X: -50000000
+        Y: -4062500
+      - X: 20000000
+        Y: -4062500
+      - X: 20000000
+        Y: -30000000
+    - - X: -63125000
+        Y: -30000000
+      - X: -63125000
+        Y: -10000000
+      - X: -60000000
+        Y: -10000000
+      - X: -60000000
+        Y: -8750000
+      - X: -57500000
+        Y: -10000000
+      - X: -57187500
+        Y: -10000000
+      - X: -57187500
+        Y: -30000000
+    - - X: 23750000
+        Y: -30000000
+      - X: 23750000
+        Y: -10000000
+      - X: 26562500
+        Y: -10000000
+      - X: 26562500
+        Y: -30000000
   m_CompositePaths:
     m_Paths:
     - - {x: 57.99997, y: -13}
@@ -15577,7 +15662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8953489658750479627
 Transform:
   m_ObjectHideFlags: 0
@@ -16976,7 +17061,21 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 486067524333568084}
+    m_ColliderPaths:
+    - - X: -160000000
+        Y: 120000000
+      - X: 580000000
+        Y: 120000000
+      - X: 580000000
+        Y: 130000000
+      - X: -170000000
+        Y: 130000000
+      - X: -170000000
+        Y: -30000000
+      - X: -160000000
+        Y: -30000000
   m_CompositePaths:
     m_Paths:
     - - {x: -16.000029, y: -3}
@@ -17455,7 +17554,9 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 7863631841523628332}
+    m_ColliderPaths: []
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
@@ -17633,7 +17734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987366671602947386, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.446
+      value: -0.359
       objectReference: {fileID: 0}
     - target: {fileID: 3988899608659698671, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: m_Name
@@ -18309,7 +18410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577563297564096711, guid: 5799d229ce1463d44ad80999e0a454ed, type: 3}
       propertyPath: m_SortingOrder
-      value: -10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 6113240933371506442, guid: 5799d229ce1463d44ad80999e0a454ed, type: 3}
       propertyPath: m_LocalPosition.x
