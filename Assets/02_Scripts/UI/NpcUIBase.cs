@@ -41,8 +41,11 @@ public abstract class NpcUIBase : UIBase
 
         _npc = npc;
         _npc.OnChanged += HandleChanged;
-        _portrait.sprite = npc.Portrait;
-        _portrait.enabled = npc.Portrait != null;
+        if (_portrait != null)
+        {
+            _portrait.sprite = npc.Portrait;
+            _portrait.enabled = npc.Portrait != null;
+        }
         Refresh();
     }
 

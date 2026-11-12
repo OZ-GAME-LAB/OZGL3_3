@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour
 {
+    private const float BoundsRetryInterval = 0.25f;
+
     [SerializeField] private Transform _target;
     [SerializeField] private Collider2D _cameraTargetBounds;
 
@@ -11,6 +13,7 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private Camera _camera;
     private ContactFilter2D _overlapFilter;
+    private float _boundsRetryTimer;
 
     private void Awake()
     {
@@ -86,6 +89,16 @@ public class CameraFollowPlayer : MonoBehaviour
         if (_target == null || _camera == null)
         {
             return;
+        }
+
+        if (_cameraTargetBounds == null)
+        {
+            _boundsRetryTimer -= Time.unscaledDeltaTime;
+            if (_boundsRetryTimer <= 0f)
+            {
+                _boundsRetryTimer = BoundsRetryInterval;
+                RefreshBounds();
+            }
         }
 
         Vector3 pos = _target.position;
