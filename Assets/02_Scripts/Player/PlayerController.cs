@@ -62,6 +62,8 @@ public class PlayerController : SingletonBehaviour<PlayerController>
     public int MaxDashCharges => Mathf.Max(1, _maxDashChance);
     public float HealSkillCooldownRemaining => Mathf.Max(0f, _healSkillCooldownEndTime - Time.time);
     public float GuardedAttackSkillCooldownRemaining => Mathf.Max(0f, _guardedAttackSkillCooldownEndTime - Time.time);
+    public bool IsSkillSUnlocked => _isSkillSUnlocked;
+    public bool IsSkillDUnlocked => _isSkillDUnlocked;
 
     private PlayerDashCharge _dashCharge;
     private DashState _dashState;
@@ -74,6 +76,8 @@ public class PlayerController : SingletonBehaviour<PlayerController>
 
     private bool _isCrouchActionActive;
     private bool _isHurtOverlayActive;
+    private bool _isSkillSUnlocked;
+    private bool _isSkillDUnlocked;
 
     private float _crouchReadyTime;
     private float _healSkillCooldownEndTime;
@@ -224,7 +228,9 @@ public class PlayerController : SingletonBehaviour<PlayerController>
 
         _playerInputHandler.ReadInput();
         _attackFlow.UpdateState();
-        if (_playerInputHandler.ConsumeHealSkillInput())
+        bool hasHealSkillInput = _playerInputHandler.ConsumeHealSkillInput();
+        if (_isSkillDUnlocked &&
+            hasHealSkillInput)
         {
             if (IsGroundedSkillState(_stateMachine.CurrentType) &&
                 _isGrounded &&
@@ -243,7 +249,10 @@ public class PlayerController : SingletonBehaviour<PlayerController>
             return;
         }
 
-        if(_playerInputHandler.ConsumeGuardedAttackSkillInput())
+        bool hasGuardedAttackSkillInput =
+            _playerInputHandler.ConsumeGuardedAttackSkillInput();
+        if (_isSkillSUnlocked &&
+            hasGuardedAttackSkillInput)
         {
             if (GuardedAttackSkillCooldownRemaining <= 0f &&
                 _playerGuardedAttackSkill.TryUse())
@@ -769,6 +778,27 @@ public class PlayerController : SingletonBehaviour<PlayerController>
         }
 
         _playerContext.IsDoubleJumpUnlocked = unlocked;
+    }
+
+    public void UnlockDoubleJump()
+    {
+        if (_playerContext == null)
+        {
+            Logger.LogError("PlayerStateContext가 null입니다.");
+            return;
+        }
+
+        _playerContext.IsDoubleJumpUnlocked = true;
+    }
+
+    public void UnlockSkillS()
+    {
+        _isSkillSUnlocked = true;
+    }
+
+    public void UnlockSkillD()
+    {
+        _isSkillDUnlocked = true;
     }
 
     private void UpdateAnimatorParameters()
