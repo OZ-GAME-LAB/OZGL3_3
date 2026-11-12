@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: f96e0d02695ca5649bf3195b6e055080
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2311426076691849875
+    second: region_phrase_swamp_ferry_unique_0
+  - first:
+      213: 6518285233540323545
+    second: region_phrase_swamp_ferry_unique_1
+  - first:
+      213: 5512731113566693331
+    second: region_phrase_swamp_ferry_unique_2
+  - first:
+      213: -5633411820195405704
+    second: region_phrase_swamp_ferry_unique_3
+  - first:
+      213: -8003488439769129995
+    second: region_phrase_swamp_ferry_unique_4
+  - first:
+      213: -1978994506217873170
+    second: region_phrase_swamp_ferry_unique_5
+  - first:
+      213: 1653848287665260952
+    second: region_phrase_swamp_ferry_unique_6
+  - first:
+      213: 6482772568040595168
+    second: region_phrase_swamp_ferry_unique_7
+  - first:
+      213: 5946986515077188604
+    second: region_phrase_swamp_ferry_unique_8
+  - first:
+      213: 2194548541911236659
+    second: region_phrase_swamp_ferry_unique_9
+  - first:
+      213: -9220865442966755038
+    second: region_phrase_swamp_ferry_unique_10
+  - first:
+      213: -2277989572373722776
+    second: region_phrase_swamp_ferry_unique_11
+  - first:
+      213: -2234103524096624296
+    second: region_phrase_swamp_ferry_unique_12
+  - first:
+      213: 7039615276546509697
+    second: region_phrase_swamp_ferry_unique_13
+  - first:
+      213: -1670991087939931137
+    second: region_phrase_swamp_ferry_unique_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 15
+        width: 2279
+        height: 1503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392eac135c5d31020800000000000000
+      internalID: 2311426076691849875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_1
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1379
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d858d172e9957a50800000000000000
+      internalID: 6518285233540323545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_2
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 1264
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d7e2667db7218c40800000000000000
+      internalID: 5512731113566693331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_3
+      rect:
+        serializedVersion: 2
+        x: 2284
+        y: 1151
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87024cfebc912d1b0800000000000000
+      internalID: -5633411820195405704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_4
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 1032
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb9d971ba5ede090800000000000000
+      internalID: -8003488439769129995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_5
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 167
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee02f645bf23984e0800000000000000
+      internalID: -1978994506217873170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_6
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 159
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8990da25146a3f610800000000000000
+      internalID: 1653848287665260952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_7
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 111
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eed4bdad4f67f950800000000000000
+      internalID: 6482772568040595168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_8
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 93
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfbc63b1ab0f78250800000000000000
+      internalID: 5946986515077188604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_9
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 111
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33088fa854a947e10800000000000000
+      internalID: 2194548541911236659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_10
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 85
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229aa4edbb7e80080800000000000000
+      internalID: -9220865442966755038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_11
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 81
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869ce90ad84f260e0800000000000000
+      internalID: -2277989572373722776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_12
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 45
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 859b5ce7eaedef0e0800000000000000
+      internalID: -2234103524096624296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_13
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 61
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18bc7f9ebccb1b160800000000000000
+      internalID: 7039615276546509697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_swamp_ferry_unique_14
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 31
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff33f7475727fc8e0800000000000000
+      internalID: -1670991087939931137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      region_phrase_swamp_ferry_unique_0: 2311426076691849875
+      region_phrase_swamp_ferry_unique_1: 6518285233540323545
+      region_phrase_swamp_ferry_unique_10: -9220865442966755038
+      region_phrase_swamp_ferry_unique_11: -2277989572373722776
+      region_phrase_swamp_ferry_unique_12: -2234103524096624296
+      region_phrase_swamp_ferry_unique_13: 7039615276546509697
+      region_phrase_swamp_ferry_unique_14: -1670991087939931137
+      region_phrase_swamp_ferry_unique_2: 5512731113566693331
+      region_phrase_swamp_ferry_unique_3: -5633411820195405704
+      region_phrase_swamp_ferry_unique_4: -8003488439769129995
+      region_phrase_swamp_ferry_unique_5: -1978994506217873170
+      region_phrase_swamp_ferry_unique_6: 1653848287665260952
+      region_phrase_swamp_ferry_unique_7: 6482772568040595168
+      region_phrase_swamp_ferry_unique_8: 5946986515077188604
+      region_phrase_swamp_ferry_unique_9: 2194548541911236659
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

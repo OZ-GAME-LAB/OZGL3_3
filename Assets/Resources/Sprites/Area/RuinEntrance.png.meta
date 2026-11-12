@@ -1,22 +1,70 @@
 fileFormatVersion: 2
-guid: 5c7f5bbeac313a247a89f73b65f65195
+guid: c128b1484e219fb49ac13b18a32c4ba3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2931385371989590898
-    second: region_phrase_ruins_entrance_elpida_style_0
+      213: -3662981403844098611
+    second: region_phrase_ruins_gate_unique_0
   - first:
-      213: -2831059541898302398
-    second: region_phrase_ruins_entrance_elpida_style_1
+      213: -2461014260131476940
+    second: region_phrase_ruins_gate_unique_1
   - first:
-      213: -8002660440132860890
-    second: region_phrase_ruins_entrance_elpida_style_2
+      213: -453709323311236502
+    second: region_phrase_ruins_gate_unique_2
   - first:
-      213: -7275367932312312477
-    second: region_phrase_ruins_entrance_elpida_style_3
+      213: -6937640272764466941
+    second: region_phrase_ruins_gate_unique_3
   - first:
-      213: 3503531445013839530
-    second: region_phrase_ruins_entrance_elpida_style_4
+      213: 4581072808411922051
+    second: region_phrase_ruins_gate_unique_4
+  - first:
+      213: -3352619242939633729
+    second: region_phrase_ruins_gate_unique_5
+  - first:
+      213: 3884143729651868808
+    second: region_phrase_ruins_gate_unique_6
+  - first:
+      213: 5402853859069442067
+    second: region_phrase_ruins_gate_unique_7
+  - first:
+      213: 1866322652310009150
+    second: region_phrase_ruins_gate_unique_8
+  - first:
+      213: -5445786296356072030
+    second: region_phrase_ruins_gate_unique_9
+  - first:
+      213: 2408045720846016408
+    second: region_phrase_ruins_gate_unique_10
+  - first:
+      213: 7689715080333931284
+    second: region_phrase_ruins_gate_unique_11
+  - first:
+      213: -7130648205432494692
+    second: region_phrase_ruins_gate_unique_12
+  - first:
+      213: -8311669844662577938
+    second: region_phrase_ruins_gate_unique_13
+  - first:
+      213: -3966448324964113199
+    second: region_phrase_ruins_gate_unique_14
+  - first:
+      213: 861880800837079938
+    second: region_phrase_ruins_gate_unique_15
+  - first:
+      213: -1755066248686158493
+    second: region_phrase_ruins_gate_unique_16
+  - first:
+      213: 6817600985504194719
+    second: region_phrase_ruins_gate_unique_17
+  - first:
+      213: 7090144116581114795
+    second: region_phrase_ruins_gate_unique_18
+  - first:
+      213: -4620817273616448981
+    second: region_phrase_ruins_gate_unique_19
+  - first:
+      213: -7563452194624255091
+    second: region_phrase_ruins_gate_unique_20
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +106,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -125,23 +173,463 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: region_phrase_ruins_entrance_elpida_style_0
+      name: region_phrase_ruins_gate_unique_0
       rect:
         serializedVersion: 2
-        x: 165
-        y: 192
-        width: 2040
-        height: 1225
+        x: 22
+        y: 0
+        width: 2280
+        height: 1518
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2734735f67f5ea820800000000000000
-      internalID: 2931385371989590898
+      spriteID: dc5c20d02d97a2dc0800000000000000
+      internalID: -3662981403844098611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_1
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1505
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a41b5c198b8ddd0800000000000000
+      internalID: -2461014260131476940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1505
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a30c836c914b9f0800000000000000
+      internalID: -453709323311236502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_3
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1481
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3090e6addec88bf90800000000000000
+      internalID: -6937640272764466941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 747
+        width: 9
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ef79b927d339f30800000000000000
+      internalID: 4581072808411922051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_5
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 645
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbfa17dbf8a1971d0800000000000000
+      internalID: -3352619242939633729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_6
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 641
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884e57e942047e530800000000000000
+      internalID: 3884143729651868808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_7
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 641
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 318be2395facafa40800000000000000
+      internalID: 5402853859069442067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 507
+        width: 6
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e35f337609286e910800000000000000
+      internalID: 1866322652310009150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 73
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a5910b673eac64b0800000000000000
+      internalID: -5445786296356072030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_10
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 44
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f1de123d81b6120800000000000000
+      internalID: 2408045720846016408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_11
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 17
+        width: 51
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413b44baf1b57ba60800000000000000
+      internalID: 7689715080333931284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_12
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 25
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c956be8ac39da0d90800000000000000
+      internalID: -7130648205432494692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_13
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 33
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee49f8a305407ac80800000000000000
+      internalID: -8311669844662577938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_14
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 49
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4229a734854f8c0800000000000000
+      internalID: -3966448324964113199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_15
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 33
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2839f9c950406fb00800000000000000
+      internalID: 861880800837079938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_16
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 29
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36db8c9ab80c4a7e0800000000000000
+      internalID: -1755066248686158493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_17
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 21
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90a451a9fbfc9e50800000000000000
+      internalID: 6817600985504194719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_18
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 17
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3a4234280456260800000000000000
+      internalID: 7090144116581114795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_19
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 7
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b224a1afb2f8fdfb0800000000000000
+      internalID: -4620817273616448981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: region_phrase_ruins_gate_unique_20
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 21
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8bc5c74d48390790800000000000000
+      internalID: -7563452194624255091
       vertices: []
       indices: 
       edges: []
@@ -150,7 +638,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 35c2f7dec0241074183aca0b2c9fe5a8
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -160,11 +648,27 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      region_phrase_ruins_entrance_elpida_style_0: 2931385371989590898
-      region_phrase_ruins_entrance_elpida_style_1: -2831059541898302398
-      region_phrase_ruins_entrance_elpida_style_2: -8002660440132860890
-      region_phrase_ruins_entrance_elpida_style_3: -7275367932312312477
-      region_phrase_ruins_entrance_elpida_style_4: 3503531445013839530
+      region_phrase_ruins_gate_unique_0: -3662981403844098611
+      region_phrase_ruins_gate_unique_1: -2461014260131476940
+      region_phrase_ruins_gate_unique_10: 2408045720846016408
+      region_phrase_ruins_gate_unique_11: 7689715080333931284
+      region_phrase_ruins_gate_unique_12: -7130648205432494692
+      region_phrase_ruins_gate_unique_13: -8311669844662577938
+      region_phrase_ruins_gate_unique_14: -3966448324964113199
+      region_phrase_ruins_gate_unique_15: 861880800837079938
+      region_phrase_ruins_gate_unique_16: -1755066248686158493
+      region_phrase_ruins_gate_unique_17: 6817600985504194719
+      region_phrase_ruins_gate_unique_18: 7090144116581114795
+      region_phrase_ruins_gate_unique_19: -4620817273616448981
+      region_phrase_ruins_gate_unique_2: -453709323311236502
+      region_phrase_ruins_gate_unique_20: -7563452194624255091
+      region_phrase_ruins_gate_unique_3: -6937640272764466941
+      region_phrase_ruins_gate_unique_4: 4581072808411922051
+      region_phrase_ruins_gate_unique_5: -3352619242939633729
+      region_phrase_ruins_gate_unique_6: 3884143729651868808
+      region_phrase_ruins_gate_unique_7: 5402853859069442067
+      region_phrase_ruins_gate_unique_8: 1866322652310009150
+      region_phrase_ruins_gate_unique_9: -5445786296356072030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
