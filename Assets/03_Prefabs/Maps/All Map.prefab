@@ -247,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 2203113764550401867, guid: ae12766b0a172af41988a6c9365e67f0, type: 3}
       propertyPath: Transform_DestinationPoint
       value: 
-      objectReference: {fileID: 472435646136236904}
+      objectReference: {fileID: 5964488883376500342}
     - target: {fileID: 3254557615215406764, guid: ae12766b0a172af41988a6c9365e67f0, type: 3}
       propertyPath: Transform_DestinationPoint
       value: 
@@ -750,7 +750,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwampPier
       objectReference: {fileID: 0}
-    - target: {fileID: 4519445612647766974, guid: 7361adb8746045f46bbcffb382031316, type: 3}
+    - target: {fileID: 4927168843933894916, guid: 7361adb8746045f46bbcffb382031316, type: 3}
       propertyPath: Transform_DestinationPoint
       value: 
       objectReference: {fileID: 561071467589183254}
@@ -803,9 +803,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7361adb8746045f46bbcffb382031316, type: 3}
---- !u!4 &472435646136236904 stripped
+--- !u!4 &5964488883376500342 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 647627741953358763, guid: 7361adb8746045f46bbcffb382031316, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6680145284767674037, guid: 7361adb8746045f46bbcffb382031316, type: 3}
   m_PrefabInstance: {fileID: 1041100860995649731}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8090714992236867440 stripped
