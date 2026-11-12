@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -30,6 +31,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     private bool _isRunning;
     private bool _attackSign;
+    private readonly Dictionary<Collider2D, MapChange> _mapPortalsByCollider = new();
+    private MapChange _interactionPortal;
 
     private void OnEnable()
     {
@@ -39,6 +42,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnDisable()
     {
+        _mapPortalsByCollider.Clear();
+        _interactionPortal = null;
+
         if (ActiveInput != this)
         {
             return;
@@ -57,6 +63,11 @@ public class PlayerInputHandler : MonoBehaviour
         if (keyboard != null && !blocksGameplayInput && keyboard.gKey.wasPressedThisFrame)
         {
             OnInteractionRequested?.Invoke(transform.position);
+            if (npc?.BlocksGameplayInput != true)
+            {
+                _interactionPortal?.Interact();
+            }
+
             blocksGameplayInput = npc?.IsOpen == true;
         }
 
@@ -236,5 +247,52 @@ public class PlayerInputHandler : MonoBehaviour
         HealSkillQueued = false;
         _isRunning = false;
         _attackSign = false;
+    }
+
+    public void HandlePlayerTriggerEnter(Collider2D other)
+    {
+        if (other == null)
+        {
+            return;
+        }
+
+        MapChange portal = other.GetComponentInParent<MapChange>();
+        if (portal == null)
+        {
+            return;
+        }
+
+        _mapPortalsByCollider[other] = portal;
+        if (portal.CurrentPortalType == MapPortalType.Interaction)
+        {
+            _interactionPortal = portal;
+        }
+    }
+
+    public void HandlePlayerTriggerExit(Collider2D other)
+    {
+        if (other == null ||
+            !_mapPortalsByCollider.TryGetValue(other, out MapChange portal))
+        {
+            return;
+        }
+
+        _mapPortalsByCollider.Remove(other);
+
+        if (_interactionPortal != portal ||
+            _mapPortalsByCollider.ContainsValue(portal))
+        {
+            return;
+        }
+
+        _interactionPortal = null;
+        foreach (MapChange overlappingPortal in _mapPortalsByCollider.Values)
+        {
+            if (overlappingPortal != null &&
+                overlappingPortal.CurrentPortalType == MapPortalType.Interaction)
+            {
+                _interactionPortal = overlappingPortal;
+            }
+        }
     }
 }

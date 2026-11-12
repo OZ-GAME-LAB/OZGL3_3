@@ -37,6 +37,13 @@ public class AreaSpriteUI : UIBase
             return;
         }
 
+        // 진입 이미지가 없는 구간은 에러 없이 그냥 넘어간다.
+        if (string.IsNullOrEmpty(data.SpritePath) == true)
+        {
+            UIManager.Instance.CloseAreaSpriteUI();
+            return;
+        }
+
         Sprite sprite = Resources.Load<Sprite>(data.SpritePath);
 
         if (sprite == null)
