@@ -106,8 +106,7 @@ public class MapChange : MonoBehaviour, IInteractable
         }
         else 
         {
-            //UIManager.Instance?.OpenInteractionPopupUI(
-            //    "상호작용 키를 눌러 이동", () => Interact(), null);
+            UIManager.Instance?.OpenInteractionPopupUI();
         }
     }
 
@@ -120,7 +119,7 @@ public class MapChange : MonoBehaviour, IInteractable
             return;
         }
 
-        //UIManager.Instance?.CloseInteractionPopupUI();
+        UIManager.Instance?.CloseInteractionPopupUI();
 
         if (_transformPlayer == transformPlayer)
         {
