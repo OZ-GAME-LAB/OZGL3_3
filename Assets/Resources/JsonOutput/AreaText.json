@@ -64,7 +64,7 @@
   },
   {
     "Id": "Area_AstraForestPier",
-    "SpritePath": null,
+    "SpritePath": "Sprites/Area/AstraForestPier",
     "RespawnMap": "Area_AstraForestVillage",
     "x": 115,
     "y": -23,
@@ -100,7 +100,7 @@
   },
   {
     "Id": "Area_RuinAncientChamber",
-    "SpritePath": null,
+    "SpritePath": "Sprites/Area/RuinAncientChamber",
     "RespawnMap": "Area_RuinEntrance",
     "x": 96,
     "y": 1,
@@ -208,7 +208,7 @@
   },
   {
     "Id": "Area_SwampDrownedCatacombs",
-    "SpritePath": null,
+    "SpritePath": "Sprites/Area/SwampDrownedCatacombs",
     "RespawnMap": "Area_SwampPier",
     "x": -88,
     "y": -53,
