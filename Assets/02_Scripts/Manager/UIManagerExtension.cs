@@ -325,18 +325,14 @@ public static class UIManagerExtension
         uiManager.CloseUI(UIRootType.PopupUI, UIType.ConfirmPopupUI);
     }
 
-    public static void OpenInteractionPopupUI(this UIManager uiManager, string message, Action onConfirm, Action onCancel = null)
+    public static void OpenInteractionPopupUI(this UIManager uiManager)
     {
         var uiBase = uiManager.OpenUI(UIRootType.PopupUI, UIType.InteractionPopupUI);
-        ConfirmPopupUI popup = uiBase as ConfirmPopupUI;
-
-        if (popup == null)
+        if (uiBase == null)
         {
-            Logger.LogError("ConfirmPopupUI가 생성되지 않았습니다.");
+            Debug.LogWarning($"UI가 생성되지 않았습니다");
             return;
         }
-
-        popup.Init(message, onConfirm, onCancel);
     }
 
     public static void CloseInteractionPopupUI(this UIManager uiManager)
