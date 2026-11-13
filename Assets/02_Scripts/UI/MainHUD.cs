@@ -97,6 +97,14 @@ public class MainHUD : UIBase
         DeathUI.Open();
     }
 
+    private bool IsNpcUIOpen()
+    {
+        return UIManager.Instance.IsOpenUI(UIType.DialoagueUI) == true
+            || UIManager.Instance.IsOpenUI(UIType.DialoaguetUI) == true
+            || UIManager.Instance.IsOpenUI(UIType.ShopUI) == true
+            || UIManager.Instance.IsOpenUI(UIType.ArtifactUI) == true;
+    }
+
     private void Update()
     {
         TrySubscribeDeath();
@@ -109,6 +117,12 @@ public class MainHUD : UIBase
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            // NPC 대화/상점/유물 창이 열려 있는 동안에는 ESC 를 막는다.
+            if (IsNpcUIOpen() == true)
+            {
+                return;
+            }
+
             if (WorldMapUI.IsOpen == true)
             {
                 WorldMapUI.Close();
