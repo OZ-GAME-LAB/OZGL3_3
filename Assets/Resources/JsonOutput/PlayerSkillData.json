@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Id": "GuradedAttack_Attack",
     "Name": "GuradedAttack",
@@ -6,7 +6,7 @@
     "TriggerName": "IsGuradedAttackSign",
     "StateName": "IsGuradedAttack",
     "needGauge": 30,
-    "Amount1": 1,
+    "Amount1": 2,
     "RangeOffset": "0.8, 0",
     "RangeSize": "2, 1.2",
     "CoolDown": 4

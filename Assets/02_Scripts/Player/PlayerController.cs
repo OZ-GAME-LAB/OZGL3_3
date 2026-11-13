@@ -252,6 +252,8 @@ public class PlayerController : SingletonBehaviour<PlayerController>
         bool hasGuardedAttackSkillInput =
             _playerInputHandler.ConsumeGuardedAttackSkillInput();
         if (_isSkillSUnlocked &&
+            IsGroundedSkillState(_stateMachine.CurrentType) &&
+            _isGrounded &&
             hasGuardedAttackSkillInput)
         {
             if (GuardedAttackSkillCooldownRemaining <= 0f &&
