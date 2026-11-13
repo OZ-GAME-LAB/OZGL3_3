@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6946491986506782344}
+  - component: {fileID: 1794767189426418000}
   m_Layer: 0
   m_Name: All Map
   m_TagString: Untagged
@@ -113,6 +114,18 @@ Transform:
   - {fileID: 2069431234454122396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1794767189426418000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124390479956697668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c842257d8ac30ff4db321a7aeca857f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapManager
 --- !u!1 &8506167998213821053
 GameObject:
   m_ObjectHideFlags: 0

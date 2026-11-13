@@ -13,10 +13,14 @@ public class BgParallax : MonoBehaviour
     private MapRoot _mapRootOwner;
 
     private Vector3 _previousCameraPosition;
+    private Vector3 _initialPosition;
+
     private float _parallaxStartTime;
 
     private void Awake()
     {
+        _initialPosition = transform.position;
+
         // 부모 계층에서 MapRoot 자동 검색
         _mapRootOwner = GetComponentInParent<MapRoot>(true);
 
@@ -46,6 +50,9 @@ public class BgParallax : MonoBehaviour
 
     private void OnEnable()
     {
+        // 배경 좌표 초기화
+        transform.position = _initialPosition;
+
         // 활성화 후 지정한 시간 동안 패럴랙스 시작 대기
         _parallaxStartTime =
             Time.time + FLOAT_PARALLAX_START_DELAY;
