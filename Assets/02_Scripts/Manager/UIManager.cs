@@ -149,6 +149,23 @@ public class UIManager : SingletonBehaviour<UIManager>
         return OpenUI(UIRootType.PopupUI, uiType, isInitialHide);
     }
 
+    /// <summary>
+    /// 문구를 직접 넘겨서 간단한 팝업을 띄운다. durationSeconds 가 0 이하면 SimplePopup 의 기본 시간을 쓴다.
+    /// 예: UIManager.Instance.OpenPopupUI("원하는 문구", 2f);
+    /// </summary>
+    public SimplePopup OpenPopupUI(string message, float durationSeconds = 0f)
+    {
+        SimplePopup popup = OpenUI(UIRootType.PopupUI, UIType.SimplePopupUI) as SimplePopup;
+        if (popup == null)
+        {
+            Debug.LogError("SimplePopupUI에 SimplePopup 컴포넌트가 없습니다.");
+            return null;
+        }
+
+        popup.Init(message, durationSeconds);
+        return popup;
+    }
+
     public UIBase OpenMainUI(UIType uiType, bool isInitialHide = false)
     {
         return OpenUI(UIRootType.MainUI, uiType, isInitialHide);
