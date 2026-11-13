@@ -93,4 +93,20 @@ public class BgParallax : MonoBehaviour
         _previousCameraPosition =
             Vector3_CameraCurrentPosition;
     }
+
+    /// <summary>
+    /// 리스폰 시 패럴랙스 위치 재설정
+    /// </summary>
+    //public void ResetParallax(Vector3 Vector3_ResetPosition)
+    //{
+    //    transform.position = Vector3_ResetPosition;
+
+    //    if (_cameraTransform != null)
+    //    {
+    //        _previousCameraPosition = _cameraTransform.position;
+    //    }
+
+    //    _parallaxStartTime =
+    //        Time.time + FLOAT_PARALLAX_START_DELAY;
+    //}
 }
