@@ -245,6 +245,7 @@ public class PlayerInputHandler : MonoBehaviour
         JumpInput = false;
         JumpQueued = false;
         HealSkillQueued = false;
+        GuardedAttackSkillQueued = false;
         _isRunning = false;
         _attackSign = false;
     }
