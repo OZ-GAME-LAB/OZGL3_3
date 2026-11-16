@@ -10,6 +10,10 @@ public class SaveProfileUI : UIBase
     [FormerlySerializedAs("Button_Close")]
     [SerializeField] private UIButton _closeButton;
 
+    [Header("사용할 수 있는 슬롯 수 (앞에서부터). 나머지는 자물쇠로 잠긴다.")]
+    [SerializeField] private int _unlockedSlotCount = 1;
+    [SerializeField] private string _lockedMessage = "이 슬롯은 아직 사용할 수 없습니다.";
+
     private readonly List<SaveSlot> _slots = new();
     private int _pendingDeleteSlot;
 
@@ -53,9 +57,10 @@ public class SaveProfileUI : UIBase
 
         for (int i = 0; i < _slots.Count; i++)
         {
-            bool hasSave = userData.HasSave(i);
+            bool isLocked = i >= _unlockedSlotCount;
+            bool hasSave = isLocked == false && userData.HasSave(i);
             SaveSlotInfo info = hasSave ? GetSlotInfo(i) : default;
-            _slots[i].Setup(i, hasSave, info, OnClickSlotStart, OnClickSlotDelete);
+            _slots[i].Setup(i, hasSave, info, OnClickSlotStart, OnClickSlotDelete, isLocked, OnClickSlotLocked);
         }
     }
 
@@ -74,6 +79,11 @@ public class SaveProfileUI : UIBase
             PlayTime = $"{(long)playTime.TotalHours:D2}:{playTime.Minutes:D2}:{playTime.Seconds:D2}",
             CreatedAt = meta.CreatedAtUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm")
         };
+    }
+
+    private void OnClickSlotLocked(int slot)
+    {
+        UIManager.Instance.OpenPopupUI(_lockedMessage, 1.5f);
     }
 
     private void OnClickSlotStart(int slot)
