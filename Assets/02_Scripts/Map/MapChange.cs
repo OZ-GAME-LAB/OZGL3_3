@@ -15,6 +15,7 @@ public class MapChange : MonoBehaviour, IInteractable
 
     [Header("Portal Settings")]
     [SerializeField] private MapPortalType Enum_PortalType = MapPortalType.Contact;
+    [SerializeField] private String UnlockKey;
 
     [Header("Destination")]
     [SerializeField] private Transform Transform_DestinationPoint;
@@ -130,12 +131,14 @@ public class MapChange : MonoBehaviour, IInteractable
 
     private void DoStartMapChange(Transform transformPlayer)
     {
+        bool UnlockKeyIsValid = string.IsNullOrEmpty(UnlockKey) || MapManager.Instance.IsMapUnlocked(UnlockKey);
         if (_isTransitioning ||
-            Transform_DestinationPoint == null)
+            Transform_DestinationPoint == null ||
+            !UnlockKeyIsValid)
         {
             return;
         }
-
+        Logger.Log($"MapChange: {UnlockKeyIsValid}");
         _isTransitioning = true;
         DoChangeMapAsync(transformPlayer).Forget();
     }

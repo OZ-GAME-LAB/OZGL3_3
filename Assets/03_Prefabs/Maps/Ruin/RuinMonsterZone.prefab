@@ -42958,6 +42958,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 8601251153012105306}
     m_Modifications:
     - target: {fileID: 234466724387664523, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
+      propertyPath: UnlockKey
+      value: RuinCorridor
+      objectReference: {fileID: 0}
+    - target: {fileID: 234466724387664523, guid: 51deb055e65f64145a1db979c20c01e5, type: 3}
       propertyPath: Enum_PortalType
       value: 1
       objectReference: {fileID: 0}
