@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using UnityEditor;
-using UnityEditor.Animations;
-using UnityEngine;
-using UnityPipeline.Microsoft.CodeAnalysis.CSharp.Syntax;
+﻿using UnityEngine;
 
 public class NormalMonster : MonsterBase
 {
