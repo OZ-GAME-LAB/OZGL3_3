@@ -20,7 +20,7 @@ public class UserDataManager
 
     public void Init(string saveDirectory = null)
     {
-        _saveDirectory = Path.GetFullPath(saveDirectory ?? Path.Combine(Application.dataPath, "UserData"));
+        _saveDirectory = Path.GetFullPath(saveDirectory ?? Path.Combine(Application.persistentDataPath, "UserData"));
         _slotMetaData = new UserSlotMetaData(_saveDirectory);
         if (!_slotMetaData.LoadData())
         {
@@ -29,11 +29,11 @@ public class UserDataManager
 
         UserDataList.Clear();
 
-        UserDataList.Add(new UserArtifactData(null));
-        UserDataList.Add(new UserShopData(null));
-        UserDataList.Add(new UserDialogueData(null));
-        UserDataList.Add(new UserInventoryData(null));
-        UserDataList.Add(new UserMapData(null));
+        UserDataList.Add(new UserArtifactData(_saveDirectory));
+        UserDataList.Add(new UserShopData(_saveDirectory));
+        UserDataList.Add(new UserDialogueData(_saveDirectory));
+        UserDataList.Add(new UserInventoryData(_saveDirectory));
+        UserDataList.Add(new UserMapData(_saveDirectory));
 
         foreach (IUserData userData in UserDataList)
         {
