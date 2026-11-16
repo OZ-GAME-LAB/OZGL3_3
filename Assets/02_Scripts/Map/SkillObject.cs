@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 enum SkillType
 {
@@ -88,15 +89,30 @@ public class SkillObject : MonoBehaviour
     }
     private void OnlockedSkill(SkillType skillName)
     {
-        if (skillName == SkillType.S) {
+        bool isUnlocked = skillName switch
+        {
+            SkillType.S => _playerController.IsSkillSUnlocked,
+            SkillType.D => _playerController.IsSkillDUnlocked,
+            SkillType.DoubleJump => _playerController.IsDoubleJumpUnlocked,
+            _ => false
+        };
+
+        if (skillName == SkillType.S && !_playerController.IsSkillSUnlocked) {
             _playerController?.UnlockSkillS();
         }
-        if (skillName == SkillType.D) {
+        if (skillName == SkillType.D && !_playerController.IsSkillDUnlocked) {
             _playerController?.UnlockSkillD();
         }
-        if (skillName == SkillType.DoubleJump) {
+        if (skillName == SkillType.DoubleJump && !_playerController.IsDoubleJumpUnlocked) {
             _playerController?.UnlockDoubleJump();
         }
+
+        
+        if (!isUnlocked) {
+            GameManager.Sound.PlaySFX("Unlock");
+        }
+            
+
     }
 
     private bool TryGetPlayerController(
