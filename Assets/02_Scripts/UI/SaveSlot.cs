@@ -26,28 +26,56 @@ public class SaveSlot : MonoBehaviour
     [SerializeField] private UIButton _startButton;
     [FormerlySerializedAs("Button_Delete")]
     [SerializeField] private UIButton _deleteButton;
+    [Header("잠금 표시 (잠긴 슬롯 위에 덮이는 오브젝트)")]
+    [SerializeField] private GameObject _lockRoot;
+    [SerializeField] private UnityEngine.UI.Button _lockButton;
 
     private int _slot;
     private Action<int> _onStart;
     private Action<int> _onDelete;
+    private Action<int> _onLockedClick;
+    private bool _isLocked;
 
     private void OnEnable()
     {
         _startButton.BindOnClickButtonEvent(OnClickStart);
         _deleteButton.BindOnClickButtonEvent(OnClickDelete);
+
+        if (_lockButton != null)
+        {
+            _lockButton.onClick.AddListener(OnClickLocked);
+        }
     }
 
     private void OnDisable()
     {
+        if (_lockButton != null)
+        {
+            _lockButton.onClick.RemoveListener(OnClickLocked);
+        }
+
         _startButton.UnBindAllOnClickButtonEvent();
         _deleteButton.UnBindAllOnClickButtonEvent();
     }
 
-    public void Setup(int slot, bool hasSave, SaveSlotInfo info, Action<int> onStart, Action<int> onDelete)
+    public void Setup(int slot, bool hasSave, SaveSlotInfo info, Action<int> onStart, Action<int> onDelete, bool isLocked = false, Action<int> onLockedClick = null)
     {
         _slot = slot;
         _onStart = onStart;
         _onDelete = onDelete;
+        _onLockedClick = onLockedClick;
+        _isLocked = isLocked;
+
+        // 잠긴 슬롯은 저장 데이터가 있어도 빈 슬롯처럼 보여 주고, 자물쇠가 위에 덮여서 클릭을 막는다.
+        if (isLocked == true)
+        {
+            hasSave = false;
+        }
+
+        if (_lockRoot != null)
+        {
+            _lockRoot.SetActive(isLocked);
+        }
 
         // 빈 슬롯이면 캐릭터, 글자, 삭제 버튼을 모두 숨기고 게임 시작 버튼만 남긴다.
         _characterImage.gameObject.SetActive(hasSave);
@@ -67,11 +95,26 @@ public class SaveSlot : MonoBehaviour
 
     private void OnClickStart()
     {
+        if (_isLocked == true)
+        {
+            return;
+        }
+
         _onStart?.Invoke(_slot);
     }
 
     private void OnClickDelete()
     {
+        if (_isLocked == true)
+        {
+            return;
+        }
+
         _onDelete?.Invoke(_slot);
+    }
+
+    private void OnClickLocked()
+    {
+        _onLockedClick?.Invoke(_slot);
     }
 }
